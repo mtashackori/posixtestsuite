@@ -23,6 +23,7 @@
 
 #define _XOPEN_SOURCE 600
 #include <stdio.h>
+#include <signal.h>
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>

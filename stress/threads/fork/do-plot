@@ -15,12 +15,12 @@
 FILE=$1
 TMP=$(mktemp -d)
 
-function clean_up
+clean_up()
 {
     rm -rf $TMP
 }
 
-function error
+error()
 {
     cat 1>&2
     clean_up

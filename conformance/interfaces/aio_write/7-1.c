@@ -84,6 +84,8 @@ int main()
 	for (i=0; i<last_req-1; i++)
 	{
 		err = aio_error(&aiocbs[i]);
+ 		if (err != 0)
+			printf(TNAME " aio_error got %d\n", err);
 		ret = aio_return(&aiocbs[i]);
 
 	}

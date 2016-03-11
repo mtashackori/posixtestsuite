@@ -23,8 +23,8 @@ EOF
 runtests()
 {
 	for test in `ls -d $1`; do
-		POSIX_TARGET=$test make build-tests
-		POSIX_TARGET=$test make run-tests
+		POSIX_TARGET=$test gmake build-tests
+		POSIX_TARGET=$test gmake run-tests
 	done
 }
 

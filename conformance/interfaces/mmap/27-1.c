@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/mman.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -62,6 +63,13 @@ int main()
 #endif
 
   data = (char *) malloc(total_size); 
+  if (data == NULL)
+  {
+     printf(TNAME "Error in malloc(): %s\n",
+            strerror(errno));
+     exit(PTS_UNRESOLVED);
+  }
+  
   snprintf(tmpfname, sizeof(tmpfname), "/tmp/pts_mmap_27_1_%d",
            getpid());
   unlink(tmpfname);

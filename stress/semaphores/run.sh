@@ -11,22 +11,24 @@
 RunTest()
 {
 	echo "TEST: " $1 $2
-	TOTAL=$TOTAL+1
+	TOTAL=$((TOTAL+1))
 	./$1 $2
-	if [ $? == 0 ]; then
-		PASS=$PASS+1
-		echo -ne "\t\t\t***TEST PASSED***\n\n"
+	if [ $? = 0 ]; then
+		PASS=$((PASS+1))
+		echo "                  ***TEST PASSED***"
+		echo
 	else
-		FAIL=$FAIL+1
-		echo -ne "\t\t\t***TEST FAILED***\n\n"
+                FAIL=$((FAIL+1))
+                echo "                  ***TEST FAILED***"
+                echo	
 	fi
 }
 
 # Main program
 
-declare -i TOTAL=0
-declare -i PASS=0
-declare -i FAIL=0
+TOTAL=0
+PASS=0
+FAIL=0
 
 # Add lists of tests to these variables for execution
 TESTS="multi_con_pro.test"
@@ -37,12 +39,12 @@ echo "=========================================="
 RunTest $TESTS 100
 
 echo
-echo -ne "\t\t****************\n"
-echo -ne "\t\t* TOTAL:  " $TOTAL "\n"
-echo -ne "\t\t* PASSED: " $PASS "\n"
-echo -ne "\t\t* FAILED: " $FAIL "\n"
-echo -ne "\t\t****************\n"
-
+echo "         ****************"
+echo "         * TOTAL:  " $TOTAL
+echo "         * PASSED: " $PASS
+echo "         * FAILED: " $FAIL
+echo "         ****************"
 exit 0
 
+declare -i FAIL=0
 

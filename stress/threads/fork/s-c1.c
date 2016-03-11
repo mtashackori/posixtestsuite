@@ -130,7 +130,7 @@ int main ( int argc, char *argv[] )
 	mes_t sentinel;
 	mes_t *m_cur, *m_tmp;
 
-	long CHILD_MAX = sysconf( _SC_CHILD_MAX );
+	long MY_CHILD_MAX = sysconf( _SC_CHILD_MAX );
 	long my_max = 1000 * SCALABILITY_FACTOR ;
 
 	/* Initialize the measure list */
@@ -140,8 +140,8 @@ int main ( int argc, char *argv[] )
 	/* Initialize output routine */
 	output_init();
 
-	if ( CHILD_MAX > 0 )
-		my_max = CHILD_MAX;
+        if ( MY_CHILD_MAX > 0 )
+               my_max = MY_CHILD_MAX;
 
 	pr = ( pid_t * ) calloc( 1 + my_max, sizeof( pid_t ) );
 
@@ -151,7 +151,7 @@ int main ( int argc, char *argv[] )
 	}
 
 #if VERBOSE > 1
-	output( "CHILD_MAX: %d\n", CHILD_MAX );
+	output( "CHILD_MAX: %d\n", MY_CHILD_MAX );
 
 #endif
 
@@ -267,12 +267,12 @@ int main ( int argc, char *argv[] )
 		/* Parent */
 		nprocesses++;
 
-		/* FAILED if nprocesses > CHILD_MAX */
+		/* FAILED if nprocesses > MY_CHILD_MAX */
 		if ( nprocesses > my_max )
 		{
 			errno = 0;
 
-			if ( CHILD_MAX > 0 )
+			if ( MY_CHILD_MAX > 0 )
 			{
 #if VERBOSE > 0
 				output( "WARNING! We were able to create more than CHILD_MAX processes\n" );

@@ -19,30 +19,33 @@
  *  4. Launch a thread which call sched_yield() and check that the counter has
  *     changed since the call.
  */
-#define LINUX
-
-#ifdef LINUX 
+#ifdef __linux__
 #define _GNU_SOURCE
 #endif
 
+#ifdef __NetBSD__
+#define _NETBSD_SOURCE
+#endif
+
+#include <sys/types.h>
+#include <sys/param.h>
+#include <sys/wait.h>
 #include <sched.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <pthread.h>
+#include <inttypes.h>
+#include <stdint.h>
 #include <errno.h>
-#include <sys/wait.h>
 #include "posixtest.h"
 
 #ifdef BSD
-# include <sys/types.h>
-# include <sys/param.h>
 # include <sys/sysctl.h>
 #endif
 
 #ifdef HPUX
-# include <sys/param.h>
 # include <sys/pstat.h>
 #endif
 
@@ -78,10 +81,10 @@ int get_ncpu() {
 	return ncpu;
 }
 
-#ifdef LINUX
 int set_process_affinity(int cpu)
 {
 	int retval = -1;
+#if defined(CPU_ZERO)	
 	cpu_set_t cpu_mask;
 	
 	CPU_ZERO(&cpu_mask);
@@ -92,11 +95,23 @@ int set_process_affinity(int cpu)
 		return -1;
 	}
 		
-//#ifndef P2_SCHED_SETAFFINITY
 	retval = sched_setaffinity(0, sizeof(cpu_mask), &cpu_mask);
-//#else
-//	retval = sched_setaffinity(0, &cpu_mask);
-//#endif
+#elif defined(cpuset_create)
+        cpuset_t *cpu_mask = cpuset_create();
+
+        cpuset_zero(cpu_mask);
+        if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
+                cpuset_set(cpu, cpu_mask);
+        } else {
+                fprintf (stderr, "Wrong cpu id: %d\n", cpu);
+                return -1;
+        }
+        retval = _sched_setaffinity(0, 0, cpuset_size(cpu_mask), cpu_mask);
+        cpuset_destroy(cpu_mask);
+#else
+       #error "no cpuset"
+#endif
+
 	if (retval == -1)
 	perror("Error at sched_setaffinity()");
         
@@ -115,26 +130,33 @@ int set_thread_affinity(int cpu)
 		fprintf (stderr, "Wrong cpu id: %d\n", cpu); 
 		return -1;
 	}
-//#ifndef P2_PTHREAD_SETAFFINITY
 	retval = pthread_setaffinity_np(pthread_self(), 
 			sizeof(cpu_mask), &cpu_mask);
-//#else
-//	retval = pthread_setaffinity_np(pthread_self(), &cpu_mask);
-//#endif
-        if (retval != 0)
+#elif defined(cpuset_create)
+        cpuset_t *cpu_mask = cpuset_create();
+
+        cpuset_zero(cpu_mask);
+        if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
+                cpuset_set(cpu, cpu_mask);
+        } else {
+                fprintf (stderr, "Wrong cpu id: %d\n", cpu);
+                return -1;
+        }
+        retval = pthread_setaffinity_np(0, cpuset_size(cpu_mask), cpu_mask);
+        cpuset_destroy(cpu_mask);
+#else
+        #error "no cpuset"
+#endif
+	if (retval != 0)
 	fprintf (stderr, "Error at pthread_setaffinity_np():\n");
 	return retval;
 }
-
-#endif
         
 void * runner(void * arg) {
 	int i=0, nc;
 	long result = 0;
-#ifdef LINUX        
         set_thread_affinity(*(int *)arg);
-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
-#endif
+	fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
 	
 	for(;i<LOOP;i++){
 		nc = nb_call;
@@ -154,11 +176,9 @@ void * runner(void * arg) {
 }
 
 void * busy_thread(void *arg){
-#ifdef LINUX        
         set_thread_affinity(*(int *)arg);
-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
-#endif
-        while(1){ 
+        fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
+	while(1){ 
                 nb_call++;
 		sched_yield();
 	}
@@ -170,11 +190,9 @@ void * busy_thread(void *arg){
 void buzy_process(int cpu){
         struct sched_param param;
 
-#ifdef LINUX        
         /* Bind to a processor */
         set_process_affinity(cpu);
         fprintf(stderr, "%d bind to cpu: %d\n", getpid(), cpu);
-#endif
         param.sched_priority = sched_get_priority_max(SCHED_FIFO);
         if(sched_setscheduler(getpid(), SCHED_FIFO, &param) != 0) {
                 perror("An error occurs when calling sched_setparam()");
