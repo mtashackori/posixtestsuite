@@ -45,7 +45,7 @@ int main()
 		sigaction(SIGTOTEST, &act, 0);
 
 		/* change child's process group id */
-		setpgrp();
+		setpgrp(0, 0);
 
 		sigpause(SIGABRT);
 

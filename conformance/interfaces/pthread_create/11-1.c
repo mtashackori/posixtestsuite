@@ -32,7 +32,7 @@ void *a_thread_func()
 	if (ts.tv_sec != 0)
 	{
 		printf("ts.tv_sec: %ld, ts.tv_nsec: %ld\n", 
-			ts.tv_sec, ts.tv_nsec);
+			(long int)ts.tv_sec, (long int)ts.tv_nsec);
 		exit(PTS_FAIL);
 	}
 	pthread_exit(0);

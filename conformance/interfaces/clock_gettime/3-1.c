@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
 		return PTS_PASS;
 	} else {
 		printf("Test FAILED - ts1=%ld,ts2=%ld,ts3=%ld,ts4=%ld\n",
-				ts1.tv_sec, ts2.tv_sec, ts3.tv_sec, 
-				ts4.tv_sec);
+				(long int)ts1.tv_sec, (long int)ts2.tv_sec, (long int)ts3.tv_sec, 
+				(long int)ts4.tv_sec);
 		return PTS_FAIL;
 	}
 
