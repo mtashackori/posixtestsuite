@@ -74,7 +74,7 @@ int main()
 		printf(TNAME " Error at getrlimit(): %s\n", strerror(errno));
 		return PTS_UNRESOLVED;
   }
-  printf("available memory: %lu\n", rlim.rlim_cur); 
+  printf("available memory: %lu\n", (unsigned long int)rlim.rlim_cur); 
  
   /* First mmap, just to get a legal addr for second mmap */ 
   fd = shm_fd;	
