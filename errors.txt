@@ -1,0 +1,2472 @@
+conformance/behavior/timers/1-1: build: FAILED: Compiler output: 
+conformance/behavior/timers/1-1.c: In function 'main':
+conformance/behavior/timers/1-1.c:25:22: error: '_SC_TIMER_MAX' undeclared (first use in this function)
+  scTIMER_MAX=sysconf(_SC_TIMER_MAX);
+                      ^
+conformance/behavior/timers/1-1.c:25:22: note: each undeclared identifier is reported only once for each function it appears in
+conformance/behavior/timers/2-1: build: FAILED: Compiler output: 
+conformance/behavior/timers/2-1.c: In function 'main':
+conformance/behavior/timers/2-1.c:23:29: error: '_SC_TIMER_MAX' undeclared (first use in this function)
+         scTIMER_MAX=sysconf(_SC_TIMER_MAX);
+                             ^
+conformance/behavior/timers/2-1.c:23:29: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/aio_h/2-1: build: FAILED: Compiler output: 
+conformance/definitions/aio_h/2-1.c: In function 'main':
+conformance/definitions/aio_h/2-1.c:15:15: error: variable 'aiocb' set but not used [-Werror=unused-but-set-variable]
+  struct aiocb aiocb;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/pthread_h/2-2: build: FAILED: Compiler output: 
+conformance/definitions/pthread_h/2-2.c:41:2: error: #error PTHREAD_PRIO_INHERIT not defined
+ #error PTHREAD_PRIO_INHERIT not defined
+  ^
+conformance/definitions/pthread_h/2-2.c:46:2: error: #error PTHREAD_PRIO_NONE not defined
+ #error PTHREAD_PRIO_NONE not defined
+  ^
+conformance/definitions/pthread_h/2-2.c:51:2: error: #error PTHREAD_PRIO_PROTECT not defined
+ #error PTHREAD_PRIO_PROTECT not defined
+  ^
+conformance/definitions/sched_h/11-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/11-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/11-1.c:22:30: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_get_priority_max_test dummyvar;
+                              ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/12-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/12-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/12-1.c:22:30: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_get_priority_min_test dummyvar;
+                              ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/13-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/13-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/13-1.c:23:22: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_getparam_test dummyvar;
+                      ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/14-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/14-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/14-1.c:23:26: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_getscheduler_test dummyvar;
+                          ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/15-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/15-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/15-1.c:24:29: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_rr_get_interval_test dummyvar;
+                             ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/16-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/16-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/16-1.c:23:22: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_setparam_test dummyvar;
+                      ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/17-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/17-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/17-1.c:23:26: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_setscheduler_test dummyvar;
+                          ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/18-1: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/18-1.c: In function 'dummyfcn':
+conformance/definitions/sched_h/18-1.c:22:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sched_yield_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/sched_h/8-3: build: FAILED: Compiler output: 
+conformance/definitions/sched_h/8-3.c:19:2: error: #error SCHED_SPORADIC not defined
+ #error SCHED_SPORADIC not defined
+  ^
+conformance/definitions/signal_h/13-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/13-1.c: In function 'main':
+conformance/definitions/signal_h/13-1.c:30:9: error: 'SIGPOLL' undeclared (first use in this function)
+   (0 == SIGPOLL) ||
+         ^
+conformance/definitions/signal_h/13-1.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/14-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/14-1.c:27:15: error: 'SIGPOLL' undeclared here (not in a function)
+ int dummy21 = SIGPOLL;
+               ^
+conformance/definitions/signal_h/16-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/16-1.c:11:14: error: 'SA_ONSTACK' undeclared here (not in a function)
+ int dummy5 = SA_ONSTACK;
+              ^
+conformance/definitions/signal_h/16-1.c:12:14: error: 'SA_RESETHAND' undeclared here (not in a function)
+ int dummy6 = SA_RESETHAND;
+              ^
+conformance/definitions/signal_h/16-1.c:13:14: error: 'SA_RESTART' undeclared here (not in a function)
+ int dummy7 = SA_RESTART;
+              ^
+conformance/definitions/signal_h/16-1.c:16:15: error: 'SA_NODEFER' undeclared here (not in a function)
+ int dummy10 = SA_NODEFER;
+               ^
+conformance/definitions/signal_h/16-1.c:17:15: error: 'SS_ONSTACK' undeclared here (not in a function)
+ int dummy11 = SS_ONSTACK;
+               ^
+conformance/definitions/signal_h/16-1.c:18:15: error: 'SS_DISABLE' undeclared here (not in a function)
+ int dummy12 = SS_DISABLE;
+               ^
+conformance/definitions/signal_h/16-1.c:19:15: error: 'MINSIGSTKSZ' undeclared here (not in a function)
+ int dummy13 = MINSIGSTKSZ;
+               ^
+conformance/definitions/signal_h/16-1.c:20:15: error: 'SIGSTKSZ' undeclared here (not in a function)
+ int dummy14 = SIGSTKSZ;
+               ^
+conformance/definitions/signal_h/17-1: build: FAILED: Compiler output: 
+In file included from /usr/include/ucontext.h:36:0,
+                 from conformance/definitions/signal_h/17-1.c:5:
+/usr/include/sys/ucontext.h:44:2: error: unknown type name 'stack_t'
+  stack_t  uc_stack; /* the stack used by this context */
+  ^
+conformance/definitions/signal_h/18-1: build: FAILED: Compiler output: 
+In file included from /usr/include/ucontext.h:36:0,
+                 from conformance/definitions/signal_h/18-1.c:5:
+/usr/include/sys/ucontext.h:44:2: error: unknown type name 'stack_t'
+  stack_t  uc_stack; /* the stack used by this context */
+  ^
+conformance/definitions/signal_h/19-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/19-1.c:7:1: error: unknown type name 'stack_t'
+ stack_t this_type_should_exist, t;
+ ^
+conformance/definitions/signal_h/19-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/19-1.c:14:8: error: request for member 'ss_sp' in something not a structure or union
+  sp = t.ss_sp;
+        ^
+conformance/definitions/signal_h/19-1.c:15:10: error: request for member 'ss_size' in something not a structure or union
+  size = t.ss_size;
+          ^
+conformance/definitions/signal_h/19-1.c:16:11: error: request for member 'ss_flags' in something not a structure or union
+  flags = t.ss_flags;
+           ^
+conformance/definitions/signal_h/20-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/20-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/20-1.c:13:2: error: invalid use of undefined type 'struct sigstack'
+  sp = t.ss_sp;
+  ^
+conformance/definitions/signal_h/20-1.c:14:2: error: invalid use of undefined type 'struct sigstack'
+  onstack = t.ss_onstack;
+  ^
+conformance/definitions/signal_h/23-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/23-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/23-1.c:15:11: error: 'bsd_signal' undeclared (first use in this function)
+  dummyvar=bsd_signal;
+           ^
+conformance/definitions/signal_h/23-1.c:15:11: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/23-1.c:14:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  bsd_signal_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/24-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/24-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/24-1.c:14:12: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  kill_test dummyvar;
+            ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/25-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/25-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/25-1.c:15:13: error: 'killpg' undeclared (first use in this function)
+  dummyvar = killpg;
+             ^
+conformance/definitions/signal_h/25-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/25-1.c:14:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  killpg_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/26-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/26-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/26-1.c:13:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  pthread_kill_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/27-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/27-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/27-1.c:13:23: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  pthread_sigmask_test dummyvar;
+                       ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/28-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/28-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/28-1.c:13:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  raise_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/29-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/29-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/29-1.c:15:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigaction_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/30-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/30-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/30-1.c:13:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigaddset_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/31-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/31-1.c:11:1: error: unknown type name 'stack_t'
+ typedef int (*sigaltstack_test)(const stack_t *, stack_t *);
+ ^
+conformance/definitions/signal_h/31-1.c:11:50: error: unknown type name 'stack_t'
+ typedef int (*sigaltstack_test)(const stack_t *, stack_t *);
+                                                  ^
+conformance/definitions/signal_h/31-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/31-1.c:15:2: error: unknown type name 'sigaltstack_test'
+  sigaltstack_test dummyvar;
+  ^
+conformance/definitions/signal_h/31-1.c:16:13: error: 'sigaltstack' undeclared (first use in this function)
+  dummyvar = sigaltstack;
+             ^
+conformance/definitions/signal_h/31-1.c:16:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/31-1.c:15:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigaltstack_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/32-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/32-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/32-1.c:13:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigdelset_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/33-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/33-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/33-1.c:13:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigemptyset_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/34-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/34-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/34-1.c:13:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigfillset_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/35-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/35-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/35-1.c:15:13: error: 'sighold' undeclared (first use in this function)
+  dummyvar = sighold;
+             ^
+conformance/definitions/signal_h/35-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/35-1.c:14:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sighold_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/36-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/36-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/36-1.c:15:13: error: 'sigignore' undeclared (first use in this function)
+  dummyvar = sigignore;
+             ^
+conformance/definitions/signal_h/36-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/36-1.c:14:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigignore_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/37-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/37-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/37-1.c:14:13: error: 'siginterrupt' undeclared (first use in this function)
+  dummyvar = siginterrupt;
+             ^
+conformance/definitions/signal_h/37-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/37-1.c:13:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  siginterrupt_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/38-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/38-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/38-1.c:13:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigismember_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/39-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/39-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/39-1.c:13:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  signal_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/40-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/40-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/40-1.c:15:13: error: 'sigpause' undeclared (first use in this function)
+  dummyvar = sigpause;
+             ^
+conformance/definitions/signal_h/40-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/40-1.c:14:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigpause_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/41-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/41-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/41-1.c:14:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigpending_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/42-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/42-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/42-1.c:14:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigprocmask_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/43-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/43-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/43-1.c:14:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigqueue_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/44-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/44-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/44-1.c:14:13: error: 'sigrelse' undeclared (first use in this function)
+  dummyvar = sigrelse;
+             ^
+conformance/definitions/signal_h/44-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/44-1.c:13:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigrelse_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/45-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/45-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/45-1.c:14:13: error: 'sigset' undeclared (first use in this function)
+  dummyvar = sigset;
+             ^
+conformance/definitions/signal_h/45-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/45-1.c:13:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigset_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/46-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/46-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/46-1.c:13:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigsuspend_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/47-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/47-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/47-1.c:16:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigtimedwait_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/48-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/48-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/48-1.c:13:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigwait_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/signal_h/49-1: build: FAILED: Compiler output: 
+conformance/definitions/signal_h/49-1.c: In function 'dummyfcn':
+conformance/definitions/signal_h/49-1.c:13:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  sigwaitinfo_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/10-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/10-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/10-1.c:25:2: error: invalid use of undefined type 'struct posix_typed_mem_info'
+  t.posix_tmi_length = sz;
+  ^
+conformance/definitions/sys/mman_h/11-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/11-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/11-1.c:23:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  mlock_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/12-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/12-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/12-1.c:23:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  mlockall_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/13-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/13-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/13-1.c:25:12: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  mmap_test dummyvar;
+            ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/14-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/14-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/14-1.c:23:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  mprotect_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/15-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/15-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/15-1.c:24:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  msync_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/16-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/16-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/16-1.c:23:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  munlock_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/17-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/17-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/17-1.c:23:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  munlockall_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/18-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/18-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/18-1.c:25:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  munmap_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/19-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/19-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/19-1.c:23:21: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  posix_madvise_test dummyvar;
+                     ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/20-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/20-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/20-1.c:27:13: error: 'posix_mem_offset' undeclared (first use in this function)
+  dummyvar = posix_mem_offset;
+             ^
+conformance/definitions/sys/mman_h/20-1.c:27:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/sys/mman_h/20-1.c:26:24: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  posix_mem_offset_test dummyvar;
+                        ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/21-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/21-1.c:19:58: error: 'struct posix_typed_mem_info' declared inside parameter list [-Werror]
+ typedef int (*posix_typed_mem_get_info_test)(int, struct posix_typed_mem_info *);
+                                                          ^
+conformance/definitions/sys/mman_h/21-1.c:19:58: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+conformance/definitions/sys/mman_h/21-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/21-1.c:24:13: error: 'posix_typed_mem_get_info' undeclared (first use in this function)
+  dummyvar = posix_typed_mem_get_info;
+             ^
+conformance/definitions/sys/mman_h/21-1.c:24:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/sys/mman_h/21-1.c:23:32: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  posix_typed_mem_get_info_test dummyvar;
+                                ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/22-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/22-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/22-1.c:24:13: error: 'posix_typed_mem_open' undeclared (first use in this function)
+  dummyvar = posix_typed_mem_open;
+             ^
+conformance/definitions/sys/mman_h/22-1.c:24:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/sys/mman_h/22-1.c:23:28: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  posix_typed_mem_open_test dummyvar;
+                            ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/23-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/23-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/23-1.c:23:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shm_open_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/24-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/24-1.c: In function 'dummyfcn':
+conformance/definitions/sys/mman_h/24-1.c:23:18: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shm_unlink_test dummyvar;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/mman_h/8-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/8-1.c:19:2: error: #error POSIX_TYPED_MEM_ALLOCATE not defined
+ #error POSIX_TYPED_MEM_ALLOCATE not defined
+  ^
+conformance/definitions/sys/mman_h/8-2: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/8-2.c:19:2: error: #error POSIX_TYPED_MEM_ALLOCATE_CONTIG not defined
+ #error POSIX_TYPED_MEM_ALLOCATE_CONTIG not defined
+  ^
+conformance/definitions/sys/mman_h/8-3: build: FAILED: Compiler output: 
+conformance/definitions/sys/mman_h/8-3.c:19:2: error: #error POSIX_TYPED_MEM_MAP_ALLOCATABLE not defined
+ #error POSIX_TYPED_MEM_MAP_ALLOCATABLE not defined
+  ^
+conformance/definitions/sys/shm_h/10-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/shm_h/10-1.c: In function 'dummyfcn':
+conformance/definitions/sys/shm_h/10-1.c:21:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shmdt_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/shm_h/11-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/shm_h/11-1.c: In function 'dummyfcn':
+conformance/definitions/sys/shm_h/11-1.c:21:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shmget_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/shm_h/12-3: build: FAILED: Compiler output: 
+conformance/definitions/sys/shm_h/12-3.c: In function 'dummyfcn':
+conformance/definitions/sys/shm_h/12-3.c:21:12: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  ftok_test dummyvar;
+            ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/shm_h/8-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/shm_h/8-1.c: In function 'dummyfcn':
+conformance/definitions/sys/shm_h/8-1.c:21:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shmat_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/sys/shm_h/9-1: build: FAILED: Compiler output: 
+conformance/definitions/sys/shm_h/9-1.c: In function 'dummyfcn':
+conformance/definitions/sys/shm_h/9-1.c:21:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  shmctl_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/10-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/10-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/10-1.c:19:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/11-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/11-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/11-1.c:21:13: error: 'clock_getcpuclockid' undeclared (first use in this function)
+  dummyvar = clock_getcpuclockid;
+             ^
+conformance/definitions/time_h/11-1.c:21:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/11-1.c:20:27: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_getcpuclockid_test dummyvar;
+                           ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/12-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/12-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/12-1.c:20:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_getres_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/13-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/13-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/13-1.c:20:21: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_gettime_test dummyvar;
+                     ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/14-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/14-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/14-1.c:22:23: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_nanosleep_test dummyvar;
+                       ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/15-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/15-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/15-1.c:20:21: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  clock_settime_test dummyvar;
+                     ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/16-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/16-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/16-1.c:19:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  ctime_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/17-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/17-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/17-1.c:20:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  ctime_r_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/18-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/18-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/18-1.c:19:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  difftime_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/19-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/19-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/19-1.c:21:13: error: 'getdate' undeclared (first use in this function)
+  dummyvar = getdate;
+             ^
+conformance/definitions/time_h/19-1.c:21:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/19-1.c:20:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  getdate_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/2-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/2-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/2-1.c:16:18: error: variable 'dst' set but not used [-Werror=unused-but-set-variable]
+  int week, year, dst;
+                  ^
+conformance/definitions/time_h/2-1.c:16:12: error: variable 'year' set but not used [-Werror=unused-but-set-variable]
+  int week, year, dst;
+            ^
+conformance/definitions/time_h/2-1.c:16:6: error: variable 'week' set but not used [-Werror=unused-but-set-variable]
+  int week, year, dst;
+      ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/20-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/20-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/20-1.c:19:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  gmtime_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/21-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/21-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/21-1.c:20:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  gmtime_r_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/22-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/22-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/22-1.c:19:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  localtime_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/23-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/23-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/23-1.c:20:19: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  localtime_r_test dummyvar;
+                   ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/24-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/24-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/24-1.c:19:14: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  mktime_test dummyvar;
+              ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/25-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/25-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/25-1.c:20:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  nanosleep_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/26-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/26-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/26-1.c:19:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  strftime_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/27-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/27-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/27-1.c:21:13: error: 'strptime' undeclared (first use in this function)
+  dummyvar = strptime;
+             ^
+conformance/definitions/time_h/27-1.c:21:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/27-1.c:20:16: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  strptime_test dummyvar;
+                ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/28-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/28-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/28-1.c:19:12: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  time_test dummyvar;
+            ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/29-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/29-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/29-1.c:20:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  timer_create_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/3-3: build: FAILED: Compiler output: 
+conformance/definitions/time_h/3-3.c:16:2: error: #error CLOCK_PROCESS_CPUTIME_ID not defined
+ #error CLOCK_PROCESS_CPUTIME_ID not defined
+  ^
+conformance/definitions/time_h/3-4: build: FAILED: Compiler output: 
+conformance/definitions/time_h/3-4.c:16:2: error: #error CLOCK_THREAD_CPUTIME_ID not defined
+ #error CLOCK_THREAD_CPUTIME_ID not defined
+  ^
+conformance/definitions/time_h/30-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/30-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/30-1.c:20:20: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  timer_delete_test dummyvar;
+                    ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/31-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/31-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/31-1.c:20:21: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  timer_gettime_test dummyvar;
+                     ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/32-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/32-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/32-1.c:20:24: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  timer_getoverrun_test dummyvar;
+                        ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/33-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/33-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/33-1.c:22:21: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  timer_settime_test dummyvar;
+                     ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/34-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/34-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/34-1.c:19:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  tzset_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/35-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/35-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/35-1.c:18:10: error: 'daylight' undeclared (first use in this function)
+  dummy = daylight;
+          ^
+conformance/definitions/time_h/35-1.c:18:10: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/35-1.c:16:6: error: variable 'dummy' set but not used [-Werror=unused-but-set-variable]
+  int dummy;
+      ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/35-2: build: FAILED: Compiler output: 
+conformance/definitions/time_h/35-2.c: In function 'dummyfcn':
+conformance/definitions/time_h/35-2.c:17:10: error: 'timezone' undeclared (first use in this function)
+  dummy = timezone;
+          ^
+conformance/definitions/time_h/35-2.c:17:10: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/35-2.c:15:7: error: variable 'dummy' set but not used [-Werror=unused-but-set-variable]
+  long dummy;
+       ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/4-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/4-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/4-1.c:17:7: error: variable 'nsec' set but not used [-Werror=unused-but-set-variable]
+  long nsec;
+       ^
+conformance/definitions/time_h/4-1.c:16:9: error: variable 'sec' set but not used [-Werror=unused-but-set-variable]
+  time_t sec;
+         ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/5-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/5-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/5-1.c:17:18: error: variable 'value' set but not used [-Werror=unused-but-set-variable]
+  struct timespec value;
+                  ^
+conformance/definitions/time_h/5-1.c:16:18: error: variable 'interval' set but not used [-Werror=unused-but-set-variable]
+  struct timespec interval;
+                  ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/8-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/8-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/8-1.c:19:15: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  asctime_test dummyvar;
+               ^
+cc1: all warnings being treated as errors
+conformance/definitions/time_h/9-1: build: FAILED: Compiler output: 
+conformance/definitions/time_h/9-1.c: In function 'dummyfcn':
+conformance/definitions/time_h/9-1.c:20:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  asctime_r_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/definitions/unistd_h/1-1: build: FAILED: Compiler output: 
+conformance/definitions/unistd_h/1-1.c: In function 'dummyfcn':
+conformance/definitions/unistd_h/1-1.c:18:13: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  fsync_test dummyvar;
+             ^
+cc1: all warnings being treated as errors
+conformance/definitions/unistd_h/2-1: build: FAILED: Compiler output: 
+conformance/definitions/unistd_h/2-1.c: In function 'dummyfcn':
+conformance/definitions/unistd_h/2-1.c:21:17: error: variable 'dummyvar' set but not used [-Werror=unused-but-set-variable]
+  ftruncate_test dummyvar;
+                 ^
+cc1: all warnings being treated as errors
+conformance/interfaces/aio_cancel/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_cancel/3-1.c: In function 'main':
+conformance/interfaces/aio_cancel/3-1.c:97:16: error: 'SIGRTMIN' undeclared (first use in this function)
+  if (sigaction(SIGRTMIN+1, &action, NULL))
+                ^
+conformance/interfaces/aio_cancel/3-1.c:97:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_read/15-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_read/15-1.c: In function 'main':
+conformance/interfaces/aio_read/15-1.c:36:16: error: storage size of 'limit' isn't known
+  struct rlimit limit;
+                ^
+conformance/interfaces/aio_read/15-1.c:36:16: error: unused variable 'limit' [-Werror=unused-variable]
+conformance/interfaces/aio_read/15-1.c:35:15: error: unused variable 'aiocb' [-Werror=unused-variable]
+  struct aiocb aiocb;
+               ^
+conformance/interfaces/aio_read/15-1.c:34:6: error: unused variable 'fd' [-Werror=unused-variable]
+  int fd;
+      ^
+conformance/interfaces/aio_read/15-1.c:33:7: error: unused variable 'buf' [-Werror=unused-variable]
+  char buf[BUF_SIZE];
+       ^
+conformance/interfaces/aio_read/15-1.c:31:7: error: unused variable 'tmpfname' [-Werror=unused-variable]
+  char tmpfname[256];
+       ^
+cc1: all warnings being treated as errors
+conformance/interfaces/aio_read/9-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_read/9-1.c: In function 'main':
+conformance/interfaces/aio_read/9-1.c:49:6: error: variable 'err' set but not used [-Werror=unused-but-set-variable]
+  int err;
+      ^
+cc1: all warnings being treated as errors
+conformance/interfaces/aio_suspend/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/1-1.c: In function 'main':
+conformance/interfaces/aio_suspend/1-1.c:127:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/1-1.c:127:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/4-1.c: In function 'main':
+conformance/interfaces/aio_suspend/4-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/4-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/6-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/6-1.c: In function 'main':
+conformance/interfaces/aio_suspend/6-1.c:123:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/6-1.c:123:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/7-1.c: In function 'main':
+conformance/interfaces/aio_suspend/7-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/7-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/8-1.c: In function 'main':
+conformance/interfaces/aio_suspend/8-1.c:128:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/8-1.c:128:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/9-1: build: FAILED: Compiler output: 
+conformance/interfaces/aio_suspend/9-1.c: In function 'main':
+conformance/interfaces/aio_suspend/9-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/aio_suspend/9-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getcpuclockid/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/clock_getcpuclockid/1-1.c: In function 'main':
+conformance/interfaces/clock_getcpuclockid/1-1.c:42:14: error: '_SC_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_CPUTIME) == -1) {
+              ^
+conformance/interfaces/clock_getcpuclockid/1-1.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getcpuclockid/1-1.c:49:2: error: implicit declaration of function 'clock_getcpuclockid' [-Werror=implicit-function-declaration]
+  if (clock_getcpuclockid(getpid(), &clockid) != 0) {
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/clock_getcpuclockid/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/clock_getcpuclockid/2-1.c: In function 'main':
+conformance/interfaces/clock_getcpuclockid/2-1.c:30:14: error: '_SC_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_CPUTIME) == -1) {
+              ^
+conformance/interfaces/clock_getcpuclockid/2-1.c:30:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getcpuclockid/2-1.c:35:2: error: implicit declaration of function 'clock_getcpuclockid' [-Werror=implicit-function-declaration]
+  if (clock_getcpuclockid(getpid(), &clockid_1) != 0) {
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/clock_getres/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/clock_getres/7-1.c: In function 'main':
+conformance/interfaces/clock_getres/7-1.c:24:14: error: '_SC_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_CPUTIME) == -1) {
+              ^
+conformance/interfaces/clock_getres/7-1.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getres/7-1.c:34:19: error: 'CLOCK_PROCESS_CPUTIME_ID' undeclared (first use in this function)
+  if (clock_getres(CLOCK_PROCESS_CPUTIME_ID, &res) == 0) {
+                   ^
+conformance/interfaces/clock_getres/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/clock_getres/8-1.c: In function 'main':
+conformance/interfaces/clock_getres/8-1.c:24:14: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_THREAD_CPUTIME) == -1) {
+              ^
+conformance/interfaces/clock_getres/8-1.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getres/8-1.c:34:19: error: 'CLOCK_THREAD_CPUTIME_ID' undeclared (first use in this function)
+  if (clock_getres(CLOCK_THREAD_CPUTIME_ID, &res) == 0) {
+                   ^
+conformance/interfaces/fork/22-1: build: FAILED: Compiler output: 
+conformance/interfaces/fork/22-1.c: In function 'main':
+conformance/interfaces/fork/22-1.c:97:17: error: '_SC_CPUTIME' undeclared (first use in this function)
+  ctp = sysconf( _SC_CPUTIME );
+                 ^
+conformance/interfaces/fork/22-1.c:97:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/fork/22-1.c:98:17: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
+  ctt = sysconf( _SC_THREAD_CPUTIME );
+                 ^
+conformance/interfaces/fork/22-1.c:115:3: error: implicit declaration of function 'clock_getcpuclockid' [-Werror=implicit-function-declaration]
+   ret = clock_getcpuclockid( 0, &clp );
+   ^
+conformance/interfaces/fork/22-1.c:136:3: error: implicit declaration of function 'pthread_getcpuclockid' [-Werror=implicit-function-declaration]
+   ret = pthread_getcpuclockid( pthread_self(), &clt );
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/fork/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/fork/7-1.c: In function 'read_catalog':
+conformance/interfaces/fork/7-1.c:90:9: error: variable 'msg' set but not used [-Werror=unused-but-set-variable]
+  char * msg = NULL;
+         ^
+cc1: all warnings being treated as errors
+conformance/interfaces/lio_listio/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/1-1.c: In function 'main':
+conformance/interfaces/lio_listio/1-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/1-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/10-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/10-1.c: In function 'main':
+conformance/interfaces/lio_listio/10-1.c:107:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/10-1.c:107:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/11-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/11-1.c: In function 'main':
+conformance/interfaces/lio_listio/11-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/11-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/14-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/14-1.c: In function 'main':
+conformance/interfaces/lio_listio/14-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/14-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/15-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/15-1.c: In function 'main':
+conformance/interfaces/lio_listio/15-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/15-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/2-1.c: In function 'main':
+conformance/interfaces/lio_listio/2-1.c:106:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/2-1.c:106:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/3-1.c: In function 'main':
+conformance/interfaces/lio_listio/3-1.c:107:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/3-1.c:107:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/4-1.c: In function 'main':
+conformance/interfaces/lio_listio/4-1.c:114:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/4-1.c:114:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/lio_listio/7-1.c: In function 'main':
+conformance/interfaces/lio_listio/7-1.c:113:41: error: 'SIGRTMIN' undeclared (first use in this function)
+   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
+                                         ^
+conformance/interfaces/lio_listio/7-1.c:113:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/mmap/24-2: build: FAILED: Compiler output: 
+conformance/interfaces/mmap/24-2.c: In function 'main':
+conformance/interfaces/mmap/24-2.c:77:3: error: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'rlim_t' [-Werror=format=]
+   printf("available memory: %lu\n", rlim.rlim_cur); 
+   ^
+conformance/interfaces/mmap/24-2.c:77:3: error: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'rlim_t' [-Werror=format=]
+cc1: all warnings being treated as errors
+conformance/interfaces/mq_send/5-1: build: FAILED: Compiler output: 
+conformance/interfaces/mq_send/5-1.c: In function 'main':
+conformance/interfaces/mq_send/5-1.c:60:6: error: variable 'unresolved' set but not used [-Werror=unused-but-set-variable]
+  int unresolved=0;
+      ^
+cc1: all warnings being treated as errors
+conformance/interfaces/mq_timedsend/5-1: build: FAILED: Compiler output: 
+conformance/interfaces/mq_timedsend/5-1.c: In function 'main':
+conformance/interfaces/mq_timedsend/5-1.c:60:6: error: variable 'unresolved' set but not used [-Werror=unused-but-set-variable]
+  int unresolved=0;
+      ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_attr_getstack/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_getstack/1-1.c: In function 'main':
+conformance/interfaces/pthread_attr_getstack/1-1.c:54:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_getstack/1-1.c:54:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_getstacksize/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_getstacksize/1-1.c: In function 'main':
+conformance/interfaces/pthread_attr_getstacksize/1-1.c:53:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_getstacksize/1-1.c:53:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_setstack/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstack/1-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_setstack/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstack/2-1.c: In function 'thread_func':
+conformance/interfaces/pthread_attr_setstack/2-1.c:48:2: error: implicit declaration of function 'pthread_getattr_np' [-Werror=implicit-function-declaration]
+  rc = pthread_getattr_np(pthread_self(), &attr);
+  ^
+conformance/interfaces/pthread_attr_setstack/2-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstack/2-1.c:90:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_setstack/2-1.c:90:15: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_attr_setstack/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstack/4-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstack/4-1.c:73:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_setstack/4-1.c:73:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_setstack/6-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstack/6-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstack/6-1.c:29:19: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+ #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
+                   ^
+conformance/interfaces/pthread_attr_setstack/6-1.c:59:15: note: in expansion of macro 'STACKSIZE'
+  stack_size = STACKSIZE;
+               ^
+conformance/interfaces/pthread_attr_setstack/6-1.c:29:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
+                   ^
+conformance/interfaces/pthread_attr_setstack/6-1.c:59:15: note: in expansion of macro 'STACKSIZE'
+  stack_size = STACKSIZE;
+               ^
+conformance/interfaces/pthread_attr_setstack/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstack/7-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstack/7-1.c:60:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_setstack/7-1.c:60:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_setstacksize/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstacksize/1-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  size_t stack_size = PTHREAD_STACK_MIN;
+                      ^
+conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_setstacksize/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstacksize/2-1.c: In function 'thread_func':
+conformance/interfaces/pthread_attr_setstacksize/2-1.c:46:2: error: implicit declaration of function 'pthread_getattr_np' [-Werror=implicit-function-declaration]
+  rc = pthread_getattr_np(pthread_self(), &attr);
+  ^
+conformance/interfaces/pthread_attr_setstacksize/2-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstacksize/2-1.c:79:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+  stack_size = PTHREAD_STACK_MIN;
+               ^
+conformance/interfaces/pthread_attr_setstacksize/2-1.c:79:15: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_attr_setstacksize/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_attr_setstacksize/4-1.c: In function 'main':
+conformance/interfaces/pthread_attr_setstacksize/4-1.c:29:19: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
+ #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
+                   ^
+conformance/interfaces/pthread_attr_setstacksize/4-1.c:50:15: note: in expansion of macro 'STACKSIZE'
+  stack_size = STACKSIZE;
+               ^
+conformance/interfaces/pthread_attr_setstacksize/4-1.c:29:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
+                   ^
+conformance/interfaces/pthread_attr_setstacksize/4-1.c:50:15: note: in expansion of macro 'STACKSIZE'
+  stack_size = STACKSIZE;
+               ^
+conformance/interfaces/pthread_barrierattr_getpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_barrierattr_getpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_barrierattr_getpshared/1-1.c:40:2: error: implicit declaration of function 'pthread_barrierattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_barrierattr_getpshared(&ba, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_barrierattr_getpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_barrierattr_getpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_barrierattr_getpshared/2-1.c:88:2: error: implicit declaration of function 'pthread_barrierattr_setpshared' [-Werror=implicit-function-declaration]
+  if(pthread_barrierattr_setpshared(&ba, pshared) != 0)
+  ^
+conformance/interfaces/pthread_barrierattr_getpshared/2-1.c:94:2: error: implicit declaration of function 'pthread_barrierattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_barrierattr_getpshared(&ba, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_barrierattr_init/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_barrierattr_init/1-1.c: In function 'main':
+conformance/interfaces/pthread_barrierattr_init/1-1.c:41:2: error: implicit declaration of function 'pthread_barrierattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_barrierattr_getpshared(&ba, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_barrierattr_setpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_barrierattr_setpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:44:2: error: implicit declaration of function 'pthread_barrierattr_setpshared' [-Werror=implicit-function-declaration]
+  rc = pthread_barrierattr_setpshared(&ba, pshared);
+  ^
+conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:51:2: error: implicit declaration of function 'pthread_barrierattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_barrierattr_getpshared(&ba, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_barrierattr_setpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_barrierattr_setpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_barrierattr_setpshared/2-1.c:52:2: error: implicit declaration of function 'pthread_barrierattr_setpshared' [-Werror=implicit-function-declaration]
+  rc = pthread_barrierattr_setpshared(&ba, pshared);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_broadcast/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_broadcast/1-2.c: In function 'main':
+conformance/interfaces/pthread_cond_broadcast/1-2.c:418:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_broadcast/1-2.c:420:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_broadcast/1-2.c:428:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_broadcast/1-2.c:431:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &td->cid);
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_broadcast/2-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_broadcast/2-3.c: In function 'main':
+conformance/interfaces/pthread_cond_broadcast/2-3.c:408:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_broadcast/2-3.c:410:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_broadcast/2-3.c:418:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_broadcast/2-3.c:421:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &td->cid);
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_destroy/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_destroy/2-1.c: In function 'main':
+conformance/interfaces/pthread_cond_destroy/2-1.c:410:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_destroy/2-1.c:412:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_destroy/2-1.c:420:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_destroy/2-1.c:423:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &td->cid);
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_init/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_init/1-2.c: In function 'do_cs_test':
+conformance/interfaces/pthread_cond_init/1-2.c:222:2: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+  ret = pthread_condattr_getclock(&ca, &cid);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_init/1-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_init/1-3.c: In function 'do_tps_test':
+conformance/interfaces/pthread_cond_init/1-3.c:672:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+  ^
+conformance/interfaces/pthread_cond_init/1-3.c:703:2: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+  ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_init/2-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_init/2-2.c: In function 'do_cs_test':
+conformance/interfaces/pthread_cond_init/2-2.c:224:2: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+  ret = pthread_condattr_getclock(&ca, &cid);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_init/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_init/4-1.c: In function 'main':
+conformance/interfaces/pthread_cond_init/4-1.c:144:2: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+  ret = pthread_condattr_setpshared(pca[0], PTHREAD_PROCESS_SHARED);
+  ^
+conformance/interfaces/pthread_cond_init/4-1.c:151:3: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_setclock(pca[1], CLOCK_MONOTONIC);
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_init/4-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_init/4-2.c: In function 'threaded':
+conformance/interfaces/pthread_cond_init/4-2.c:170:3: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_setpshared(pca[0], PTHREAD_PROCESS_SHARED);
+   ^
+conformance/interfaces/pthread_cond_init/4-2.c:180:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(pca[1], CLOCK_MONOTONIC);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_signal/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_signal/1-2.c: In function 'main':
+conformance/interfaces/pthread_cond_signal/1-2.c:373:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_signal/1-2.c:375:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_signal/1-2.c:383:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_signal/1-2.c:386:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &td->cid);
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_timedwait/2-4: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_timedwait/2-4.c: In function 'main':
+conformance/interfaces/pthread_cond_timedwait/2-4.c:377:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-4.c:379:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-4.c:395:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-4.c:438:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &(td->cid));
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_timedwait/2-5: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_timedwait/2-5.c: In function 'main':
+conformance/interfaces/pthread_cond_timedwait/2-5.c:255:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-5.c:264:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-5.c:271:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-5.c:291:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &(data.cid));
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_timedwait/2-6: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_timedwait/2-6.c: In function 'main':
+conformance/interfaces/pthread_cond_timedwait/2-6.c:278:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-6.c:287:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-6.c:294:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-6.c:309:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &(data.cid));
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_timedwait/2-7: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_timedwait/2-7.c: In function 'main':
+conformance/interfaces/pthread_cond_timedwait/2-7.c:383:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-7.c:385:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-7.c:401:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_timedwait/2-7.c:444:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &(td->cid));
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_timedwait/4-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_timedwait/4-2.c: In function 'main':
+conformance/interfaces/pthread_cond_timedwait/4-2.c:329:5: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+     ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+     ^
+conformance/interfaces/pthread_cond_timedwait/4-2.c:331:5: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+     ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+     ^
+conformance/interfaces/pthread_cond_timedwait/4-2.c:347:5: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+     ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+     ^
+conformance/interfaces/pthread_cond_timedwait/4-2.c:358:4: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_getclock(&ca, &cid);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_wait/2-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_wait/2-2.c: In function 'main':
+conformance/interfaces/pthread_cond_wait/2-2.c:362:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_wait/2-2.c:364:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_wait/2-2.c:380:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+conformance/interfaces/pthread_cond_wait/2-2.c:423:3: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+   ret = pthread_condattr_getclock(&ca, &(td->cid));
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_cond_wait/2-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_cond_wait/2-3.c: In function 'main':
+conformance/interfaces/pthread_cond_wait/2-3.c:271:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_wait/2-3.c:280:4: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setpshared(&ca, PTHREAD_PROCESS_SHARED);
+    ^
+conformance/interfaces/pthread_cond_wait/2-3.c:287:4: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+    ret = pthread_condattr_setclock(&ca, CLOCK_MONOTONIC);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_create/1-5: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_create/1-5.c: In function 'overflow':
+conformance/interfaces/pthread_create/1-5.c:112:9: error: variable 'pad' set but not used [-Werror=unused-but-set-variable]
+  void * pad[50]; /* We want to consume the stack quickly */
+         ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_create/11-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_create/11-1.c: In function 'a_thread_func':
+conformance/interfaces/pthread_create/11-1.c:29:2: error: implicit declaration of function 'pthread_getcpuclockid' [-Werror=implicit-function-declaration]
+  pthread_getcpuclockid(pthread_self(), &cpuclock);
+  ^
+conformance/interfaces/pthread_create/11-1.c: In function 'main':
+conformance/interfaces/pthread_create/11-1.c:50:14: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_THREAD_CPUTIME) == -1) {
+              ^
+conformance/interfaces/pthread_create/11-1.c:50:14: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_create/3-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_create/3-2.c: In function 'overflow':
+conformance/interfaces/pthread_create/3-2.c:122:9: error: variable 'pad' set but not used [-Werror=unused-but-set-variable]
+  void * pad[50]; /* We want to consume the stack quickly */
+         ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_getclock/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_getclock/1-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_getclock/1-1.c:38:2: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_getclock(&condattr, &clockid);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_getclock/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_getclock/1-2.c: In function 'main':
+conformance/interfaces/pthread_condattr_getclock/1-2.c:39:2: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, CLOCK_REALTIME);
+  ^
+conformance/interfaces/pthread_condattr_getclock/1-2.c:46:2: error: implicit declaration of function 'pthread_condattr_getclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_getclock(&condattr, &clockid);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_getpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_getpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_getpshared/1-1.c:49:3: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+   ret=pthread_condattr_setpshared(&attr[i], PTHREAD_PROCESS_PRIVATE);
+   ^
+conformance/interfaces/pthread_condattr_getpshared/1-1.c:57:3: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+   if(pthread_condattr_getpshared(&attr[i], &pshared) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_getpshared/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_getpshared/1-2.c: In function 'main':
+conformance/interfaces/pthread_condattr_getpshared/1-2.c:49:3: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+   ret=pthread_condattr_setpshared(&attr[i], PTHREAD_PROCESS_SHARED);
+   ^
+conformance/interfaces/pthread_condattr_getpshared/1-2.c:57:3: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+   if(pthread_condattr_getpshared(&attr[i], &pshared) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_getpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_getpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_getpshared/2-1.c:43:2: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_condattr_getpshared(&attr, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_init/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_init/1-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_init/1-1.c:43:2: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_condattr_getpshared(&condattr, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setclock/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setclock/1-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_setclock/1-1.c:38:2: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, CLOCK_REALTIME);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setclock/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setclock/1-2.c: In function 'main':
+conformance/interfaces/pthread_condattr_setclock/1-2.c:51:2: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, CLOCK_MONOTONIC);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setclock/1-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setclock/1-3.c: In function 'main':
+conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: error: '_SC_CPUTIME' undeclared (first use in this function)
+  if (sysconf(_SC_CPUTIME) == -1) {
+              ^
+conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_condattr_setclock/1-3.c:57:2: error: implicit declaration of function 'clock_getcpuclockid' [-Werror=implicit-function-declaration]
+  if (clock_getcpuclockid(getpid(), &clockid) != 0)
+  ^
+conformance/interfaces/pthread_condattr_setclock/1-3.c:63:2: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, clockid);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setclock/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setclock/2-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_setclock/2-1.c:45:2: error: implicit declaration of function 'pthread_condattr_setclock' [-Werror=implicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, INVALID_CLOCKID);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_setpshared/1-1.c:56:3: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+   ret=pthread_condattr_setpshared(&attr[i], PTHREAD_PROCESS_PRIVATE);
+   ^
+conformance/interfaces/pthread_condattr_setpshared/1-1.c:64:3: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+   if(pthread_condattr_getpshared(&attr[i], &pshared) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setpshared/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setpshared/1-2.c: In function 'main':
+conformance/interfaces/pthread_condattr_setpshared/1-2.c:56:3: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+   ret=pthread_condattr_setpshared(&attr[i], PTHREAD_PROCESS_SHARED);
+   ^
+conformance/interfaces/pthread_condattr_setpshared/1-2.c:64:3: error: implicit declaration of function 'pthread_condattr_getpshared' [-Werror=implicit-function-declaration]
+   if(pthread_condattr_getpshared(&attr[i], &pshared) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_condattr_setpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_condattr_setpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_condattr_setpshared/2-1.c:50:2: error: implicit declaration of function 'pthread_condattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_condattr_setpshared(&attr, INVALID_PSHARED_VALUE);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_getcpuclockid/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_getcpuclockid/1-1.c: In function 'thread_func':
+conformance/interfaces/pthread_getcpuclockid/1-1.c:35:2: error: implicit declaration of function 'pthread_getcpuclockid' [-Werror=implicit-function-declaration]
+  rc = pthread_getcpuclockid(pthread_self(), &cid); 
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_getcpuclockid/speculative/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_getcpuclockid/speculative/3-1.c: In function 'main':
+conformance/interfaces/pthread_getcpuclockid/speculative/3-1.c:56:2: error: implicit declaration of function 'pthread_getcpuclockid' [-Werror=implicit-function-declaration]
+  rc = pthread_getcpuclockid(new_th, &cid); 
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_key_create/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_key_create/2-1.c: In function 'main':
+conformance/interfaces/pthread_key_create/2-1.c:33:26: error: 'key' is used uninitialized in this function [-Werror=uninitialized]
+  rc = pthread_getspecific(key);
+                          ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_destroy/2-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_destroy/2-2.c: In function 'main':
+conformance/interfaces/pthread_mutex_destroy/2-2.c:130:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma[i], PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_destroy/5-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_destroy/5-2.c: In function 'main':
+conformance/interfaces/pthread_mutex_destroy/5-2.c:131:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma[i], PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_getprioceiling/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_getprioceiling/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutex_getprioceiling/1-1.c:43:2: error: implicit declaration of function 'pthread_mutex_getprioceiling' [-Werror=implicit-function-declaration]
+  if(pthread_mutex_getprioceiling(&mutex, &prioceiling) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_lock/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_lock/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutex_lock/1-1.c:40:29: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
+    int                   i, rc;
+                             ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/1-1.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/1-1.c:124:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  if(pthread_mutex_timedlock(&mutex, &timeout) != ETIMEDOUT)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/2-1.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/2-1.c:138:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  if(pthread_mutex_timedlock(&mutex, &timeout) != ETIMEDOUT)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/4-1.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/4-1.c:88:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  ret = pthread_mutex_timedlock(&mutex, &timeout);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/5-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/5-1.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/5-1.c:104:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  ret = pthread_mutex_timedlock(&mutex, &timeout);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/5-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/5-2.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/5-2.c:104:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  ret = pthread_mutex_timedlock(&mutex, &timeout);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_timedlock/5-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_timedlock/5-3.c: In function 'f1':
+conformance/interfaces/pthread_mutex_timedlock/5-3.c:112:2: error: implicit declaration of function 'pthread_mutex_timedlock' [-Werror=implicit-function-declaration]
+  ret = pthread_mutex_timedlock(&mutex, &timeout);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_trylock/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_trylock/1-2.c: In function 'main':
+conformance/interfaces/pthread_mutex_trylock/1-2.c:271:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_trylock/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_trylock/2-1.c: In function 'main':
+conformance/interfaces/pthread_mutex_trylock/2-1.c:248:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_trylock/4-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_trylock/4-2.c: In function 'main':
+conformance/interfaces/pthread_mutex_trylock/4-2.c:272:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma, PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_trylock/4-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_trylock/4-3.c: In function 'test':
+conformance/interfaces/pthread_mutex_trylock/4-3.c:204:4: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+    ret = pthread_mutexattr_setpshared(&ma[i], PTHREAD_PROCESS_SHARED);
+    ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutex_unlock/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutex_unlock/2-1.c: In function 'main':
+conformance/interfaces/pthread_mutex_unlock/2-1.c:43:29: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
+    int                   i, rc;
+                             ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-1.c:44:2: error: implicit declaration of function 'pthread_mutexattr_getprioceiling' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getprioceiling(&mta, &prioceiling) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.c:53:3: error: implicit declaration of function 'pthread_mutexattr_setprioceiling' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_setprioceiling(&mta,i))
+   ^
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.c:60:3: error: implicit declaration of function 'pthread_mutexattr_getprioceiling' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_getprioceiling(&mta, &prioceiling) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getprioceiling/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getprioceiling/3-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getprioceiling/3-1.c:36:2: error: implicit declaration of function 'pthread_mutexattr_getprioceiling' [-Werror=implicit-function-declaration]
+  if((ret=pthread_mutexattr_getprioceiling(&mta, &prioceiling)) == 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getprotocol/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getprotocol/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getprotocol/1-1.c:38:2: error: implicit declaration of function 'pthread_mutexattr_getprotocol' [-Werror=implicit-function-declaration]
+  if((rc=pthread_mutexattr_getprotocol(&mta, &protocol)) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:33:13: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
+  protcls[0]=PTHREAD_PRIO_NONE;
+             ^
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:33:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:34:13: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
+  protcls[1]=PTHREAD_PRIO_INHERIT;
+             ^
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:35:13: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
+  protcls[2]=PTHREAD_PRIO_PROTECT;
+             ^
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:40:3: error: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_setprotocol(&mta,protcls[i]))
+   ^
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:47:3: error: implicit declaration of function 'pthread_mutexattr_getprotocol' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_getprotocol(&mta, &protocol) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getpshared/1-1.c:43:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getpshared(&mta, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getpshared/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getpshared/1-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getpshared/1-2.c:46:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_SHARED);
+  ^
+conformance/interfaces/pthread_mutexattr_getpshared/1-2.c:54:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getpshared(&mta, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getpshared/1-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getpshared/1-3.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getpshared/1-3.c:46:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_PRIVATE);
+  ^
+conformance/interfaces/pthread_mutexattr_getpshared/1-3.c:54:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getpshared(&mta, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_getpshared/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_getpshared/3-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_getpshared/3-1.c:43:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_getpshared(&mta, &pshared);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_init/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_init/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_init/1-1.c:43:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getpshared(&mta, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprioceiling/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprioceiling/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprioceiling/1-1.c:52:3: error: implicit declaration of function 'pthread_mutexattr_setprioceiling' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_setprioceiling(&mta,i))
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-1.c:42:2: error: implicit declaration of function 'pthread_mutexattr_setprioceiling' [-Werror=implicit-function-declaration]
+  if((ret=pthread_mutexattr_setprioceiling(&mta,prioceiling)) == 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-2.c:44:2: error: implicit declaration of function 'pthread_mutexattr_setprioceiling' [-Werror=implicit-function-declaration]
+  if((ret=pthread_mutexattr_setprioceiling(&mta,prioceiling)) == 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:37:13: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
+  protcls[0]=PTHREAD_PRIO_NONE;
+             ^
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:37:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:38:13: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
+  protcls[1]=PTHREAD_PRIO_INHERIT;
+             ^
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:39:13: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
+  protcls[2]=PTHREAD_PRIO_PROTECT;
+             ^
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:44:3: error: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_setprotocol(&mta,protcls[i]) != 0)
+   ^
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:51:3: error: implicit declaration of function 'pthread_mutexattr_getprotocol' [-Werror=implicit-function-declaration]
+   if(pthread_mutexattr_getprotocol(&mta, &protocol) != 0)
+   ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:20: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
+  while(protocol == PTHREAD_PRIO_NONE || protocol == PTHREAD_PRIO_INHERIT
+                    ^
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:20: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:53: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
+  while(protocol == PTHREAD_PRIO_NONE || protocol == PTHREAD_PRIO_INHERIT
+                                                     ^
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:40:18: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
+   || protocol == PTHREAD_PRIO_PROTECT){
+                  ^
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:45:2: error: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Werror=implicit-function-declaration]
+  ret = pthread_mutexattr_setprotocol(&mta,protocol);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:2: error: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Werror=implicit-function-declaration]
+  ret = pthread_mutexattr_setprotocol(&mta,PTHREAD_PRIO_NONE);
+  ^
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
+  ret = pthread_mutexattr_setprotocol(&mta,PTHREAD_PRIO_NONE);
+                                           ^
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/1-1.c:56:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  if((ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_PRIVATE)) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/1-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/1-2.c:43:2: error: implicit declaration of function 'pthread_mutexattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_mutexattr_getpshared(&mta, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/2-1.c:43:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_PRIVATE);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/2-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/2-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/2-2.c:43:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_SHARED);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/3-1.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/3-1.c:39:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, PTHREAD_PROCESS_PRIVATE);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_mutexattr_setpshared/3-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_mutexattr_setpshared/3-2.c: In function 'main':
+conformance/interfaces/pthread_mutexattr_setpshared/3-2.c:42:2: error: implicit declaration of function 'pthread_mutexattr_setpshared' [-Werror=implicit-function-declaration]
+  ret=pthread_mutexattr_setpshared(&mta, INVALID_PSHARED_VALUE);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_once/3-1: build: FAILED: Compiler output: 
+In file included from /usr/include/sys/types.h:360:0,
+                 from /usr/include/sys/time.h:38,
+                 from /usr/include/time.h:142,
+                 from /usr/include/pthread.h:37,
+                 from conformance/interfaces/pthread_once/3-1.c:23:
+conformance/interfaces/pthread_once/3-1.c: In function 'main':
+conformance/interfaces/pthread_once/3-1.c:71:17: error: expected expression before '{' token
+  once_control = PTHREAD_ONCE_INIT;
+                 ^
+conformance/interfaces/pthread_once/6-1: build: FAILED: Compiler output: 
+In file included from /usr/include/sys/types.h:360:0,
+                 from /usr/include/sys/time.h:38,
+                 from /usr/include/time.h:142,
+                 from /usr/include/pthread.h:37,
+                 from conformance/interfaces/pthread_once/6-1.c:35:
+conformance/interfaces/pthread_once/6-1.c: In function 'test':
+conformance/interfaces/pthread_once/6-1.c:199:14: error: expected expression before '{' token
+   once_ctl = PTHREAD_ONCE_INIT;
+              ^
+conformance/interfaces/pthread_rwlockattr_getpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_rwlockattr_getpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_rwlockattr_getpshared/1-1.c:41:2: error: implicit declaration of function 'pthread_rwlockattr_getpshared' [-Werror=implicit-function-declaration]
+  rc = pthread_rwlockattr_getpshared(&rwla, &pshared);
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_rwlockattr_getpshared/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_rwlockattr_getpshared/2-1.c: In function 'main':
+conformance/interfaces/pthread_rwlockattr_getpshared/2-1.c:65:2: error: implicit declaration of function 'pthread_rwlockattr_setpshared' [-Werror=implicit-function-declaration]
+  if(pthread_rwlockattr_setpshared(&rwla, pshared) != 0)
+  ^
+conformance/interfaces/pthread_rwlockattr_getpshared/2-1.c:71:2: error: implicit declaration of function 'pthread_rwlockattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_rwlockattr_getpshared(&rwla, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_rwlockattr_getpshared/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_rwlockattr_getpshared/4-1.c: In function 'main':
+conformance/interfaces/pthread_rwlockattr_getpshared/4-1.c:41:2: error: implicit declaration of function 'pthread_rwlockattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_rwlockattr_getpshared(&rwla, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_rwlockattr_init/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_rwlockattr_init/1-1.c: In function 'main':
+conformance/interfaces/pthread_rwlockattr_init/1-1.c:44:2: error: implicit declaration of function 'pthread_rwlockattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_rwlockattr_getpshared(&rwa, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_rwlockattr_setpshared/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c: In function 'main':
+conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:42:2: error: implicit declaration of function 'pthread_rwlockattr_setpshared' [-Werror=implicit-function-declaration]
+  rc = pthread_rwlockattr_setpshared(&rwla, PTHREAD_PROCESS_PRIVATE);
+  ^
+conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:49:2: error: implicit declaration of function 'pthread_rwlockattr_getpshared' [-Werror=implicit-function-declaration]
+  if(pthread_rwlockattr_getpshared(&rwla, &pshared) != 0)
+  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/pthread_sigmask/12-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_sigmask/12-1.c: In function 'is_changed':
+conformance/interfaces/pthread_sigmask/12-1.c:37:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/pthread_sigmask/12-1.c:37:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_sigmask/7-1.c: In function 'a_thread_func':
+conformance/interfaces/pthread_sigmask/7-1.c:33:37: error: 'SIGPOLL' undeclared (first use in this function)
+                   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS,
+                                     ^
+conformance/interfaces/pthread_sigmask/7-1.c:33:37: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_sigmask/8-1.c: In function 'is_changed':
+conformance/interfaces/pthread_sigmask/8-1.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/pthread_sigmask/8-1.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/8-2: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_sigmask/8-2.c: In function 'is_changed':
+conformance/interfaces/pthread_sigmask/8-2.c:33:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/pthread_sigmask/8-2.c:33:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/8-3: build: FAILED: Compiler output: 
+conformance/interfaces/pthread_sigmask/8-3.c: In function 'is_changed':
+conformance/interfaces/pthread_sigmask/8-3.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/pthread_sigmask/8-3.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sched_yield/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/sched_yield/1-1.c: In function 'set_thread_affinity':
+conformance/interfaces/sched_yield/1-1.c:124:2: error: unknown type name 'cpu_set_t'
+  cpu_set_t cpu_mask;
+  ^
+conformance/interfaces/sched_yield/1-1.c:126:2: error: implicit declaration of function 'CPU_ZERO' [-Werror=implicit-function-declaration]
+  CPU_ZERO(&cpu_mask);
+  ^
+conformance/interfaces/sched_yield/1-1.c:127:25: error: 'CPU_SETSIZE' undeclared (first use in this function)
+  if (cpu >= 0 && cpu <= CPU_SETSIZE) {
+                         ^
+conformance/interfaces/sched_yield/1-1.c:127:25: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sched_yield/1-1.c:128:3: error: implicit declaration of function 'CPU_SET' [-Werror=implicit-function-declaration]
+   CPU_SET(cpu, &cpu_mask);
+   ^
+conformance/interfaces/sched_yield/1-1.c:134:4: error: passing argument 3 of 'pthread_setaffinity_np' from incompatible pointer type [-Werror]
+    sizeof(cpu_mask), &cpu_mask);
+    ^
+In file included from conformance/interfaces/sched_yield/1-1.c:38:0:
+/usr/include/pthread.h:196:5: note: expected 'struct cpuset_t *' but argument is of type 'int *'
+ int pthread_setaffinity_np(pthread_t, size_t, cpuset_t *);
+     ^
+conformance/interfaces/sched_yield/1-1.c:135:2: error: #elif without #if
+ #elif defined(cpuset_create)
+  ^
+conformance/interfaces/sched_yield/1-1.c:136:19: error: conflicting types for 'cpu_mask'
+         cpuset_t *cpu_mask = cpuset_create();
+                   ^
+conformance/interfaces/sched_yield/1-1.c:124:12: note: previous declaration of 'cpu_mask' was here
+  cpu_set_t cpu_mask;
+            ^
+conformance/interfaces/sched_yield/1-1.c:147:2: error: #else without #if
+ #else
+  ^
+conformance/interfaces/sched_yield/1-1.c:148:10: error: #error "no cpuset"
+         #error "no cpuset"
+          ^
+conformance/interfaces/sched_yield/1-1.c:149:2: error: #endif without #if
+ #endif
+  ^
+conformance/interfaces/sched_yield/1-1.c: In function 'runner':
+conformance/interfaces/sched_yield/1-1.c:159:43: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
+                                           ^
+conformance/interfaces/sched_yield/1-1.c: In function 'busy_thread':
+conformance/interfaces/sched_yield/1-1.c:180:50: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+         fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
+                                                  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/sem_init/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sem_init/7-1.c: In function 'main':
+conformance/interfaces/sem_init/7-1.c:97:17: error: '_SC_SEM_NSEMS_MAX' undeclared (first use in this function)
+  max = sysconf( _SC_SEM_NSEMS_MAX );
+                 ^
+conformance/interfaces/sem_init/7-1.c:97:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sem_open/1-2: build: FAILED: Compiler output: 
+conformance/interfaces/sem_open/1-2.c: In function 'main':
+conformance/interfaces/sem_open/1-2.c:39:15: error: the comparison will always evaluate as 'true' for the address of 'mysemp' will never be NULL [-Werror=address]
+  if ( &mysemp != NULL)
+               ^
+cc1: all warnings being treated as errors
+conformance/interfaces/sem_timedwait/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/sem_timedwait/3-1.c:22:22: fatal error: features.h: No such file or directory
+ #include <features.h>
+                      ^
+compilation terminated.
+conformance/interfaces/sem_timedwait/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sem_timedwait/7-1.c:22:22: fatal error: features.h: No such file or directory
+ #include <features.h>
+                      ^
+compilation terminated.
+conformance/interfaces/sem_timedwait/9-1: build: FAILED: Compiler output: 
+conformance/interfaces/sem_timedwait/9-1.c: In function 'main':
+conformance/interfaces/sem_timedwait/9-1.c:43:18: error: variable 'status' set but not used [-Werror=unused-but-set-variable]
+         int pid, status;
+                  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/sem_wait/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sem_wait/7-1.c: In function 'main':
+conformance/interfaces/sem_wait/7-1.c:40:18: error: variable 'status' set but not used [-Werror=unused-but-set-variable]
+         int pid, status;
+                  ^
+cc1: all warnings being treated as errors
+conformance/interfaces/sigaction/1-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/1-19.c: In function 'main':
+conformance/interfaces/sigaction/1-19.c:40:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/1-19.c:40:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/12-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/12-19.c: In function 'main':
+conformance/interfaces/sigaction/12-19.c:53:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/12-19.c:53:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/12-45: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/12-45.c: In function 'main':
+conformance/interfaces/sigaction/12-45.c:51:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/12-45.c:51:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/13-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/13-19.c: In function 'main':
+conformance/interfaces/sigaction/13-19.c:52:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/13-19.c:52:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/16-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/16-19.c: In function 'main':
+conformance/interfaces/sigaction/16-19.c:89:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/16-19.c:150:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/16-19.c:89:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/16-19.c:150:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/17-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/17-19.c: In function 'main':
+conformance/interfaces/sigaction/17-19.c:48:13: error: 'SIGPOLL' undeclared (first use in this function)
+   sigaction(SIGPOLL,  &act, 0);     
+             ^
+conformance/interfaces/sigaction/17-19.c:48:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/18-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/18-19.c: In function 'main':
+conformance/interfaces/sigaction/18-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/18-19.c:112:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/18-19.c:79:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/18-19.c:112:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/19-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-1.c: In function 'main':
+conformance/interfaces/sigaction/19-1.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-1.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-10: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-10.c: In function 'main':
+conformance/interfaces/sigaction/19-10.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-10.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-11: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-11.c: In function 'main':
+conformance/interfaces/sigaction/19-11.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-11.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-12: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-12.c: In function 'main':
+conformance/interfaces/sigaction/19-12.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-12.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-13: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-13.c: In function 'main':
+conformance/interfaces/sigaction/19-13.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-13.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-14: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-14.c: In function 'main':
+conformance/interfaces/sigaction/19-14.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-14.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-15: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-15.c: In function 'main':
+conformance/interfaces/sigaction/19-15.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-15.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-16: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-16.c: In function 'main':
+conformance/interfaces/sigaction/19-16.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-16.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-17: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-17.c: In function 'main':
+conformance/interfaces/sigaction/19-17.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-17.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-18: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-18.c: In function 'main':
+conformance/interfaces/sigaction/19-18.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-18.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-19.c: In function 'handler':
+conformance/interfaces/sigaction/19-19.c:80:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/19-19.c:89:25: note: in expansion of macro 'SIGNAL'
+  if ( info->si_signo != SIGNAL )
+                         ^
+conformance/interfaces/sigaction/19-19.c:80:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/19-19.c:89:25: note: in expansion of macro 'SIGNAL'
+  if ( info->si_signo != SIGNAL )
+                         ^
+conformance/interfaces/sigaction/19-19.c: In function 'main':
+conformance/interfaces/sigaction/19-19.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-19.c:80:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/19-19.c:129:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/19-2: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-2.c: In function 'main':
+conformance/interfaces/sigaction/19-2.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-2.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-20: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-20.c: In function 'main':
+conformance/interfaces/sigaction/19-20.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-20.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-21: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-21.c: In function 'main':
+conformance/interfaces/sigaction/19-21.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-21.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-22: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-22.c: In function 'main':
+conformance/interfaces/sigaction/19-22.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-22.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-23: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-23.c: In function 'main':
+conformance/interfaces/sigaction/19-23.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-23.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-24: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-24.c: In function 'main':
+conformance/interfaces/sigaction/19-24.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-24.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-25: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-25.c: In function 'main':
+conformance/interfaces/sigaction/19-25.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-25.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-26: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-26.c: In function 'main':
+conformance/interfaces/sigaction/19-26.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-26.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-3: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-3.c: In function 'main':
+conformance/interfaces/sigaction/19-3.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-3.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-4: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-4.c: In function 'main':
+conformance/interfaces/sigaction/19-4.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-4.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-5: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-5.c: In function 'main':
+conformance/interfaces/sigaction/19-5.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-5.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-6: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-6.c: In function 'main':
+conformance/interfaces/sigaction/19-6.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-6.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-7: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-7.c: In function 'main':
+conformance/interfaces/sigaction/19-7.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-7.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-8: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-8.c: In function 'main':
+conformance/interfaces/sigaction/19-8.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-8.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-9: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/19-9.c: In function 'main':
+conformance/interfaces/sigaction/19-9.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/19-9.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/2-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/2-19.c: In function 'main':
+conformance/interfaces/sigaction/2-19.c:42:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/2-19.c:42:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/22-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/22-19.c: In function 'handler':
+conformance/interfaces/sigaction/22-19.c:55:9: error: 'SIGPOLL' undeclared (first use in this function)
+   raise(SIGPOLL);
+         ^
+conformance/interfaces/sigaction/22-19.c:55:9: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/22-19.c: In function 'main':
+conformance/interfaces/sigaction/22-19.c:72:17: error: 'SIGPOLL' undeclared (first use in this function)
+   if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                 ^
+conformance/interfaces/sigaction/23-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/23-19.c: In function 'handler':
+conformance/interfaces/sigaction/23-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/23-19.c:102:16: note: in expansion of macro 'SIGNAL'
+   ret = raise( SIGNAL );
+                ^
+conformance/interfaces/sigaction/23-19.c:79:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/23-19.c:102:16: note: in expansion of macro 'SIGNAL'
+   ret = raise( SIGNAL );
+                ^
+conformance/interfaces/sigaction/23-19.c: In function 'main':
+conformance/interfaces/sigaction/23-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/23-19.c:151:19: note: in expansion of macro 'SIGNAL'
+  ret = sigaction( SIGNAL, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/25-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/25-19.c: In function 'handler':
+conformance/interfaces/sigaction/25-19.c:53:9: error: 'SIGPOLL' undeclared (first use in this function)
+   raise(SIGPOLL);
+         ^
+conformance/interfaces/sigaction/25-19.c:53:9: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/25-19.c: In function 'main':
+conformance/interfaces/sigaction/25-19.c:70:17: error: 'SIGPOLL' undeclared (first use in this function)
+   if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                 ^
+conformance/interfaces/sigaction/28-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/28-19.c: In function 'main':
+conformance/interfaces/sigaction/28-19.c:167:16: error: 'SIGPOLL' undeclared (first use in this function)
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/28-19.c:197:26: note: in expansion of macro 'SIGNAL'
+  if ( SIG_ERR == signal( SIGNAL, handler_1 ) )
+                          ^
+conformance/interfaces/sigaction/28-19.c:167:16: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGNAL SIGPOLL
+                ^
+conformance/interfaces/sigaction/28-19.c:197:26: note: in expansion of macro 'SIGNAL'
+  if ( SIG_ERR == signal( SIGNAL, handler_1 ) )
+                          ^
+conformance/interfaces/sigaction/29-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/29-1.c: In function 'handler':
+conformance/interfaces/sigaction/29-1.c:95:25: error: 'SIGRTMAX' undeclared (first use in this function)
+  if ( info->si_signo != SIGRTMAX )
+                         ^
+conformance/interfaces/sigaction/29-1.c:95:25: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/29-1.c: In function 'main':
+conformance/interfaces/sigaction/29-1.c:125:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigaction/29-1.c:145:19: error: 'SIGRTMAX' undeclared (first use in this function)
+  ret = sigaction( SIGRTMAX, &sa, 0 );
+                   ^
+conformance/interfaces/sigaction/3-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/3-19.c: In function 'main':
+conformance/interfaces/sigaction/3-19.c:40:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/3-19.c:40:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/30-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/30-1.c: In function 'main':
+conformance/interfaces/sigaction/30-1.c:82:21: error: 'SIGRTMAX' undeclared (first use in this function)
+ #define SIG_INVALID SIGRTMAX+10
+                     ^
+conformance/interfaces/sigaction/30-1.c:117:49: note: in expansion of macro 'SIG_INVALID'
+  output( "Trying to catch invalid signal %d\n", SIG_INVALID );
+                                                 ^
+conformance/interfaces/sigaction/30-1.c:82:21: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIG_INVALID SIGRTMAX+10
+                     ^
+conformance/interfaces/sigaction/30-1.c:117:49: note: in expansion of macro 'SIG_INVALID'
+  output( "Trying to catch invalid signal %d\n", SIG_INVALID );
+                                                 ^
+conformance/interfaces/sigaction/4-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/4-19.c: In function 'main':
+conformance/interfaces/sigaction/4-19.c:54:17: error: 'SIGPOLL' undeclared (first use in this function)
+   if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                 ^
+conformance/interfaces/sigaction/4-19.c:54:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-45: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/4-45.c: In function 'main':
+conformance/interfaces/sigaction/4-45.c:53:17: error: 'SIGPOLL' undeclared (first use in this function)
+   if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                 ^
+conformance/interfaces/sigaction/4-45.c:53:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-71: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/4-71.c: In function 'main':
+conformance/interfaces/sigaction/4-71.c:33:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/4-71.c:33:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-97: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/4-97.c: In function 'main':
+conformance/interfaces/sigaction/4-97.c:33:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/4-97.c:33:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/6-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/6-19.c: In function 'main':
+conformance/interfaces/sigaction/6-19.c:37:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/6-19.c:37:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/8-19: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/8-19.c: In function 'main':
+conformance/interfaces/sigaction/8-19.c:47:16: error: 'SIGPOLL' undeclared (first use in this function)
+  if (sigaction(SIGPOLL,  &act, 0) == -1) {
+                ^
+conformance/interfaces/sigaction/8-19.c:47:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/8-20: build: FAILED: Compiler output: 
+conformance/interfaces/sigaction/8-20.c: In function 'SIGPROF_handler':
+conformance/interfaces/sigaction/8-20.c:32:8: error: 'SIGPOLL' undeclared (first use in this function)
+  raise(SIGPOLL);
+        ^
+conformance/interfaces/sigaction/8-20.c:32:8: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/8-20.c: In function 'main':
+conformance/interfaces/sigaction/8-20.c:46:26: error: 'SIGPOLL' undeclared (first use in this function)
+  sigaddset(&act.sa_mask, SIGPOLL);
+                          ^
+conformance/interfaces/sigemptyset/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigemptyset/1-1.c: In function 'main':
+conformance/interfaces/sigemptyset/1-1.c:26:34: error: 'SIGPOLL' undeclared (first use in this function)
+                         SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, SIGTRAP,
+                                  ^
+conformance/interfaces/sigemptyset/1-1.c:26:34: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigfillset/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigfillset/1-1.c: In function 'main':
+conformance/interfaces/sigfillset/1-1.c:28:34: error: 'SIGPOLL' undeclared (first use in this function)
+                         SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, SIGTRAP,
+                                  ^
+conformance/interfaces/sigfillset/1-1.c:28:34: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/12-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/12-1.c: In function 'is_changed':
+conformance/interfaces/sigprocmask/12-1.c:35:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigprocmask/12-1.c:35:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/17-core-buildonly: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/17-core-buildonly.c: In function 'main':
+conformance/interfaces/sigprocmask/17-core-buildonly.c:27:6: error: variable 'signo' set but not used [-Werror=unused-but-set-variable]
+  int signo;
+      ^
+cc1: all warnings being treated as errors
+conformance/interfaces/sigprocmask/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/7-1.c: In function 'main':
+conformance/interfaces/sigprocmask/7-1.c:33:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigprocmask/7-1.c:33:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/8-1.c: In function 'is_changed':
+conformance/interfaces/sigprocmask/8-1.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigprocmask/8-1.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/8-2: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/8-2.c: In function 'is_changed':
+conformance/interfaces/sigprocmask/8-2.c:32:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigprocmask/8-2.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/8-3: build: FAILED: Compiler output: 
+conformance/interfaces/sigprocmask/8-3.c: In function 'is_changed':
+conformance/interfaces/sigprocmask/8-3.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigprocmask/8-3.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigqueue/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/1-1.c: In function 'myhandler':
+conformance/interfaces/sigqueue/1-1.c:22:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/1-1.c:33:16: note: in expansion of macro 'SIGTOTEST'
+  if ((signo == SIGTOTEST) && (info->si_value.sival_int == VALTOTEST)) {
+                ^
+conformance/interfaces/sigqueue/1-1.c:22:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/1-1.c:33:16: note: in expansion of macro 'SIGTOTEST'
+  if ((signo == SIGTOTEST) && (info->si_value.sival_int == VALTOTEST)) {
+                ^
+conformance/interfaces/sigqueue/1-1.c: In function 'main':
+conformance/interfaces/sigqueue/1-1.c:22:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/1-1.c:49:13: note: in expansion of macro 'SIGTOTEST'
+   sigaction(SIGTOTEST, &act, 0);
+             ^
+conformance/interfaces/sigqueue/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/4-1.c: In function 'main':
+conformance/interfaces/sigqueue/4-1.c:23:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/4-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/4-1.c:23:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/4-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/5-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/5-1.c: In function 'main':
+conformance/interfaces/sigqueue/5-1.c:23:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/5-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/5-1.c:23:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/5-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/6-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/6-1.c: In function 'main':
+conformance/interfaces/sigqueue/6-1.c:28:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/6-1.c:58:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/6-1.c:28:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/6-1.c:58:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/7-1.c: In function 'main':
+conformance/interfaces/sigqueue/7-1.c:58:13: error: 'SIGRTMAX' undeclared (first use in this function)
+  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
+             ^
+conformance/interfaces/sigqueue/7-1.c:58:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigqueue/7-1.c:58:30: error: 'SIGRTMIN' undeclared (first use in this function)
+  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
+                              ^
+conformance/interfaces/sigqueue/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/8-1.c: In function 'main':
+conformance/interfaces/sigqueue/8-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/8-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/8-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/8-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/9-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigqueue/9-1.c: In function 'main':
+conformance/interfaces/sigqueue/9-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/9-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/9-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigqueue/9-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigqueue/9-1.c:56:21: error: '_SC_SIGQUEUE_MAX' undeclared (first use in this function)
+  syslimit = sysconf(_SC_SIGQUEUE_MAX);
+                     ^
+conformance/interfaces/sigset/5-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigset/5-1.c: In function 'is_empty':
+conformance/interfaces/sigset/5-1.c:35:35: error: 'SIGPOLL' undeclared (first use in this function)
+                 SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS,
+                                   ^
+conformance/interfaces/sigset/5-1.c:35:35: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigsuspend/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigsuspend/4-1.c: In function 'is_changed':
+conformance/interfaces/sigsuspend/4-1.c:50:21: error: 'SIGPOLL' undeclared (first use in this function)
+   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
+                     ^
+conformance/interfaces/sigsuspend/4-1.c:50:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigtimedwait/4-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigtimedwait/4-1.c: In function 'main':
+conformance/interfaces/sigtimedwait/4-1.c:38:25: error: storage size of 'ts' isn't known
+         struct timespec ts;
+                         ^
+conformance/interfaces/sigtimedwait/4-1.c:38:25: error: unused variable 'ts' [-Werror=unused-variable]
+cc1: all warnings being treated as errors
+conformance/interfaces/sigwait/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigwait/2-1.c: In function 'main':
+conformance/interfaces/sigwait/2-1.c:45:28: error: 'SIGRTMIN' undeclared (first use in this function)
+  if ( sigaddset( &newmask, SIGRTMIN ) == -1 )
+                            ^
+conformance/interfaces/sigwait/2-1.c:45:28: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigwait/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigwait/7-1.c: In function 'main':
+conformance/interfaces/sigwait/7-1.c:98:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
+  rts = sysconf( _SC_REALTIME_SIGNALS );
+                 ^
+conformance/interfaces/sigwait/7-1.c:98:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigwait/7-1.c:114:12: error: 'SIGRTMIN' undeclared (first use in this function)
+  for ( i = SIGRTMIN; i <= SIGRTMAX; i++ )
+            ^
+conformance/interfaces/sigwait/7-1.c:114:27: error: 'SIGRTMAX' undeclared (first use in this function)
+  for ( i = SIGRTMIN; i <= SIGRTMAX; i++ )
+                           ^
+conformance/interfaces/sigwaitinfo/2-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigwaitinfo/2-1.c: In function 'main':
+conformance/interfaces/sigwaitinfo/2-1.c:49:13: error: 'SIGRTMAX' undeclared (first use in this function)
+  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
+             ^
+conformance/interfaces/sigwaitinfo/2-1.c:49:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigwaitinfo/2-1.c:49:30: error: 'SIGRTMIN' undeclared (first use in this function)
+  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
+                              ^
+conformance/interfaces/sigwaitinfo/7-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigwaitinfo/7-1.c: In function 'main':
+conformance/interfaces/sigwaitinfo/7-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigwaitinfo/7-1.c:51:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigwaitinfo/7-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigwaitinfo/7-1.c:51:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigwaitinfo/8-1: build: FAILED: Compiler output: 
+conformance/interfaces/sigwaitinfo/8-1.c: In function 'main':
+conformance/interfaces/sigwaitinfo/8-1.c:25:19: error: 'SIGRTMIN' undeclared (first use in this function)
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigwaitinfo/8-1.c:50:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/sigwaitinfo/8-1.c:25:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define SIGTOTEST SIGRTMIN
+                   ^
+conformance/interfaces/sigwaitinfo/8-1.c:50:12: note: in expansion of macro 'SIGTOTEST'
+  sigaction(SIGTOTEST, &act, 0);
+            ^
+conformance/interfaces/timer_create/10-1: build: FAILED: Compiler output: 
+conformance/interfaces/timer_create/10-1.c: In function 'main':
+conformance/interfaces/timer_create/10-1.c:45:15: error: '_SC_CPUTIME' undeclared (first use in this function)
+  rc = sysconf(_SC_CPUTIME);
+               ^
+conformance/interfaces/timer_create/10-1.c:45:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/timer_create/10-1.c:74:19: error: 'CLOCK_PROCESS_CPUTIME_ID' undeclared (first use in this function)
+  if (timer_create(CLOCK_PROCESS_CPUTIME_ID, &ev, &tid) != 0) {
+                   ^
+conformance/interfaces/timer_create/11-1: build: FAILED: Compiler output: 
+conformance/interfaces/timer_create/11-1.c: In function 'main':
+conformance/interfaces/timer_create/11-1.c:33:15: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
+  rc = sysconf(_SC_THREAD_CPUTIME);
+               ^
+conformance/interfaces/timer_create/11-1.c:33:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/timer_create/11-1.c:71:19: error: 'CLOCK_THREAD_CPUTIME_ID' undeclared (first use in this function)
+  if (timer_create(CLOCK_THREAD_CPUTIME_ID, &ev, &tid) != 0) {
+                   ^
+conformance/interfaces/timer_getoverrun/3-1: build: FAILED: Compiler output: 
+conformance/interfaces/timer_getoverrun/3-1.c: In function 'main':
+conformance/interfaces/timer_getoverrun/3-1.c:22:32: error: '_SC_DELAYTIMER_MAX' undeclared (first use in this function)
+  long delaytimer_max = sysconf(_SC_DELAYTIMER_MAX);
+                                ^
+conformance/interfaces/timer_getoverrun/3-1.c:22:32: note: each undeclared identifier is reported only once for each function it appears in
