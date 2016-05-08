@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <aio.h>
-
+#include <resource.h>
 #include "posixtest.h"
 
 int main()

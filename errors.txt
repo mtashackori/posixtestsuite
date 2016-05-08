@@ -1,19 +1,13 @@
 
 timers:
-   _SC_TIMER_MAX
    _SC_CPUTIME
    _SC_THREAD_CPUTIME
    _SC_DELAYTIMER_MAX
 
-   CLOCK_PROCESS_CPUTIME_ID
-   CLOCK_THREAD_CPUTIME_ID
-   clock_getcpuclockid
    getdate
    strptime
    daylight
    timezone
-   pthread_getcpuclockid
-   struct timespec
 
 pthreads: 
    PTHREAD_PRIO_INHERIT   
