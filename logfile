@@ -2858,9 +2858,8 @@ conformance/interfaces/sem_timedwait/2-1: build: PASS
 conformance/interfaces/sem_timedwait/2-1: link: PASS
 conformance/interfaces/sem_timedwait/2-2: build: PASS
 conformance/interfaces/sem_timedwait/2-2: link: PASS
-conformance/interfaces/sem_timedwait/3-1: build: FAILED: Compiler output: 
-conformance/interfaces/sem_timedwait/3-1.c:22:22: fatal error: features.h: No such file or directory
-compilation terminated.
+conformance/interfaces/sem_timedwait/3-1: build: PASS
+conformance/interfaces/sem_timedwait/3-1: link: PASS
 conformance/interfaces/sem_timedwait/4-1: build: PASS
 conformance/interfaces/sem_timedwait/4-1: link: PASS
 conformance/interfaces/sem_timedwait/6-1: build: PASS
