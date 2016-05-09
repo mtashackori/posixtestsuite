@@ -27,7 +27,6 @@ pthreads:
    pthread_rwlockattr_setpshared
    pthread_mutex_getprioceiling
    pthread_mutex_timedlock
-   pthread_setaffinity_np (wrong parameters of CPU set)
    pthread_getattr_np
 
 scheduler:
@@ -71,12 +70,6 @@ mmap:
     posix_mem_offset
     posix_typed_mem_get_info
     posix_typed_mem_open
-
-cpuset
-    CPU_ZERO
-    CPU_SETSIZE
-    CPU_SET
-    cpu_set_t
 
 semaphore 
     _SC_SEM_NSEMS_MAX

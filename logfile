@@ -2776,58 +2776,8 @@ conformance/interfaces/sched_setscheduler/7-1: build: PASS
 conformance/interfaces/sched_setscheduler/7-1: link: PASS
 conformance/interfaces/sched_setscheduler/9-1: build: PASS
 conformance/interfaces/sched_setscheduler/9-1: link: PASS
-conformance/interfaces/sched_yield/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/sched_yield/1-1.c:27:0: warning: "_NETBSD_SOURCE" redefined
- #define _NETBSD_SOURCE
- ^
-<command-line>:0:0: note: this is the location of the previous definition
-conformance/interfaces/sched_yield/1-1.c: In function 'set_thread_affinity':
-conformance/interfaces/sched_yield/1-1.c:124:2: error: unknown type name 'cpu_set_t'
-  cpu_set_t cpu_mask;
-  ^
-conformance/interfaces/sched_yield/1-1.c:126:2: warning: implicit declaration of function 'CPU_ZERO' [-Wimplicit-function-declaration]
-  CPU_ZERO(&cpu_mask);
-  ^
-conformance/interfaces/sched_yield/1-1.c:127:25: error: 'CPU_SETSIZE' undeclared (first use in this function)
-  if (cpu >= 0 && cpu <= CPU_SETSIZE) {
-                         ^
-conformance/interfaces/sched_yield/1-1.c:127:25: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sched_yield/1-1.c:128:3: warning: implicit declaration of function 'CPU_SET' [-Wimplicit-function-declaration]
-   CPU_SET(cpu, &cpu_mask);
-   ^
-conformance/interfaces/sched_yield/1-1.c:134:22: warning: passing argument 3 of 'pthread_setaffinity_np' from incompatible pointer type [-Wincompatible-pointer-types]
-    sizeof(cpu_mask), &cpu_mask);
-                      ^
-In file included from conformance/interfaces/sched_yield/1-1.c:38:0:
-/usr/include/pthread.h:198:5: note: expected 'cpuset_t * {aka struct _cpuset *}' but argument is of type 'int *'
- int pthread_setaffinity_np(pthread_t, size_t, cpuset_t *);
-     ^
-conformance/interfaces/sched_yield/1-1.c:135:2: error: #elif without #if
- #elif defined(cpuset_create)
-  ^
-conformance/interfaces/sched_yield/1-1.c:136:19: error: conflicting types for 'cpu_mask'
-         cpuset_t *cpu_mask = cpuset_create();
-                   ^
-conformance/interfaces/sched_yield/1-1.c:124:12: note: previous declaration of 'cpu_mask' was here
-  cpu_set_t cpu_mask;
-            ^
-conformance/interfaces/sched_yield/1-1.c:147:2: error: #else without #if
- #else
-  ^
-conformance/interfaces/sched_yield/1-1.c:148:10: error: #error "no cpuset"
-         #error "no cpuset"
-          ^
-conformance/interfaces/sched_yield/1-1.c:149:2: error: #endif without #if
- #endif
-  ^
-conformance/interfaces/sched_yield/1-1.c: In function 'runner':
-conformance/interfaces/sched_yield/1-1.c:159:43: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
-                                           ^
-conformance/interfaces/sched_yield/1-1.c: In function 'busy_thread':
-conformance/interfaces/sched_yield/1-1.c:180:50: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-         fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
-                                                  ^
+conformance/interfaces/sched_yield/1-1: build: PASS
+conformance/interfaces/sched_yield/1-1: link: PASS
 conformance/interfaces/sched_yield/2-1: build: PASS
 conformance/interfaces/sched_yield/2-1: link: PASS
 conformance/interfaces/sem_close/1-1: build: PASS

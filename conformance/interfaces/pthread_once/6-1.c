@@ -196,7 +196,7 @@ void * test( void * arg )
 	{
 		count_ope++;
 
-		once_ctl = PTHREAD_ONCE_INIT;
+		once_ctl = (pthread_once_t)PTHREAD_ONCE_INIT;
 		init_ctl = 0;
 
 		ret = pthread_once( &once_ctl, initializer );

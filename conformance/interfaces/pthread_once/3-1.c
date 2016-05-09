@@ -68,7 +68,7 @@ void *an_init_func2()
 int main()
 {
 	pthread_t new_th;
-	once_control = PTHREAD_ONCE_INIT;
+	once_control = (pthread_once_t)PTHREAD_ONCE_INIT;
 	init_flag=0;
 	
 	/* Create a thread that will execute the first call to pthread_once() */
