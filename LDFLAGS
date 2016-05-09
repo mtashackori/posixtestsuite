@@ -14,4 +14,4 @@
 # allow for the NPTL-specific compilation (used in some test cases)
 # Note: this sometimes require the package nptl-devel.*.rpm to be installed.
 #-I /usr/include/nptl -L /usr/lib/nptl -D_XOPEN_SOURCE=600 -lpthread -lrt -lm
--D_NETBSD_SOURCE -D_KERNEL -lpthread -lrt -lm
+-D_NETBSD_SOURCE -lpthread -lrt -lm
