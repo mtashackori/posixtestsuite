@@ -47,4 +47,3 @@ mmap:
 
 semaphore 
     _SC_SEM_NSEMS_MAX  (freebsd)
-    features.h
