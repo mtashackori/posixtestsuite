@@ -29,43 +29,21 @@ scheduler:
     SCHED_SPORADIC (linux)
 
 signals:
-    SIGPOLL
-    SIGRTMIN
-    SIGRTMAX
-    SIGNAL
-    SIGSTKSZ
-    SIG_INVALID
-    SIGTOTEST
-    _SC_REALTIME_SIGNALS
-    _SC_SIGQUEUE_MAX
-    SA_ONSTACK
-    SA_RESETHAND
-    SA_RESTART
-    SA_NODEFER  
-    SS_ONSTACK
-    SS_DISABLE
-    MINSIGSTKSZ
-    struct sigstack
-    stack_t
-    bsd_signal
-    killpg
-    sigaltstack_test
-    sigaltstack
-    sighold
-    sigignore
-    siginterrupt
-    sigpause
-    sigrelse
-    sigset
+    SIGPOLL (freebsd)
+    SIGRTMIN (provided, but need to expose to userland)
+    SIGRTMAX (provided, but need to expose to userland) 
+    _SC_REALTIME_SIGNALS (freebsd)
+    _SC_SIGQUEUE_MAX  (freebsd)  
+    bsd_signal (linux)
 
 mmap:
-    POSIX_TYPED_MEM_ALLOCATE
-    POSIX_TYPED_MEM_ALLOCATE_CONTIG
-    POSIX_TYPED_MEM_MAP_ALLOCATABLE
-    struct posix_typed_mem_info
-    posix_mem_offset
-    posix_typed_mem_get_info
-    posix_typed_mem_open
+    POSIX_TYPED_MEM_ALLOCATE  (linux)
+    POSIX_TYPED_MEM_ALLOCATE_CONTIG (linux) 
+    POSIX_TYPED_MEM_MAP_ALLOCATABLE (linux)
+    struct posix_typed_mem_info (linux)
+    posix_mem_offset (linux)
+    posix_typed_mem_get_info (linux)
+    posix_typed_mem_open (linux)
 
 semaphore 
     _SC_SEM_NSEMS_MAX  (freebsd)
