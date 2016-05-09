@@ -19,14 +19,6 @@
  *  4. Launch a thread which call sched_yield() and check that the counter has
  *     changed since the call.
  */
-#ifdef __linux__
-#define _GNU_SOURCE
-#endif
-
-#ifdef __NetBSD__
-#define _NETBSD_SOURCE
-#endif
-
 #include <sys/types.h>
 #include <sys/param.h>
 #include <sys/wait.h>
@@ -97,32 +89,32 @@ int set_process_affinity(int cpu)
 		
 	retval = sched_setaffinity(0, sizeof(cpu_mask), &cpu_mask);
 #elif defined(cpuset_create)
-        cpuset_t *cpu_mask = cpuset_create();
+    cpuset_t *cpu_mask = cpuset_create();
 
-        cpuset_zero(cpu_mask);
-        if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
-                cpuset_set(cpu, cpu_mask);
-        } else {
-                fprintf (stderr, "Wrong cpu id: %d\n", cpu);
-                return -1;
-        }
-        retval = _sched_setaffinity(0, 0, cpuset_size(cpu_mask), cpu_mask);
-        cpuset_destroy(cpu_mask);
+    cpuset_zero(cpu_mask);
+    if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
+        cpuset_set(cpu, cpu_mask);
+    } else {
+        fprintf (stderr, "Wrong cpu id: %d\n", cpu);
+        return -1;
+    }
+    retval = _sched_setaffinity(0, 0, cpuset_size(cpu_mask), cpu_mask);
+    cpuset_destroy(cpu_mask);
 #else
-       #error "no cpuset"
+    #error "no cpuset"
 #endif
 
 	if (retval == -1)
 	perror("Error at sched_setaffinity()");
         
-        return retval;
+    return retval;
 }
 
 int set_thread_affinity(int cpu)
 {
 	int retval = -1;
-	cpu_set_t cpu_mask;
-	
+#if defined(CPU_ZERO) 
+	cpu_set_t cpu_mask;	
 	CPU_ZERO(&cpu_mask);
 	if (cpu >= 0 && cpu <= CPU_SETSIZE) {
 		CPU_SET(cpu, &cpu_mask);
@@ -133,19 +125,19 @@ int set_thread_affinity(int cpu)
 	retval = pthread_setaffinity_np(pthread_self(), 
 			sizeof(cpu_mask), &cpu_mask);
 #elif defined(cpuset_create)
-        cpuset_t *cpu_mask = cpuset_create();
+    cpuset_t *cpu_mask = cpuset_create();
 
-        cpuset_zero(cpu_mask);
-        if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
-                cpuset_set(cpu, cpu_mask);
-        } else {
-                fprintf (stderr, "Wrong cpu id: %d\n", cpu);
-                return -1;
-        }
-        retval = pthread_setaffinity_np(0, cpuset_size(cpu_mask), cpu_mask);
-        cpuset_destroy(cpu_mask);
+    cpuset_zero(cpu_mask);
+    if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
+        cpuset_set(cpu, cpu_mask);
+    } else {
+        fprintf (stderr, "Wrong cpu id: %d\n", cpu);
+        return -1;
+    }
+    retval = pthread_setaffinity_np(0, cpuset_size(cpu_mask), cpu_mask);
+    cpuset_destroy(cpu_mask);
 #else
-        #error "no cpuset"
+    #error "no cpuset"
 #endif
 	if (retval != 0)
 	fprintf (stderr, "Error at pthread_setaffinity_np():\n");

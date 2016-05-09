@@ -174,57 +174,14 @@ conformance/definitions/signal_h/14-1.c:27:15: error: 'SIGPOLL' undeclared here 
                ^
 conformance/definitions/signal_h/15-1: build: PASS
 conformance/definitions/signal_h/15-1: link: SKIP
-conformance/definitions/signal_h/16-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/16-1.c:11:14: error: 'SA_ONSTACK' undeclared here (not in a function)
- int dummy5 = SA_ONSTACK;
-              ^
-conformance/definitions/signal_h/16-1.c:12:14: error: 'SA_RESETHAND' undeclared here (not in a function)
- int dummy6 = SA_RESETHAND;
-              ^
-conformance/definitions/signal_h/16-1.c:13:14: error: 'SA_RESTART' undeclared here (not in a function)
- int dummy7 = SA_RESTART;
-              ^
-conformance/definitions/signal_h/16-1.c:16:15: error: 'SA_NODEFER' undeclared here (not in a function)
- int dummy10 = SA_NODEFER;
-               ^
-conformance/definitions/signal_h/16-1.c:17:15: error: 'SS_ONSTACK' undeclared here (not in a function)
- int dummy11 = SS_ONSTACK;
-               ^
-conformance/definitions/signal_h/16-1.c:18:15: error: 'SS_DISABLE' undeclared here (not in a function)
- int dummy12 = SS_DISABLE;
-               ^
-conformance/definitions/signal_h/16-1.c:19:15: error: 'MINSIGSTKSZ' undeclared here (not in a function)
- int dummy13 = MINSIGSTKSZ;
-               ^
-conformance/definitions/signal_h/16-1.c:20:15: error: 'SIGSTKSZ' undeclared here (not in a function)
- int dummy14 = SIGSTKSZ;
-               ^
-conformance/definitions/signal_h/17-1: build: FAILED: Compiler output: 
-In file included from /usr/include/ucontext.h:36:0,
-                 from conformance/definitions/signal_h/17-1.c:5:
-/usr/include/sys/ucontext.h:44:2: error: unknown type name 'stack_t'
-  stack_t  uc_stack; /* the stack used by this context */
-  ^
-conformance/definitions/signal_h/18-1: build: FAILED: Compiler output: 
-In file included from /usr/include/ucontext.h:36:0,
-                 from conformance/definitions/signal_h/18-1.c:5:
-/usr/include/sys/ucontext.h:44:2: error: unknown type name 'stack_t'
-  stack_t  uc_stack; /* the stack used by this context */
-  ^
-conformance/definitions/signal_h/19-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/19-1.c:7:1: error: unknown type name 'stack_t'
- stack_t this_type_should_exist, t;
- ^
-conformance/definitions/signal_h/19-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/19-1.c:14:8: error: request for member 'ss_sp' in something not a structure or union
-  sp = t.ss_sp;
-        ^
-conformance/definitions/signal_h/19-1.c:15:10: error: request for member 'ss_size' in something not a structure or union
-  size = t.ss_size;
-          ^
-conformance/definitions/signal_h/19-1.c:16:11: error: request for member 'ss_flags' in something not a structure or union
-  flags = t.ss_flags;
-           ^
+conformance/definitions/signal_h/16-1: build: PASS
+conformance/definitions/signal_h/16-1: link: SKIP
+conformance/definitions/signal_h/17-1: build: PASS
+conformance/definitions/signal_h/17-1: link: SKIP
+conformance/definitions/signal_h/18-1: build: PASS
+conformance/definitions/signal_h/18-1: link: SKIP
+conformance/definitions/signal_h/19-1: build: PASS
+conformance/definitions/signal_h/19-1: link: SKIP
 conformance/definitions/signal_h/2-1: build: PASS
 conformance/definitions/signal_h/2-1: link: SKIP
 conformance/definitions/signal_h/2-2: build: PASS
@@ -233,14 +190,8 @@ conformance/definitions/signal_h/2-3: build: PASS
 conformance/definitions/signal_h/2-3: link: SKIP
 conformance/definitions/signal_h/2-4: build: PASS
 conformance/definitions/signal_h/2-4: link: SKIP
-conformance/definitions/signal_h/20-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/20-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/20-1.c:13:2: error: invalid use of undefined type 'struct sigstack'
-  sp = t.ss_sp;
-  ^
-conformance/definitions/signal_h/20-1.c:14:2: error: invalid use of undefined type 'struct sigstack'
-  onstack = t.ss_onstack;
-  ^
+conformance/definitions/signal_h/20-1: build: PASS
+conformance/definitions/signal_h/20-1: link: SKIP
 conformance/definitions/signal_h/21-1: build: PASS
 conformance/definitions/signal_h/21-1: link: SKIP
 conformance/definitions/signal_h/22-1: build: PASS
@@ -331,12 +282,8 @@ conformance/definitions/signal_h/23-1.c:15:11: error: 'bsd_signal' undeclared (f
 conformance/definitions/signal_h/23-1.c:15:11: note: each undeclared identifier is reported only once for each function it appears in
 conformance/definitions/signal_h/24-1: build: PASS
 conformance/definitions/signal_h/24-1: link: SKIP
-conformance/definitions/signal_h/25-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/25-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/25-1.c:15:13: error: 'killpg' undeclared (first use in this function)
-  dummyvar = killpg;
-             ^
-conformance/definitions/signal_h/25-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/25-1: build: PASS
+conformance/definitions/signal_h/25-1: link: SKIP
 conformance/definitions/signal_h/26-1: build: PASS
 conformance/definitions/signal_h/26-1: link: SKIP
 conformance/definitions/signal_h/27-1: build: PASS
@@ -349,75 +296,38 @@ conformance/definitions/signal_h/3-1: build: PASS
 conformance/definitions/signal_h/3-1: link: SKIP
 conformance/definitions/signal_h/30-1: build: PASS
 conformance/definitions/signal_h/30-1: link: SKIP
-conformance/definitions/signal_h/31-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/31-1.c:11:39: error: unknown type name 'stack_t'
- typedef int (*sigaltstack_test)(const stack_t *, stack_t *);
-                                       ^
-conformance/definitions/signal_h/31-1.c:11:50: error: unknown type name 'stack_t'
- typedef int (*sigaltstack_test)(const stack_t *, stack_t *);
-                                                  ^
-conformance/definitions/signal_h/31-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/31-1.c:15:2: error: unknown type name 'sigaltstack_test'
-  sigaltstack_test dummyvar;
-  ^
-conformance/definitions/signal_h/31-1.c:16:13: error: 'sigaltstack' undeclared (first use in this function)
-  dummyvar = sigaltstack;
-             ^
-conformance/definitions/signal_h/31-1.c:16:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/31-1: build: PASS
+conformance/definitions/signal_h/31-1: link: SKIP
 conformance/definitions/signal_h/32-1: build: PASS
 conformance/definitions/signal_h/32-1: link: SKIP
 conformance/definitions/signal_h/33-1: build: PASS
 conformance/definitions/signal_h/33-1: link: SKIP
 conformance/definitions/signal_h/34-1: build: PASS
 conformance/definitions/signal_h/34-1: link: SKIP
-conformance/definitions/signal_h/35-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/35-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/35-1.c:15:13: error: 'sighold' undeclared (first use in this function)
-  dummyvar = sighold;
-             ^
-conformance/definitions/signal_h/35-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/definitions/signal_h/36-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/36-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/36-1.c:15:13: error: 'sigignore' undeclared (first use in this function)
-  dummyvar = sigignore;
-             ^
-conformance/definitions/signal_h/36-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/definitions/signal_h/37-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/37-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/37-1.c:14:13: error: 'siginterrupt' undeclared (first use in this function)
-  dummyvar = siginterrupt;
-             ^
-conformance/definitions/signal_h/37-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/35-1: build: PASS
+conformance/definitions/signal_h/35-1: link: SKIP
+conformance/definitions/signal_h/36-1: build: PASS
+conformance/definitions/signal_h/36-1: link: SKIP
+conformance/definitions/signal_h/37-1: build: PASS
+conformance/definitions/signal_h/37-1: link: SKIP
 conformance/definitions/signal_h/38-1: build: PASS
 conformance/definitions/signal_h/38-1: link: SKIP
 conformance/definitions/signal_h/39-1: build: PASS
 conformance/definitions/signal_h/39-1: link: SKIP
 conformance/definitions/signal_h/4-1: build: PASS
 conformance/definitions/signal_h/4-1: link: SKIP
-conformance/definitions/signal_h/40-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/40-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/40-1.c:15:13: error: 'sigpause' undeclared (first use in this function)
-  dummyvar = sigpause;
-             ^
-conformance/definitions/signal_h/40-1.c:15:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/40-1: build: PASS
+conformance/definitions/signal_h/40-1: link: SKIP
 conformance/definitions/signal_h/41-1: build: PASS
 conformance/definitions/signal_h/41-1: link: SKIP
 conformance/definitions/signal_h/42-1: build: PASS
 conformance/definitions/signal_h/42-1: link: SKIP
 conformance/definitions/signal_h/43-1: build: PASS
 conformance/definitions/signal_h/43-1: link: SKIP
-conformance/definitions/signal_h/44-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/44-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/44-1.c:14:13: error: 'sigrelse' undeclared (first use in this function)
-  dummyvar = sigrelse;
-             ^
-conformance/definitions/signal_h/44-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/definitions/signal_h/45-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/45-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/45-1.c:14:13: error: 'sigset' undeclared (first use in this function)
-  dummyvar = sigset;
-             ^
-conformance/definitions/signal_h/45-1.c:14:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/44-1: build: PASS
+conformance/definitions/signal_h/44-1: link: SKIP
+conformance/definitions/signal_h/45-1: build: PASS
+conformance/definitions/signal_h/45-1: link: SKIP
 conformance/definitions/signal_h/46-1: build: PASS
 conformance/definitions/signal_h/46-1: link: SKIP
 conformance/definitions/signal_h/47-1: build: PASS
@@ -591,12 +501,8 @@ conformance/definitions/time_h/17-1: build: PASS
 conformance/definitions/time_h/17-1: link: SKIP
 conformance/definitions/time_h/18-1: build: PASS
 conformance/definitions/time_h/18-1: link: SKIP
-conformance/definitions/time_h/19-1: build: FAILED: Compiler output: 
-conformance/definitions/time_h/19-1.c: In function 'dummyfcn':
-conformance/definitions/time_h/19-1.c:21:13: error: 'getdate' undeclared (first use in this function)
-  dummyvar = getdate;
-             ^
-conformance/definitions/time_h/19-1.c:21:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/19-1: build: PASS
+conformance/definitions/time_h/19-1: link: SKIP
 conformance/definitions/time_h/2-1: build: PASS
 conformance/definitions/time_h/2-1: link: SKIP
 conformance/definitions/time_h/20-1: build: PASS
@@ -613,12 +519,8 @@ conformance/definitions/time_h/25-1: build: PASS
 conformance/definitions/time_h/25-1: link: SKIP
 conformance/definitions/time_h/26-1: build: PASS
 conformance/definitions/time_h/26-1: link: SKIP
-conformance/definitions/time_h/27-1: build: FAILED: Compiler output: 
-conformance/definitions/time_h/27-1.c: In function 'dummyfcn':
-conformance/definitions/time_h/27-1.c:21:13: error: 'strptime' undeclared (first use in this function)
-  dummyvar = strptime;
-             ^
-conformance/definitions/time_h/27-1.c:21:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/27-1: build: PASS
+conformance/definitions/time_h/27-1: link: SKIP
 conformance/definitions/time_h/28-1: build: PASS
 conformance/definitions/time_h/28-1: link: SKIP
 conformance/definitions/time_h/29-1: build: PASS
@@ -641,18 +543,10 @@ conformance/definitions/time_h/33-1: build: PASS
 conformance/definitions/time_h/33-1: link: SKIP
 conformance/definitions/time_h/34-1: build: PASS
 conformance/definitions/time_h/34-1: link: SKIP
-conformance/definitions/time_h/35-1: build: FAILED: Compiler output: 
-conformance/definitions/time_h/35-1.c: In function 'dummyfcn':
-conformance/definitions/time_h/35-1.c:18:10: error: 'daylight' undeclared (first use in this function)
-  dummy = daylight;
-          ^
-conformance/definitions/time_h/35-1.c:18:10: note: each undeclared identifier is reported only once for each function it appears in
-conformance/definitions/time_h/35-2: build: FAILED: Compiler output: 
-conformance/definitions/time_h/35-2.c: In function 'dummyfcn':
-conformance/definitions/time_h/35-2.c:17:10: error: 'timezone' undeclared (first use in this function)
-  dummy = timezone;
-          ^
-conformance/definitions/time_h/35-2.c:17:10: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/time_h/35-1: build: PASS
+conformance/definitions/time_h/35-1: link: SKIP
+conformance/definitions/time_h/35-2: build: PASS
+conformance/definitions/time_h/35-2: link: SKIP
 conformance/definitions/time_h/35-3: build: PASS
 conformance/definitions/time_h/35-3: link: SKIP
 conformance/definitions/time_h/4-1: build: PASS
@@ -767,7 +661,7 @@ conformance/interfaces/aio_read/14-1: build: PASS
 conformance/interfaces/aio_read/14-1: link: PASS
 conformance/interfaces/aio_read/15-1: build: PASS
 conformance/interfaces/aio_read/15-1: link: PASS
-conformance/interfaces/aio_readruild: PASS
+conformance/interfaces/aio_read/2-1: build: PASS
 conformance/interfaces/aio_read/2-1: link: PASS
 conformance/interfaces/aio_read/3-1: build: PASS
 conformance/interfaces/aio_read/3-1: link: PASS
@@ -1689,10 +1583,6 @@ conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: error: 'PTHREAD_STACK_
                ^
 conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/pthread_attr_setstack/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/2-1.c: In function 'thread_func':
-conformance/interfaces/pthread_attr_setstack/2-1.c:48:7: warning: implicit declaration of function 'pthread_getattr_np' [-Wimplicit-function-declaration]
-  rc = pthread_getattr_np(pthread_self(), &attr);
-       ^
 conformance/interfaces/pthread_attr_setstack/2-1.c: In function 'main':
 conformance/interfaces/pthread_attr_setstack/2-1.c:90:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
   stack_size = PTHREAD_STACK_MIN;
@@ -1731,10 +1621,6 @@ conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: error: 'PTHREAD_ST
                       ^
 conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/pthread_attr_setstacksize/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstacksize/2-1.c: In function 'thread_func':
-conformance/interfaces/pthread_attr_setstacksize/2-1.c:46:7: warning: implicit declaration of function 'pthread_getattr_np' [-Wimplicit-function-declaration]
-  rc = pthread_getattr_np(pthread_self(), &attr);
-       ^
 conformance/interfaces/pthread_attr_setstacksize/2-1.c: In function 'main':
 conformance/interfaces/pthread_attr_setstacksize/2-1.c:79:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
   stack_size = PTHREAD_STACK_MIN;
@@ -2064,9 +1950,6 @@ conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: error: '_SC_CPUTIM
   if (sysconf(_SC_CPUTIME) == -1) {
               ^
 conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_condattr_setclock/1-3.c:63:7: warning: implicit declaration of function 'pthread_condattr_setclock' [-Wimplicit-function-declaration]
-  rc = pthread_condattr_setclock(&condattr, clockid);
-       ^
 conformance/interfaces/pthread_condattr_setclock/2-1: build: PASS
 conformance/interfaces/pthread_condattr_setclock/2-1: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/1-1: build: PASS
@@ -2894,6 +2777,10 @@ conformance/interfaces/sched_setscheduler/7-1: link: PASS
 conformance/interfaces/sched_setscheduler/9-1: build: PASS
 conformance/interfaces/sched_setscheduler/9-1: link: PASS
 conformance/interfaces/sched_yield/1-1: build: FAILED: Compiler output: 
+conformance/interfaces/sched_yield/1-1.c:27:0: warning: "_NETBSD_SOURCE" redefined
+ #define _NETBSD_SOURCE
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
 conformance/interfaces/sched_yield/1-1.c: In function 'set_thread_affinity':
 conformance/interfaces/sched_yield/1-1.c:124:2: error: unknown type name 'cpu_set_t'
   cpu_set_t cpu_mask;

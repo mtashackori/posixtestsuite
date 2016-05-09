@@ -4,11 +4,6 @@ timers:
    _SC_THREAD_CPUTIME
    _SC_DELAYTIMER_MAX
 
-   getdate
-   strptime
-   daylight
-   timezone
-
 pthreads: 
    PTHREAD_PRIO_INHERIT   
    PTHREAD_PRIO_NONE
