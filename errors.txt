@@ -1,4 +1,6 @@
 
+Errors that caused by feature missing
+
 timers:
    _SC_CPUTIME  (freebsd)
    _SC_THREAD_CPUTIME (freebsd)  
@@ -47,3 +49,24 @@ mmap:
 
 semaphore 
     _SC_SEM_NSEMS_MAX  (freebsd)
+
+
+Errors that caused by usage (build with -D_NETBSD_SOURCE -lpthread -lrt -lm and disable compiler warnings and use current) 
+struct rlimit (inlcude sys/resource.h)
+setpgrp (netbsd needs to pass 2 parameters, but other systems, like like linux does not)
+struct sigaction sa (include signal.h)
+sigfillset(&sa.sa_mask) (include signal.h)
+sigaction(include signal.h) 
+SIGBUS (include signal.h)
+sigfillset (include signal.h)
+SIGSEGV (include signal.h)
+PTHREAD_ONCE_INIT (need force the type to be pthread_once_t)
+cpu_set_t (netbsd has its own implementation)
+CPU_ZERO (netbsd has its own implementation)
+CPU_SETSIZE (netbsd has its own implementation)
+sched_setaffinity (netbsd has its own implementation)
+pthread_setaffinity_np (caused by wrong parameters passed in, convert parameter to be netbsd specific)
+features.h (no features.h, actually netbsd does not need this file to be correct, just removed)
+SIGNAL (depends on macro which is not defined)
+SIG_INVALID (depends on macro which is not defined)
+SIGTOTEST  (depends on macro which is not defined)
