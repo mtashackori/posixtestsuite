@@ -32,8 +32,8 @@ scheduler:
 
 signals:
     SIGPOLL (freebsd)
-    SIGRTMIN (provided, but need to expose to userland)
-    SIGRTMAX (provided, but need to expose to userland) 
+    SIGRTMIN (done, waitting for reviews)
+    SIGRTMAX (done, waitting for reviews) 
     _SC_REALTIME_SIGNALS (freebsd)
     _SC_SIGQUEUE_MAX  (freebsd)  
     bsd_signal (linux)
