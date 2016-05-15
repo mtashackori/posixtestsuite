@@ -585,12 +585,8 @@ conformance/interfaces/aio_cancel/2-1: build: PASS
 conformance/interfaces/aio_cancel/2-1: link: PASS
 conformance/interfaces/aio_cancel/2-2: build: PASS
 conformance/interfaces/aio_cancel/2-2: link: PASS
-conformance/interfaces/aio_cancel/3-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_cancel/3-1.c: In function 'main':
-conformance/interfaces/aio_cancel/3-1.c:97:16: error: 'SIGRTMIN' undeclared (first use in this function)
-  if (sigaction(SIGRTMIN+1, &action, NULL))
-                ^
-conformance/interfaces/aio_cancel/3-1.c:97:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_cancel/3-1: build: PASS
+conformance/interfaces/aio_cancel/3-1: link: PASS
 conformance/interfaces/aio_cancel/4-1: build: PASS
 conformance/interfaces/aio_cancel/4-1: link: PASS
 conformance/interfaces/aio_cancel/5-1: build: PASS
@@ -689,48 +685,24 @@ conformance/interfaces/aio_return/3-2: build: PASS
 conformance/interfaces/aio_return/3-2: link: PASS
 conformance/interfaces/aio_return/4-1: build: PASS
 conformance/interfaces/aio_return/4-1: link: PASS
-conformance/interfaces/aio_suspend/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/1-1.c: In function 'main':
-conformance/interfaces/aio_suspend/1-1.c:127:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/1-1.c:127:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/1-1: build: PASS
+conformance/interfaces/aio_suspend/1-1: link: PASS
 conformance/interfaces/aio_suspend/2-1: build: PASS
 conformance/interfaces/aio_suspend/2-1: link: PASS
 conformance/interfaces/aio_suspend/3-1: build: PASS
 conformance/interfaces/aio_suspend/3-1: link: PASS
-conformance/interfaces/aio_suspend/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/4-1.c: In function 'main':
-conformance/interfaces/aio_suspend/4-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/4-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/4-1: build: PASS
+conformance/interfaces/aio_suspend/4-1: link: PASS
 conformance/interfaces/aio_suspend/5-1: build: PASS
 conformance/interfaces/aio_suspend/5-1: link: PASS
-conformance/interfaces/aio_suspend/6-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/6-1.c: In function 'main':
-conformance/interfaces/aio_suspend/6-1.c:123:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/6-1.c:123:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/aio_suspend/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/7-1.c: In function 'main':
-conformance/interfaces/aio_suspend/7-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/7-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/aio_suspend/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/8-1.c: In function 'main':
-conformance/interfaces/aio_suspend/8-1.c:128:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/8-1.c:128:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/aio_suspend/9-1: build: FAILED: Compiler output: 
-conformance/interfaces/aio_suspend/9-1.c: In function 'main':
-conformance/interfaces/aio_suspend/9-1.c:125:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/aio_suspend/9-1.c:125:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/aio_suspend/6-1: build: PASS
+conformance/interfaces/aio_suspend/6-1: link: PASS
+conformance/interfaces/aio_suspend/7-1: build: PASS
+conformance/interfaces/aio_suspend/7-1: link: PASS
+conformance/interfaces/aio_suspend/8-1: build: PASS
+conformance/interfaces/aio_suspend/8-1: link: PASS
+conformance/interfaces/aio_suspend/9-1: build: PASS
+conformance/interfaces/aio_suspend/9-1: link: PASS
 conformance/interfaces/aio_write/1-1: build: PASS
 conformance/interfaces/aio_write/1-1: link: PASS
 conformance/interfaces/aio_write/1-2: build: PASS
@@ -962,40 +934,20 @@ conformance/interfaces/killpg/6-1: build: PASS
 conformance/interfaces/killpg/6-1: link: PASS
 conformance/interfaces/killpg/8-1: build: PASS
 conformance/interfaces/killpg/8-1: link: PASS
-conformance/interfaces/lio_listio/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/1-1.c: In function 'main':
-conformance/interfaces/lio_listio/1-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/1-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/lio_listio/10-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/10-1.c: In function 'main':
-conformance/interfaces/lio_listio/10-1.c:107:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/10-1.c:107:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/lio_listio/11-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/11-1.c: In function 'main':
-conformance/interfaces/lio_listio/11-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/11-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/1-1: build: PASS
+conformance/interfaces/lio_listio/1-1: link: PASS
+conformance/interfaces/lio_listio/10-1: build: PASS
+conformance/interfaces/lio_listio/10-1: link: PASS
+conformance/interfaces/lio_listio/11-1: build: PASS
+conformance/interfaces/lio_listio/11-1: link: PASS
 conformance/interfaces/lio_listio/12-1: build: PASS
 conformance/interfaces/lio_listio/12-1: link: PASS
 conformance/interfaces/lio_listio/13-1: build: PASS
 conformance/interfaces/lio_listio/13-1: link: PASS
-conformance/interfaces/lio_listio/14-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/14-1.c: In function 'main':
-conformance/interfaces/lio_listio/14-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/14-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/lio_listio/15-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/15-1.c: In function 'main':
-conformance/interfaces/lio_listio/15-1.c:111:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/15-1.c:111:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/14-1: build: PASS
+conformance/interfaces/lio_listio/14-1: link: PASS
+conformance/interfaces/lio_listio/15-1: build: PASS
+conformance/interfaces/lio_listio/15-1: link: PASS
 conformance/interfaces/lio_listio/16-1: build: PASS
 conformance/interfaces/lio_listio/16-1: link: PASS
 conformance/interfaces/lio_listio/17-1: build: PASS
@@ -1004,12 +956,8 @@ conformance/interfaces/lio_listio/18-1: build: PASS
 conformance/interfaces/lio_listio/18-1: link: PASS
 conformance/interfaces/lio_listio/19-1: build: PASS
 conformance/interfaces/lio_listio/19-1: link: PASS
-conformance/interfaces/lio_listio/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/2-1.c: In function 'main':
-conformance/interfaces/lio_listio/2-1.c:106:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/2-1.c:106:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/2-1: build: PASS
+conformance/interfaces/lio_listio/2-1: link: PASS
 conformance/interfaces/lio_listio/20-1: build: PASS
 conformance/interfaces/lio_listio/20-1: link: PASS
 conformance/interfaces/lio_listio/21-1: build: PASS
@@ -1022,28 +970,16 @@ conformance/interfaces/lio_listio/24-1: build: PASS
 conformance/interfaces/lio_listio/24-1: link: PASS
 conformance/interfaces/lio_listio/25-1: build: PASS
 conformance/interfaces/lio_listio/25-1: link: PASS
-conformance/interfaces/lio_listio/3-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/3-1.c: In function 'main':
-conformance/interfaces/lio_listio/3-1.c:107:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/3-1.c:107:41: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/lio_listio/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/4-1.c: In function 'main':
-conformance/interfaces/lio_listio/4-1.c:114:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/4-1.c:114:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/3-1: build: PASS
+conformance/interfaces/lio_listio/3-1: link: PASS
+conformance/interfaces/lio_listio/4-1: build: PASS
+conformance/interfaces/lio_listio/4-1: link: PASS
 conformance/interfaces/lio_listio/5-1: build: PASS
 conformance/interfaces/lio_listio/5-1: link: PASS
 conformance/interfaces/lio_listio/6-1: build: PASS
 conformance/interfaces/lio_listio/6-1: link: PASS
-conformance/interfaces/lio_listio/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/lio_listio/7-1.c: In function 'main':
-conformance/interfaces/lio_listio/7-1.c:113:41: error: 'SIGRTMIN' undeclared (first use in this function)
-   aiocbs[i]->aio_sigevent.sigev_signo = SIGRTMIN+1;
-                                         ^
-conformance/interfaces/lio_listio/7-1.c:113:41: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/lio_listio/7-1: build: PASS
+conformance/interfaces/lio_listio/7-1: link: PASS
 conformance/interfaces/lio_listio/8-1: build: PASS
 conformance/interfaces/lio_listio/8-1: link: PASS
 conformance/interfaces/lio_listio/9-1: build: PASS
@@ -3913,18 +3849,11 @@ conformance/interfaces/sigaction/28-8: link: PASS
 conformance/interfaces/sigaction/28-9: build: PASS
 conformance/interfaces/sigaction/28-9: link: PASS
 conformance/interfaces/sigaction/29-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/29-1.c: In function 'handler':
-conformance/interfaces/sigaction/29-1.c:95:25: error: 'SIGRTMAX' undeclared (first use in this function)
-  if ( info->si_signo != SIGRTMAX )
-                         ^
-conformance/interfaces/sigaction/29-1.c:95:25: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigaction/29-1.c: In function 'main':
 conformance/interfaces/sigaction/29-1.c:125:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
   rts = sysconf( _SC_REALTIME_SIGNALS );
                  ^
-conformance/interfaces/sigaction/29-1.c:145:19: error: 'SIGRTMAX' undeclared (first use in this function)
-  ret = sigaction( SIGRTMAX, &sa, 0 );
-                   ^
+conformance/interfaces/sigaction/29-1.c:125:17: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigaction/3-1: build: PASS
 conformance/interfaces/sigaction/3-1: link: PASS
 conformance/interfaces/sigaction/3-10: build: PASS
@@ -3981,20 +3910,8 @@ conformance/interfaces/sigaction/3-8: build: PASS
 conformance/interfaces/sigaction/3-8: link: PASS
 conformance/interfaces/sigaction/3-9: build: PASS
 conformance/interfaces/sigaction/3-9: link: PASS
-conformance/interfaces/sigaction/30-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/30-1.c: In function 'main':
-conformance/interfaces/sigaction/30-1.c:82:21: error: 'SIGRTMAX' undeclared (first use in this function)
- #define SIG_INVALID SIGRTMAX+10
-                     ^
-conformance/interfaces/sigaction/30-1.c:117:49: note: in expansion of macro 'SIG_INVALID'
-  output( "Trying to catch invalid signal %d\n", SIG_INVALID );
-                                                 ^
-conformance/interfaces/sigaction/30-1.c:82:21: note: each undeclared identifier is reported only once for each function it appears in
- #define SIG_INVALID SIGRTMAX+10
-                     ^
-conformance/interfaces/sigaction/30-1.c:117:49: note: in expansion of macro 'SIG_INVALID'
-  output( "Trying to catch invalid signal %d\n", SIG_INVALID );
-                                                 ^
+conformance/interfaces/sigaction/30-1: build: PASS
+conformance/interfaces/sigaction/30-1: link: PASS
 conformance/interfaces/sigaction/4-1: build: PASS
 conformance/interfaces/sigaction/4-1: link: PASS
 conformance/interfaces/sigaction/4-10: build: PASS
@@ -4495,27 +4412,8 @@ conformance/interfaces/sigprocmask/8-3.c:31:21: error: 'SIGPOLL' undeclared (fir
 conformance/interfaces/sigprocmask/8-3.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigprocmask/9-1: build: PASS
 conformance/interfaces/sigprocmask/9-1: link: PASS
-conformance/interfaces/sigqueue/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/1-1.c: In function 'myhandler':
-conformance/interfaces/sigqueue/1-1.c:22:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/1-1.c:33:16: note: in expansion of macro 'SIGTOTEST'
-  if ((signo == SIGTOTEST) && (info->si_value.sival_int == VALTOTEST)) {
-                ^
-conformance/interfaces/sigqueue/1-1.c:22:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/1-1.c:33:16: note: in expansion of macro 'SIGTOTEST'
-  if ((signo == SIGTOTEST) && (info->si_value.sival_int == VALTOTEST)) {
-                ^
-conformance/interfaces/sigqueue/1-1.c: In function 'main':
-conformance/interfaces/sigqueue/1-1.c:22:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/1-1.c:49:13: note: in expansion of macro 'SIGTOTEST'
-   sigaction(SIGTOTEST, &act, 0);
-             ^
+conformance/interfaces/sigqueue/1-1: build: PASS
+conformance/interfaces/sigqueue/1-1: link: PASS
 conformance/interfaces/sigqueue/10-1: build: PASS
 conformance/interfaces/sigqueue/10-1: link: PASS
 conformance/interfaces/sigqueue/11-1: build: PASS
@@ -4528,103 +4426,22 @@ conformance/interfaces/sigqueue/2-2: build: PASS
 conformance/interfaces/sigqueue/2-2: link: PASS
 conformance/interfaces/sigqueue/3-1: build: PASS
 conformance/interfaces/sigqueue/3-1: link: PASS
-conformance/interfaces/sigqueue/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/4-1.c: In function 'main':
-conformance/interfaces/sigqueue/4-1.c:23:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/4-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/4-1.c:23:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/4-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/4-1.c:56:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
-conformance/interfaces/sigqueue/5-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/5-1.c: In function 'main':
-conformance/interfaces/sigqueue/5-1.c:23:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/5-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/5-1.c:23:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/5-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/5-1.c:56:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
-conformance/interfaces/sigqueue/6-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/6-1.c: In function 'main':
-conformance/interfaces/sigqueue/6-1.c:28:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/6-1.c:58:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/6-1.c:28:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/6-1.c:58:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/6-1.c:63:20: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-  if ((return_val = sigqueue(pid, SIGTOTEST, value)) != 0) {
-                    ^
-conformance/interfaces/sigqueue/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/7-1.c: In function 'main':
-conformance/interfaces/sigqueue/7-1.c:58:13: error: 'SIGRTMAX' undeclared (first use in this function)
-  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
-             ^
-conformance/interfaces/sigqueue/7-1.c:58:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigqueue/7-1.c:58:30: error: 'SIGRTMIN' undeclared (first use in this function)
-  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
-                              ^
-conformance/interfaces/sigqueue/7-1.c:69:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, rtsig, value) != 0) {
-       ^
-conformance/interfaces/sigqueue/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/8-1.c: In function 'main':
-conformance/interfaces/sigqueue/8-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/8-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/8-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/8-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/8-1.c:57:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
+conformance/interfaces/sigqueue/4-1: build: PASS
+conformance/interfaces/sigqueue/4-1: link: PASS
+conformance/interfaces/sigqueue/5-1: build: PASS
+conformance/interfaces/sigqueue/5-1: link: PASS
+conformance/interfaces/sigqueue/6-1: build: PASS
+conformance/interfaces/sigqueue/6-1: link: PASS
+conformance/interfaces/sigqueue/7-1: build: PASS
+conformance/interfaces/sigqueue/7-1: link: PASS
+conformance/interfaces/sigqueue/8-1: build: PASS
+conformance/interfaces/sigqueue/8-1: link: PASS
 conformance/interfaces/sigqueue/9-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/9-1.c: In function 'main':
-conformance/interfaces/sigqueue/9-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/9-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigqueue/9-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigqueue/9-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
 conformance/interfaces/sigqueue/9-1.c:56:21: error: '_SC_SIGQUEUE_MAX' undeclared (first use in this function)
   syslimit = sysconf(_SC_SIGQUEUE_MAX);
                      ^
+conformance/interfaces/sigqueue/9-1.c:56:21: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigqueue/9-1.c:68:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
    if (sigqueue(pid, SIGTOTEST, value) != 0) {
        ^
@@ -4682,12 +4499,8 @@ conformance/interfaces/sigtimedwait/6-1: build: PASS
 conformance/interfaces/sigtimedwait/6-1: link: PASS
 conformance/interfaces/sigwait/1-1: build: PASS
 conformance/interfaces/sigwait/1-1: link: PASS
-conformance/interfaces/sigwait/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigwait/2-1.c: In function 'main':
-conformance/interfaces/sigwait/2-1.c:45:28: error: 'SIGRTMIN' undeclared (first use in this function)
-  if ( sigaddset( &newmask, SIGRTMIN ) == -1 )
-                            ^
-conformance/interfaces/sigwait/2-1.c:45:28: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigwait/2-1: build: PASS
+conformance/interfaces/sigwait/2-1: link: PASS
 conformance/interfaces/sigwait/3-1: build: PASS
 conformance/interfaces/sigwait/3-1: link: PASS
 conformance/interfaces/sigwait/4-1: build: PASS
@@ -4702,68 +4515,22 @@ conformance/interfaces/sigwait/7-1.c:98:17: error: '_SC_REALTIME_SIGNALS' undecl
   rts = sysconf( _SC_REALTIME_SIGNALS );
                  ^
 conformance/interfaces/sigwait/7-1.c:98:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigwait/7-1.c:114:12: error: 'SIGRTMIN' undeclared (first use in this function)
-  for ( i = SIGRTMIN; i <= SIGRTMAX; i++ )
-            ^
-conformance/interfaces/sigwait/7-1.c:114:27: error: 'SIGRTMAX' undeclared (first use in this function)
-  for ( i = SIGRTMIN; i <= SIGRTMAX; i++ )
-                           ^
 conformance/interfaces/sigwait/8-1: build: PASS
 conformance/interfaces/sigwait/8-1: link: PASS
 conformance/interfaces/sigwaitinfo/1-1: build: PASS
 conformance/interfaces/sigwaitinfo/1-1: link: PASS
-conformance/interfaces/sigwaitinfo/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigwaitinfo/2-1.c: In function 'main':
-conformance/interfaces/sigwaitinfo/2-1.c:49:13: error: 'SIGRTMAX' undeclared (first use in this function)
-  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
-             ^
-conformance/interfaces/sigwaitinfo/2-1.c:49:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigwaitinfo/2-1.c:49:30: error: 'SIGRTMIN' undeclared (first use in this function)
-  for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
-                              ^
-conformance/interfaces/sigwaitinfo/2-1.c:60:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, rtsig, value) != 0) {
-       ^
+conformance/interfaces/sigwaitinfo/2-1: build: PASS
+conformance/interfaces/sigwaitinfo/2-1: link: PASS
 conformance/interfaces/sigwaitinfo/3-1: build: PASS
 conformance/interfaces/sigwaitinfo/3-1: link: PASS
 conformance/interfaces/sigwaitinfo/5-1: build: PASS
 conformance/interfaces/sigwaitinfo/5-1: link: PASS
 conformance/interfaces/sigwaitinfo/6-1: build: PASS
 conformance/interfaces/sigwaitinfo/6-1: link: PASS
-conformance/interfaces/sigwaitinfo/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigwaitinfo/7-1.c: In function 'main':
-conformance/interfaces/sigwaitinfo/7-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigwaitinfo/7-1.c:51:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigwaitinfo/7-1.c:24:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigwaitinfo/7-1.c:51:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigwaitinfo/7-1.c:59:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
-conformance/interfaces/sigwaitinfo/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigwaitinfo/8-1.c: In function 'main':
-conformance/interfaces/sigwaitinfo/8-1.c:25:19: error: 'SIGRTMIN' undeclared (first use in this function)
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigwaitinfo/8-1.c:50:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigwaitinfo/8-1.c:25:19: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGTOTEST SIGRTMIN
-                   ^
-conformance/interfaces/sigwaitinfo/8-1.c:50:12: note: in expansion of macro 'SIGTOTEST'
-  sigaction(SIGTOTEST, &act, 0);
-            ^
-conformance/interfaces/sigwaitinfo/8-1.c:58:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
+conformance/interfaces/sigwaitinfo/7-1: build: PASS
+conformance/interfaces/sigwaitinfo/7-1: link: PASS
+conformance/interfaces/sigwaitinfo/8-1: build: PASS
+conformance/interfaces/sigwaitinfo/8-1: link: PASS
 conformance/interfaces/sigwaitinfo/9-1: build: PASS
 conformance/interfaces/sigwaitinfo/9-1: link: PASS
 conformance/interfaces/strftime/1-1: build: PASS
