@@ -1,13 +1,13 @@
+conformance/behavior/timers/1-1: build: PASS
+conformance/behavior/timers/1-1: link: PASS
+conformance/behavior/timers/2-1: build: PASS
+conformance/behavior/timers/2-1: link: PASS
 conformance/behavior/WIFEXITED/1-1: build: PASS
 conformance/behavior/WIFEXITED/1-1: link: PASS
 conformance/behavior/WIFEXITED/1-2: build: PASS
 conformance/behavior/WIFEXITED/1-2: link: PASS
 conformance/behavior/WIFEXITED/1-3: build: PASS
 conformance/behavior/WIFEXITED/1-3: link: PASS
-conformance/behavior/timers/1-1: build: PASS
-conformance/behavior/timers/1-1: link: PASS
-conformance/behavior/timers/2-1: build: PASS
-conformance/behavior/timers/2-1: link: PASS
 conformance/definitions/aio_h/1-1: build: PASS
 conformance/definitions/aio_h/1-1: link: SKIP
 conformance/definitions/aio_h/1-2: build: PASS
@@ -1950,6 +1950,9 @@ conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: error: '_SC_CPUTIM
   if (sysconf(_SC_CPUTIME) == -1) {
               ^
 conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_condattr_setclock/1-3.c:63:7: warning: implicit declaration of function 'pthread_condattr_setclock' [-Wimplicit-function-declaration]
+  rc = pthread_condattr_setclock(&condattr, clockid);
+       ^
 conformance/interfaces/pthread_condattr_setclock/2-1: build: PASS
 conformance/interfaces/pthread_condattr_setclock/2-1: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/1-1: build: PASS
@@ -4539,6 +4542,9 @@ conformance/interfaces/sigqueue/4-1.c:23:19: note: each undeclared identifier is
 conformance/interfaces/sigqueue/4-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigqueue/4-1.c:56:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigqueue/5-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/5-1.c: In function 'main':
 conformance/interfaces/sigqueue/5-1.c:23:19: error: 'SIGRTMIN' undeclared (first use in this function)
@@ -4553,6 +4559,9 @@ conformance/interfaces/sigqueue/5-1.c:23:19: note: each undeclared identifier is
 conformance/interfaces/sigqueue/5-1.c:48:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigqueue/5-1.c:56:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigqueue/6-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/6-1.c: In function 'main':
 conformance/interfaces/sigqueue/6-1.c:28:19: error: 'SIGRTMIN' undeclared (first use in this function)
@@ -4567,6 +4576,9 @@ conformance/interfaces/sigqueue/6-1.c:28:19: note: each undeclared identifier is
 conformance/interfaces/sigqueue/6-1.c:58:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigqueue/6-1.c:63:20: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+  if ((return_val = sigqueue(pid, SIGTOTEST, value)) != 0) {
+                    ^
 conformance/interfaces/sigqueue/7-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/7-1.c: In function 'main':
 conformance/interfaces/sigqueue/7-1.c:58:13: error: 'SIGRTMAX' undeclared (first use in this function)
@@ -4576,6 +4588,9 @@ conformance/interfaces/sigqueue/7-1.c:58:13: note: each undeclared identifier is
 conformance/interfaces/sigqueue/7-1.c:58:30: error: 'SIGRTMIN' undeclared (first use in this function)
   for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
                               ^
+conformance/interfaces/sigqueue/7-1.c:69:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, rtsig, value) != 0) {
+       ^
 conformance/interfaces/sigqueue/8-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/8-1.c: In function 'main':
 conformance/interfaces/sigqueue/8-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
@@ -4590,6 +4605,9 @@ conformance/interfaces/sigqueue/8-1.c:24:19: note: each undeclared identifier is
 conformance/interfaces/sigqueue/8-1.c:49:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigqueue/8-1.c:57:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigqueue/9-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigqueue/9-1.c: In function 'main':
 conformance/interfaces/sigqueue/9-1.c:24:19: error: 'SIGRTMIN' undeclared (first use in this function)
@@ -4607,6 +4625,9 @@ conformance/interfaces/sigqueue/9-1.c:49:12: note: in expansion of macro 'SIGTOT
 conformance/interfaces/sigqueue/9-1.c:56:21: error: '_SC_SIGQUEUE_MAX' undeclared (first use in this function)
   syslimit = sysconf(_SC_SIGQUEUE_MAX);
                      ^
+conformance/interfaces/sigqueue/9-1.c:68:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigrelse/1-1: build: PASS
 conformance/interfaces/sigrelse/1-1: link: PASS
 conformance/interfaces/sigrelse/2-1: build: PASS
@@ -4700,6 +4721,9 @@ conformance/interfaces/sigwaitinfo/2-1.c:49:13: note: each undeclared identifier
 conformance/interfaces/sigwaitinfo/2-1.c:49:30: error: 'SIGRTMIN' undeclared (first use in this function)
   for (rtsig=SIGRTMAX; rtsig>=SIGRTMIN; rtsig--) {
                               ^
+conformance/interfaces/sigwaitinfo/2-1.c:60:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, rtsig, value) != 0) {
+       ^
 conformance/interfaces/sigwaitinfo/3-1: build: PASS
 conformance/interfaces/sigwaitinfo/3-1: link: PASS
 conformance/interfaces/sigwaitinfo/5-1: build: PASS
@@ -4720,6 +4744,9 @@ conformance/interfaces/sigwaitinfo/7-1.c:24:19: note: each undeclared identifier
 conformance/interfaces/sigwaitinfo/7-1.c:51:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigwaitinfo/7-1.c:59:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigwaitinfo/8-1: build: FAILED: Compiler output: 
 conformance/interfaces/sigwaitinfo/8-1.c: In function 'main':
 conformance/interfaces/sigwaitinfo/8-1.c:25:19: error: 'SIGRTMIN' undeclared (first use in this function)
@@ -4734,6 +4761,9 @@ conformance/interfaces/sigwaitinfo/8-1.c:25:19: note: each undeclared identifier
 conformance/interfaces/sigwaitinfo/8-1.c:50:12: note: in expansion of macro 'SIGTOTEST'
   sigaction(SIGTOTEST, &act, 0);
             ^
+conformance/interfaces/sigwaitinfo/8-1.c:58:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
+   if (sigqueue(pid, SIGTOTEST, value) != 0) {
+       ^
 conformance/interfaces/sigwaitinfo/9-1: build: PASS
 conformance/interfaces/sigwaitinfo/9-1: link: PASS
 conformance/interfaces/strftime/1-1: build: PASS
