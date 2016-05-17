@@ -32,8 +32,8 @@ scheduler:
 
 signals:
     SIGPOLL (freebsd)
-    SIGRTMIN (done, waitting for reviews)
-    SIGRTMAX (done, waitting for reviews) 
+    SIGRTMIN (done, should wait for realtime signals to be done)
+    SIGRTMAX (done, should wait for realtime signals to be done) 
     _SC_REALTIME_SIGNALS (freebsd)
     _SC_SIGQUEUE_MAX  (freebsd)  
     bsd_signal (linux)
@@ -48,7 +48,7 @@ mmap:
     posix_typed_mem_open (linux)
 
 semaphore 
-    _SC_SEM_NSEMS_MAX  (freebsd)
+    _SC_SEM_NSEMS_MAX  (done, but needs kernel to fail allocate more)
 
 
 Errors that caused by usage (build with -D_NETBSD_SOURCE -lpthread -lrt -lm and disable compiler warnings and use current) 
