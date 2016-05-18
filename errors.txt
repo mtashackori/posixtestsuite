@@ -2,9 +2,32 @@
 Errors that caused by feature missing
 
 timers:
-   _SC_CPUTIME  (freebsd)
-   _SC_THREAD_CPUTIME (freebsd)  
-   _SC_DELAYTIMER_MAX (freebsd)
+   _SC_CPUTIME  (freebsd, 200112L set to be, _POSIX_CPUTIME)
+   _SC_THREAD_CPUTIME (freebsd, 200112L set to be, _POSIX_THREAD_CPUTIME)  
+   _SC_DELAYTIMER_MAX (freebsd, called from sysctl)
+
+scheduler:
+    SCHED_SPORADIC (linux)
+
+signals:
+    SIGPOLL (freebsd)
+    SIGRTMIN (done, should wait for realtime signals to be done)
+    SIGRTMAX (done, should wait for realtime signals to be done) 
+    _SC_REALTIME_SIGNALS (freebsd, called from sysctl?)
+    _SC_SIGQUEUE_MAX  (freebsd, called from sysctl?)  
+    bsd_signal (waiting for compiling results)
+
+semaphore 
+    _SC_SEM_NSEMS_MAX  (done, but needs kernel to fail allocate more)
+
+mmap:
+    POSIX_TYPED_MEM_ALLOCATE  (linux)
+    POSIX_TYPED_MEM_ALLOCATE_CONTIG (linux) 
+    POSIX_TYPED_MEM_MAP_ALLOCATABLE (linux)
+    struct posix_typed_mem_info (linux)
+    posix_mem_offset (linux)
+    posix_typed_mem_get_info (linux)
+    posix_typed_mem_open (linux)
 
 pthreads: 
    PTHREAD_PRIO_INHERIT  (freebsd)
@@ -26,29 +49,6 @@ pthreads:
    pthread_rwlockattr_setpshared  (freebsd)
    pthread_mutex_getprioceiling  (freebsd)
    pthread_mutex_timedlock (freebsd)
-
-scheduler:
-    SCHED_SPORADIC (linux)
-
-signals:
-    SIGPOLL (freebsd)
-    SIGRTMIN (done, should wait for realtime signals to be done)
-    SIGRTMAX (done, should wait for realtime signals to be done) 
-    _SC_REALTIME_SIGNALS (freebsd)
-    _SC_SIGQUEUE_MAX  (freebsd)  
-    bsd_signal (linux)
-
-mmap:
-    POSIX_TYPED_MEM_ALLOCATE  (linux)
-    POSIX_TYPED_MEM_ALLOCATE_CONTIG (linux) 
-    POSIX_TYPED_MEM_MAP_ALLOCATABLE (linux)
-    struct posix_typed_mem_info (linux)
-    posix_mem_offset (linux)
-    posix_typed_mem_get_info (linux)
-    posix_typed_mem_open (linux)
-
-semaphore 
-    _SC_SEM_NSEMS_MAX  (done, but needs kernel to fail allocate more)
 
 
 Errors that caused by usage (build with -D_NETBSD_SOURCE -lpthread -lrt -lm and disable compiler warnings and use current) 

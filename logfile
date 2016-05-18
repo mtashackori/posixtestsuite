@@ -274,12 +274,8 @@ conformance/definitions/signal_h/22-8: build: PASS
 conformance/definitions/signal_h/22-8: link: SKIP
 conformance/definitions/signal_h/22-9: build: PASS
 conformance/definitions/signal_h/22-9: link: SKIP
-conformance/definitions/signal_h/23-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/23-1.c: In function 'dummyfcn':
-conformance/definitions/signal_h/23-1.c:15:11: error: 'bsd_signal' undeclared (first use in this function)
-  dummyvar=bsd_signal;
-           ^
-conformance/definitions/signal_h/23-1.c:15:11: note: each undeclared identifier is reported only once for each function it appears in
+conformance/definitions/signal_h/23-1: build: PASS
+conformance/definitions/signal_h/23-1: link: SKIP
 conformance/definitions/signal_h/24-1: build: PASS
 conformance/definitions/signal_h/24-1: link: SKIP
 conformance/definitions/signal_h/25-1: build: PASS
@@ -4659,7 +4655,3 @@ functional/threads/schedule/1-1: build: PASS
 functional/threads/schedule/1-1: link: PASS
 functional/threads/schedule/1-2: build: PASS
 functional/threads/schedule/1-2: link: PASS
-conformance/interfaces/sem_init/7-1: build: PASS
-conformance/interfaces/sem_init/7-1: link: PASS
-conformance/interfaces/sem_init/7-1: build: PASS
-conformance/interfaces/sem_init/7-1: link: PASS
