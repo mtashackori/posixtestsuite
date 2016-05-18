@@ -34,19 +34,77 @@ pthreads:
    PTHREAD_PRIO_NONE   (freebsd)
    PTHREAD_PRIO_PROTECT  (freebsd)
    PTHREAD_STACK_MIN  (freebsd)
+
    pthread_barrierattr_getpshared  (freebsd)
    pthread_barrierattr_setpshared  (freebsd)
+
+   netbsd
+   struct __pthread_barrier_st {
+          unsigned int  ptb_magic;
+    
+          /* Protects data below */
+          pthread_spin_t  ptb_lock;
+     
+          pthread_queue_t ptb_waiters;
+          unsigned int  ptb_initcount;
+          unsigned int  ptb_curcount;
+          unsigned int  ptb_generation;
+      
+          void    *ptb_private;
+    };
+
+  freebsd
+  struct pthread_barrierattr {
+         int   pshared;
+  };
+
    pthread_mutexattr_setpshared  (freebsd)
    pthread_mutexattr_getpshared  (freebsd)
-   pthread_condattr_setpshared (freebsd)
-   pthread_condattr_getpshared (freebsd)
-   pthread_condattr_getclock (freebsd)
    pthread_mutexattr_getprioceiling  (freebsd)
    pthread_mutexattr_setprioceiling  (freebsd) 
    pthread_mutexattr_getprotocol (freebsd)
    pthread_mutexattr_setprotocol  (freebsd)
+
+   netbsd:
+   struct __pthread_mutexattr_st {
+      unsigned int  ptma_magic;
+      void  *ptma_private;
+  };
+  
+  freebsd:
+  struct pthread_mutex_attr {
+    enum pthread_mutextype  m_type;
+    int     m_protocol;
+    int     m_ceiling;
+    int     m_pshared;
+  };
+
+   pthread_condattr_setpshared (freebsd)
+   pthread_condattr_getpshared (freebsd)
+   pthread_condattr_getclock (freebsd)
+
+    struct  __pthread_condattr_st {
+          unsigned int  ptca_magic;
+          void  *ptca_private;
+    };
+
+    struct pthread_cond_attr {
+          int   c_pshared;
+          int   c_clockid;
+    };
+
    pthread_rwlockattr_getpshared (freebsd)
    pthread_rwlockattr_setpshared  (freebsd)
+
+   struct __pthread_rwlockattr_st {
+         unsigned int  ptra_magic;
+         void *ptra_private;
+    };
+
+    struct pthread_rwlockattr {
+        int   pshared;
+    };
+    
    pthread_mutex_getprioceiling  (freebsd)
    pthread_mutex_timedlock (freebsd)
 
