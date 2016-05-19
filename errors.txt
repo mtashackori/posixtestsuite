@@ -81,7 +81,7 @@ pthreads:
 
    pthread_condattr_setpshared (freebsd)
    pthread_condattr_getpshared (freebsd)
-   pthread_condattr_getclock (freebsd)
+   pthread_condattr_getclock (done, need to send for review)
 
     struct  __pthread_condattr_st {
           unsigned int  ptca_magic;
