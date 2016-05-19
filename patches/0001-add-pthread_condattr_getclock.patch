@@ -6,8 +6,6 @@ index 8f7da27..3b79c50f 100644
  
  #ifndef _LIB_PTHREAD_H
  #define _LIB_PTHREAD_H
--
-+#define TEST
  #include <sys/cdefs.h>
  
  #include <time.h>	/* For timespec */
