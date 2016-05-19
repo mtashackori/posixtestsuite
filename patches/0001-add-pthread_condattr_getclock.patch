@@ -1,0 +1,40 @@
+diff --git a/lib/libpthread/pthread.h b/lib/libpthread/pthread.h
+index 8f7da27..3b79c50f 100644
+--- a/lib/libpthread/pthread.h
++++ b/lib/libpthread/pthread.h
+@@ -31,7 +31,7 @@
+ 
+ #ifndef _LIB_PTHREAD_H
+ #define _LIB_PTHREAD_H
+-
++#define TEST
+ #include <sys/cdefs.h>
+ 
+ #include <time.h>	/* For timespec */
+@@ -114,6 +114,7 @@ int	pthread_cond_broadcast(pthread_cond_t *);
+ int	pthread_condattr_init(pthread_condattr_t *);
+ #if defined(_NETBSD_SOURCE)
+ int     pthread_condattr_setclock(pthread_condattr_t *, clockid_t);
++int	pthread_condattr_getclock(pthread_condattr_t *);
+ #endif
+ int	pthread_condattr_destroy(pthread_condattr_t *);
+ 
+diff --git a/lib/libpthread/pthread_cond.c b/lib/libpthread/pthread_cond.c
+index 4be884a..e703aa3 100644
+--- a/lib/libpthread/pthread_cond.c
++++ b/lib/libpthread/pthread_cond.c
+@@ -370,6 +370,14 @@ pthread_condattr_setclock(pthread_condattr_t *attr, clockid_t clck)
+ }
+ 
+ int
++pthread_condattr_getclock(pthread_condattr_t *attr)
++{
++	if (attr == NULL || attr->ptca_private == NULL)
++		return EINVAL;
++	return *(int *)attr->ptca_private;
++}
++
++int
+ pthread_condattr_destroy(pthread_condattr_t *attr)
+ {
+ 
