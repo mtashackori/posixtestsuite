@@ -35,8 +35,8 @@ pthreads:
    PTHREAD_PRIO_PROTECT  (freebsd)
    PTHREAD_STACK_MIN  (freebsd)
 
-   pthread_barrierattr_getpshared  (freebsd)
-   pthread_barrierattr_setpshared  (freebsd)
+   pthread_barrierattr_getpshared  (done, but need to provide more)
+   pthread_barrierattr_setpshared  (done, but need to provide more)
 
    netbsd
    struct __pthread_barrier_st {

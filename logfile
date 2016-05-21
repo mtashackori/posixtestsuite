@@ -1615,31 +1615,17 @@ conformance/interfaces/pthread_barrier_wait/6-1: link: PASS
 conformance/interfaces/pthread_barrierattr_destroy/1-1: build: PASS
 conformance/interfaces/pthread_barrierattr_destroy/1-1: link: PASS
 conformance/interfaces/pthread_barrierattr_getpshared/1-1: build: PASS
-conformance/interfaces/pthread_barrierattr_getpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_barrierattr_getpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_getpshared/1-1.c:40: undefined reference to `pthread_barrierattr_getpshared'
+conformance/interfaces/pthread_barrierattr_getpshared/1-1: link: PASS
 conformance/interfaces/pthread_barrierattr_getpshared/2-1: build: PASS
-conformance/interfaces/pthread_barrierattr_getpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_barrierattr_getpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_getpshared/2-1.c:88: undefined reference to `pthread_barrierattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_getpshared/2-1.c:94: undefined reference to `pthread_barrierattr_getpshared'
+conformance/interfaces/pthread_barrierattr_getpshared/2-1: link: PASS
 conformance/interfaces/pthread_barrierattr_init/1-1: build: PASS
-conformance/interfaces/pthread_barrierattr_init/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_barrierattr_init/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_init/1-1.c:41: undefined reference to `pthread_barrierattr_getpshared'
+conformance/interfaces/pthread_barrierattr_init/1-1: link: PASS
 conformance/interfaces/pthread_barrierattr_init/2-1: build: PASS
 conformance/interfaces/pthread_barrierattr_init/2-1: link: PASS
 conformance/interfaces/pthread_barrierattr_setpshared/1-1: build: PASS
-conformance/interfaces/pthread_barrierattr_setpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_barrierattr_setpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:44: undefined reference to `pthread_barrierattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:51: undefined reference to `pthread_barrierattr_getpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:64: undefined reference to `pthread_barrierattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_setpshared/1-1.c:71: undefined reference to `pthread_barrierattr_getpshared'
+conformance/interfaces/pthread_barrierattr_setpshared/1-1: link: PASS
 conformance/interfaces/pthread_barrierattr_setpshared/2-1: build: PASS
-conformance/interfaces/pthread_barrierattr_setpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_barrierattr_setpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_barrierattr_setpshared/2-1.c:52: undefined reference to `pthread_barrierattr_setpshared'
+conformance/interfaces/pthread_barrierattr_setpshared/2-1: link: PASS
 conformance/interfaces/pthread_cleanup_pop/1-1: build: PASS
 conformance/interfaces/pthread_cleanup_pop/1-1: link: PASS
 conformance/interfaces/pthread_cleanup_pop/1-2: build: PASS

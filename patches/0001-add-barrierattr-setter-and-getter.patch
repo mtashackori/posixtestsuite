@@ -1,0 +1,56 @@
+From 4949f2e68523951b2f0184285a2f9ace94797b29 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Sat, 21 May 2016 04:22:18 +0000
+Subject: [PATCH] add barrierattr setter and getter
+
+---
+ lib/libpthread/pthread.h         |  3 ++-
+ lib/libpthread/pthread_barrier.c | 18 ++++++++++++++++++
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+
+diff --git a/lib/libpthread/pthread.h b/lib/libpthread/pthread.h
+index 3b79c50..6a9e475 100644
+--- a/lib/libpthread/pthread.h
++++ b/lib/libpthread/pthread.h
+@@ -186,7 +186,8 @@ int	pthread_barrier_wait(pthread_barrier_t *);
+ int	pthread_barrier_destroy(pthread_barrier_t *);
+ int	pthread_barrierattr_init(pthread_barrierattr_t *);
+ int	pthread_barrierattr_destroy(pthread_barrierattr_t *);
+-
++int	pthread_barrierattr_getpshared(const pthread_barrierattr_t * __restrict , int* __restrict pshared);
++int	pthread_barrierattr_setpshared(pthread_barrierattr_t *attr, int pshared);
+ int	pthread_getschedparam(pthread_t, int * __restrict,
+ 	    struct sched_param * __restrict);
+ int	pthread_setschedparam(pthread_t, int, const struct sched_param *);
+diff --git a/lib/libpthread/pthread_barrier.c b/lib/libpthread/pthread_barrier.c
+index 4fa5f16..0e4f5aa 100644
+--- a/lib/libpthread/pthread_barrier.c
++++ b/lib/libpthread/pthread_barrier.c
+@@ -117,6 +117,24 @@ pthread_barrier_wait(pthread_barrier_t *barrier)
+ 	return 0;
+ }
+ 
++int
++pthread_barrierattr_getpshared(const pthread_barrierattr_t * __restrict attr, int * __restrict pshared)
++{
++	*pshared = PTHREAD_PROCESS_PRIVATE;
++	return 0;
++}
++
++int
++pthread_barrierattr_setpshared(pthread_barrierattr_t* attr, int pshared)
++{
++	switch(pshared) {
++	case PTHREAD_PROCESS_PRIVATE:
++		return 0;
++	case PTHREAD_PROCESS_SHARED:
++		return ENOSYS;
++	}
++	return EINVAL;
++}
+ 
+ int
+ pthread_barrierattr_init(pthread_barrierattr_t *attr)
+-- 
+2.6.4
+
