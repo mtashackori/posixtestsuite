@@ -1641,19 +1641,13 @@ conformance/interfaces/pthread_cleanup_push/1-3: link: PASS
 conformance/interfaces/pthread_cond_broadcast/1-1: build: PASS
 conformance/interfaces/pthread_cond_broadcast/1-1: link: PASS
 conformance/interfaces/pthread_cond_broadcast/1-2: build: PASS
-conformance/interfaces/pthread_cond_broadcast/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_broadcast/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_broadcast/1-2.c:418: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_broadcast/1-2.c:420: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_broadcast/1-2: link: PASS
 conformance/interfaces/pthread_cond_broadcast/2-1: build: PASS
 conformance/interfaces/pthread_cond_broadcast/2-1: link: PASS
 conformance/interfaces/pthread_cond_broadcast/2-2: build: PASS
 conformance/interfaces/pthread_cond_broadcast/2-2: link: PASS
 conformance/interfaces/pthread_cond_broadcast/2-3: build: PASS
-conformance/interfaces/pthread_cond_broadcast/2-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_broadcast/2-3.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_broadcast/2-3.c:408: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_broadcast/2-3.c:410: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_broadcast/2-3: link: PASS
 conformance/interfaces/pthread_cond_broadcast/4-1: build: PASS
 conformance/interfaces/pthread_cond_broadcast/4-1: link: PASS
 conformance/interfaces/pthread_cond_broadcast/4-2: build: PASS
@@ -1661,10 +1655,7 @@ conformance/interfaces/pthread_cond_broadcast/4-2: link: PASS
 conformance/interfaces/pthread_cond_destroy/1-1: build: PASS
 conformance/interfaces/pthread_cond_destroy/1-1: link: PASS
 conformance/interfaces/pthread_cond_destroy/2-1: build: PASS
-conformance/interfaces/pthread_cond_destroy/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_destroy/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_destroy/2-1.c:410: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_destroy/2-1.c:412: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_destroy/2-1: link: PASS
 conformance/interfaces/pthread_cond_destroy/3-1: build: PASS
 conformance/interfaces/pthread_cond_destroy/3-1: link: PASS
 conformance/interfaces/pthread_cond_destroy/speculative/4-1: build: PASS
@@ -1674,10 +1665,7 @@ conformance/interfaces/pthread_cond_init/1-1: link: PASS
 conformance/interfaces/pthread_cond_init/1-2: build: PASS
 conformance/interfaces/pthread_cond_init/1-2: link: PASS
 conformance/interfaces/pthread_cond_init/1-3: build: PASS
-conformance/interfaces/pthread_cond_init/1-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_init/1-3.o: In function `do_tps_test':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/1-3.c:672: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/1-3.c:703: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_init/1-3: link: PASS
 conformance/interfaces/pthread_cond_init/2-1: build: PASS
 conformance/interfaces/pthread_cond_init/2-1: link: PASS
 conformance/interfaces/pthread_cond_init/2-2: build: PASS
@@ -1685,22 +1673,13 @@ conformance/interfaces/pthread_cond_init/2-2: link: PASS
 conformance/interfaces/pthread_cond_init/3-1: build: PASS
 conformance/interfaces/pthread_cond_init/3-1: link: PASS
 conformance/interfaces/pthread_cond_init/4-1: build: PASS
-conformance/interfaces/pthread_cond_init/4-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_init/4-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/4-1.c:144: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/4-1.c:146: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_init/4-1: link: PASS
 conformance/interfaces/pthread_cond_init/4-2: build: PASS
-conformance/interfaces/pthread_cond_init/4-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_init/4-2.o: In function `threaded':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/4-2.c:170: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_init/4-2.c:172: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_init/4-2: link: PASS
 conformance/interfaces/pthread_cond_signal/1-1: build: PASS
 conformance/interfaces/pthread_cond_signal/1-1: link: PASS
 conformance/interfaces/pthread_cond_signal/1-2: build: PASS
-conformance/interfaces/pthread_cond_signal/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_signal/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_signal/1-2.c:373: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_signal/1-2.c:375: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_signal/1-2: link: PASS
 conformance/interfaces/pthread_cond_signal/2-1: build: PASS
 conformance/interfaces/pthread_cond_signal/2-1: link: PASS
 conformance/interfaces/pthread_cond_signal/2-2: build: PASS
@@ -1718,34 +1697,19 @@ conformance/interfaces/pthread_cond_timedwait/2-2: link: PASS
 conformance/interfaces/pthread_cond_timedwait/2-3: build: PASS
 conformance/interfaces/pthread_cond_timedwait/2-3: link: PASS
 conformance/interfaces/pthread_cond_timedwait/2-4: build: PASS
-conformance/interfaces/pthread_cond_timedwait/2-4: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_timedwait/2-4.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-4.c:377: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-4.c:379: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_timedwait/2-4: link: PASS
 conformance/interfaces/pthread_cond_timedwait/2-5: build: PASS
-conformance/interfaces/pthread_cond_timedwait/2-5: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_timedwait/2-5.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-5.c:255: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-5.c:264: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_timedwait/2-5: link: PASS
 conformance/interfaces/pthread_cond_timedwait/2-6: build: PASS
-conformance/interfaces/pthread_cond_timedwait/2-6: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_timedwait/2-6.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-6.c:278: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-6.c:287: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_timedwait/2-6: link: PASS
 conformance/interfaces/pthread_cond_timedwait/2-7: build: PASS
-conformance/interfaces/pthread_cond_timedwait/2-7: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_timedwait/2-7.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-7.c:383: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/2-7.c:385: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_timedwait/2-7: link: PASS
 conformance/interfaces/pthread_cond_timedwait/3-1: build: PASS
 conformance/interfaces/pthread_cond_timedwait/3-1: link: PASS
 conformance/interfaces/pthread_cond_timedwait/4-1: build: PASS
 conformance/interfaces/pthread_cond_timedwait/4-1: link: PASS
 conformance/interfaces/pthread_cond_timedwait/4-2: build: PASS
-conformance/interfaces/pthread_cond_timedwait/4-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_timedwait/4-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/4-2.c:329: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_timedwait/4-2.c:331: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_timedwait/4-2: link: PASS
 conformance/interfaces/pthread_cond_timedwait/4-3: build: PASS
 conformance/interfaces/pthread_cond_timedwait/4-3: link: PASS
 conformance/interfaces/pthread_cond_wait/1-1: build: PASS
@@ -1753,15 +1717,9 @@ conformance/interfaces/pthread_cond_wait/1-1: link: PASS
 conformance/interfaces/pthread_cond_wait/2-1: build: PASS
 conformance/interfaces/pthread_cond_wait/2-1: link: PASS
 conformance/interfaces/pthread_cond_wait/2-2: build: PASS
-conformance/interfaces/pthread_cond_wait/2-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_wait/2-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_wait/2-2.c:362: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_wait/2-2.c:364: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_wait/2-2: link: PASS
 conformance/interfaces/pthread_cond_wait/2-3: build: PASS
-conformance/interfaces/pthread_cond_wait/2-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_cond_wait/2-3.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_wait/2-3.c:271: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_cond_wait/2-3.c:280: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_cond_wait/2-3: link: PASS
 conformance/interfaces/pthread_cond_wait/3-1: build: PASS
 conformance/interfaces/pthread_cond_wait/3-1: link: PASS
 conformance/interfaces/pthread_cond_wait/4-1: build: PASS
@@ -1821,23 +1779,13 @@ conformance/interfaces/pthread_condattr_getclock/1-1: link: PASS
 conformance/interfaces/pthread_condattr_getclock/1-2: build: PASS
 conformance/interfaces/pthread_condattr_getclock/1-2: link: PASS
 conformance/interfaces/pthread_condattr_getpshared/1-1: build: PASS
-conformance/interfaces/pthread_condattr_getpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_getpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_getpshared/1-1.c:49: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_getpshared/1-1.c:57: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_getpshared/1-1: link: PASS
 conformance/interfaces/pthread_condattr_getpshared/1-2: build: PASS
-conformance/interfaces/pthread_condattr_getpshared/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_getpshared/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_getpshared/1-2.c:49: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_getpshared/1-2.c:57: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_getpshared/1-2: link: PASS
 conformance/interfaces/pthread_condattr_getpshared/2-1: build: PASS
-conformance/interfaces/pthread_condattr_getpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_getpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_getpshared/2-1.c:43: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_getpshared/2-1: link: PASS
 conformance/interfaces/pthread_condattr_init/1-1: build: PASS
-conformance/interfaces/pthread_condattr_init/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_init/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_init/1-1.c:43: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_init/1-1: link: PASS
 conformance/interfaces/pthread_condattr_init/3-1: build: PASS
 conformance/interfaces/pthread_condattr_init/3-1: link: PASS
 conformance/interfaces/pthread_condattr_setclock/1-1: build: PASS
@@ -1856,19 +1804,11 @@ conformance/interfaces/pthread_condattr_setclock/1-3.c:63:7: warning: implicit d
 conformance/interfaces/pthread_condattr_setclock/2-1: build: PASS
 conformance/interfaces/pthread_condattr_setclock/2-1: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/1-1: build: PASS
-conformance/interfaces/pthread_condattr_setpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_setpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_setpshared/1-1.c:56: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_setpshared/1-1.c:64: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_setpshared/1-1: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/1-2: build: PASS
-conformance/interfaces/pthread_condattr_setpshared/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_setpshared/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_setpshared/1-2.c:56: undefined reference to `pthread_condattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_setpshared/1-2.c:64: undefined reference to `pthread_condattr_getpshared'
+conformance/interfaces/pthread_condattr_setpshared/1-2: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/2-1: build: PASS
-conformance/interfaces/pthread_condattr_setpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_condattr_setpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_condattr_setpshared/2-1.c:50: undefined reference to `pthread_condattr_setpshared'
+conformance/interfaces/pthread_condattr_setpshared/2-1: link: PASS
 conformance/interfaces/pthread_detach/1-1: build: PASS
 conformance/interfaces/pthread_detach/1-1: link: PASS
 conformance/interfaces/pthread_detach/1-2: build: PASS
@@ -1980,17 +1920,13 @@ conformance/interfaces/pthread_mutex_destroy/1-1: link: PASS
 conformance/interfaces/pthread_mutex_destroy/2-1: build: PASS
 conformance/interfaces/pthread_mutex_destroy/2-1: link: PASS
 conformance/interfaces/pthread_mutex_destroy/2-2: build: PASS
-conformance/interfaces/pthread_mutex_destroy/2-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_destroy/2-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_destroy/2-2.c:130: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_destroy/2-2: link: PASS
 conformance/interfaces/pthread_mutex_destroy/3-1: build: PASS
 conformance/interfaces/pthread_mutex_destroy/3-1: link: PASS
 conformance/interfaces/pthread_mutex_destroy/5-1: build: PASS
 conformance/interfaces/pthread_mutex_destroy/5-1: link: PASS
 conformance/interfaces/pthread_mutex_destroy/5-2: build: PASS
-conformance/interfaces/pthread_mutex_destroy/5-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_destroy/5-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_destroy/5-2.c:131: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_destroy/5-2: link: PASS
 conformance/interfaces/pthread_mutex_destroy/speculative/4-2: build: PASS
 conformance/interfaces/pthread_mutex_destroy/speculative/4-2: link: PASS
 conformance/interfaces/pthread_mutex_getprioceiling/1-1: build: PASS
@@ -2052,25 +1988,17 @@ conformance/interfaces/pthread_mutex_timedlock/5-3.o: In function `f1':
 conformance/interfaces/pthread_mutex_trylock/1-1: build: PASS
 conformance/interfaces/pthread_mutex_trylock/1-1: link: PASS
 conformance/interfaces/pthread_mutex_trylock/1-2: build: PASS
-conformance/interfaces/pthread_mutex_trylock/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_trylock/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_trylock/1-2.c:271: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_trylock/1-2: link: PASS
 conformance/interfaces/pthread_mutex_trylock/2-1: build: PASS
-conformance/interfaces/pthread_mutex_trylock/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_trylock/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_trylock/2-1.c:248: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_trylock/2-1: link: PASS
 conformance/interfaces/pthread_mutex_trylock/3-1: build: PASS
 conformance/interfaces/pthread_mutex_trylock/3-1: link: PASS
 conformance/interfaces/pthread_mutex_trylock/4-1: build: PASS
 conformance/interfaces/pthread_mutex_trylock/4-1: link: PASS
 conformance/interfaces/pthread_mutex_trylock/4-2: build: PASS
-conformance/interfaces/pthread_mutex_trylock/4-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_trylock/4-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_trylock/4-2.c:272: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_trylock/4-2: link: PASS
 conformance/interfaces/pthread_mutex_trylock/4-3: build: PASS
-conformance/interfaces/pthread_mutex_trylock/4-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_trylock/4-3.o: In function `test':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_trylock/4-3.c:204: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutex_trylock/4-3: link: PASS
 conformance/interfaces/pthread_mutex_unlock/1-1: build: PASS
 conformance/interfaces/pthread_mutex_unlock/1-1: link: PASS
 conformance/interfaces/pthread_mutex_unlock/2-1: build: PASS
@@ -2125,23 +2053,13 @@ conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:47:6: warning: implic
    if(pthread_mutexattr_getprotocol(&mta, &protocol) != 0)
       ^
 conformance/interfaces/pthread_mutexattr_getpshared/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_getpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/1-1.c:43: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_getpshared/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/1-2: build: PASS
-conformance/interfaces/pthread_mutexattr_getpshared/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getpshared/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/1-2.c:46: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/1-2.c:54: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_getpshared/1-2: link: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/1-3: build: PASS
-conformance/interfaces/pthread_mutexattr_getpshared/1-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getpshared/1-3.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/1-3.c:46: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/1-3.c:54: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_getpshared/1-3: link: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/3-1: build: PASS
-conformance/interfaces/pthread_mutexattr_getpshared/3-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getpshared/3-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getpshared/3-1.c:43: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_getpshared/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_gettype/1-1: build: PASS
 conformance/interfaces/pthread_mutexattr_gettype/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_gettype/1-2: build: PASS
@@ -2155,9 +2073,7 @@ conformance/interfaces/pthread_mutexattr_gettype/1-5: link: PASS
 conformance/interfaces/pthread_mutexattr_gettype/speculative/3-1: build: PASS
 conformance/interfaces/pthread_mutexattr_gettype/speculative/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_init/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_init/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_init/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_init/1-1.c:43: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_init/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_init/3-1: build: PASS
 conformance/interfaces/pthread_mutexattr_init/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setprioceiling/1-1: build: PASS
@@ -2215,30 +2131,17 @@ conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: error: 'PTHREA
                                            ^
 conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/pthread_mutexattr_setpshared/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/1-1.c:56: undefined reference to `pthread_mutexattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/1-1.c:63: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/1-2: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/1-2.c:43: undefined reference to `pthread_mutexattr_getpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/1-2: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/2-1: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/2-1.c:43: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/2-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/2-2: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/2-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/2-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/2-2.c:43: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/2-2: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/3-1: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/3-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/3-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/3-1.c:39: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/3-2: build: PASS
-conformance/interfaces/pthread_mutexattr_setpshared/3-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setpshared/3-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setpshared/3-2.c:42: undefined reference to `pthread_mutexattr_setpshared'
+conformance/interfaces/pthread_mutexattr_setpshared/3-2: link: PASS
 conformance/interfaces/pthread_mutexattr_settype/1-1: build: PASS
 conformance/interfaces/pthread_mutexattr_settype/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_settype/2-1: build: PASS
@@ -2342,31 +2245,17 @@ conformance/interfaces/pthread_rwlockattr_destroy/1-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_destroy/2-1: build: PASS
 conformance/interfaces/pthread_rwlockattr_destroy/2-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_getpshared/1-1: build: PASS
-conformance/interfaces/pthread_rwlockattr_getpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_rwlockattr_getpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_getpshared/1-1.c:41: undefined reference to `pthread_rwlockattr_getpshared'
+conformance/interfaces/pthread_rwlockattr_getpshared/1-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_getpshared/2-1: build: PASS
-conformance/interfaces/pthread_rwlockattr_getpshared/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_rwlockattr_getpshared/2-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_getpshared/2-1.c:65: undefined reference to `pthread_rwlockattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_getpshared/2-1.c:71: undefined reference to `pthread_rwlockattr_getpshared'
+conformance/interfaces/pthread_rwlockattr_getpshared/2-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_getpshared/4-1: build: PASS
-conformance/interfaces/pthread_rwlockattr_getpshared/4-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_rwlockattr_getpshared/4-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_getpshared/4-1.c:41: undefined reference to `pthread_rwlockattr_getpshared'
+conformance/interfaces/pthread_rwlockattr_getpshared/4-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_init/1-1: build: PASS
-conformance/interfaces/pthread_rwlockattr_init/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_rwlockattr_init/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_init/1-1.c:44: undefined reference to `pthread_rwlockattr_getpshared'
+conformance/interfaces/pthread_rwlockattr_init/1-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_init/2-1: build: PASS
 conformance/interfaces/pthread_rwlockattr_init/2-1: link: PASS
 conformance/interfaces/pthread_rwlockattr_setpshared/1-1: build: PASS
-conformance/interfaces/pthread_rwlockattr_setpshared/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_rwlockattr_setpshared/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:42: undefined reference to `pthread_rwlockattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:49: undefined reference to `pthread_rwlockattr_getpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:61: undefined reference to `pthread_rwlockattr_setpshared'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_rwlockattr_setpshared/1-1.c:68: undefined reference to `pthread_rwlockattr_getpshared'
+conformance/interfaces/pthread_rwlockattr_setpshared/1-1: link: PASS
 conformance/interfaces/pthread_self/1-1: build: PASS
 conformance/interfaces/pthread_self/1-1: link: PASS
 conformance/interfaces/pthread_setcancelstate/1-1: build: PASS

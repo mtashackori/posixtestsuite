@@ -1,0 +1,132 @@
+From a6d7dffbce0c60306507192a994c9ab0d1303aa6 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Sun, 22 May 2016 01:18:49 +0000
+Subject: [PATCH] getter and setter of cond, mutex and rwlock
+
+---
+ lib/libpthread/pthread.h        |  8 ++++++--
+ lib/libpthread/pthread_cond.c   | 17 +++++++++++++++++
+ lib/libpthread/pthread_mutex.c  | 17 +++++++++++++++++
+ lib/libpthread/pthread_rwlock.c | 17 +++++++++++++++++
+ 4 files changed, 57 insertions(+), 2 deletions(-)
+
+diff --git a/lib/libpthread/pthread.h b/lib/libpthread/pthread.h
+index 6a9e475..5970378 100644
+--- a/lib/libpthread/pthread.h
++++ b/lib/libpthread/pthread.h
+@@ -96,6 +96,8 @@ int	pthread_mutex_trylock(pthread_mutex_t *);
+ int	pthread_mutex_unlock(pthread_mutex_t *);
+ int	pthread_mutexattr_init(pthread_mutexattr_t *);
+ int	pthread_mutexattr_destroy(pthread_mutexattr_t *);
++int	pthread_mutexattr_getpshared(const pthread_mutexattr_t*__restrict attr, int *__restrict pshared);
++int	pthread_mutexattr_setpshared(pthread_mutexattr_t *attr, int pshared);
+ int	pthread_mutexattr_gettype(const pthread_mutexattr_t * __restrict,
+ 	    int * __restrict);
+ int	pthread_mutexattr_settype(pthread_mutexattr_t *attr, int);
+@@ -117,7 +119,8 @@ int     pthread_condattr_setclock(pthread_condattr_t *, clockid_t);
+ int	pthread_condattr_getclock(pthread_condattr_t *);
+ #endif
+ int	pthread_condattr_destroy(pthread_condattr_t *);
+-
++int	pthread_condattr_getpshared(const pthread_condattr_t *__restrict attr, int* __restrict pshared);
++int	pthread_condattr_setpshared(pthread_condattr_t *attr, int pshared);
+ int	pthread_once(pthread_once_t *, void (*)(void));
+ 
+ int	pthread_key_create(pthread_key_t *, void (*)(void *));
+@@ -179,7 +182,8 @@ int	pthread_rwlock_timedwrlock(pthread_rwlock_t * __restrict,
+ int	pthread_rwlock_unlock(pthread_rwlock_t *);
+ int	pthread_rwlockattr_init(pthread_rwlockattr_t *);
+ int	pthread_rwlockattr_destroy(pthread_rwlockattr_t *);
+-
++int	pthread_rwlockattr_getpshared(const pthread_rwlockattr_t*__restrict attr, int *__restrict pshared);
++int	pthread_rwlockattr_setpshared(pthread_rwlockattr_t *attr, int pshared);
+ int	pthread_barrier_init(pthread_barrier_t * __restrict,
+ 	    const pthread_barrierattr_t * __restrict, unsigned int);
+ int	pthread_barrier_wait(pthread_barrier_t *);
+diff --git a/lib/libpthread/pthread_cond.c b/lib/libpthread/pthread_cond.c
+index e703aa3..1c0fb30 100644
+--- a/lib/libpthread/pthread_cond.c
++++ b/lib/libpthread/pthread_cond.c
+@@ -390,6 +390,23 @@ pthread_condattr_destroy(pthread_condattr_t *attr)
+ 	return 0;
+ }
+ 
++int
++pthread_condattr_getpshared(const pthread_condattr_t *__restrict attr, int *__restrict pshared) {
++	*pshared = PTHREAD_PROCESS_PRIVATE;
++	return 0;
++}
++
++int
++pthread_condattr_setpshared(pthread_condattr_t *attr, int pshared) {
++	switch(pshared) {
++	case PTHREAD_PROCESS_PRIVATE:
++		return 0;
++	case PTHREAD_PROCESS_SHARED:
++		return ENOSYS;
++	}
++	return EINVAL;
++}
++
+ /* Utility routine to hang out for a while if threads haven't started yet. */
+ static int
+ pthread_cond_wait_nothread(pthread_t self, pthread_mutex_t *mutex,
+diff --git a/lib/libpthread/pthread_mutex.c b/lib/libpthread/pthread_mutex.c
+index 2d8eed5..e755ade 100644
+--- a/lib/libpthread/pthread_mutex.c
++++ b/lib/libpthread/pthread_mutex.c
+@@ -618,6 +618,23 @@ pthread_mutexattr_settype(pthread_mutexattr_t *attr, int type)
+ 	}
+ }
+ 
++int
++pthread_mutexattr_getpshared(const pthread_mutexattr_t *__restrict attr, int* __restrict pshared) {
++	*pshared = PTHREAD_PROCESS_PRIVATE;
++	return 0;
++}
++
++int
++pthread_mutexattr_setpshared(pthread_mutexattr_t *attr, int pshared) {
++	switch(pshared) {
++	case PTHREAD_PROCESS_PRIVATE:
++		return 0;
++	case PTHREAD_PROCESS_SHARED:
++		return ENOSYS;
++	}
++	return EINVAL;
++}
++
+ /*
+  * pthread__mutex_deferwake: try to defer unparking threads in self->pt_waiters
+  *
+diff --git a/lib/libpthread/pthread_rwlock.c b/lib/libpthread/pthread_rwlock.c
+index e5712ab..8766b08 100644
+--- a/lib/libpthread/pthread_rwlock.c
++++ b/lib/libpthread/pthread_rwlock.c
+@@ -640,6 +640,23 @@ _pthread_rwlock_wrheld_np(pthread_rwlock_t *ptr)
+ }
+ 
+ int
++pthread_rwlockattr_getpshared(const pthread_rwlockattr_t* __restrict attr, int *__restrict pshared) {
++	*pshared = PTHREAD_PROCESS_PRIVATE;
++	return 0;
++}
++
++int
++pthread_rwlockattr_setpshared(pthread_rwlockattr_t*attr, int pshared) {
++	switch(pshared) {
++	case PTHREAD_PROCESS_PRIVATE:
++		return 0;
++	case PTHREAD_PROCESS_SHARED:
++		return ENOSYS;
++	}
++	return EINVAL;
++}
++
++int
+ pthread_rwlockattr_init(pthread_rwlockattr_t *attr)
+ {
+ 
+-- 
+2.6.4
+
