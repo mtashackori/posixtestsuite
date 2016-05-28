@@ -1,6 +1,27 @@
 
 Errors that caused by feature missing
 
+DONE:
+signals:
+  SIGRTMIN (done, should wait for realtime signals to be done)
+  SIGRTMAX (done, should wait for realtime signals to be done) 
+  bsd_signal (done, waitting for reviews)
+
+semaphore 
+  _SC_SEM_NSEMS_MAX  (done, but needs kernel to fail allocate more)
+
+pthreads: 
+  pthread_condattr_getclock (done, need to send for review)
+  pthread_barrierattr_getpshared  (done, but need to provide cross process sync)
+  pthread_barrierattr_setpshared  (done)
+  pthread_mutexattr_setpshared  (done)
+  pthread_mutexattr_getpshared  (done)
+  pthread_condattr_setpshared (done)
+  pthread_condattr_getpshared (done)
+  pthread_rwlockattr_getpshared (done)
+  pthread_rwlockattr_setpshared  (done)
+
+NOT DONE:
 timers:
    _SC_CPUTIME  (freebsd, 200112L set to be, _POSIX_CPUTIME)
    _SC_THREAD_CPUTIME (freebsd, 200112L set to be, _POSIX_THREAD_CPUTIME)  
@@ -11,14 +32,8 @@ scheduler:
 
 signals:
     SIGPOLL (freebsd)
-    SIGRTMIN (done, should wait for realtime signals to be done)
-    SIGRTMAX (done, should wait for realtime signals to be done) 
     _SC_REALTIME_SIGNALS (freebsd, called from sysctl?)
     _SC_SIGQUEUE_MAX  (freebsd, called from sysctl?)  
-    bsd_signal (waiting for compiling results)
-
-semaphore 
-    _SC_SEM_NSEMS_MAX  (done, but needs kernel to fail allocate more)
 
 mmap:
     POSIX_TYPED_MEM_ALLOCATE  (linux)
@@ -29,18 +44,7 @@ mmap:
     posix_typed_mem_get_info (linux)
     posix_typed_mem_open (linux)
 
-pthreads: 
-   pthread_condattr_getclock (done, need to send for review)
-   pthread_barrierattr_getpshared  (done, but need to provide cross process sync)
-   pthread_barrierattr_setpshared  (done)
-   pthread_mutexattr_setpshared  (done)
-   pthread_mutexattr_getpshared  (done)
-   pthread_condattr_setpshared (done)
-   pthread_condattr_getpshared (done)
-   pthread_rwlockattr_getpshared (done)
-   pthread_rwlockattr_setpshared  (done)
-
-
+pthread
    (refer to ad's patch)
    PTHREAD_PRIO_INHERIT  (freebsd)
    PTHREAD_PRIO_NONE   (freebsd)
