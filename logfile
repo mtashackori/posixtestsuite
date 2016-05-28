@@ -72,16 +72,8 @@ conformance/definitions/pthread_h/19-1: build: PASS
 conformance/definitions/pthread_h/19-1: link: SKIP
 conformance/definitions/pthread_h/2-1: build: PASS
 conformance/definitions/pthread_h/2-1: link: SKIP
-conformance/definitions/pthread_h/2-2: build: FAILED: Compiler output: 
-conformance/definitions/pthread_h/2-2.c:41:2: error: #error PTHREAD_PRIO_INHERIT not defined
- #error PTHREAD_PRIO_INHERIT not defined
-  ^
-conformance/definitions/pthread_h/2-2.c:46:2: error: #error PTHREAD_PRIO_NONE not defined
- #error PTHREAD_PRIO_NONE not defined
-  ^
-conformance/definitions/pthread_h/2-2.c:51:2: error: #error PTHREAD_PRIO_PROTECT not defined
- #error PTHREAD_PRIO_PROTECT not defined
-  ^
+conformance/definitions/pthread_h/2-2: build: PASS
+conformance/definitions/pthread_h/2-2: link: SKIP
 conformance/definitions/pthread_h/20-1: build: PASS
 conformance/definitions/pthread_h/20-1: link: SKIP
 conformance/definitions/pthread_h/3-1: build: PASS
@@ -1930,9 +1922,7 @@ conformance/interfaces/pthread_mutex_destroy/5-2: link: PASS
 conformance/interfaces/pthread_mutex_destroy/speculative/4-2: build: PASS
 conformance/interfaces/pthread_mutex_destroy/speculative/4-2: link: PASS
 conformance/interfaces/pthread_mutex_getprioceiling/1-1: build: PASS
-conformance/interfaces/pthread_mutex_getprioceiling/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_getprioceiling/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_getprioceiling/1-1.c:43: undefined reference to `pthread_mutex_getprioceiling'
+conformance/interfaces/pthread_mutex_getprioceiling/1-1: link: PASS
 conformance/interfaces/pthread_mutex_init/1-1: build: PASS
 conformance/interfaces/pthread_mutex_init/1-1: link: PASS
 conformance/interfaces/pthread_mutex_init/1-2: build: PASS
@@ -1962,29 +1952,17 @@ conformance/interfaces/pthread_mutex_lock/4-1: link: PASS
 conformance/interfaces/pthread_mutex_lock/5-1: build: PASS
 conformance/interfaces/pthread_mutex_lock/5-1: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/1-1: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/1-1.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/1-1.c:124: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/1-1: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/2-1: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/2-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/2-1.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/2-1.c:138: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/2-1: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/4-1: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/4-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/4-1.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/4-1.c:88: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/4-1: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/5-1: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/5-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/5-1.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/5-1.c:104: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/5-1: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/5-2: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/5-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/5-2.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/5-2.c:104: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/5-2: link: PASS
 conformance/interfaces/pthread_mutex_timedlock/5-3: build: PASS
-conformance/interfaces/pthread_mutex_timedlock/5-3: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutex_timedlock/5-3.o: In function `f1':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutex_timedlock/5-3.c:112: undefined reference to `pthread_mutex_timedlock'
+conformance/interfaces/pthread_mutex_timedlock/5-3: link: PASS
 conformance/interfaces/pthread_mutex_trylock/1-1: build: PASS
 conformance/interfaces/pthread_mutex_trylock/1-1: link: PASS
 conformance/interfaces/pthread_mutex_trylock/1-2: build: PASS
@@ -2018,40 +1996,15 @@ conformance/interfaces/pthread_mutexattr_destroy/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_destroy/4-1: build: PASS
 conformance/interfaces/pthread_mutexattr_destroy/4-1: link: PASS
 conformance/interfaces/pthread_mutexattr_getprioceiling/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_getprioceiling/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getprioceiling/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getprioceiling/1-1.c:44: undefined reference to `pthread_mutexattr_getprioceiling'
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_getprioceiling/1-2: build: PASS
-conformance/interfaces/pthread_mutexattr_getprioceiling/1-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.c:60: undefined reference to `pthread_mutexattr_getprioceiling'
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getprioceiling/1-2.c:53: undefined reference to `pthread_mutexattr_setprioceiling'
+conformance/interfaces/pthread_mutexattr_getprioceiling/1-2: link: PASS
 conformance/interfaces/pthread_mutexattr_getprioceiling/3-1: build: PASS
-conformance/interfaces/pthread_mutexattr_getprioceiling/3-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getprioceiling/3-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getprioceiling/3-1.c:36: undefined reference to `pthread_mutexattr_getprioceiling'
+conformance/interfaces/pthread_mutexattr_getprioceiling/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_getprotocol/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_getprotocol/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_getprotocol/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_getprotocol/1-1.c:38: undefined reference to `pthread_mutexattr_getprotocol'
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c: In function 'main':
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:33:13: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
-  protcls[0]=PTHREAD_PRIO_NONE;
-             ^
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:33:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:34:13: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
-  protcls[1]=PTHREAD_PRIO_INHERIT;
-             ^
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:35:13: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
-  protcls[2]=PTHREAD_PRIO_PROTECT;
-             ^
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:40:6: warning: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Wimplicit-function-declaration]
-   if(pthread_mutexattr_setprotocol(&mta,protcls[i]))
-      ^
-conformance/interfaces/pthread_mutexattr_getprotocol/1-2.c:47:6: warning: implicit declaration of function 'pthread_mutexattr_getprotocol' [-Wimplicit-function-declaration]
-   if(pthread_mutexattr_getprotocol(&mta, &protocol) != 0)
-      ^
+conformance/interfaces/pthread_mutexattr_getprotocol/1-1: link: PASS
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2: build: PASS
+conformance/interfaces/pthread_mutexattr_getprotocol/1-2: link: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/1-1: build: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_getpshared/1-2: build: PASS
@@ -2077,59 +2030,17 @@ conformance/interfaces/pthread_mutexattr_init/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_init/3-1: build: PASS
 conformance/interfaces/pthread_mutexattr_init/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setprioceiling/1-1: build: PASS
-conformance/interfaces/pthread_mutexattr_setprioceiling/1-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setprioceiling/1-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setprioceiling/1-1.c:52: undefined reference to `pthread_mutexattr_setprioceiling'
+conformance/interfaces/pthread_mutexattr_setprioceiling/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setprioceiling/3-1: build: PASS
-conformance/interfaces/pthread_mutexattr_setprioceiling/3-1: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setprioceiling/3-1.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setprioceiling/3-1.c:42: undefined reference to `pthread_mutexattr_setprioceiling'
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setprioceiling/3-2: build: PASS
-conformance/interfaces/pthread_mutexattr_setprioceiling/3-2: link: FAILED. Linker output: 
-conformance/interfaces/pthread_mutexattr_setprioceiling/3-2.o: In function `main':
-/home/ycui/posixtestsuite/conformance/interfaces/pthread_mutexattr_setprioceiling/3-2.c:44: undefined reference to `pthread_mutexattr_setprioceiling'
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c: In function 'main':
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:37:13: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
-  protcls[0]=PTHREAD_PRIO_NONE;
-             ^
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:37:13: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:38:13: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
-  protcls[1]=PTHREAD_PRIO_INHERIT;
-             ^
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:39:13: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
-  protcls[2]=PTHREAD_PRIO_PROTECT;
-             ^
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:44:6: warning: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Wimplicit-function-declaration]
-   if(pthread_mutexattr_setprotocol(&mta,protcls[i]) != 0)
-      ^
-conformance/interfaces/pthread_mutexattr_setprotocol/1-1.c:51:6: warning: implicit declaration of function 'pthread_mutexattr_getprotocol' [-Wimplicit-function-declaration]
-   if(pthread_mutexattr_getprotocol(&mta, &protocol) != 0)
-      ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c: In function 'main':
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:20: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
-  while(protocol == PTHREAD_PRIO_NONE || protocol == PTHREAD_PRIO_INHERIT
-                    ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:20: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:39:53: error: 'PTHREAD_PRIO_INHERIT' undeclared (first use in this function)
-  while(protocol == PTHREAD_PRIO_NONE || protocol == PTHREAD_PRIO_INHERIT
-                                                     ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:40:18: error: 'PTHREAD_PRIO_PROTECT' undeclared (first use in this function)
-   || protocol == PTHREAD_PRIO_PROTECT){
-                  ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-1.c:45:8: warning: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Wimplicit-function-declaration]
-  ret = pthread_mutexattr_setprotocol(&mta,protocol);
-        ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-2: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c: In function 'main':
-conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:8: warning: implicit declaration of function 'pthread_mutexattr_setprotocol' [-Wimplicit-function-declaration]
-  ret = pthread_mutexattr_setprotocol(&mta,PTHREAD_PRIO_NONE);
-        ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: error: 'PTHREAD_PRIO_NONE' undeclared (first use in this function)
-  ret = pthread_mutexattr_setprotocol(&mta,PTHREAD_PRIO_NONE);
-                                           ^
-conformance/interfaces/pthread_mutexattr_setprotocol/3-2.c:30:43: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_mutexattr_setprioceiling/3-2: link: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1: build: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/1-1: link: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1: build: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/3-1: link: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2: build: PASS
+conformance/interfaces/pthread_mutexattr_setprotocol/3-2: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/1-1: build: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/1-1: link: PASS
 conformance/interfaces/pthread_mutexattr_setpshared/1-2: build: PASS
