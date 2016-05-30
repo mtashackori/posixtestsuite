@@ -1,0 +1,50 @@
+From f4134805b5d9de288bc3cc7ad0846e6275b2583e Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Mon, 30 May 2016 01:28:29 +0000
+Subject: [PATCH] change style of bsd_signal
+
+---
+ lib/libc/gen/signal.c | 16 ++++++++++++++++
+ sys/sys/signal.h      |  2 +-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/lib/libc/gen/signal.c b/lib/libc/gen/signal.c
+index cc3cce2..cf68bc5 100644
+--- a/lib/libc/gen/signal.c
++++ b/lib/libc/gen/signal.c
+@@ -64,3 +64,19 @@ signal(int s, sig_t a)
+ 		return (SIG_ERR);
+ 	return (osa.sa_handler);
+ }
++
++void 
++(*bsd_signal(int sig, void (*func)(int)))(int) 
++{
++	struct sigaction act, oact;
++
++	act.sa_handler = func;
++	act.sa_flags = SA_RESTART;
++
++	sigemptyset(&act.sa_mask);
++	sigaddset(&act.sa_mask, sig);
++	if (sigaction(sig, &act, &oact) < 0)
++		return (SIG_ERR);
++
++	return (oact.sa_handler);
++}
+diff --git a/sys/sys/signal.h b/sys/sys/signal.h
+index 47e3cd7..982fdac 100644
+--- a/sys/sys/signal.h
++++ b/sys/sys/signal.h
+@@ -233,7 +233,7 @@ struct	sigevent {
+  */
+ __BEGIN_DECLS
+ void	(*signal(int, void (*)(int)))(int);
+-#define	bsd_signal signal
++void	(*bsd_signal(int, void (*)(int)))(int);
+ #if (_POSIX_C_SOURCE - 0) >= 200112L || defined(_NETBSD_SOURCE)
+ int	sigqueue(pid_t, int, const union sigval);
+ #endif
+-- 
+2.6.4
+

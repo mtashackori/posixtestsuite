@@ -25,10 +25,10 @@ DONE:
 signals:
   SIGRTMIN (done, should wait for realtime signals to be done)
   SIGRTMAX (done, should wait for realtime signals to be done) 
-  bsd_signal (done, needs to change style)
+  bsd_signal (done)
 
 semaphore 
-  _SC_SEM_NSEMS_MAX  (done, add field in proc and judge in kmem_create and kmem_destroy)
+  _SC_SEM_NSEMS_MAX  (done)
 
 pthreads: 
   pthread_condattr_getclock (done, need to send for review)
