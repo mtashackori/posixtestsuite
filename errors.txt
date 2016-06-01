@@ -31,7 +31,7 @@ semaphore
   _SC_SEM_NSEMS_MAX  (done)
 
 pthreads: 
-  pthread_condattr_getclock (done, need to send for review)
+  pthread_condattr_getclock (done)
   pthread_barrierattr_getpshared  (done, but need to provide cross process sync)
   pthread_barrierattr_setpshared  (done)
   pthread_mutexattr_setpshared  (done)
