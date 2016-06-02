@@ -729,18 +729,10 @@ conformance/interfaces/clock/1-1: build: PASS
 conformance/interfaces/clock/1-1: link: PASS
 conformance/interfaces/clock/2-1: build: PASS
 conformance/interfaces/clock/2-1: link: PASS
-conformance/interfaces/clock_getcpuclockid/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/clock_getcpuclockid/1-1.c: In function 'main':
-conformance/interfaces/clock_getcpuclockid/1-1.c:42:14: error: '_SC_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_CPUTIME) == -1) {
-              ^
-conformance/interfaces/clock_getcpuclockid/1-1.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/clock_getcpuclockid/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/clock_getcpuclockid/2-1.c: In function 'main':
-conformance/interfaces/clock_getcpuclockid/2-1.c:30:14: error: '_SC_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_CPUTIME) == -1) {
-              ^
-conformance/interfaces/clock_getcpuclockid/2-1.c:30:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getcpuclockid/1-1: build: PASS
+conformance/interfaces/clock_getcpuclockid/1-1: link: PASS
+conformance/interfaces/clock_getcpuclockid/2-1: build: PASS
+conformance/interfaces/clock_getcpuclockid/2-1: link: PASS
 conformance/interfaces/clock_getres/1-1: build: PASS
 conformance/interfaces/clock_getres/1-1: link: PASS
 conformance/interfaces/clock_getres/3-1: build: PASS
@@ -751,18 +743,10 @@ conformance/interfaces/clock_getres/6-1: build: PASS
 conformance/interfaces/clock_getres/6-1: link: PASS
 conformance/interfaces/clock_getres/6-2: build: PASS
 conformance/interfaces/clock_getres/6-2: link: PASS
-conformance/interfaces/clock_getres/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/clock_getres/7-1.c: In function 'main':
-conformance/interfaces/clock_getres/7-1.c:24:14: error: '_SC_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_CPUTIME) == -1) {
-              ^
-conformance/interfaces/clock_getres/7-1.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/clock_getres/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/clock_getres/8-1.c: In function 'main':
-conformance/interfaces/clock_getres/8-1.c:24:14: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_THREAD_CPUTIME) == -1) {
-              ^
-conformance/interfaces/clock_getres/8-1.c:24:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_getres/7-1: build: PASS
+conformance/interfaces/clock_getres/7-1: link: PASS
+conformance/interfaces/clock_getres/8-1: build: PASS
+conformance/interfaces/clock_getres/8-1: link: PASS
 conformance/interfaces/clock_gettime/1-1: build: PASS
 conformance/interfaces/clock_gettime/1-1: link: PASS
 conformance/interfaces/clock_gettime/1-2: build: PASS
@@ -771,12 +755,8 @@ conformance/interfaces/clock_gettime/2-1: build: PASS
 conformance/interfaces/clock_gettime/2-1: link: PASS
 conformance/interfaces/clock_gettime/3-1: build: PASS
 conformance/interfaces/clock_gettime/3-1: link: PASS
-conformance/interfaces/clock_gettime/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/clock_gettime/4-1.c: In function 'main':
-conformance/interfaces/clock_gettime/4-1.c:39:14: error: '_SC_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_CPUTIME) == -1) {
-              ^
-conformance/interfaces/clock_gettime/4-1.c:39:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/clock_gettime/4-1: build: PASS
+conformance/interfaces/clock_gettime/4-1: link: PASS
 conformance/interfaces/clock_gettime/7-1: build: PASS
 conformance/interfaces/clock_gettime/7-1: link: PASS
 conformance/interfaces/clock_gettime/8-1: build: PASS
@@ -865,15 +845,8 @@ conformance/interfaces/fork/2-1: build: PASS
 conformance/interfaces/fork/2-1: link: PASS
 conformance/interfaces/fork/21-1: build: PASS
 conformance/interfaces/fork/21-1: link: PASS
-conformance/interfaces/fork/22-1: build: FAILED: Compiler output: 
-conformance/interfaces/fork/22-1.c: In function 'main':
-conformance/interfaces/fork/22-1.c:97:17: error: '_SC_CPUTIME' undeclared (first use in this function)
-  ctp = sysconf( _SC_CPUTIME );
-                 ^
-conformance/interfaces/fork/22-1.c:97:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/fork/22-1.c:98:17: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
-  ctt = sysconf( _SC_THREAD_CPUTIME );
-                 ^
+conformance/interfaces/fork/22-1: build: PASS
+conformance/interfaces/fork/22-1: link: PASS
 conformance/interfaces/fork/3-1: build: PASS
 conformance/interfaces/fork/3-1: link: PASS
 conformance/interfaces/fork/4-1: build: PASS
@@ -1730,12 +1703,8 @@ conformance/interfaces/pthread_create/1-6: build: PASS
 conformance/interfaces/pthread_create/1-6: link: PASS
 conformance/interfaces/pthread_create/10-1: build: PASS
 conformance/interfaces/pthread_create/10-1: link: PASS
-conformance/interfaces/pthread_create/11-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_create/11-1.c: In function 'main':
-conformance/interfaces/pthread_create/11-1.c:50:14: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_THREAD_CPUTIME) == -1) {
-              ^
-conformance/interfaces/pthread_create/11-1.c:50:14: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_create/11-1: build: PASS
+conformance/interfaces/pthread_create/11-1: link: PASS
 conformance/interfaces/pthread_create/12-1: build: PASS
 conformance/interfaces/pthread_create/12-1: link: PASS
 conformance/interfaces/pthread_create/14-1: build: PASS
@@ -1784,15 +1753,8 @@ conformance/interfaces/pthread_condattr_setclock/1-1: build: PASS
 conformance/interfaces/pthread_condattr_setclock/1-1: link: PASS
 conformance/interfaces/pthread_condattr_setclock/1-2: build: PASS
 conformance/interfaces/pthread_condattr_setclock/1-2: link: PASS
-conformance/interfaces/pthread_condattr_setclock/1-3: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_condattr_setclock/1-3.c: In function 'main':
-conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: error: '_SC_CPUTIME' undeclared (first use in this function)
-  if (sysconf(_SC_CPUTIME) == -1) {
-              ^
-conformance/interfaces/pthread_condattr_setclock/1-3.c:42:14: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_condattr_setclock/1-3.c:63:7: warning: implicit declaration of function 'pthread_condattr_setclock' [-Wimplicit-function-declaration]
-  rc = pthread_condattr_setclock(&condattr, clockid);
-       ^
+conformance/interfaces/pthread_condattr_setclock/1-3: build: PASS
+conformance/interfaces/pthread_condattr_setclock/1-3: link: PASS
 conformance/interfaces/pthread_condattr_setclock/2-1: build: PASS
 conformance/interfaces/pthread_condattr_setclock/2-1: link: PASS
 conformance/interfaces/pthread_condattr_setpshared/1-1: build: PASS
@@ -4303,18 +4265,10 @@ conformance/interfaces/time/1-1: build: PASS
 conformance/interfaces/time/1-1: link: PASS
 conformance/interfaces/timer_create/1-1: build: PASS
 conformance/interfaces/timer_create/1-1: link: PASS
-conformance/interfaces/timer_create/10-1: build: FAILED: Compiler output: 
-conformance/interfaces/timer_create/10-1.c: In function 'main':
-conformance/interfaces/timer_create/10-1.c:45:15: error: '_SC_CPUTIME' undeclared (first use in this function)
-  rc = sysconf(_SC_CPUTIME);
-               ^
-conformance/interfaces/timer_create/10-1.c:45:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/timer_create/11-1: build: FAILED: Compiler output: 
-conformance/interfaces/timer_create/11-1.c: In function 'main':
-conformance/interfaces/timer_create/11-1.c:33:15: error: '_SC_THREAD_CPUTIME' undeclared (first use in this function)
-  rc = sysconf(_SC_THREAD_CPUTIME);
-               ^
-conformance/interfaces/timer_create/11-1.c:33:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/timer_create/10-1: build: PASS
+conformance/interfaces/timer_create/10-1: link: PASS
+conformance/interfaces/timer_create/11-1: build: PASS
+conformance/interfaces/timer_create/11-1: link: PASS
 conformance/interfaces/timer_create/16-1: build: PASS
 conformance/interfaces/timer_create/16-1: link: PASS
 conformance/interfaces/timer_create/3-1: build: PASS
@@ -4347,12 +4301,8 @@ conformance/interfaces/timer_getoverrun/2-2: build: PASS
 conformance/interfaces/timer_getoverrun/2-2: link: PASS
 conformance/interfaces/timer_getoverrun/2-3: build: PASS
 conformance/interfaces/timer_getoverrun/2-3: link: PASS
-conformance/interfaces/timer_getoverrun/3-1: build: FAILED: Compiler output: 
-conformance/interfaces/timer_getoverrun/3-1.c: In function 'main':
-conformance/interfaces/timer_getoverrun/3-1.c:22:32: error: '_SC_DELAYTIMER_MAX' undeclared (first use in this function)
-  long delaytimer_max = sysconf(_SC_DELAYTIMER_MAX);
-                                ^
-conformance/interfaces/timer_getoverrun/3-1.c:22:32: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/timer_getoverrun/3-1: build: PASS
+conformance/interfaces/timer_getoverrun/3-1: link: PASS
 conformance/interfaces/timer_getoverrun/speculative/6-1: build: PASS
 conformance/interfaces/timer_getoverrun/speculative/6-1: link: PASS
 conformance/interfaces/timer_getoverrun/speculative/6-2: build: PASS
