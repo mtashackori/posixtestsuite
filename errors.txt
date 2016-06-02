@@ -22,6 +22,11 @@ SIGTOTEST  (depends on macro which is not defined)
 Errors that caused by feature missing
 
 DONE:
+timers:
+   _SC_CPUTIME  (done, waiting for reviews)
+   _SC_THREAD_CPUTIME (done, waiting for reviews)  
+   _SC_DELAYTIMER_MAX (done, waiting for reviews)
+
 signals:
   SIGRTMIN (done, should wait for realtime signals to be done)
   SIGRTMAX (done, should wait for realtime signals to be done) 
@@ -53,11 +58,6 @@ pthreads:
 
 
 NOT DONE:
-timers:
-   _SC_CPUTIME  (freebsd, 200112L set to be, _POSIX_CPUTIME)
-   _SC_THREAD_CPUTIME (freebsd, 200112L set to be, _POSIX_THREAD_CPUTIME)  
-   _SC_DELAYTIMER_MAX (freebsd, called from sysctl)
-
 scheduler:
     SCHED_SPORADIC (linux)
 
