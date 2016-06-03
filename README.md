@@ -9,13 +9,14 @@ did some modifications both in the benchmark side and NetBSD current kernel. <br
 In terms of benchmark modifications, one can acquire by cloning this repo. <br />
 For kernel changes, one can find all patches in the `patch/` folder. <br />
 So, at first, apply patches in patch folder to your kernel source tree, then <br />
-clone this repo, and run `gmake`. From the logs of the benchmark, one can see the status <br />
-of each executed test.
+compiler your kernel, user land and install the new kernel. <br />
+Finally, clone this repo, and run `gmake`. From the logs of the benchmark, <br />
+one can see the status of each executed test. <br />
 
 # Status
 
 The work is not completed, but you can see the current status from the errors.txt file. <br />
-The file works as a roadmap. Missing features in errors.txt will be supported one by one <br />
+The file works as a roadmap. Missing features in errors.txt will be supported one by one. <br />
 
 # Effectiveness of Each Commit
 
