@@ -8,6 +8,8 @@ did some modifications both in the benchmark side and NetBSD current kernel. <br
 
 In terms of benchmark modifications, one can acquire by cloning this repo. <br />
 For kernel changes, one can find all patches in the `patch/` folder. <br />
+This folder is organized by features. Each subfolder may have `OLD/` folder, <br />
+which usually implements the feature in a different way, but not used finally. <br />
 So, at first, apply patches in `patch/` folder to your kernel source tree, then <br />
 compiler your kernel, user land and install the new kernel. <br />
 Finally, clone this repo, and run `gmake`. From the logs of the benchmark, <br />
