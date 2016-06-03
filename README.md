@@ -8,7 +8,7 @@ did some modifications both in the benchmark side and NetBSD current kernel. <br
 
 In terms of benchmark modifications, one can acquire by cloning this repo. <br />
 For kernel changes, one can find all patches in the `patch/` folder. <br />
-So, at first, apply patches in patch folder to your kernel source tree, then <br />
+So, at first, apply patches in `patch/` folder to your kernel source tree, then <br />
 compiler your kernel, user land and install the new kernel. <br />
 Finally, clone this repo, and run `gmake`. From the logs of the benchmark, <br />
 one can see the status of each executed test. <br />
@@ -16,11 +16,11 @@ one can see the status of each executed test. <br />
 # How to Compile Kernel
 
 Because there are too many ways of compiling kernels, the steps of making kernel in this repo is given below. <br />
-cp /usr/src/sys/arch/\<arch\>/conf/GENERIC /usr/src/sys/arch/\<arch\>/conf/CURRENT <br />
-cd /usr/src <br />
-./build.sh -O /usr/current -U -j 8 -u tools kernel=CURRENT modules <br />  
-./build.sh -O /usr/current -U -j 8 -u distribution sets <br />
-Note: always use -u <br />
+`cp /usr/src/sys/arch/\<arch\>/conf/GENERIC /usr/src/sys/arch/\<arch\>/conf/CURRENT` <br />
+`cd /usr/src` <br />
+`./build.sh -O /usr/current -U -j 8 -u tools kernel=CURRENT modules` 	Note: always use -u <br />  
+`./build.sh -O /usr/current -U -j 8 -u distribution sets` <br />
+
 
 # Status
 
