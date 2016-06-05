@@ -1,0 +1,113 @@
+diff --git a/distrib/sets/lists/comp/mi b/distrib/sets/lists/comp/mi
+index be410ff..9b88d5a 100644
+--- a/distrib/sets/lists/comp/mi
++++ b/distrib/sets/lists/comp/mi
+@@ -16008,6 +16008,7 @@
+ ./usr/share/man/html3/sigismember.html		comp-c-htmlman		html
+ ./usr/share/man/html3/siglongjmp.html		comp-c-htmlman		html
+ ./usr/share/man/html3/signal.html		comp-c-htmlman		html
++./usr/share/man/html3/bsd_signal.html		comp-c-htmlman		html
+ ./usr/share/man/html3/signal_add.html		comp-obsolete		obsolete
+ ./usr/share/man/html3/signal_del.html		comp-obsolete		obsolete
+ ./usr/share/man/html3/signal_initialized.html	comp-obsolete		obsolete
+@@ -23179,6 +23180,7 @@
+ ./usr/share/man/man3/sigismember.3		comp-c-man		.man
+ ./usr/share/man/man3/siglongjmp.3		comp-c-man		.man
+ ./usr/share/man/man3/signal.3			comp-c-man		.man
++./usr/share/man/man3/bsd_signal.3		comp-c-man		.man
+ ./usr/share/man/man3/signal_add.3		comp-obsolete		obsolete
+ ./usr/share/man/man3/signal_del.3		comp-obsolete		obsolete
+ ./usr/share/man/man3/signal_initialized.3	comp-obsolete		obsolete
+diff --git a/lib/libc/gen/Makefile.inc b/lib/libc/gen/Makefile.inc
+index 12d1a8c..8cbbc69 100644
+--- a/lib/libc/gen/Makefile.inc
++++ b/lib/libc/gen/Makefile.inc
+@@ -79,7 +79,7 @@ MAN+=	alarm.3 arc4random.3 basename.3 bswap.3 clock.3 closefrom.3 \
+ 	psignal.3 pwcache.3 pthread_atfork.3 \
+ 	raise.3 randomid.3 realpath.3 scandir.3 setjmp.3 setmode.3 \
+ 	setproctitle.3 shquote.3 sighold.3 sigignore.3 siginterrupt.3 \
+-	signal.3 signbit.3 sigrelse.3 sigset.3 sigsetops.3 sleep.3 \
++	signal.3 bsd_signal.3 signbit.3 sigrelse.3 sigset.3 sigsetops.3 sleep.3 \
+ 	stringlist.3 sysconf.3 sysctl.3 syslog.3 time.3 times.3 \
+ 	timezone.3 toascii.3 tolower.3 toupper.3 ttyname.3 \
+ 	ualarm.3 ulimit.3 uname.3 unvis.3 usleep.3 utime.3 valloc.3 vis.3 \
+diff --git a/lib/libc/gen/bsd_signal.3 b/lib/libc/gen/bsd_signal.3
+new file mode 100644
+index 0000000..cc8ccfa
+--- /dev/null
++++ b/lib/libc/gen/bsd_signal.3
+@@ -0,0 +1,60 @@
++.\"	$NetBSD: bsd_signal.3,v 1.24 2016/06/04 18:00:00 lha Exp $
++.\"
++.\" Copyright (c) 1980, 1991, 1993
++.\"	The Regents of the University of California.  All rights reserved.
++.\"
++.\" Redistribution and use in source and binary forms, with or without
++.\" modification, are permitted provided that the following conditions
++.\" are met:
++.\" 1. Redistributions of source code must retain the above copyright
++.\"    notice, this list of conditions and the following disclaimer.
++.\" 2. Redistributions in binary form must reproduce the above copyright
++.\"    notice, this list of conditions and the following disclaimer in the
++.\"    documentation and/or other materials provided with the distribution.
++.\" 3. Neither the name of the University nor the names of its contributors
++.\"    may be used to endorse or promote products derived from this software
++.\"    without specific prior written permission.
++.\"
++.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
++.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
++.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++.\" SUCH DAMAGE.
++.\"
++.\"     @(#)bsd_signal.3	8.3 (Berkeley) 4/19/94
++.\"
++.Dd June 04, 2016
++.Dt BSD_SIGNAL 3
++.Os
++.Sh NAME
++.Nm bsd_signal
++.Nd BSD version of signal()
++.Sh LIBRARY
++.Lb libc
++.Sh SYNOPSIS
++.In signal.h
++.\" The following is Quite Ugly, but syntactically correct.  Don't try to
++.\" fix it.
++.Ft void \*(lp*
++.Fn bsd_signal "int sig" "void \*(lp*func\*(rp\*(lpint\*(rp\*(rp\*(rp\*(lpint"
++.Sh DESCRIPTION
++The
++.Fn bsd_signal
++function provides a partially compatible interface for programs written to historical system interfaces.
++
++.Sh RETURN VALUES
++The previous action is returned on a successful call.
++Otherwise,
++.Dv SIG_ERR
++is returned and the global variable
++.Va errno
++is set to indicate the error.
++
++.Sh SEE ALSO
++.Xr signal 3
+diff --git a/lib/libc/gen/signal.3 b/lib/libc/gen/signal.3
+index e554195..e003d34 100644
+--- a/lib/libc/gen/signal.3
++++ b/lib/libc/gen/signal.3
+@@ -183,7 +183,8 @@ or
+ .Xr setjmp 3 ,
+ .Xr strsignal 3 ,
+ .Xr tty 4 ,
+-.Xr signal 7
++.Xr signal 7,
++.Xr bsd_signal 3
+ .Sh HISTORY
+ This
+ .Fn signal

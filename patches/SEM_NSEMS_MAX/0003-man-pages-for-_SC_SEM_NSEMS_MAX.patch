@@ -1,0 +1,26 @@
+From 87261599531c6328df475d227f9da1018c494d9c Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Sun, 5 Jun 2016 04:36:47 +0000
+Subject: [PATCH] man pages for _SC_SEM_NSEMS_MAX
+
+---
+ lib/libc/gen/sysconf.3 | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/lib/libc/gen/sysconf.3 b/lib/libc/gen/sysconf.3
+index 982d124..d8929ea 100644
+--- a/lib/libc/gen/sysconf.3
++++ b/lib/libc/gen/sysconf.3
+@@ -149,6 +149,9 @@ and its
+ Semaphores
+ option to which the system attempts to conform,
+ otherwise \-1.
++.It Li _SC_SEM_NSEMS_MAX
++The maximum number of semaphores that one process can have open at a time,
++otherwise \-1.
+ .It Li _SC_SHELL
+ Return 1 if
+ .Tn POSIX
+-- 
+2.6.4
+

@@ -1,0 +1,32 @@
+From bcd1331a2ef28a0cad3d4695152165669c9e5b7c Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Sun, 5 Jun 2016 04:50:15 +0000
+Subject: [PATCH] man pages for timer macros
+
+---
+ lib/libc/gen/sysconf.3 | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/lib/libc/gen/sysconf.3 b/lib/libc/gen/sysconf.3
+index d8929ea..4f03524 100644
+--- a/lib/libc/gen/sysconf.3
++++ b/lib/libc/gen/sysconf.3
+@@ -185,6 +185,15 @@ and its
+ Timers
+ option to which the system attempts to conform,
+ otherwise \-1.
++.It Li _SC_CPUTIME
++The clockID CLOCK_PROCESS_CPUTIME_ID is supported,
++otherwise \-1.
++.It Li _SC_THREAD_CPUTIME
++The clockID CLOCK_THREAD_CPUTIME_ID is supported,
++otherwise \-1.
++.It Li _SC_DELAYTIMER_MAX
++The maximum number of overrun for a specific timer,
++otherwise \-1.
+ .It Li _SC_TZNAME_MAX
+ The minimum maximum number of types supported for the name of a
+ timezone.
+-- 
+2.6.4
+
