@@ -22,7 +22,9 @@ Because there are too many ways of compiling kernels, the steps of making kernel
 `cd /usr/src` <br />
 `./build.sh -O /usr/current -U -j 8 -u tools kernel=CURRENT modules` 	Note: always use -u <br />
 `./build.sh -O /usr/current -U -j 8 -u distribution sets` <br />
-
+`cp /usr/current/sys/arch/<arch>/compile/CURRENT/netbsd /` <br />
+`cd /usr/src` <br />
+`./build.sh -U -O /usr/current install=/` <br />
 
 # Status
 
