@@ -76,6 +76,7 @@ mmap:
     posix_typed_mem_open (linux)
 
 pthread
-   PTHREAD_STACK_MIN  (freebsd)
+   PTHREAD_STACK_MIN  (should be returned when query _SC_THREAD_STACK_MIN, 
+   also the same with _getpagesize())
 
 

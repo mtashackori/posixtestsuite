@@ -1409,18 +1409,10 @@ conformance/interfaces/pthread_attr_getschedpolicy/2-1: build: PASS
 conformance/interfaces/pthread_attr_getschedpolicy/2-1: link: PASS
 conformance/interfaces/pthread_attr_getscope/1-1: build: PASS
 conformance/interfaces/pthread_attr_getscope/1-1: link: PASS
-conformance/interfaces/pthread_attr_getstack/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_getstack/1-1.c: In function 'main':
-conformance/interfaces/pthread_attr_getstack/1-1.c:54:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_getstack/1-1.c:54:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_getstacksize/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_getstacksize/1-1.c: In function 'main':
-conformance/interfaces/pthread_attr_getstacksize/1-1.c:53:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_getstacksize/1-1.c:53:15: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_attr_getstack/1-1: build: PASS
+conformance/interfaces/pthread_attr_getstack/1-1: link: PASS
+conformance/interfaces/pthread_attr_getstacksize/1-1: build: PASS
+conformance/interfaces/pthread_attr_getstacksize/1-1: link: PASS
 conformance/interfaces/pthread_attr_init/1-1: build: PASS
 conformance/interfaces/pthread_attr_init/1-1: link: PASS
 conformance/interfaces/pthread_attr_init/2-1: build: PASS
@@ -1473,70 +1465,22 @@ conformance/interfaces/pthread_attr_setscope/4-1: build: PASS
 conformance/interfaces/pthread_attr_setscope/4-1: link: PASS
 conformance/interfaces/pthread_attr_setscope/5-1: build: PASS
 conformance/interfaces/pthread_attr_setscope/5-1: link: PASS
-conformance/interfaces/pthread_attr_setstack/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/1-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_setstack/1-1.c:63:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstack/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/2-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstack/2-1.c:90:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_setstack/2-1.c:90:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstack/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/4-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstack/4-1.c:73:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_setstack/4-1.c:73:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstack/6-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/6-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstack/6-1.c:29:19: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
- #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
-                   ^
-conformance/interfaces/pthread_attr_setstack/6-1.c:59:15: note: in expansion of macro 'STACKSIZE'
-  stack_size = STACKSIZE;
-               ^
-conformance/interfaces/pthread_attr_setstack/6-1.c:29:19: note: each undeclared identifier is reported only once for each function it appears in
- #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
-                   ^
-conformance/interfaces/pthread_attr_setstack/6-1.c:59:15: note: in expansion of macro 'STACKSIZE'
-  stack_size = STACKSIZE;
-               ^
-conformance/interfaces/pthread_attr_setstack/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstack/7-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstack/7-1.c:60:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_setstack/7-1.c:60:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstacksize/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstacksize/1-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  size_t stack_size = PTHREAD_STACK_MIN;
-                      ^
-conformance/interfaces/pthread_attr_setstacksize/1-1.c:41:22: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstacksize/2-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstacksize/2-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstacksize/2-1.c:79:15: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
-  stack_size = PTHREAD_STACK_MIN;
-               ^
-conformance/interfaces/pthread_attr_setstacksize/2-1.c:79:15: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_attr_setstacksize/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_attr_setstacksize/4-1.c: In function 'main':
-conformance/interfaces/pthread_attr_setstacksize/4-1.c:29:19: error: 'PTHREAD_STACK_MIN' undeclared (first use in this function)
- #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
-                   ^
-conformance/interfaces/pthread_attr_setstacksize/4-1.c:50:15: note: in expansion of macro 'STACKSIZE'
-  stack_size = STACKSIZE;
-               ^
-conformance/interfaces/pthread_attr_setstacksize/4-1.c:29:19: note: each undeclared identifier is reported only once for each function it appears in
- #define STACKSIZE PTHREAD_STACK_MIN - sysconf(_SC_PAGE_SIZE)
-                   ^
-conformance/interfaces/pthread_attr_setstacksize/4-1.c:50:15: note: in expansion of macro 'STACKSIZE'
-  stack_size = STACKSIZE;
-               ^
+conformance/interfaces/pthread_attr_setstack/1-1: build: PASS
+conformance/interfaces/pthread_attr_setstack/1-1: link: PASS
+conformance/interfaces/pthread_attr_setstack/2-1: build: PASS
+conformance/interfaces/pthread_attr_setstack/2-1: link: PASS
+conformance/interfaces/pthread_attr_setstack/4-1: build: PASS
+conformance/interfaces/pthread_attr_setstack/4-1: link: PASS
+conformance/interfaces/pthread_attr_setstack/6-1: build: PASS
+conformance/interfaces/pthread_attr_setstack/6-1: link: PASS
+conformance/interfaces/pthread_attr_setstack/7-1: build: PASS
+conformance/interfaces/pthread_attr_setstack/7-1: link: PASS
+conformance/interfaces/pthread_attr_setstacksize/1-1: build: PASS
+conformance/interfaces/pthread_attr_setstacksize/1-1: link: PASS
+conformance/interfaces/pthread_attr_setstacksize/2-1: build: PASS
+conformance/interfaces/pthread_attr_setstacksize/2-1: link: PASS
+conformance/interfaces/pthread_attr_setstacksize/4-1: build: PASS
+conformance/interfaces/pthread_attr_setstacksize/4-1: link: PASS
 conformance/interfaces/pthread_cancel/1-1: build: PASS
 conformance/interfaces/pthread_cancel/1-1: link: PASS
 conformance/interfaces/pthread_cancel/1-2: build: PASS
