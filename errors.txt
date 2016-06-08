@@ -1,4 +1,4 @@
-Errors that caused by usage (build with -D_NETBSD_SOURCE -lpthread -lrt -lm and disable compiler warnings and use current) 
+Errors that caused by usage (build with -lpthread -lrt -lm and disable compiler warnings and use current) 
 struct rlimit (inlcude sys/resource.h)
 setpgrp (netbsd needs to pass 2 parameters, but other systems, like like linux does not)
 struct sigaction sa (include signal.h)
@@ -59,9 +59,6 @@ pthreads:
   PTHREAD_STACK_MIN  (should be returned when query _SC_THREAD_STACK_MIN, also the same with _getpagesize())
 
 NOT DONE:
-scheduler:
-    SCHED_SPORADIC (linux)
-
 signals:
     SIGPOLL (freebsd)
     _SC_REALTIME_SIGNALS (freebsd, called from sysctl?)
@@ -75,3 +72,8 @@ mmap:
     posix_mem_offset (linux)
     posix_typed_mem_get_info (linux)
     posix_typed_mem_open (linux)
+
+scheduler:
+    SCHED_SPORADIC (linux)
+    
+
