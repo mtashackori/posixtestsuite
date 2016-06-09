@@ -154,16 +154,10 @@ conformance/definitions/sched_h/8-4: build: PASS
 conformance/definitions/sched_h/8-4: link: SKIP
 conformance/definitions/signal_h/1-1: build: PASS
 conformance/definitions/signal_h/1-1: link: SKIP
-conformance/definitions/signal_h/13-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/13-1.c: In function 'main':
-conformance/definitions/signal_h/13-1.c:30:9: error: 'SIGPOLL' undeclared (first use in this function)
-   (0 == SIGPOLL) ||
-         ^
-conformance/definitions/signal_h/13-1.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
-conformance/definitions/signal_h/14-1: build: FAILED: Compiler output: 
-conformance/definitions/signal_h/14-1.c:27:15: error: 'SIGPOLL' undeclared here (not in a function)
- int dummy21 = SIGPOLL;
-               ^
+conformance/definitions/signal_h/13-1: build: PASS
+conformance/definitions/signal_h/13-1: link: PASS
+conformance/definitions/signal_h/14-1: build: PASS
+conformance/definitions/signal_h/14-1: link: SKIP
 conformance/definitions/signal_h/15-1: build: PASS
 conformance/definitions/signal_h/15-1: link: SKIP
 conformance/definitions/signal_h/16-1: build: PASS
@@ -2105,12 +2099,8 @@ conformance/interfaces/pthread_setspecific/1-2: build: PASS
 conformance/interfaces/pthread_setspecific/1-2: link: PASS
 conformance/interfaces/pthread_sigmask/10-1: build: PASS
 conformance/interfaces/pthread_sigmask/10-1: link: PASS
-conformance/interfaces/pthread_sigmask/12-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_sigmask/12-1.c: In function 'is_changed':
-conformance/interfaces/pthread_sigmask/12-1.c:37:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/pthread_sigmask/12-1.c:37:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/12-1: build: PASS
+conformance/interfaces/pthread_sigmask/12-1: link: PASS
 conformance/interfaces/pthread_sigmask/14-1: build: PASS
 conformance/interfaces/pthread_sigmask/14-1: link: PASS
 conformance/interfaces/pthread_sigmask/15-1: build: PASS
@@ -2125,30 +2115,14 @@ conformance/interfaces/pthread_sigmask/5-1: build: PASS
 conformance/interfaces/pthread_sigmask/5-1: link: PASS
 conformance/interfaces/pthread_sigmask/6-1: build: PASS
 conformance/interfaces/pthread_sigmask/6-1: link: PASS
-conformance/interfaces/pthread_sigmask/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_sigmask/7-1.c: In function 'a_thread_func':
-conformance/interfaces/pthread_sigmask/7-1.c:33:37: error: 'SIGPOLL' undeclared (first use in this function)
-                   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS,
-                                     ^
-conformance/interfaces/pthread_sigmask/7-1.c:33:37: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_sigmask/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_sigmask/8-1.c: In function 'is_changed':
-conformance/interfaces/pthread_sigmask/8-1.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/pthread_sigmask/8-1.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_sigmask/8-2: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_sigmask/8-2.c: In function 'is_changed':
-conformance/interfaces/pthread_sigmask/8-2.c:33:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/pthread_sigmask/8-2.c:33:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/pthread_sigmask/8-3: build: FAILED: Compiler output: 
-conformance/interfaces/pthread_sigmask/8-3.c: In function 'is_changed':
-conformance/interfaces/pthread_sigmask/8-3.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/pthread_sigmask/8-3.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/pthread_sigmask/7-1: build: PASS
+conformance/interfaces/pthread_sigmask/7-1: link: PASS
+conformance/interfaces/pthread_sigmask/8-1: build: PASS
+conformance/interfaces/pthread_sigmask/8-1: link: PASS
+conformance/interfaces/pthread_sigmask/8-2: build: PASS
+conformance/interfaces/pthread_sigmask/8-2: link: PASS
+conformance/interfaces/pthread_sigmask/8-3: build: PASS
+conformance/interfaces/pthread_sigmask/8-3: link: PASS
 conformance/interfaces/pthread_sigmask/9-1: build: PASS
 conformance/interfaces/pthread_sigmask/9-1: link: PASS
 conformance/interfaces/pthread_spin_destroy/1-1: build: PASS
@@ -2635,12 +2609,8 @@ conformance/interfaces/sigaction/1-17: build: PASS
 conformance/interfaces/sigaction/1-17: link: PASS
 conformance/interfaces/sigaction/1-18: build: PASS
 conformance/interfaces/sigaction/1-18: link: PASS
-conformance/interfaces/sigaction/1-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/1-19.c: In function 'main':
-conformance/interfaces/sigaction/1-19.c:40:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/1-19.c:40:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/1-19: build: PASS
+conformance/interfaces/sigaction/1-19: link: PASS
 conformance/interfaces/sigaction/1-2: build: PASS
 conformance/interfaces/sigaction/1-2: link: PASS
 conformance/interfaces/sigaction/1-20: build: PASS
@@ -2695,12 +2665,8 @@ conformance/interfaces/sigaction/12-17: build: PASS
 conformance/interfaces/sigaction/12-17: link: PASS
 conformance/interfaces/sigaction/12-18: build: PASS
 conformance/interfaces/sigaction/12-18: link: PASS
-conformance/interfaces/sigaction/12-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/12-19.c: In function 'main':
-conformance/interfaces/sigaction/12-19.c:53:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/12-19.c:53:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/12-19: build: PASS
+conformance/interfaces/sigaction/12-19: link: PASS
 conformance/interfaces/sigaction/12-2: build: PASS
 conformance/interfaces/sigaction/12-2: link: PASS
 conformance/interfaces/sigaction/12-20: build: PASS
@@ -2757,12 +2723,8 @@ conformance/interfaces/sigaction/12-43: build: PASS
 conformance/interfaces/sigaction/12-43: link: PASS
 conformance/interfaces/sigaction/12-44: build: PASS
 conformance/interfaces/sigaction/12-44: link: PASS
-conformance/interfaces/sigaction/12-45: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/12-45.c: In function 'main':
-conformance/interfaces/sigaction/12-45.c:51:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/12-45.c:51:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/12-45: build: PASS
+conformance/interfaces/sigaction/12-45: link: PASS
 conformance/interfaces/sigaction/12-46: build: PASS
 conformance/interfaces/sigaction/12-46: link: PASS
 conformance/interfaces/sigaction/12-47: build: PASS
@@ -2807,12 +2769,8 @@ conformance/interfaces/sigaction/13-17: build: PASS
 conformance/interfaces/sigaction/13-17: link: PASS
 conformance/interfaces/sigaction/13-18: build: PASS
 conformance/interfaces/sigaction/13-18: link: PASS
-conformance/interfaces/sigaction/13-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/13-19.c: In function 'main':
-conformance/interfaces/sigaction/13-19.c:52:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/13-19.c:52:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/13-19: build: PASS
+conformance/interfaces/sigaction/13-19: link: PASS
 conformance/interfaces/sigaction/13-2: build: PASS
 conformance/interfaces/sigaction/13-2: link: PASS
 conformance/interfaces/sigaction/13-20: build: PASS
@@ -2863,20 +2821,8 @@ conformance/interfaces/sigaction/16-17: build: PASS
 conformance/interfaces/sigaction/16-17: link: PASS
 conformance/interfaces/sigaction/16-18: build: PASS
 conformance/interfaces/sigaction/16-18: link: PASS
-conformance/interfaces/sigaction/16-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/16-19.c: In function 'main':
-conformance/interfaces/sigaction/16-19.c:89:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/16-19.c:150:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
-conformance/interfaces/sigaction/16-19.c:89:16: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/16-19.c:150:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
+conformance/interfaces/sigaction/16-19: build: PASS
+conformance/interfaces/sigaction/16-19: link: PASS
 conformance/interfaces/sigaction/16-2: build: PASS
 conformance/interfaces/sigaction/16-2: link: PASS
 conformance/interfaces/sigaction/16-20: build: PASS
@@ -2927,12 +2873,8 @@ conformance/interfaces/sigaction/17-17: build: PASS
 conformance/interfaces/sigaction/17-17: link: PASS
 conformance/interfaces/sigaction/17-18: build: PASS
 conformance/interfaces/sigaction/17-18: link: PASS
-conformance/interfaces/sigaction/17-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/17-19.c: In function 'main':
-conformance/interfaces/sigaction/17-19.c:48:13: error: 'SIGPOLL' undeclared (first use in this function)
-   sigaction(SIGPOLL,  &act, 0);     
-             ^
-conformance/interfaces/sigaction/17-19.c:48:13: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/17-19: build: PASS
+conformance/interfaces/sigaction/17-19: link: PASS
 conformance/interfaces/sigaction/17-2: build: PASS
 conformance/interfaces/sigaction/17-2: link: PASS
 conformance/interfaces/sigaction/17-20: build: PASS
@@ -2983,20 +2925,8 @@ conformance/interfaces/sigaction/18-17: build: PASS
 conformance/interfaces/sigaction/18-17: link: PASS
 conformance/interfaces/sigaction/18-18: build: PASS
 conformance/interfaces/sigaction/18-18: link: PASS
-conformance/interfaces/sigaction/18-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/18-19.c: In function 'main':
-conformance/interfaces/sigaction/18-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/18-19.c:112:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
-conformance/interfaces/sigaction/18-19.c:79:16: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/18-19.c:112:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
+conformance/interfaces/sigaction/18-19: build: PASS
+conformance/interfaces/sigaction/18-19: link: PASS
 conformance/interfaces/sigaction/18-2: build: PASS
 conformance/interfaces/sigaction/18-2: link: PASS
 conformance/interfaces/sigaction/18-20: build: PASS
@@ -3088,29 +3018,11 @@ conformance/interfaces/sigaction/19-18.c:109:17: error: '_SC_REALTIME_SIGNALS' u
                  ^
 conformance/interfaces/sigaction/19-18.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigaction/19-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-19.c: In function 'handler':
-conformance/interfaces/sigaction/19-19.c:80:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/19-19.c:89:25: note: in expansion of macro 'SIGNAL'
-  if ( info->si_signo != SIGNAL )
-                         ^
-conformance/interfaces/sigaction/19-19.c:80:16: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/19-19.c:89:25: note: in expansion of macro 'SIGNAL'
-  if ( info->si_signo != SIGNAL )
-                         ^
 conformance/interfaces/sigaction/19-19.c: In function 'main':
 conformance/interfaces/sigaction/19-19.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
   rts = sysconf( _SC_REALTIME_SIGNALS );
                  ^
-conformance/interfaces/sigaction/19-19.c:80:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/19-19.c:129:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
+conformance/interfaces/sigaction/19-19.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
 conformance/interfaces/sigaction/19-2: build: FAILED: Compiler output: 
 conformance/interfaces/sigaction/19-2.c: In function 'main':
 conformance/interfaces/sigaction/19-2.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
@@ -3221,12 +3133,8 @@ conformance/interfaces/sigaction/2-17: build: PASS
 conformance/interfaces/sigaction/2-17: link: PASS
 conformance/interfaces/sigaction/2-18: build: PASS
 conformance/interfaces/sigaction/2-18: link: PASS
-conformance/interfaces/sigaction/2-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/2-19.c: In function 'main':
-conformance/interfaces/sigaction/2-19.c:42:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/2-19.c:42:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/2-19: build: PASS
+conformance/interfaces/sigaction/2-19: link: PASS
 conformance/interfaces/sigaction/2-2: build: PASS
 conformance/interfaces/sigaction/2-2: link: PASS
 conformance/interfaces/sigaction/2-20: build: PASS
@@ -3279,16 +3187,8 @@ conformance/interfaces/sigaction/22-17: build: PASS
 conformance/interfaces/sigaction/22-17: link: PASS
 conformance/interfaces/sigaction/22-18: build: PASS
 conformance/interfaces/sigaction/22-18: link: PASS
-conformance/interfaces/sigaction/22-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/22-19.c: In function 'handler':
-conformance/interfaces/sigaction/22-19.c:55:9: error: 'SIGPOLL' undeclared (first use in this function)
-   raise(SIGPOLL);
-         ^
-conformance/interfaces/sigaction/22-19.c:55:9: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/22-19.c: In function 'main':
-conformance/interfaces/sigaction/22-19.c:72:17: error: 'SIGPOLL' undeclared (first use in this function)
-   if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                 ^
+conformance/interfaces/sigaction/22-19: build: PASS
+conformance/interfaces/sigaction/22-19: link: PASS
 conformance/interfaces/sigaction/22-2: build: PASS
 conformance/interfaces/sigaction/22-2: link: PASS
 conformance/interfaces/sigaction/22-20: build: PASS
@@ -3339,27 +3239,8 @@ conformance/interfaces/sigaction/23-17: build: PASS
 conformance/interfaces/sigaction/23-17: link: PASS
 conformance/interfaces/sigaction/23-18: build: PASS
 conformance/interfaces/sigaction/23-18: link: PASS
-conformance/interfaces/sigaction/23-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/23-19.c: In function 'handler':
-conformance/interfaces/sigaction/23-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/23-19.c:102:16: note: in expansion of macro 'SIGNAL'
-   ret = raise( SIGNAL );
-                ^
-conformance/interfaces/sigaction/23-19.c:79:16: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/23-19.c:102:16: note: in expansion of macro 'SIGNAL'
-   ret = raise( SIGNAL );
-                ^
-conformance/interfaces/sigaction/23-19.c: In function 'main':
-conformance/interfaces/sigaction/23-19.c:79:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/23-19.c:151:19: note: in expansion of macro 'SIGNAL'
-  ret = sigaction( SIGNAL, &sa, 0 );
-                   ^
+conformance/interfaces/sigaction/23-19: build: PASS
+conformance/interfaces/sigaction/23-19: link: PASS
 conformance/interfaces/sigaction/23-2: build: PASS
 conformance/interfaces/sigaction/23-2: link: PASS
 conformance/interfaces/sigaction/23-20: build: PASS
@@ -3410,16 +3291,8 @@ conformance/interfaces/sigaction/25-17: build: PASS
 conformance/interfaces/sigaction/25-17: link: PASS
 conformance/interfaces/sigaction/25-18: build: PASS
 conformance/interfaces/sigaction/25-18: link: PASS
-conformance/interfaces/sigaction/25-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/25-19.c: In function 'handler':
-conformance/interfaces/sigaction/25-19.c:53:9: error: 'SIGPOLL' undeclared (first use in this function)
-   raise(SIGPOLL);
-         ^
-conformance/interfaces/sigaction/25-19.c:53:9: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/25-19.c: In function 'main':
-conformance/interfaces/sigaction/25-19.c:70:17: error: 'SIGPOLL' undeclared (first use in this function)
-   if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                 ^
+conformance/interfaces/sigaction/25-19: build: PASS
+conformance/interfaces/sigaction/25-19: link: PASS
 conformance/interfaces/sigaction/25-2: build: PASS
 conformance/interfaces/sigaction/25-2: link: PASS
 conformance/interfaces/sigaction/25-20: build: PASS
@@ -3470,20 +3343,8 @@ conformance/interfaces/sigaction/28-17: build: PASS
 conformance/interfaces/sigaction/28-17: link: PASS
 conformance/interfaces/sigaction/28-18: build: PASS
 conformance/interfaces/sigaction/28-18: link: PASS
-conformance/interfaces/sigaction/28-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/28-19.c: In function 'main':
-conformance/interfaces/sigaction/28-19.c:167:16: error: 'SIGPOLL' undeclared (first use in this function)
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/28-19.c:197:26: note: in expansion of macro 'SIGNAL'
-  if ( SIG_ERR == signal( SIGNAL, handler_1 ) )
-                          ^
-conformance/interfaces/sigaction/28-19.c:167:16: note: each undeclared identifier is reported only once for each function it appears in
- #define SIGNAL SIGPOLL
-                ^
-conformance/interfaces/sigaction/28-19.c:197:26: note: in expansion of macro 'SIGNAL'
-  if ( SIG_ERR == signal( SIGNAL, handler_1 ) )
-                          ^
+conformance/interfaces/sigaction/28-19: build: PASS
+conformance/interfaces/sigaction/28-19: link: PASS
 conformance/interfaces/sigaction/28-2: build: PASS
 conformance/interfaces/sigaction/28-2: link: PASS
 conformance/interfaces/sigaction/28-20: build: PASS
@@ -3540,12 +3401,8 @@ conformance/interfaces/sigaction/3-17: build: PASS
 conformance/interfaces/sigaction/3-17: link: PASS
 conformance/interfaces/sigaction/3-18: build: PASS
 conformance/interfaces/sigaction/3-18: link: PASS
-conformance/interfaces/sigaction/3-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/3-19.c: In function 'main':
-conformance/interfaces/sigaction/3-19.c:40:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/3-19.c:40:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/3-19: build: PASS
+conformance/interfaces/sigaction/3-19: link: PASS
 conformance/interfaces/sigaction/3-2: build: PASS
 conformance/interfaces/sigaction/3-2: link: PASS
 conformance/interfaces/sigaction/3-20: build: PASS
@@ -3608,12 +3465,8 @@ conformance/interfaces/sigaction/4-17: build: PASS
 conformance/interfaces/sigaction/4-17: link: PASS
 conformance/interfaces/sigaction/4-18: build: PASS
 conformance/interfaces/sigaction/4-18: link: PASS
-conformance/interfaces/sigaction/4-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/4-19.c: In function 'main':
-conformance/interfaces/sigaction/4-19.c:54:17: error: 'SIGPOLL' undeclared (first use in this function)
-   if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                 ^
-conformance/interfaces/sigaction/4-19.c:54:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-19: build: PASS
+conformance/interfaces/sigaction/4-19: link: PASS
 conformance/interfaces/sigaction/4-2: build: PASS
 conformance/interfaces/sigaction/4-2: link: PASS
 conformance/interfaces/sigaction/4-20: build: PASS
@@ -3670,12 +3523,8 @@ conformance/interfaces/sigaction/4-43: build: PASS
 conformance/interfaces/sigaction/4-43: link: PASS
 conformance/interfaces/sigaction/4-44: build: PASS
 conformance/interfaces/sigaction/4-44: link: PASS
-conformance/interfaces/sigaction/4-45: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/4-45.c: In function 'main':
-conformance/interfaces/sigaction/4-45.c:53:17: error: 'SIGPOLL' undeclared (first use in this function)
-   if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                 ^
-conformance/interfaces/sigaction/4-45.c:53:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-45: build: PASS
+conformance/interfaces/sigaction/4-45: link: PASS
 conformance/interfaces/sigaction/4-46: build: PASS
 conformance/interfaces/sigaction/4-46: link: PASS
 conformance/interfaces/sigaction/4-47: build: PASS
@@ -3732,12 +3581,8 @@ conformance/interfaces/sigaction/4-7: build: PASS
 conformance/interfaces/sigaction/4-7: link: PASS
 conformance/interfaces/sigaction/4-70: build: PASS
 conformance/interfaces/sigaction/4-70: link: PASS
-conformance/interfaces/sigaction/4-71: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/4-71.c: In function 'main':
-conformance/interfaces/sigaction/4-71.c:33:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/4-71.c:33:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-71: build: PASS
+conformance/interfaces/sigaction/4-71: link: PASS
 conformance/interfaces/sigaction/4-72: build: PASS
 conformance/interfaces/sigaction/4-72: link: PASS
 conformance/interfaces/sigaction/4-73: build: PASS
@@ -3792,12 +3637,8 @@ conformance/interfaces/sigaction/4-95: build: PASS
 conformance/interfaces/sigaction/4-95: link: PASS
 conformance/interfaces/sigaction/4-96: build: PASS
 conformance/interfaces/sigaction/4-96: link: PASS
-conformance/interfaces/sigaction/4-97: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/4-97.c: In function 'main':
-conformance/interfaces/sigaction/4-97.c:33:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/4-97.c:33:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/4-97: build: PASS
+conformance/interfaces/sigaction/4-97: link: PASS
 conformance/interfaces/sigaction/4-98: build: PASS
 conformance/interfaces/sigaction/4-98: link: PASS
 conformance/interfaces/sigaction/4-99: build: PASS
@@ -3822,12 +3663,8 @@ conformance/interfaces/sigaction/6-17: build: PASS
 conformance/interfaces/sigaction/6-17: link: PASS
 conformance/interfaces/sigaction/6-18: build: PASS
 conformance/interfaces/sigaction/6-18: link: PASS
-conformance/interfaces/sigaction/6-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/6-19.c: In function 'main':
-conformance/interfaces/sigaction/6-19.c:37:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/6-19.c:37:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/6-19: build: PASS
+conformance/interfaces/sigaction/6-19: link: PASS
 conformance/interfaces/sigaction/6-2: build: PASS
 conformance/interfaces/sigaction/6-2: link: PASS
 conformance/interfaces/sigaction/6-20: build: PASS
@@ -3878,24 +3715,12 @@ conformance/interfaces/sigaction/8-17: build: PASS
 conformance/interfaces/sigaction/8-17: link: PASS
 conformance/interfaces/sigaction/8-18: build: PASS
 conformance/interfaces/sigaction/8-18: link: PASS
-conformance/interfaces/sigaction/8-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/8-19.c: In function 'main':
-conformance/interfaces/sigaction/8-19.c:47:16: error: 'SIGPOLL' undeclared (first use in this function)
-  if (sigaction(SIGPOLL,  &act, 0) == -1) {
-                ^
-conformance/interfaces/sigaction/8-19.c:47:16: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/8-19: build: PASS
+conformance/interfaces/sigaction/8-19: link: PASS
 conformance/interfaces/sigaction/8-2: build: PASS
 conformance/interfaces/sigaction/8-2: link: PASS
-conformance/interfaces/sigaction/8-20: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/8-20.c: In function 'SIGPROF_handler':
-conformance/interfaces/sigaction/8-20.c:32:8: error: 'SIGPOLL' undeclared (first use in this function)
-  raise(SIGPOLL);
-        ^
-conformance/interfaces/sigaction/8-20.c:32:8: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/8-20.c: In function 'main':
-conformance/interfaces/sigaction/8-20.c:46:26: error: 'SIGPOLL' undeclared (first use in this function)
-  sigaddset(&act.sa_mask, SIGPOLL);
-                          ^
+conformance/interfaces/sigaction/8-20: build: PASS
+conformance/interfaces/sigaction/8-20: link: PASS
 conformance/interfaces/sigaction/8-21: build: PASS
 conformance/interfaces/sigaction/8-21: link: PASS
 conformance/interfaces/sigaction/8-22: build: PASS
@@ -3966,20 +3791,12 @@ conformance/interfaces/sigdelset/2-1: build: PASS
 conformance/interfaces/sigdelset/2-1: link: PASS
 conformance/interfaces/sigdelset/4-core-buildonly: build: PASS
 conformance/interfaces/sigdelset/4-core-buildonly: link: PASS
-conformance/interfaces/sigemptyset/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigemptyset/1-1.c: In function 'main':
-conformance/interfaces/sigemptyset/1-1.c:26:34: error: 'SIGPOLL' undeclared (first use in this function)
-                         SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, SIGTRAP,
-                                  ^
-conformance/interfaces/sigemptyset/1-1.c:26:34: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigemptyset/1-1: build: PASS
+conformance/interfaces/sigemptyset/1-1: link: PASS
 conformance/interfaces/sigemptyset/2-1: build: PASS
 conformance/interfaces/sigemptyset/2-1: link: PASS
-conformance/interfaces/sigfillset/1-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigfillset/1-1.c: In function 'main':
-conformance/interfaces/sigfillset/1-1.c:28:34: error: 'SIGPOLL' undeclared (first use in this function)
-                         SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, SIGTRAP,
-                                  ^
-conformance/interfaces/sigfillset/1-1.c:28:34: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigfillset/1-1: build: PASS
+conformance/interfaces/sigfillset/1-1: link: PASS
 conformance/interfaces/sigfillset/2-1: build: PASS
 conformance/interfaces/sigfillset/2-1: link: PASS
 conformance/interfaces/sighold/1-1: build: PASS
@@ -4036,12 +3853,8 @@ conformance/interfaces/sigpending/2-1: build: PASS
 conformance/interfaces/sigpending/2-1: link: PASS
 conformance/interfaces/sigprocmask/10-1: build: PASS
 conformance/interfaces/sigprocmask/10-1: link: PASS
-conformance/interfaces/sigprocmask/12-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigprocmask/12-1.c: In function 'is_changed':
-conformance/interfaces/sigprocmask/12-1.c:35:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigprocmask/12-1.c:35:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/12-1: build: PASS
+conformance/interfaces/sigprocmask/12-1: link: PASS
 conformance/interfaces/sigprocmask/15-1: build: PASS
 conformance/interfaces/sigprocmask/15-1: link: PASS
 conformance/interfaces/sigprocmask/17-core-buildonly: build: PASS
@@ -4052,30 +3865,14 @@ conformance/interfaces/sigprocmask/5-1: build: PASS
 conformance/interfaces/sigprocmask/5-1: link: PASS
 conformance/interfaces/sigprocmask/6-1: build: PASS
 conformance/interfaces/sigprocmask/6-1: link: PASS
-conformance/interfaces/sigprocmask/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigprocmask/7-1.c: In function 'main':
-conformance/interfaces/sigprocmask/7-1.c:33:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigprocmask/7-1.c:33:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigprocmask/8-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigprocmask/8-1.c: In function 'is_changed':
-conformance/interfaces/sigprocmask/8-1.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigprocmask/8-1.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigprocmask/8-2: build: FAILED: Compiler output: 
-conformance/interfaces/sigprocmask/8-2.c: In function 'is_changed':
-conformance/interfaces/sigprocmask/8-2.c:32:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigprocmask/8-2.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigprocmask/8-3: build: FAILED: Compiler output: 
-conformance/interfaces/sigprocmask/8-3.c: In function 'is_changed':
-conformance/interfaces/sigprocmask/8-3.c:31:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigprocmask/8-3.c:31:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigprocmask/7-1: build: PASS
+conformance/interfaces/sigprocmask/7-1: link: PASS
+conformance/interfaces/sigprocmask/8-1: build: PASS
+conformance/interfaces/sigprocmask/8-1: link: PASS
+conformance/interfaces/sigprocmask/8-2: build: PASS
+conformance/interfaces/sigprocmask/8-2: link: PASS
+conformance/interfaces/sigprocmask/8-3: build: PASS
+conformance/interfaces/sigprocmask/8-3: link: PASS
 conformance/interfaces/sigprocmask/9-1: build: PASS
 conformance/interfaces/sigprocmask/9-1: link: PASS
 conformance/interfaces/sigqueue/1-1: build: PASS
@@ -4127,12 +3924,8 @@ conformance/interfaces/sigset/3-1: build: PASS
 conformance/interfaces/sigset/3-1: link: PASS
 conformance/interfaces/sigset/4-1: build: PASS
 conformance/interfaces/sigset/4-1: link: PASS
-conformance/interfaces/sigset/5-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigset/5-1.c: In function 'is_empty':
-conformance/interfaces/sigset/5-1.c:35:35: error: 'SIGPOLL' undeclared (first use in this function)
-                 SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS,
-                                   ^
-conformance/interfaces/sigset/5-1.c:35:35: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigset/5-1: build: PASS
+conformance/interfaces/sigset/5-1: link: PASS
 conformance/interfaces/sigset/6-1: build: PASS
 conformance/interfaces/sigset/6-1: link: PASS
 conformance/interfaces/sigset/7-1: build: PASS
@@ -4145,12 +3938,8 @@ conformance/interfaces/sigsuspend/1-1: build: PASS
 conformance/interfaces/sigsuspend/1-1: link: PASS
 conformance/interfaces/sigsuspend/3-1: build: PASS
 conformance/interfaces/sigsuspend/3-1: link: PASS
-conformance/interfaces/sigsuspend/4-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigsuspend/4-1.c: In function 'is_changed':
-conformance/interfaces/sigsuspend/4-1.c:50:21: error: 'SIGPOLL' undeclared (first use in this function)
-   SIGUSR1, SIGUSR2, SIGPOLL, SIGPROF, SIGSYS, 
-                     ^
-conformance/interfaces/sigsuspend/4-1.c:50:21: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigsuspend/4-1: build: PASS
+conformance/interfaces/sigsuspend/4-1: link: PASS
 conformance/interfaces/sigsuspend/6-1: build: PASS
 conformance/interfaces/sigsuspend/6-1: link: PASS
 conformance/interfaces/sigtimedwait/1-1: build: PASS

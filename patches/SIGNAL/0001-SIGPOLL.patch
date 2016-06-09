@@ -1,0 +1,24 @@
+From 45a357ead3d4e17a20fc9f94eb1b87394d7b0192 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Thu, 9 Jun 2016 00:56:13 +0000
+Subject: [PATCH] SIGPOLL
+
+---
+ sys/sys/signal.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/sys/sys/signal.h b/sys/sys/signal.h
+index 982fdac..3a06f20 100644
+--- a/sys/sys/signal.h
++++ b/sys/sys/signal.h
+@@ -84,6 +84,7 @@
+ #define	SIGPWR		32	/* power fail/restart (not reset when caught) */
+ #define	SIGRTMIN	33
+ #define	SIGRTMAX	63
++#define SIGPOLL		SIGIO
+ 
+ #ifndef _KERNEL
+ #include <sys/cdefs.h>
+-- 
+2.6.4
+
