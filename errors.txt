@@ -28,6 +28,7 @@ timers:
    _SC_DELAYTIMER_MAX (done, waiting for reviews)
 
 signals:
+  SIGPOLL (done)
   SIGRTMIN (done, should wait for realtime signals to be done)
   SIGRTMAX (done, should wait for realtime signals to be done) 
   bsd_signal (done)
@@ -60,7 +61,6 @@ pthreads:
 
 NOT DONE:
 signals:
-    SIGPOLL (freebsd)
     _SC_REALTIME_SIGNALS (freebsd, called from sysctl?)
     _SC_SIGQUEUE_MAX  (freebsd, called from sysctl?)  
 
