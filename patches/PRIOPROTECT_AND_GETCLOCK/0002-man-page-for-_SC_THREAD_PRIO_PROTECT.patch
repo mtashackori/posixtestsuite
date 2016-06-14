@@ -1,0 +1,25 @@
+From 6832f63b91d092d0748a828ac05dec2200c88592 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Tue, 14 Jun 2016 04:01:31 +0000
+Subject: [PATCH] man page for _SC_THREAD_PRIO_PROTECT
+
+---
+ lib/libc/gen/sysconf.3 | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/lib/libc/gen/sysconf.3 b/lib/libc/gen/sysconf.3
+index 4f03524..92cf605 100644
+--- a/lib/libc/gen/sysconf.3
++++ b/lib/libc/gen/sysconf.3
+@@ -178,6 +178,8 @@ and its
+ Threads
+ option to which the system attempts to conform,
+ otherwise \-1.
++.It Li _SC_THREAD_PRIO_PROTECT
++System supports the priority ceiling protocol for POSIX threads.
+ .It Li _SC_TIMERS
+ The version of
+ .St -p1003.1
+-- 
+2.6.4
+
