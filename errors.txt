@@ -37,8 +37,8 @@ semaphore
   _SC_SEM_NSEMS_MAX  (done)
 
 pthreads: 
-  pthread_condattr_getclock (done)
-  pthread_barrierattr_getpshared  (done, but need to provide cross process sync)
+  pthread_condattr_getclock (done, but need to provide cross process sync)
+  pthread_barrierattr_getpshared  (done)
   pthread_barrierattr_setpshared  (done)
   pthread_mutexattr_setpshared  (done)
   pthread_mutexattr_getpshared  (done)
@@ -61,8 +61,8 @@ pthreads:
 
 NOT DONE:
 signals:
-    _SC_REALTIME_SIGNALS (freebsd, called from sysctl?)
-    _SC_SIGQUEUE_MAX  (freebsd, called from sysctl?)  
+    _SC_REALTIME_SIGNALS 
+    _SC_SIGQUEUE_MAX   
 
 mmap:
     POSIX_TYPED_MEM_ALLOCATE  (linux)
@@ -76,4 +76,3 @@ mmap:
 scheduler:
     SCHED_SPORADIC (linux)
     
-
