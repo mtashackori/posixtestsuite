@@ -1,0 +1,874 @@
+From 7ffa7e019019a3389e4c6484dbde4aeba5fad55b Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Tue, 14 Jun 2016 04:03:47 +0000
+Subject: [PATCH] man pages for pthread functions
+
+---
+ distrib/sets/lists/comp/mi           |  48 +++++++++++
+ lib/libpthread/Makefile              |  16 ++++
+ lib/libpthread/pthread_barrier.3     |  45 +++++++++-
+ lib/libpthread/pthread_barrierattr.3 |  33 ++++++-
+ lib/libpthread/pthread_condattr.3    |  53 +++++++++++-
+ lib/libpthread/pthread_mutex.3       |  78 ++++++++++++++++-
+ lib/libpthread/pthread_mutexattr.3   | 162 +++++++++++++++++++++++------------
+ lib/libpthread/pthread_rwlockattr.3  |  41 +++++++--
+ 8 files changed, 407 insertions(+), 69 deletions(-)
+
+diff --git a/distrib/sets/lists/comp/mi b/distrib/sets/lists/comp/mi
+index 9b88d5a..7eabb1b 100644
+--- a/distrib/sets/lists/comp/mi
++++ b/distrib/sets/lists/comp/mi
+@@ -8347,6 +8347,8 @@
+ ./usr/share/man/cat3/pthread_barrier_wait.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_barrierattr.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_barrierattr_destroy.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_barrierattr_getpshared.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_barrierattr_setpshared.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_barrierattr_init.0 comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_cancel.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_cleanup_pop.0	comp-c-catman		.cat
+@@ -8360,8 +8362,11 @@
+ ./usr/share/man/cat3/pthread_cond_wait.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_condattr.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_condattr_destroy.0 comp-c-catman		.cat
++./usr/share/man/cat3/pthread_condattr_getpshared.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_condattr_setpshared.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_condattr_init.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_condattr_setclock.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_condattr_getclock.0	comp-c-catmat	.cat
+ ./usr/share/man/cat3/pthread_create.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_curcpu_np.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_detach.0		comp-c-catman		.cat
+@@ -8383,11 +8388,20 @@
+ ./usr/share/man/cat3/pthread_mutex_lock.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_mutex_trylock.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_mutex_unlock.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_mutex_timedlock.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_mutex_getprioceiling.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_mutex_setprioceiling.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_mutexattr.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_mutexattr_destroy.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_mutexattr_getpshared.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_mutexattr_setpshared.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_mutexattr_gettype.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_mutexattr_init.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_mutexattr_settype.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_mutexattr_getprotocol.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_mutexattr_setprotocol.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_mutexattr_getprioceiling.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_mutexattr_setprioceiling.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_once.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_resume_np.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_rwlock.0		comp-c-catman		.cat
+@@ -8402,6 +8416,8 @@
+ ./usr/share/man/cat3/pthread_rwlock_wrlock.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_rwlockattr.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_rwlockattr_destroy.0	comp-c-catman		.cat
++./usr/share/man/cat3/pthread_rwlockattr_getpshared.0	comp-c-catman	.cat
++./usr/share/man/cat3/pthread_rwlockattr_setpshared.0	comp-c-catman	.cat
+ ./usr/share/man/cat3/pthread_rwlockattr_init.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_schedparam.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/pthread_self.0		comp-c-catman		.cat
+@@ -15518,6 +15534,8 @@
+ ./usr/share/man/html3/pthread_barrier_wait.html comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_barrierattr.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_barrierattr_destroy.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_barrierattr_getpshared.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_barrierattr_setpshared.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_barrierattr_init.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_cancel.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_cleanup_pop.html	comp-c-htmlman		html
+@@ -15531,8 +15549,11 @@
+ ./usr/share/man/html3/pthread_cond_wait.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_condattr.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_condattr_destroy.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_condattr_getpshared.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_condattr_setpshared.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_condattr_init.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_condattr_setclock.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_condattr_getclock.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_create.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_curcpu_np.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_detach.html	comp-c-htmlman		html
+@@ -15554,11 +15575,20 @@
+ ./usr/share/man/html3/pthread_mutex_lock.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_mutex_trylock.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_mutex_unlock.html comp-c-htmlman		html
++./usr/share/man/html3/pthread_mutex_timedlock.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutex_getprioceiling.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutex_setprioceiling.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_mutexattr.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_mutexattr_destroy.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_mutexattr_getpshared.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutexattr_setpshared.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_mutexattr_gettype.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_mutexattr_init.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_mutexattr_settype.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_mutexattr_getprotocol.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutexattr_setprotocol.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutexattr_getprioceiling.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_mutexattr_setprioceiling.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_once.html		comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_resume_np.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_rwlock.html	comp-c-htmlman		html
+@@ -15573,6 +15603,8 @@
+ ./usr/share/man/html3/pthread_rwlock_wrlock.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_rwlockattr.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_rwlockattr_destroy.html	comp-c-htmlman		html
++./usr/share/man/html3/pthread_rwlockattr_getpshared.html	comp-c-htmlman	html
++./usr/share/man/html3/pthread_rwlockattr_setpshared.html	comp-c-htmlman	html
+ ./usr/share/man/html3/pthread_rwlockattr_init.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_schedparam.html	comp-c-htmlman		html
+ ./usr/share/man/html3/pthread_self.html		comp-c-htmlman		html
+@@ -22683,6 +22715,8 @@
+ ./usr/share/man/man3/pthread_barrier_wait.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_barrierattr.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_barrierattr_destroy.3	comp-c-man		.man
++./usr/share/man/man3/pthread_barrierattr_getpshared.3	comp-c-man	.man
++./usr/share/man/man3/pthread_barrierattr_setpshared.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_barrierattr_init.3 comp-c-man		.man
+ ./usr/share/man/man3/pthread_cancel.3		comp-c-man		.man
+ ./usr/share/man/man3/pthread_cleanup_pop.3	comp-c-man		.man
+@@ -22696,8 +22730,11 @@
+ ./usr/share/man/man3/pthread_cond_wait.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_condattr.3		comp-c-man		.man
+ ./usr/share/man/man3/pthread_condattr_destroy.3 comp-c-man		.man
++./usr/share/man/man3/pthread_condattr_getpshared.3	comp-c-man	.man
++./usr/share/man/man3/pthread_condattr_setpshared.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_condattr_init.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_condattr_setclock.3	comp-c-man		.man
++./usr/share/man/man3/pthread_condattr_getclock.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_create.3		comp-c-man		.man
+ ./usr/share/man/man3/pthread_curcpu_np.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_detach.3		comp-c-man		.man
+@@ -22719,11 +22756,20 @@
+ ./usr/share/man/man3/pthread_mutex_lock.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_mutex_trylock.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_mutex_unlock.3	comp-c-man		.man
++./usr/share/man/man3/pthread_mutex_timedlock.3	comp-c-man		.man
++./usr/share/man/man3/pthread_mutex_getprioceiling.3	comp-c-man	.man
++./usr/share/man/man3/pthread_mutex_setprioceiling.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_mutexattr.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_mutexattr_destroy.3	comp-c-man		.man
++./usr/share/man/man3/pthread_mutexattr_getpshared.3	comp-c-man	.man
++./usr/share/man/man3/pthread_mutexattr_setpshared.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_mutexattr_gettype.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_mutexattr_init.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_mutexattr_settype.3	comp-c-man		.man
++./usr/share/man/man3/pthread_mutexattr_getprotocol.3	comp-c-man	.man
++./usr/share/man/man3/pthread_mutexattr_setprotocol.3	comp-c-man	.man
++./usr/share/man/man3/pthread_mutexattr_getprioceiling.3	comp-c-man	.man
++./usr/share/man/man3/pthread_mutexattr_setprioceiling.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_once.3		comp-c-man		.man
+ ./usr/share/man/man3/pthread_resume_np.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_rwlock.3		comp-c-man		.man
+@@ -22738,6 +22784,8 @@
+ ./usr/share/man/man3/pthread_rwlock_wrlock.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_rwlockattr.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_rwlockattr_destroy.3	comp-c-man		.man
++./usr/share/man/man3/pthread_rwlockattr_getpshared.3	comp-c-man	.man
++./usr/share/man/man3/pthread_rwlockattr_setpshared.3	comp-c-man	.man
+ ./usr/share/man/man3/pthread_rwlockattr_init.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_schedparam.3	comp-c-man		.man
+ ./usr/share/man/man3/pthread_self.3		comp-c-man		.man
+diff --git a/lib/libpthread/Makefile b/lib/libpthread/Makefile
+index b5e6b97..77487fd 100644
+--- a/lib/libpthread/Makefile
++++ b/lib/libpthread/Makefile
+@@ -177,6 +177,8 @@ MLINKS+=	pthread_barrier.3 pthread_barrier_wait.3
+ 
+ MLINKS+=	pthread_barrierattr.3 pthread_barrierattr_init.3
+ MLINKS+=	pthread_barrierattr.3 pthread_barrierattr_destroy.3
++MLINKS+=	pthread_barrierattr.3 pthread_barrierattr_getpshared.3
++MLINKS+=	pthread_barrierattr.3 pthread_barrierattr_setpshared.3
+ 
+ MLINKS+=	pthread_cond.3 pthread_cond_init.3
+ MLINKS+=	pthread_cond.3 pthread_cond_destroy.3
+@@ -188,6 +190,9 @@ MLINKS+=	pthread_cond.3 pthread_cond_timedwait.3
+ MLINKS+=	pthread_condattr.3 pthread_condattr_init.3
+ MLINKS+=	pthread_condattr.3 pthread_condattr_destroy.3
+ MLINKS+=	pthread_condattr.3 pthread_condattr_setclock.3
++MLINKS+=	pthread_condattr.3 pthread_condattr_getclock.3
++MLINKS+=	pthread_condattr.3 pthread_condattr_getpshared.3
++MLINKS+=	pthread_condattr.3 pthread_condattr_setpshared.3
+ 
+ MLINKS+=	pthread_getname_np.3 pthread_setname_np.3
+ MLINKS+=	pthread_getspecific.3 pthread_setspecific.3
+@@ -198,11 +203,20 @@ MLINKS+=	pthread_mutex.3 pthread_mutex_destroy.3
+ MLINKS+=	pthread_mutex.3 pthread_mutex_lock.3
+ MLINKS+=	pthread_mutex.3 pthread_mutex_trylock.3
+ MLINKS+=	pthread_mutex.3 pthread_mutex_unlock.3
++MLINKS+=	pthread_mutex.3 pthread_mutex_timedlock.3
++MLINKS+=	pthread_mutex.3	pthread_mutex_getprioceiling.3
++MLINKS+=	pthread_mutex.3	pthread_mutex_setprioceiling.3 
+ 
+ MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_init.3
+ MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_destroy.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_getpshared.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_setpshared.3
+ MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_settype.3
+ MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_gettype.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_getprotocol.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_setprotocol.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_getprioceiling.3
++MLINKS+=	pthread_mutexattr.3 pthread_mutexattr_setprioceiling.3	
+ 
+ MLINKS+=	pthread_rwlock.3 pthread_rwlock_init.3
+ MLINKS+=	pthread_rwlock.3 pthread_rwlock_destroy.3
+@@ -217,6 +231,8 @@ MLINKS+=	pthread_rwlock.3 pthread_rwlock_trywrlock.3
+ 
+ MLINKS+=	pthread_rwlockattr.3 pthread_rwlockattr_init.3
+ MLINKS+=	pthread_rwlockattr.3 pthread_rwlockattr_destroy.3
++MLINKS+=	pthread_rwlockattr.3 pthread_rwlockattr_getpshared.3
++MLINKS+=	pthread_rwlockattr.3 pthread_rwlockattr_setpshared.3
+ 
+ MLINKS+=	pthread_spin.3 pthread_spin_init.3
+ MLINKS+=	pthread_spin.3 pthread_spin_destroy.3
+diff --git a/lib/libpthread/pthread_barrier.3 b/lib/libpthread/pthread_barrier.3
+index 8cbec10..d5f1fdd 100644
+--- a/lib/libpthread/pthread_barrier.3
++++ b/lib/libpthread/pthread_barrier.3
+@@ -25,7 +25,7 @@
+ .\" POSSIBILITY OF SUCH DAMAGE.
+ .\"
+ .\" ----------------------------------------------------------------------------
+-.Dd July 8, 2010
++.Dd June 12, 2016
+ .Dt PTHREAD_BARRIER 3
+ .Os
+ .Sh NAME
+@@ -42,6 +42,12 @@
+ .Fn pthread_barrier_destroy "pthread_barrier_t *barrier"
+ .Ft int
+ .Fn pthread_barrier_wait "pthread_barrier_t *barrier"
++.Ft int
++.Fn pthread_barrierattr_getpshared "const pthread_barrierattr_t * __restrict attr" \
++"int * __restrict pshared"
++.Ft int
++.Fn pthread_barrierattr_setpshared "pthread_barrierattr_t * attr" \
++"int pshared" 
+ .\" ----------------------------------------------------------------------------
+ .Sh DESCRIPTION
+ The
+@@ -87,6 +93,16 @@ call have called
+ all threads will wake up, return from their respective
+ .Fn pthread_barrier_wait
+ calls and continue execution.
++.Pp
++.\" -----
++The
++.Fn pthread_barrierattr_getpshared 
++function shall obtain the value of the process-shared attribute from the
++attributes object referenced by attr. 
++The
++.Fn pthread_barrierattr_setpshared
++function shall set the process-shared attribute in an initialized attributes
++object referenced by attr. 
+ .\" ----------------------------------------------------------------------------
+ .Sh RETURN VALUES
+ If successful,
+@@ -113,6 +129,19 @@ It is the responsibility of this thread to insure the visibility
+ and atomicity of any updates to shared data with respect to the
+ other threads participating in the barrier.
+ In the case of failure, an error value will be returned.
++.Pp
++.\" -----
++If successful,
++.Fn pthread_barrierattr_getpshared
++shall return zero and store the value of the process-shared attribute of attr 
++into the object referenced by the
++.Fa pshared
++parameter. Otherwise, an error number shall be returned to indicate the error.
++.Pp
++.\" -----
++If successful,
++.Fn pthread_barrierattr_setpshared
++shall return zero; Otherwise, an error number shall be returned to indicate the error. 
+ .\" ----------------------------------------------------------------------------
+ .Sh ERRORS
+ The
+@@ -152,6 +181,20 @@ The value specified by
+ .Fa barrier
+ is invalid.
+ .El
++.Pp
++.\" -----
++The 
++.Fn pthread_barrierattr_setpshared
++function and 
++the
++.Fn pthread_barrierattr_getpshared
++function may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The value specified by
++.Fa attr
++is invalid.
++
+ .\" ---------------------------------------------------------------------------
+ .Sh SEE ALSO
+ .Xr pthread_barrierattr 3 ,
+diff --git a/lib/libpthread/pthread_barrierattr.3 b/lib/libpthread/pthread_barrierattr.3
+index 38b04f1..19f4e84 100644
+--- a/lib/libpthread/pthread_barrierattr.3
++++ b/lib/libpthread/pthread_barrierattr.3
+@@ -22,12 +22,14 @@
+ .\" ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ .\" POSSIBILITY OF SUCH DAMAGE.
+ .\"
+-.Dd July 9, 2010
++.Dd June 12, 2016
+ .Dt PTHREAD_BARRIERATTR 3
+ .Os
+ .Sh NAME
+ .Nm pthread_barrierattr_init ,
+ .Nm pthread_barrierattr_destroy ,
++.Nm pthread_barrierattr_getpshared ,
++.Nm pthread_barrierattr_setpshared
+ .Nd barrier attribute operations
+ .Sh LIBRARY
+ .Lb libpthread
+@@ -37,6 +39,10 @@
+ .Fn pthread_barrierattr_init "pthread_barrierattr_t *attr"
+ .Ft int
+ .Fn pthread_barrierattr_destroy "pthread_barrierattr_t *attr"
++.Ft int
++.Fn pthread_barrierattr_getpshared "const pthread_barrierattr_t * __restrict attr" "int * __restrict pshared"
++.Ft int
++.Fn pthread_barrierattr_setpshared "pthread_barrierattr_t * attr" "int pshared"
+ .Sh DESCRIPTION
+ Barrier attributes are used to specify parameters to be used with
+ .Xr pthread_barrier_init 3 .
+@@ -54,6 +60,19 @@ The
+ .Fn pthread_barrierattr_destroy
+ function destroys
+ .Fa attr .
++.Pp
++The
++.Fn pthread_barrierattr_getpshared
++function shall obtain the value of the process-shared attribute
++from the attributes object referenced by 
++.Fa attr .
++.Pp
++The
++.Fn pthread_barrierattr_setpshared
++function shall set the process-shared attribute in an initialized
++attributes object referenced by 
++.Fa attr .
++
+ .Sh RETURN VALUES
+ If successful, these functions return 0.
+ Otherwise, an error number is returned to indicate the error.
+@@ -70,6 +89,18 @@ The value specified by
+ .Fa attr
+ is invalid.
+ .El
++.Pp
++The
++.Fn pthread_barrierattr_getpshared
++and
++.Fn pthread_barrierattr_setpshared
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The value specified by
++.Fa attr 
++is invalid.
++.El
+ .Sh SEE ALSO
+ .Xr pthread_barrier_init 3
+ .Sh STANDARDS
+diff --git a/lib/libpthread/pthread_condattr.3 b/lib/libpthread/pthread_condattr.3
+index 6816c42..e6b04da 100644
+--- a/lib/libpthread/pthread_condattr.3
++++ b/lib/libpthread/pthread_condattr.3
+@@ -50,11 +50,15 @@
+ .\" EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .\"
+ .\" $FreeBSD: src/lib/libpthread/man/pthread_condattr.3,v 1.10 2002/09/16 19:29:28 mini Exp $
+-.Dd November 2, 2012
++.Dd June 12, 2016
+ .Dt PTHREAD_CONDATTR 3
+ .Os
+ .Sh NAME
+-.Nm pthread_condattr_init
++.Nm pthread_condattr_init, 
++.Nm pthread_condattr_getpshared,
++.Nm pthread_condattr_setpshared,
++.Nm pthread_condattr_getclock,
++.Nm pthread_condattr_setclock
+ .Nd condition attribute operations
+ .Sh LIBRARY
+ .Lb libpthread
+@@ -63,9 +67,16 @@
+ .Ft int
+ .Fn pthread_condattr_init "pthread_condattr_t *attr"
+ .Ft int
++.Fn pthread_condattr_getclock "const pthread_condattr_t *__restrict attr" \
++"clockid_t * __restrict clock_id"
++.Ft int
+ .Fn pthread_condattr_setclock "pthread_condattr_t *attr" "clockid_t clock"
+ .Ft int
+ .Fn pthread_condattr_destroy "pthread_condattr_t *attr"
++.Ft int
++.Fn pthread_condattr_getpshared "const pthread_condattr_t * __restrict attr" "int * __restrict pshared"
++.Ft int
++.Fn pshared_condattr_setpshared "pthread_condattr_t *attr" "int pshared"
+ .Sh DESCRIPTION
+ Condition attribute objects are used to specify parameters to the
+ .Xr pthread_cond_init 3
+@@ -77,6 +88,12 @@ and the
+ .Fn pthread_condattr_destroy
+ function destroys a condition attribute object.
+ The
++.Fn pthread_condattr_getclock
++function shall obtain the value of the 
++.Fa clock
++attributes object referenced by
++.Fa attr.
++The
+ .Fn pthread_condattr_setclock
+ function sets the system clock to be used for time comparisons to
+ the one specified in
+@@ -86,6 +103,16 @@ Valid clock values are
+ and
+ .Dv CLOCK_REALTIME
+ (the default).
++The
++.Fn pthread_condattr_getpshared
++function shall obtain the value of the process-shared attribute from the 
++attributes object referenced by
++.Fa attr.
++The
++.Fn pthread_condattr_setpshared
++function shall set the process-shared attribute in an initialized attributes 
++object referenced by 
++.Fa attr.
+ .Sh RETURN VALUES
+ If successful, these functions return 0.
+ Otherwise, an error number is returned to indicate the error.
+@@ -102,6 +129,28 @@ The value specified by
+ .Fa attr
+ is invalid.
+ .El
++.Pp
++The
++.Fn pthread_condattr_getclock 
++and
++.Fn pthread_condattr_setclock
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The value specified by
++.Fa attr is invalid.
++.El
++.Pp
++The
++.Fn pthread_condattr_getpshared
++and
++.Fn pthread_condattr_setpshared
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The value specified by
++.Fa attr
++is invalid.
+ .Sh SEE ALSO
+ .Xr pthread_cond_init 3
+ .Sh STANDARDS
+diff --git a/lib/libpthread/pthread_mutex.3 b/lib/libpthread/pthread_mutex.3
+index b6ddcab..d387fc3 100644
+--- a/lib/libpthread/pthread_mutex.3
++++ b/lib/libpthread/pthread_mutex.3
+@@ -52,7 +52,7 @@
+ .\" SUCH DAMAGE.
+ .\"
+ .\" ----------------------------------------------------------------------------
+-.Dd July 8, 2010
++.Dd June 12, 2016
+ .Dt PTHREAD_MUTEX 3
+ .Os
+ .Sh NAME
+@@ -75,6 +75,14 @@
+ .Fn pthread_mutex_trylock "pthread_mutex_t *mutex"
+ .Ft int
+ .Fn pthread_mutex_unlock "pthread_mutex_t *mutex"
++.Ft int
++.Fn pthread_mutex_timedlock "pthread_mutex_t * mutex" "const struct timespec *__restrict timeout"
++.Ft int
++.Fn pthread_mutex_getprioceiling "const pthread_mutex_t * __restrict mutex" "int * __restrict prioceiling"
++.Ft int
++.Fn pthread_mutex_setprioceiling "pthread_mutex_t * __restrict mutex" \
++"int prioceiling" "int * __restrict old_ceiling"
++
+ .\" ----------------------------------------------------------------------------
+ .Sh DESCRIPTION
+ The
+@@ -135,6 +143,38 @@ When operating with the default mutex type,
+ undefined behavior follows if a thread tries to unlock a mutex
+ that has not been locked by it, or if a thread tries to release
+ a mutex that is already unlocked.
++.Pp
++.\" -----
++The 
++.Fn pthread_mutex_timedlock
++function shall lock the mutex object referenced by
++.Fa mutex.
++If the mutex is already locked, the calling thread shall block until
++the mutex becomes available in the 
++.Fn pthread_mutex_lock
++function. If the mutex cannot be locked without waiting for another thread to
++unlock the mutex, this wait shall be terminated when the specified timeout expires.
++The timeout shall expire when the absolute time specified by 
++.Fa timeout
++passes, as measured by the clock on which timeouts are based.
++.Pp
++.\" -----
++The
++.Fn pthread_mutex_getprioceiling
++function shall return the current priority ceiling of the mutex.
++.Pp
++.\" -----
++The 
++.Fn pthread_mutex_setprioceiling
++function shall either lock the mutex if it is unlocked, or block until it can sucessfully
++lock the mutex, then it shall change mutex's priority ceiling and release the mutex.
++When the change is sucessful, the previous value of the priority ceiling shall be returned
++in
++.Fa old_ceiling.
++The process of locking the mutex need not adhere to the priority protect protocol.
++If
++.Fn pthread_mutex_setprioceiling
++function fails, the mutex priority ceiling shall not be changed.
+ .\" ----------------------------------------------------------------------------
+ .Sh RETURN VALUES
+ Upon success all described functions return zero.
+@@ -203,6 +243,42 @@ is invalid.
+ The current thread does not hold a lock on
+ .Fa mutex .
+ .El
++.Pp
++.\" -----
++.Fn pthread_mutex_timedlock
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The mutex was created with the protocol attribute having the value
++PTHREAD_PRIO_PROTECT and the calling thread's priority is higher than
++the mutex current priority ceiling.
++.It Bq Er EINVAL
++The process or thread would have blocked, and the
++.Fa timeout
++parameter specified a nanoseconds field value less than zero or greater
++than or equal to 1000 million.
++.It Bq Er ETIMEDOUT
++The mutex could not be locked before the specified timeout expired.
++.El
++.Pp
++.\" -----
++The
++.Fn pthread_mutex_getprioceiling
++and 
++.Fn pthread_mutex_setprioceiling
++functions may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The priority requested by 
++.Fa prioceiling
++is out of range.
++.It Bq Er EINVAL
++The value specified by 
++.Fa mutex
++does not refer to a currently existing mutex.
++.It Bq Er EPERM
++The caller does not have the privilege to perform the operation.
++
+ .\" ----------------------------------------------------------------------------
+ .Sh SEE ALSO
+ .Xr pthread 3 ,
+diff --git a/lib/libpthread/pthread_mutexattr.3 b/lib/libpthread/pthread_mutexattr.3
+index 5a20787..ef6d341 100644
+--- a/lib/libpthread/pthread_mutexattr.3
++++ b/lib/libpthread/pthread_mutexattr.3
+@@ -50,18 +50,20 @@
+ .\" EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .\"
+ .\" $FreeBSD: src/lib/libpthread/man/pthread_mutexattr.3,v 1.8 2002/09/16 19:29:29 mini Exp $
+-.Dd July 9, 2010
++.Dd June 12, 2016
+ .Dt PTHREAD_MUTEXATTR 3
+ .Os
+ .Sh NAME
+ .Nm pthread_mutexattr_init ,
+ .Nm pthread_mutexattr_destroy ,
+-.\" .Nm pthread_mutexattr_setprioceiling ,
+-.\" .Nm pthread_mutexattr_getprioceiling ,
+-.\" .Nm pthread_mutexattr_setprotocol ,
+-.\" .Nm pthread_mutexattr_getprotocol ,
++.Nm pthread_mutexattr_setprioceiling ,
++.Nm pthread_mutexattr_getprioceiling ,
++.Nm pthread_mutexattr_setprotocol ,
++.Nm pthread_mutexattr_getprotocol ,
+ .Nm pthread_mutexattr_settype ,
+-.Nm pthread_mutexattr_gettype
++.Nm pthread_mutexattr_gettype ,
++.Nm pthread_mutexattr_getpshared ,
++.Nm pthread_mutexattr_setpshared
+ .Nd mutex attribute operations
+ .Sh LIBRARY
+ .Lb libpthread
+@@ -71,23 +73,29 @@
+ .Fn pthread_mutexattr_init "pthread_mutexattr_t *attr"
+ .Ft int
+ .Fn pthread_mutexattr_destroy "pthread_mutexattr_t *attr"
+-.\" .Ft int
+-.\" .Fn pthread_mutexattr_setprioceiling \
+-.\" "pthread_mutexattr_t *attr" "int prioceiling"
+-.\" .Ft int
+-.\" .Fn pthread_mutexattr_getprioceiling \
+-.\" "pthread_mutexattr_t *attr" "int *prioceiling"
+-.\" .Ft int
+-.\" .Fn pthread_mutexattr_setprotocol \
+-.\" "pthread_mutexattr_t *attr" "int protocol"
+-.\" .Ft int
+-.\" .Fn pthread_mutexattr_getprotocol \
+-.\" "pthread_mutexattr_t *attr" "int *protocol"
++.Ft int
++.Fn pthread_mutexattr_setprioceiling \
++"pthread_mutexattr_t *attr" "int prioceiling"
++.Ft int
++.Fn pthread_mutexattr_getprioceiling \
++"pthread_mutexattr_t *attr" "int *prioceiling"
++.Ft int
++.Fn pthread_mutexattr_setprotocol \
++"pthread_mutexattr_t *attr" "int protocol"
++.Ft int
++.Fn pthread_mutexattr_getprotocol \
++"pthread_mutexattr_t *attr" "int *protocol"
+ .Ft int
+ .Fn pthread_mutexattr_settype "pthread_mutexattr_t *attr" "int type"
+ .Ft int
+ .Fn pthread_mutexattr_gettype \
+ "pthread_mutexattr_t * restrict attr" "int * restrict type"
++.Ft int
++.Fn pthread_mutexattr_getpshared \
++"const pthread_mutexattr_t * __restrict attr" "int * __restrict pshared"
++.Ft int
++.Fn pthread_mutexattr_setpshared \
++"pthread_mutexattr_t * attr" "int pshared"
+ .Sh DESCRIPTION
+ Mutex attributes are used to specify parameters to
+ .Fn pthread_mutex_init .
+@@ -172,6 +180,38 @@ The
+ .Fn pthread_mutexattr_gettype
+ functions copy the type value of the attribute to the location
+ pointed to by the second parameter.
++.Pp
++The
++.Fn pthread_mutexattr_getpshared
++function obtains the value of the process-shared attribute from 
++the attributes object referenced by 
++.Fa attr.
++.Pp
++The 
++.Fn pthread_mutexattr_setpshared
++function is used to set the process-shared attribute in an initialised
++attributes object referenced by
++.Fa attr.
++.Pp
++The 
++.Fn pthread_mutexattr_getprotocol
++and
++.Fn pthread_mutexattr_setprotocol
++functions shall get and set the protocol attribute of a mutex attributes 
++object pointed to by
++.Fa attr 
++which was previously created by the function
++.Fn pthread_mutexattr_init .
++.Pp
++The 
++.Fn pthread_mutexattr_getprioceiling
++and
++.Fn pthread_mutexattr_setprioceiling
++functions, shall get and set the priority ceiling attribute of a mutex attributes
++object pointed to by 
++.Fa attr 
++which was previously created by the function
++.Fn pthread_mutexattr_init .
+ .Sh RETURN VALUES
+ If successful, these functions return 0.
+ Otherwise, an error number is returned to indicate the error.
+@@ -201,44 +241,54 @@ No error numbers are defined for the
+ and
+ .Fn pthread_mutexattr_gettype
+ functions.
+-.\"
+-.\" .Pp
+-.\" .Fn pthread_mutexattr_setprioceiling
+-.\" may fail if:
+-.\" .Bl -tag -width Er
+-.\" .It Bq Er EINVAL
+-.\" Invalid value for
+-.\" .Fa attr ,
+-.\" or invalid value for
+-.\" .Fa prioceiling .
+-.\" .El
+-.\" .Pp
+-.\" .Fn pthread_mutexattr_getprioceiling
+-.\" may fail if:
+-.\" .Bl -tag -width Er
+-.\" .It Bq Er EINVAL
+-.\" Invalid value for
+-.\" .Fa attr .
+-.\" .El
+-.\" .Pp
+-.\" .Fn pthread_mutexattr_setprotocol
+-.\" may fail if:
+-.\" .Bl -tag -width Er
+-.\" .It Bq Er EINVAL
+-.\" Invalid value for
+-.\" .Fa attr ,
+-.\" or invalid value for
+-.\" .Fa protocol .
+-.\" .El
+-.\" .Pp
+-.\" .Fn pthread_mutexattr_getprotocol
+-.\" may fail if:
+-.\" .Bl -tag -width Er
+-.\" .It Bq Er EINVAL
+-.\" Invalid value for
+-.\" .Fa attr .
+-.\" .El
+-.\" .Pp
++.Pp
++.Fn pthread_mutexattr_setprioceiling
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++Invalid value for
++.Fa attr ,
++or invalid value for
++.Fa prioceiling .
++.El
++.Pp
++.Fn pthread_mutexattr_getprioceiling
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++Invalid value for
++.Fa attr .
++.El
++.Pp
++.Fn pthread_mutexattr_setprotocol
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++Invalid value for
++.Fa attr ,
++or invalid value for
++.Fa protocol .
++.El
++.Pp
++.Fn pthread_mutexattr_getprotocol
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++Invalid value for
++.Fa attr .
++.El
++.Pp
++.El
++.Pp
++.Fn pthread_mutexattr_getpshared
++and 
++.Fn pthread_mutexattr_setpshared
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++the value specified by 
++.Fa attr
++is invalid.
+ .Sh SEE ALSO
+ .Xr pthread_mutex_init 3
+ .Sh STANDARDS
+diff --git a/lib/libpthread/pthread_rwlockattr.3 b/lib/libpthread/pthread_rwlockattr.3
+index 78ab06e..d3801fe 100644
+--- a/lib/libpthread/pthread_rwlockattr.3
++++ b/lib/libpthread/pthread_rwlockattr.3
+@@ -48,13 +48,15 @@
+ .\"
+ .\" $FreeBSD: src/lib/libpthread/man/pthread_rwlockattr_init.3,v 1.7 2002/09/16 19:29:29 mini Exp $
+ .\"
+-.Dd July 9, 2010
++.Dd June 12, 2016
+ .Dt PTHREAD_RWLOCKATTR 3
+ .Os
+ .Sh NAME
+ .Nm pthread_rwlockattr_init ,
+-.Nm pthread_rwlockattr_destroy
+-.Nd initialize or destroy read/write lock attributes
++.Nm pthread_rwlockattr_destroy ,
++.Nm pthread_rwlockattr_getpshared ,
++.Nm pthread_rwlockattr_setpshared
++.Nd initialize, destroy or query read/write lock attributes
+ .Sh LIBRARY
+ .Lb libpthread
+ .Sh SYNOPSIS
+@@ -63,6 +65,10 @@
+ .Fn pthread_rwlockattr_init "pthread_rwlockattr_t *attr"
+ .Ft int
+ .Fn pthread_rwlockattr_destroy "pthread_rwlockattr_t *attr"
++.Ft int
++.Fn pthread_rwlockattr_getpshared "const pthread_rwlockattr_t *__restrict attr" "int * __restrict pshared"
++.Ft int
++.Fn pthread_rwlockattr_setpshared "pthread_rwlockattr_t *attr" "int pshared"
+ .Sh DESCRIPTION
+ The
+ .Fn pthread_rwlockattr_init
+@@ -73,12 +79,20 @@ The
+ function is used to destroy a read/write lock attribute object
+ previously created with
+ .Fn pthread_rwlockattr_init .
++.Pp
++The
++.Fn pthread_rwlockattr_getpshared
++function shall obtain the value of process-shared attribute from the initialized attributes object 
++referenced by
++.Fa attr.
++.Pp
++The
++.Fn pthread_rwlockattr_setpshared
++function shall set the process-shared attribute in an initialized attributes object referenced by
++.Fa attr.
+ .Sh RETURN VALUES
+-If successful, the
+-.Fn pthread_rwlockattr_init
+-and
+-.Fn pthread_rwlockattr_destroy
+-functions return zero.
++If successful, 
++all these functions return zero.
+ Otherwise an error number will be returned to indicate the error.
+ .Sh ERRORS
+ .Fn pthread_rwlockattr_init
+@@ -98,6 +112,17 @@ The value specified by
+ .Fa attr
+ is invalid.
+ .El
++.Pp
++.Fn pthread_rwlockattr_getpshared
++and
++.Fn pthread_rwlockattr_setpshared
++may fail if:
++.Bl -tag -width Er
++.It Bq Er EINVAL
++The value specified by
++.Fa attr
++is invalid.
++.El
+ .Sh SEE ALSO
+ .Xr pthread_rwlock_init 3
+ .Sh STANDARDS
+-- 
+2.6.4
+
