@@ -1,0 +1,51 @@
+From df19786a508e349835e474f2a28aa5cae51cb1a2 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Wed, 15 Jun 2016 04:43:03 +0000
+Subject: [PATCH] condattr test
+
+---
+ tests/lib/libpthread/t_cond.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/tests/lib/libpthread/t_cond.c b/tests/lib/libpthread/t_cond.c
+index 9f33c9e..71c55ec 100644
+--- a/tests/lib/libpthread/t_cond.c
++++ b/tests/lib/libpthread/t_cond.c
+@@ -547,6 +547,26 @@ ATF_TC_BODY(destroy_after_cancel, tc)
+ 	PTHREAD_REQUIRE(pthread_mutex_destroy(&mutex));
+ }
+ 
++ATF_TC(condattr);
++ATF_TC_HEAD(condattr, tc)
++{
++	atf_tc_set_md_var(tc, "descr", "Checks Condattr");
++}
++ATF_TC_BODY(condattr, tc)
++{
++	pthread_condattr_t condattr;
++	clockid_t clockid;
++
++	PTHREAD_REQUIRE(pthread_condattr_init(&condattr));
++	PTHREAD_REQUIRE(pthread_condattr_setclock(&condattr, CLOCK_REALTIME));
++	PTHREAD_REQUIRE(pthread_condattr_getclock(&condattr, &clockid));
++	ATF_REQUIRE_EQ(clockid, CLOCK_REALTIME);
++	
++	PTHREAD_REQUIRE(pthread_condattr_setclock(&condattr, CLOCK_MONOTONIC));
++	PTHREAD_REQUIRE(pthread_condattr_getclock(&condattr, &clockid));	
++ 	ATF_REQUIRE_EQ(clockid, CLOCK_MONOTONIC);
++}
++
+ ATF_TP_ADD_TCS(tp)
+ {
+ 
+@@ -558,6 +578,7 @@ ATF_TP_ADD_TCS(tp)
+ 	ATF_TP_ADD_TC(tp, broadcast);
+ 	ATF_TP_ADD_TC(tp, bogus_timedwaits);
+ 	ATF_TP_ADD_TC(tp, destroy_after_cancel);
++	ATF_TP_ADD_TC(tp, condattr);
+ 
+ 	return atf_no_error();
+ }
+-- 
+2.6.4
+
