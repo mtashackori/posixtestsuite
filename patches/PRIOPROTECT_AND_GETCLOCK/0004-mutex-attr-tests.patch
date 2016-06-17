@@ -1,0 +1,82 @@
+From aba4e71d543f5377a3dd130b6856d1f293954f25 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Fri, 17 Jun 2016 04:19:00 +0000
+Subject: [PATCH] mutex attr tests
+
+---
+ tests/lib/libpthread/t_mutex.c | 54 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 53 insertions(+), 1 deletion(-)
+
+diff --git a/tests/lib/libpthread/t_mutex.c b/tests/lib/libpthread/t_mutex.c
+index b5b07b3..d53ac6e 100644
+--- a/tests/lib/libpthread/t_mutex.c
++++ b/tests/lib/libpthread/t_mutex.c
+@@ -304,12 +304,64 @@ ATF_TC_BODY(mutex4, tc)
+ 	PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex));
+ }
+ 
++ATF_TC(mutexattr1);
++ATF_TC_HEAD(mutexattr1, tc)
++{
++	atf_tc_set_md_var(tc, "descr", "Checks mutexattr");
++}
++ATF_TC_BODY(mutexattr1, tc)
++{
++	pthread_mutexattr_t mattr;
++	int protocol, target;
++	
++	PTHREAD_REQUIRE(pthread_mutexattr_init(&mattr));
++
++	target = PTHREAD_PRIO_NONE;
++	PTHREAD_REQUIRE(pthread_mutexattr_setprotocol(&mattr, target));
++	PTHREAD_REQUIRE(pthread_mutexattr_getprotocol(&mattr, &protocol));
++	ATF_REQUIRE_EQ(protocol, target);
++
++	/*
++	target = PTHREAD_PRIO_INHERIT;
++	PTHREAD_REQUIRE(pthread_mutexattr_setprotocol(&mattr, target));
++	PTHREAD_REQUIRE(pthread_mutexattr_getprotocol(&mattr, &protocol));
++	ATF_REQUIRE_EQ(protocol, target);
++	*/
++
++	target = PTHREAD_PRIO_PROTECT;
++	PTHREAD_REQUIRE(pthread_mutexattr_setprotocol(&mattr, target));
++	PTHREAD_REQUIRE(pthread_mutexattr_getprotocol(&mattr, &protocol));
++	ATF_REQUIRE_EQ(protocol, target);
++}
++
++ATF_TC(mutexattr2);
++ATF_TC_HEAD(mutexattr2, tc)
++{
++	atf_tc_set_md_var(tc, "descr", "Checks mutexattr");
++}
++ATF_TC_BODY(mutexattr2, tc)
++{
++	pthread_mutexattr_t mattr;
++
++	PTHREAD_REQUIRE(pthread_mutexattr_init(&mattr));
++	int max_prio = sched_get_priority_max(SCHED_FIFO);
++	int min_prio = sched_get_priority_min(SCHED_FIFO);
++	int i, prioceiling;
++	for (i=min_prio; (i<max_prio+1); i++) {
++		PTHREAD_REQUIRE(pthread_mutexattr_setprioceiling(&mattr, i));
++		PTHREAD_REQUIRE(pthread_mutexattr_getprioceiling(&mattr, &prioceiling));
++		ATF_REQUIRE_EQ(i, prioceiling);
++	}
++}
++
+ ATF_TP_ADD_TCS(tp)
+ {
+ 	ATF_TP_ADD_TC(tp, mutex1);
+ 	ATF_TP_ADD_TC(tp, mutex2);
+ 	ATF_TP_ADD_TC(tp, mutex3);
+ 	ATF_TP_ADD_TC(tp, mutex4);
+-
++	ATF_TP_ADD_TC(tp, mutexattr1);
++	ATF_TP_ADD_TC(tp, mutexattr2);
++	
+ 	return atf_no_error();
+ }
+-- 
+2.6.4
+
