@@ -59,6 +59,9 @@ pthreads:
 
   PTHREAD_STACK_MIN  (should be returned when query _SC_THREAD_STACK_MIN, also the same with _getpagesize())
 
+scheduler:
+    SCHED_SPORADIC (can be implemented based on FIFO, most os does not implement it)
+    
 NOT DONE:
 signals:
     _SC_REALTIME_SIGNALS 
@@ -72,7 +75,3 @@ mmap:
     posix_mem_offset (linux)
     posix_typed_mem_get_info (linux)
     posix_typed_mem_open (linux)
-
-scheduler:
-    SCHED_SPORADIC (linux)
-    

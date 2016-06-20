@@ -1,0 +1,24 @@
+From a01f56c3d8efe0eab2c4594bae1f345c7aeeffe8 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Mon, 20 Jun 2016 03:15:24 +0000
+Subject: [PATCH] define SCHED_SPORADIC
+
+---
+ sys/sys/sched.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/sys/sys/sched.h b/sys/sys/sched.h
+index 5e5082e..8bc9a30 100644
+--- a/sys/sys/sched.h
++++ b/sys/sys/sched.h
+@@ -88,6 +88,7 @@ struct sched_param {
+ #define	SCHED_OTHER	0
+ #define	SCHED_FIFO	1
+ #define	SCHED_RR	2
++#define SCHED_SPORADIC	SCHED_FIFO
+ 
+ #if defined(_NETBSD_SOURCE)
+ __BEGIN_DECLS
+-- 
+2.6.4
+

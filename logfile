@@ -146,10 +146,8 @@ conformance/definitions/sched_h/8-1: build: PASS
 conformance/definitions/sched_h/8-1: link: SKIP
 conformance/definitions/sched_h/8-2: build: PASS
 conformance/definitions/sched_h/8-2: link: SKIP
-conformance/definitions/sched_h/8-3: build: FAILED: Compiler output: 
-conformance/definitions/sched_h/8-3.c:19:2: error: #error SCHED_SPORADIC not defined
- #error SCHED_SPORADIC not defined
-  ^
+conformance/definitions/sched_h/8-3: build: PASS
+conformance/definitions/sched_h/8-3: link: SKIP
 conformance/definitions/sched_h/8-4: build: PASS
 conformance/definitions/sched_h/8-4: link: SKIP
 conformance/definitions/signal_h/1-1: build: PASS
