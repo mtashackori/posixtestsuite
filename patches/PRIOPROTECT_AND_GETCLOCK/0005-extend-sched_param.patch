@@ -1,0 +1,41 @@
+From 2f9f8954026b0ea0a3de2790b771a5dba1f6b32c Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Tue, 21 Jun 2016 21:28:38 +0000
+Subject: [PATCH 1/2] extend sched_param
+
+---
+ sys/kern/sys_sched.c | 3 +++
+ sys/sys/sched.h      | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/sys/kern/sys_sched.c b/sys/kern/sys_sched.c
+index 787628e..c413feb 100644
+--- a/sys/kern/sys_sched.c
++++ b/sys/kern/sys_sched.c
+@@ -246,6 +246,9 @@ do_sched_getparam(pid_t pid, lwpid_t lid, int *policy,
+ 
+ 	lwp_lock(t);
+ 	lparams.sched_priority = t->l_priority;
++	lparams.sched_inherited = t->l_inheritedprio;
++	lparams.sched_protect = t->l_protectprio;
++	lparams.sched_aux = t->l_auxprio; 
+ 	lpolicy = t->l_class;
+ 	lwp_unlock(t);
+ 	mutex_exit(t->l_proc->p_lock);
+diff --git a/sys/sys/sched.h b/sys/sys/sched.h
+index 8bc9a30..b045761 100644
+--- a/sys/sys/sched.h
++++ b/sys/sys/sched.h
+@@ -79,6 +79,9 @@
+ 
+ struct sched_param {
+ 	int	sched_priority;
++	int 	sched_inherited;
++	int	sched_protect;
++	int 	sched_aux;
+ };
+ 
+ /*
+-- 
+2.6.4
+

@@ -1,0 +1,98 @@
+From 08717eff0156863c382ed3e799d0901243a61185 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Tue, 21 Jun 2016 21:29:00 +0000
+Subject: [PATCH 2/2] unit tests for priority protect
+
+---
+ tests/lib/libpthread/t_mutex.c | 61 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+diff --git a/tests/lib/libpthread/t_mutex.c b/tests/lib/libpthread/t_mutex.c
+index d53ac6e..485a71d 100644
+--- a/tests/lib/libpthread/t_mutex.c
++++ b/tests/lib/libpthread/t_mutex.c
+@@ -35,6 +35,8 @@ __RCSID("$NetBSD: t_mutex.c,v 1.7 2014/11/04 00:20:19 justin Exp $");
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <sys/sched.h>
++#include <sys/param.h>
+ 
+ #include <atf-c.h>
+ 
+@@ -304,6 +306,64 @@ ATF_TC_BODY(mutex4, tc)
+ 	PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex));
+ }
+ 
++pthread_mutexattr_t attr5;
++pthread_mutex_t mutex5;
++int min_fifo_prio, max_fifo_prio;
++
++static void *child_func(void* arg) {
++        printf("child is waitting\n");
++        struct sched_param param;
++	int res;
++	res = sched_getparam(getpid(), &param);
++        ATF_REQUIRE_EQ(res, 0);
++	PTHREAD_REQUIRE(pthread_mutex_lock(&mutex5));
++        printf("child is owning resource\n");
++	res = sched_getparam(getpid(), &param);
++	ATF_REQUIRE_EQ(res, 0);
++	ATF_REQUIRE_EQ(param.sched_protect, max_fifo_prio + PRI_USER_RT); 
++        PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex5));
++	printf("child is done\n");
++	
++	return 0;
++}
++
++ATF_TC(mutex5);
++ATF_TC_HEAD(mutex5, tc)
++{
++	atf_tc_set_md_var(tc, "descr", "Checks mutexes for priority setting");
++}
++ATF_TC_BODY(mutex5, tc)
++{
++	int res;
++        struct sched_param param;
++        pthread_t child;
++
++	min_fifo_prio = sched_get_priority_min(SCHED_FIFO);
++	max_fifo_prio = sched_get_priority_max(SCHED_FIFO);
++	printf("min prio for FIFO = %d\n", min_fifo_prio);
++        param.sched_priority = min_fifo_prio;
++	/* = 0 OTHER, 1 FIFO, 2 RR, -1 NONE */
++	res = sched_setscheduler(getpid(), SCHED_FIFO, &param);
++        printf("previous policy used = %d\n", res);
++
++	res = sched_getscheduler(getpid());
++	ATF_REQUIRE_EQ(res, 1);
++
++	PTHREAD_REQUIRE(pthread_mutexattr_init(&attr5));
++	PTHREAD_REQUIRE(pthread_mutexattr_setprotocol(&attr5, PTHREAD_PRIO_PROTECT));
++	PTHREAD_REQUIRE(pthread_mutexattr_setprioceiling(&attr5, max_fifo_prio));
++        
++	PTHREAD_REQUIRE(pthread_mutex_init(&mutex5, &attr5));
++        PTHREAD_REQUIRE(pthread_mutex_lock(&mutex5));
++        printf("enter critical section for main\n");
++	PTHREAD_REQUIRE(pthread_create(&child, NULL, child_func, NULL));
++        printf("main starts to sleep\n");
++        sleep(10);
++        printf("main completes\n");
++	PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex5));
++        PTHREAD_REQUIRE(pthread_join(child, NULL));
++}
++
+ ATF_TC(mutexattr1);
+ ATF_TC_HEAD(mutexattr1, tc)
+ {
+@@ -360,6 +420,7 @@ ATF_TP_ADD_TCS(tp)
+ 	ATF_TP_ADD_TC(tp, mutex2);
+ 	ATF_TP_ADD_TC(tp, mutex3);
+ 	ATF_TP_ADD_TC(tp, mutex4);
++	ATF_TP_ADD_TC(tp, mutex5);
+ 	ATF_TP_ADD_TC(tp, mutexattr1);
+ 	ATF_TP_ADD_TC(tp, mutexattr2);
+ 	
+-- 
+2.6.4
+

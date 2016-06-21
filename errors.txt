@@ -23,9 +23,9 @@ Errors that caused by feature missing
 
 DONE:
 timers:
-   _SC_CPUTIME  (done, waiting for reviews)
-   _SC_THREAD_CPUTIME (done, waiting for reviews)  
-   _SC_DELAYTIMER_MAX (done, waiting for reviews)
+   _SC_CPUTIME  (done)
+   _SC_THREAD_CPUTIME (done)  
+   _SC_DELAYTIMER_MAX (done)
 
 signals:
   SIGPOLL (done)
