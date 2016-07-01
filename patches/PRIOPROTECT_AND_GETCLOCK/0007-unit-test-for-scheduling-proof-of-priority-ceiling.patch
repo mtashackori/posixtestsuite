@@ -1,0 +1,124 @@
+From 0556c9b4c547219728c6ef1e24e476cb6d259c9d Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Fri, 1 Jul 2016 06:10:08 +0000
+Subject: [PATCH] unit test for scheduling proof of priority ceiling
+
+---
+ tests/lib/libpthread/t_mutex.c | 94 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 94 insertions(+)
+
+diff --git a/tests/lib/libpthread/t_mutex.c b/tests/lib/libpthread/t_mutex.c
+index 485a71d..1d6f3c5 100644
+--- a/tests/lib/libpthread/t_mutex.c
++++ b/tests/lib/libpthread/t_mutex.c
+@@ -364,6 +364,99 @@ ATF_TC_BODY(mutex5, tc)
+         PTHREAD_REQUIRE(pthread_join(child, NULL));
+ }
+ 
++pthread_mutex_t mutex6;
++int start = 0;
++
++long high_cnt = 0, low_cnt = 0, MAX_LOOP = 100000000;
++static void *high_prio(void* arg) {
++        struct sched_param param;
++        int policy;
++        param.sched_priority = min_fifo_prio + 10;
++        pthread_t childid = pthread_self();
++        PTHREAD_REQUIRE(pthread_setschedparam(childid, 1, &param));
++        PTHREAD_REQUIRE(pthread_getschedparam(childid, &policy, &param));
++        printf("high protect = %d, prio = %d\n", param.sched_protect, param.sched_priority);
++        ATF_REQUIRE_EQ(policy, 1);
++	printf("high prio = %d\n", param.sched_priority);
++        sleep(1);
++        int i;
++	long tmp = 0;
++        for (i = 0; i<20; i++) {
++                while (high_cnt < MAX_LOOP) {
++			tmp += (123456789 % 1234) * (987654321 % 54321);
++                        high_cnt += 1;
++                }
++                high_cnt = 0;
++                sleep(1);
++        }
++        PTHREAD_REQUIRE(pthread_mutex_lock(&mutex6));
++        if (start == 0) start = 2;
++        PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex6));
++
++	return 0;
++}
++
++static void *low_prio(void* arg) {
++        struct sched_param param;
++        int policy;
++        param.sched_priority = min_fifo_prio;
++        pthread_t childid = pthread_self();
++	int res;
++	res = _sched_protect(max_fifo_prio);
++	ATF_REQUIRE_EQ(res, 0);
++	PTHREAD_REQUIRE(pthread_setschedparam(childid, 1, &param));
++        PTHREAD_REQUIRE(pthread_getschedparam(childid, &policy, &param));
++        printf("low protect = %d, prio = %d\n", param.sched_protect, param.sched_priority);
++        ATF_REQUIRE_EQ(policy, 1);
++	printf("low prio = %d\n", param.sched_priority);
++        sleep(1);
++        int i;
++        for (i = 0; i<20; i++) {
++                while (low_cnt < MAX_LOOP) {
++                        long tmp;
++                        tmp += (123456789 % 1234) * (987654321 % 54321);
++                        low_cnt += 1;
++                }
++                low_cnt = 0;
++                sleep(1);
++        }
++        PTHREAD_REQUIRE(pthread_mutex_lock(&mutex6));
++        if (start == 0 ) start = 1;
++        PTHREAD_REQUIRE(pthread_mutex_unlock(&mutex6));
++
++	return 0;
++}
++
++ATF_TC(mutex6);
++ATF_TC_HEAD(mutex6, tc)
++{
++	atf_tc_set_md_var(tc, "descr", "Checks scheduling for priority ceiling");
++}
++
++ATF_TC_BODY(mutex6, tc)
++{
++	int res;
++        pthread_t high, low;
++        min_fifo_prio = sched_get_priority_min(SCHED_FIFO);
++        max_fifo_prio = sched_get_priority_max(SCHED_FIFO);
++        PTHREAD_REQUIRE(pthread_mutex_init(&mutex, NULL));
++        printf("min_fifo_prio = %d, max_fifo_info = %d\n", min_fifo_prio, max_fifo_prio);
++        struct sched_param param;
++        param.sched_priority = min_fifo_prio;
++	res = sched_setscheduler(getpid(), SCHED_FIFO, &param);
++        printf("previous policy used = %d\n", res);
++
++	res = sched_getscheduler(getpid());
++        ATF_REQUIRE_EQ(res, 1);
++	PTHREAD_REQUIRE(pthread_create(&high, NULL, high_prio, NULL));
++	PTHREAD_REQUIRE(pthread_create(&low, NULL, low_prio, NULL));
++        sleep(5);
++	PTHREAD_REQUIRE(pthread_join(low, NULL));
++        PTHREAD_REQUIRE(pthread_join(high, NULL));
++        
++	ATF_REQUIRE_EQ(start, 1);
++}
++
+ ATF_TC(mutexattr1);
+ ATF_TC_HEAD(mutexattr1, tc)
+ {
+@@ -421,6 +514,7 @@ ATF_TP_ADD_TCS(tp)
+ 	ATF_TP_ADD_TC(tp, mutex3);
+ 	ATF_TP_ADD_TC(tp, mutex4);
+ 	ATF_TP_ADD_TC(tp, mutex5);
++	ATF_TP_ADD_TC(tp, mutex6);
+ 	ATF_TP_ADD_TC(tp, mutexattr1);
+ 	ATF_TP_ADD_TC(tp, mutexattr2);
+ 	
+-- 
+2.6.4
+
