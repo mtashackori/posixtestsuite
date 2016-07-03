@@ -40,6 +40,9 @@ Example, git show   23b1580c69b31be95db234913b93b8a11fc4f89e   <br />
 # Impact
 
 Some of changes (both kernel and userland) have been accepted into NetBSD source tree. <br />
+https://github.com/IIJ-NetBSD/netbsd-src/commit/272d39e2405b0c730cbcf300cf4879220a967aa7 <br />
+https://github.com/IIJ-NetBSD/netbsd-src/commit/b6c4d4ba3de2aed35ceba10f027225a04ca697a3 <br />
+https://github.com/IIJ-NetBSD/netbsd-src/commit/80dec21a89c7d0033ce1f54846cbfc7d675656a6 <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/8312e2efc6d0a9e03b8774bb9fcd5aac3d73907a <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/053c58f1df1ccb730a2973d5690003c01b1182e1 <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/2b763ded396e6526d1cc63b89acd558e6de63f32 <br />
