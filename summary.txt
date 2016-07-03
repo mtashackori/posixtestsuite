@@ -105,7 +105,7 @@ My improvements can be organized into 5 features.
 
 Plan for the next part:
 	In the next part of this project, there are several possible works that can be done
-	1. Wrap up the priority protect testing. 
+	1. Wrap up the priority protect testing (done). 
 	2. Signals, we need the support of _SC_REALTIME_SIGNALS and _SC_SIGQUEUE_MAX
 	These two can be implemented by queuing real time signals and operate properly.   
 
