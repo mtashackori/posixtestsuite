@@ -1,0 +1,99 @@
+From 2b497ca0ddee7e059bd64f294a165c70cb0eded1 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Tue, 5 Jul 2016 02:00:07 +0000
+Subject: [PATCH] man pages for sched_protect
+
+---
+ distrib/sets/lists/comp/mi |  3 +++
+ lib/librt/Makefile         |  1 +
+ lib/librt/sched.3          | 13 ++++++++++++-
+ 3 files changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/distrib/sets/lists/comp/mi b/distrib/sets/lists/comp/mi
+index 7eabb1b..464922c 100644
+--- a/distrib/sets/lists/comp/mi
++++ b/distrib/sets/lists/comp/mi
+@@ -8673,6 +8673,7 @@
+ ./usr/share/man/cat3/sched_setparam.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/sched_setscheduler.0	comp-c-catman		.cat
+ ./usr/share/man/cat3/sched_yield.0		comp-c-catman		.cat
++./usr/share/man/cat3/sched_protect.0		comp-c-catman		.cat
+ ./usr/share/man/cat3/scrl.0			comp-c-catman		.cat
+ ./usr/share/man/cat3/scroll.0			comp-c-catman		.cat
+ ./usr/share/man/cat3/scrollok.0			comp-c-catman		.cat
+@@ -15855,6 +15856,7 @@
+ ./usr/share/man/html3/sched_setparam.html	comp-c-htmlman		html
+ ./usr/share/man/html3/sched_setscheduler.html	comp-c-htmlman		html
+ ./usr/share/man/html3/sched_yield.html		comp-c-htmlman		html
++./usr/share/man/html3/sched_protect.html	comp-c-htmlman		html
+ ./usr/share/man/html3/scrl.html			comp-c-htmlman		html
+ ./usr/share/man/html3/scroll.html		comp-c-htmlman		html
+ ./usr/share/man/html3/scrollok.html		comp-c-htmlman		html
+@@ -23041,6 +23043,7 @@
+ ./usr/share/man/man3/sched_setparam.3		comp-c-man		.man
+ ./usr/share/man/man3/sched_setscheduler.3	comp-c-man		.man
+ ./usr/share/man/man3/sched_yield.3		comp-c-man		.man
++./usr/share/man/man3/sched_protect.3		comp-c-man		.man
+ ./usr/share/man/man3/scrl.3			comp-c-man		.man
+ ./usr/share/man/man3/scroll.3			comp-c-man		.man
+ ./usr/share/man/man3/scrollok.3			comp-c-man		.man
+diff --git a/lib/librt/Makefile b/lib/librt/Makefile
+index 580e833..c890b97 100644
+--- a/lib/librt/Makefile
++++ b/lib/librt/Makefile
+@@ -33,6 +33,7 @@ MLINKS+=	pset.3 pset_destroy.3
+ 
+ MLINKS+=	sched.3 sched_setparam.3
+ MLINKS+=	sched.3 sched_getparam.3
++MLINKS+=	sched.3 sched_protect.3
+ MLINKS+=	sched.3 sched_setscheduler.3
+ MLINKS+=	sched.3 sched_getscheduler.3
+ MLINKS+=	sched.3 sched_get_priority_max.3
+diff --git a/lib/librt/sched.3 b/lib/librt/sched.3
+index 3e0a222..e82c4b0 100644
+--- a/lib/librt/sched.3
++++ b/lib/librt/sched.3
+@@ -38,7 +38,8 @@
+ .Nm sched_get_priority_max ,
+ .Nm sched_get_priority_min ,
+ .Nm sched_rr_get_interval ,
+-.Nm sched_yield
++.Nm sched_yield ,
++.Nm sched_protect
+ .Nd process scheduling
+ .Sh LIBRARY
+ .Lb librt
+@@ -60,6 +61,8 @@
+ .Fn sched_rr_get_interval "pid_t pid" "struct timespec *interval"
+ .Ft int
+ .Fn sched_yield "void"
++.Ft int
++.Fn sched_protect "int priority"
+ .Sh DESCRIPTION
+ This section describes the functions used to get scheduling information
+ about processes, and control the scheduling of processes.
+@@ -152,6 +155,10 @@ Get the affinity mask of the process specified by
+ .Fa pid
+ into the
+ .Fa cpuset .
++.It Fn sched_protect
++Performs priority protection for PTHREAD_PRIO_PROTECT protocol.
++This function will increase the priority of the caller thread to
++.Fa priority.
+ .El
+ .Sh IMPLEMENTATION NOTES
+ Setting CPU
+@@ -180,6 +187,10 @@ Otherwise, \-1 is returned and
+ .Va errno
+ is set to indicate the error.
+ .Pp
++.Fn sched_protect
++returns 0 on success.
++Otherwise, EINVAL is returned.
++.Pp
+ .Fn sched_setscheduler
+ returns the previously used scheduling policy on success.
+ Otherwise, \-1 is returned and
+-- 
+2.6.4
+
