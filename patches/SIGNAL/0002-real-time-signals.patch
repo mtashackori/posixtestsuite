@@ -1,0 +1,196 @@
+From 6196092dddd787c9279010faf8c5e1094307356f Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Thu, 14 Jul 2016 09:02:28 +0000
+Subject: [PATCH] real time signals
+
+---
+ include/limits.h       |  2 ++
+ lib/libc/gen/sysconf.c |  4 ++++
+ sys/kern/kern_sig.c    | 33 ++++++++++++++++++++++++---------
+ sys/kern/sys_sig.c     |  3 ++-
+ sys/sys/signalvar.h    |  2 +-
+ sys/sys/unistd.h       |  2 ++
+ 6 files changed, 35 insertions(+), 11 deletions(-)
+
+diff --git a/include/limits.h b/include/limits.h
+index 0d50189..9801a3d 100644
+--- a/include/limits.h
++++ b/include/limits.h
+@@ -94,6 +94,8 @@
+ 
+ #define	_POSIX_TIMER_MAX	32
+ #define	_POSIX_SEM_NSEMS_MAX	256
++#define	_POSIX_SIGQUEUE_MAX	32
++#define	_POSIX_REALTIME_SIGNALS	200112L
+ #define	_POSIX_CPUTIME		200112L
+ #define	_POSIX_THREAD_CPUTIME	200112L
+ #define	_POSIX_DELAYTIMER_MAX	32
+diff --git a/lib/libc/gen/sysconf.c b/lib/libc/gen/sysconf.c
+index 6be2a24..d532982 100644
+--- a/lib/libc/gen/sysconf.c
++++ b/lib/libc/gen/sysconf.c
+@@ -430,6 +430,10 @@ yesno:		if (sysctl(mib, mib_len, &value, &len, NULL, 0) == -1)
+ 		return _POSIX_THREAD_CPUTIME;
+ 	case _SC_DELAYTIMER_MAX:
+ 		return _POSIX_DELAYTIMER_MAX;
++	case _SC_SIGQUEUE_MAX:
++		return _POSIX_SIGQUEUE_MAX;
++	case _SC_REALTIME_SIGNALS:
++		return 200112L;
+ 	default:
+ 		errno = EINVAL;
+ 		return (-1);
+diff --git a/sys/kern/kern_sig.c b/sys/kern/kern_sig.c
+index c3a4512..1a36277 100644
+--- a/sys/kern/kern_sig.c
++++ b/sys/kern/kern_sig.c
+@@ -106,6 +106,7 @@ __KERNEL_RCSID(0, "$NetBSD: kern_sig.c,v 1.327 2016/04/28 00:37:39 christos Exp
+ 
+ #include <uvm/uvm_extern.h>
+ 
++#define	SIGQUEUE_MAX	32
+ static pool_cache_t	sigacts_cache	__read_mostly;
+ static pool_cache_t	ksiginfo_cache	__read_mostly;
+ static callout_t	proc_stop_ch	__cacheline_aligned;
+@@ -118,7 +119,7 @@ static void	ksiginfo_exechook(struct proc *, void *);
+ static void	proc_stop_callout(void *);
+ static int	sigchecktrace(void);
+ static int	sigpost(struct lwp *, sig_t, int, int);
+-static void	sigput(sigpend_t *, struct proc *, ksiginfo_t *);
++static int	sigput(sigpend_t *, struct proc *, ksiginfo_t *);
+ static int	sigunwait(struct proc *, const ksiginfo_t *);
+ static void	sigswitch(bool, int, int);
+ 
+@@ -599,7 +600,7 @@ out:
+  *
+  *	Append a new ksiginfo element to the list of pending ksiginfo's.
+  */
+-static void
++static int
+ sigput(sigpend_t *sp, struct proc *p, ksiginfo_t *ksi)
+ {
+ 	ksiginfo_t *kp;
+@@ -613,25 +614,34 @@ sigput(sigpend_t *sp, struct proc *p, ksiginfo_t *ksi)
+ 	 * If there is no siginfo, we are done.
+ 	 */
+ 	if (KSI_EMPTY_P(ksi))
+-		return;
++		return 0;
+ 
+ 	KASSERT((ksi->ksi_flags & KSI_FROMPOOL) != 0);
+ 
++	int cnt = 0;
+ #ifdef notyet	/* XXX: QUEUING */
+ 	if (ksi->ksi_signo < SIGRTMIN)
+ #endif
+ 	{
+ 		TAILQ_FOREACH(kp, &sp->sp_info, ksi_list) {
++			cnt += 1;
++			if (ksi->ksi_signo >= SIGRTMIN && ksi->ksi_signo <= SIGRTMAX) continue;
+ 			if (kp->ksi_signo == ksi->ksi_signo) {
+ 				KSI_COPY(ksi, kp);
+ 				kp->ksi_flags |= KSI_QUEUED;
+-				return;
++				return 0;
+ 			}
+ 		}
+ 	}
+-
++	
++	if (cnt >= SIGQUEUE_MAX) {
++		printf("no resource to enqueue\n");
++		return -1;
++	}
+ 	ksi->ksi_flags |= KSI_QUEUED;
+ 	TAILQ_INSERT_TAIL(&sp->sp_info, ksi, ksi_list);
++	
++	return 0;
+ }
+ 
+ /*
+@@ -1195,7 +1205,7 @@ sigunwait(struct proc *p, const ksiginfo_t *ksi)
+  *
+  * Other ignored signals are discarded immediately.
+  */
+-void
++int
+ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ {
+ 	int prop, signo = ksi->ksi_signo;
+@@ -1217,7 +1227,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	 * exiting, then just drop the signal here and bail out.
+ 	 */
+ 	if (p->p_stat != SACTIVE && p->p_stat != SSTOP)
+-		return;
++		return 0;
+ 
+ 	/*
+ 	 * Notify any interested parties of the signal.
+@@ -1329,7 +1339,11 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	if (lid != 0) {
+ 		l = lwp_find(p, lid);
+ 		if (l != NULL) {
+-			sigput(&l->l_sigpend, p, kp);
++			int ret = sigput(&l->l_sigpend, p, kp);
++			if (ret == -1) {
++				printf("sigput returns -1\n");
++				return -1;
++			} 
+ 			membar_producer();
+ 			(void)sigpost(l, action, prop, kp->ksi_signo);
+ 		}
+@@ -1426,9 +1440,10 @@ out:
+ 	 */
+ 	ksiginfo_free(kp);
+ 	if (signo == -1)
+-		return;
++		return 0;
+ discard:
+ 	SDT_PROBE(proc, kernel, , signal__discard, l, p, signo, 0, 0);
++	return 0;
+ }
+ 
+ void
+diff --git a/sys/kern/sys_sig.c b/sys/kern/sys_sig.c
+index a132fa6..c14e14d 100644
+--- a/sys/kern/sys_sig.c
++++ b/sys/kern/sys_sig.c
+@@ -258,7 +258,8 @@ kill1(struct lwp *l, pid_t pid, ksiginfo_t *ksi, register_t *retval)
+ 		    KAUTH_PROCESS_SIGNAL, p, KAUTH_ARG(ksi->ksi_signo),
+ 		    NULL, NULL);
+ 		if (!error && ksi->ksi_signo) {
+-			kpsignal2(p, ksi);
++			int ret = kpsignal2(p, ksi);
++			if (ret == -1) return -1;
+ 		}
+ 		mutex_exit(p->p_lock);
+ 		mutex_exit(proc_lock);
+diff --git a/sys/sys/signalvar.h b/sys/sys/signalvar.h
+index 655829b..1a47f0c 100644
+--- a/sys/sys/signalvar.h
++++ b/sys/sys/signalvar.h
+@@ -151,7 +151,7 @@ int	sigget(sigpend_t *, ksiginfo_t *, int, const sigset_t *);
+ void	sigclear(sigpend_t *, const sigset_t *, ksiginfoq_t *);
+ void	sigclearall(struct proc *, const sigset_t *, ksiginfoq_t *);
+ 
+-void	kpsignal2(struct proc *, ksiginfo_t *);
++int	kpsignal2(struct proc *, ksiginfo_t *);
+ 
+ void	signal_init(void);
+ 
+diff --git a/sys/sys/unistd.h b/sys/sys/unistd.h
+index 9110a9f..a4748e3 100644
+--- a/sys/sys/unistd.h
++++ b/sys/sys/unistd.h
+@@ -314,6 +314,8 @@
+ #define	_SC_CPUTIME			90
+ #define	_SC_THREAD_CPUTIME		91
+ #define	_SC_DELAYTIMER_MAX		92
++#define	_SC_SIGQUEUE_MAX		93
++#define	_SC_REALTIME_SIGNALS		94
+ 
+ /* Extensions found in Solaris and Linux. */
+ #define	_SC_PHYS_PAGES		121
+-- 
+2.6.4
+

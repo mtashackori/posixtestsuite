@@ -2955,162 +2955,58 @@ conformance/interfaces/sigaction/18-8: build: PASS
 conformance/interfaces/sigaction/18-8: link: PASS
 conformance/interfaces/sigaction/18-9: build: PASS
 conformance/interfaces/sigaction/18-9: link: PASS
-conformance/interfaces/sigaction/19-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-1.c: In function 'main':
-conformance/interfaces/sigaction/19-1.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-1.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-10: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-10.c: In function 'main':
-conformance/interfaces/sigaction/19-10.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-10.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-11: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-11.c: In function 'main':
-conformance/interfaces/sigaction/19-11.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-11.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-12: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-12.c: In function 'main':
-conformance/interfaces/sigaction/19-12.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-12.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-13: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-13.c: In function 'main':
-conformance/interfaces/sigaction/19-13.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-13.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-14: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-14.c: In function 'main':
-conformance/interfaces/sigaction/19-14.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-14.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-15: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-15.c: In function 'main':
-conformance/interfaces/sigaction/19-15.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-15.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-16: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-16.c: In function 'main':
-conformance/interfaces/sigaction/19-16.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-16.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-17: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-17.c: In function 'main':
-conformance/interfaces/sigaction/19-17.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-17.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-18: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-18.c: In function 'main':
-conformance/interfaces/sigaction/19-18.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-18.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-19: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-19.c: In function 'main':
-conformance/interfaces/sigaction/19-19.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-19.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-2: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-2.c: In function 'main':
-conformance/interfaces/sigaction/19-2.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-2.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-20: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-20.c: In function 'main':
-conformance/interfaces/sigaction/19-20.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-20.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-21: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-21.c: In function 'main':
-conformance/interfaces/sigaction/19-21.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-21.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-22: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-22.c: In function 'main':
-conformance/interfaces/sigaction/19-22.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-22.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-23: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-23.c: In function 'main':
-conformance/interfaces/sigaction/19-23.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-23.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-24: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-24.c: In function 'main':
-conformance/interfaces/sigaction/19-24.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-24.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-25: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-25.c: In function 'main':
-conformance/interfaces/sigaction/19-25.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-25.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-26: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-26.c: In function 'main':
-conformance/interfaces/sigaction/19-26.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-26.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-3: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-3.c: In function 'main':
-conformance/interfaces/sigaction/19-3.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-3.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-4: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-4.c: In function 'main':
-conformance/interfaces/sigaction/19-4.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-4.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-5: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-5.c: In function 'main':
-conformance/interfaces/sigaction/19-5.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-5.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-6: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-6.c: In function 'main':
-conformance/interfaces/sigaction/19-6.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-6.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-7: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-7.c: In function 'main':
-conformance/interfaces/sigaction/19-7.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-7.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-8: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-8.c: In function 'main':
-conformance/interfaces/sigaction/19-8.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-8.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigaction/19-9: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/19-9.c: In function 'main':
-conformance/interfaces/sigaction/19-9.c:109:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/19-9.c:109:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/19-1: build: PASS
+conformance/interfaces/sigaction/19-1: link: PASS
+conformance/interfaces/sigaction/19-10: build: PASS
+conformance/interfaces/sigaction/19-10: link: PASS
+conformance/interfaces/sigaction/19-11: build: PASS
+conformance/interfaces/sigaction/19-11: link: PASS
+conformance/interfaces/sigaction/19-12: build: PASS
+conformance/interfaces/sigaction/19-12: link: PASS
+conformance/interfaces/sigaction/19-13: build: PASS
+conformance/interfaces/sigaction/19-13: link: PASS
+conformance/interfaces/sigaction/19-14: build: PASS
+conformance/interfaces/sigaction/19-14: link: PASS
+conformance/interfaces/sigaction/19-15: build: PASS
+conformance/interfaces/sigaction/19-15: link: PASS
+conformance/interfaces/sigaction/19-16: build: PASS
+conformance/interfaces/sigaction/19-16: link: PASS
+conformance/interfaces/sigaction/19-17: build: PASS
+conformance/interfaces/sigaction/19-17: link: PASS
+conformance/interfaces/sigaction/19-18: build: PASS
+conformance/interfaces/sigaction/19-18: link: PASS
+conformance/interfaces/sigaction/19-19: build: PASS
+conformance/interfaces/sigaction/19-19: link: PASS
+conformance/interfaces/sigaction/19-2: build: PASS
+conformance/interfaces/sigaction/19-2: link: PASS
+conformance/interfaces/sigaction/19-20: build: PASS
+conformance/interfaces/sigaction/19-20: link: PASS
+conformance/interfaces/sigaction/19-21: build: PASS
+conformance/interfaces/sigaction/19-21: link: PASS
+conformance/interfaces/sigaction/19-22: build: PASS
+conformance/interfaces/sigaction/19-22: link: PASS
+conformance/interfaces/sigaction/19-23: build: PASS
+conformance/interfaces/sigaction/19-23: link: PASS
+conformance/interfaces/sigaction/19-24: build: PASS
+conformance/interfaces/sigaction/19-24: link: PASS
+conformance/interfaces/sigaction/19-25: build: PASS
+conformance/interfaces/sigaction/19-25: link: PASS
+conformance/interfaces/sigaction/19-26: build: PASS
+conformance/interfaces/sigaction/19-26: link: PASS
+conformance/interfaces/sigaction/19-3: build: PASS
+conformance/interfaces/sigaction/19-3: link: PASS
+conformance/interfaces/sigaction/19-4: build: PASS
+conformance/interfaces/sigaction/19-4: link: PASS
+conformance/interfaces/sigaction/19-5: build: PASS
+conformance/interfaces/sigaction/19-5: link: PASS
+conformance/interfaces/sigaction/19-6: build: PASS
+conformance/interfaces/sigaction/19-6: link: PASS
+conformance/interfaces/sigaction/19-7: build: PASS
+conformance/interfaces/sigaction/19-7: link: PASS
+conformance/interfaces/sigaction/19-8: build: PASS
+conformance/interfaces/sigaction/19-8: link: PASS
+conformance/interfaces/sigaction/19-9: build: PASS
+conformance/interfaces/sigaction/19-9: link: PASS
 conformance/interfaces/sigaction/2-1: build: PASS
 conformance/interfaces/sigaction/2-1: link: PASS
 conformance/interfaces/sigaction/2-10: build: PASS
@@ -3373,12 +3269,8 @@ conformance/interfaces/sigaction/28-8: build: PASS
 conformance/interfaces/sigaction/28-8: link: PASS
 conformance/interfaces/sigaction/28-9: build: PASS
 conformance/interfaces/sigaction/28-9: link: PASS
-conformance/interfaces/sigaction/29-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigaction/29-1.c: In function 'main':
-conformance/interfaces/sigaction/29-1.c:125:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigaction/29-1.c:125:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigaction/29-1: build: PASS
+conformance/interfaces/sigaction/29-1: link: PASS
 conformance/interfaces/sigaction/3-1: build: PASS
 conformance/interfaces/sigaction/3-1: link: PASS
 conformance/interfaces/sigaction/3-10: build: PASS
@@ -3897,15 +3789,8 @@ conformance/interfaces/sigqueue/7-1: build: PASS
 conformance/interfaces/sigqueue/7-1: link: PASS
 conformance/interfaces/sigqueue/8-1: build: PASS
 conformance/interfaces/sigqueue/8-1: link: PASS
-conformance/interfaces/sigqueue/9-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigqueue/9-1.c: In function 'main':
-conformance/interfaces/sigqueue/9-1.c:56:21: error: '_SC_SIGQUEUE_MAX' undeclared (first use in this function)
-  syslimit = sysconf(_SC_SIGQUEUE_MAX);
-                     ^
-conformance/interfaces/sigqueue/9-1.c:56:21: note: each undeclared identifier is reported only once for each function it appears in
-conformance/interfaces/sigqueue/9-1.c:68:7: warning: implicit declaration of function 'sigqueue' [-Wimplicit-function-declaration]
-   if (sigqueue(pid, SIGTOTEST, value) != 0) {
-       ^
+conformance/interfaces/sigqueue/9-1: build: PASS
+conformance/interfaces/sigqueue/9-1: link: PASS
 conformance/interfaces/sigrelse/1-1: build: PASS
 conformance/interfaces/sigrelse/1-1: link: PASS
 conformance/interfaces/sigrelse/2-1: build: PASS
@@ -3962,12 +3847,8 @@ conformance/interfaces/sigwait/6-1: build: PASS
 conformance/interfaces/sigwait/6-1: link: PASS
 conformance/interfaces/sigwait/6-2: build: PASS
 conformance/interfaces/sigwait/6-2: link: PASS
-conformance/interfaces/sigwait/7-1: build: FAILED: Compiler output: 
-conformance/interfaces/sigwait/7-1.c: In function 'main':
-conformance/interfaces/sigwait/7-1.c:98:17: error: '_SC_REALTIME_SIGNALS' undeclared (first use in this function)
-  rts = sysconf( _SC_REALTIME_SIGNALS );
-                 ^
-conformance/interfaces/sigwait/7-1.c:98:17: note: each undeclared identifier is reported only once for each function it appears in
+conformance/interfaces/sigwait/7-1: build: PASS
+conformance/interfaces/sigwait/7-1: link: PASS
 conformance/interfaces/sigwait/8-1: build: PASS
 conformance/interfaces/sigwait/8-1: link: PASS
 conformance/interfaces/sigwaitinfo/1-1: build: PASS
