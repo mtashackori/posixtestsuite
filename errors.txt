@@ -32,6 +32,14 @@ signals:
   SIGRTMIN (done, should wait for realtime signals to be done)
   SIGRTMAX (done, should wait for realtime signals to be done) 
   bsd_signal (done)
+  signals:
+    _SC_REALTIME_SIGNALS 
+    _SC_SIGQUEUE_MAX  
+comments, 
+  1. find out if the queue size is per signal or total
+  2. write a unit test to prove that you can queue more than 1 signal
+  3. make sure we have enough resources in the pool
+  4. issue of handling sigqueue properly   (http://pubs.opengroup.org/onlinepubs/007908775/xsh/realtime.html)
 
 semaphore 
   _SC_SEM_NSEMS_MAX  (done)
@@ -63,10 +71,6 @@ scheduler:
     SCHED_SPORADIC (can be implemented based on FIFO, most os does not implement it)
     
 NOT DONE:
-signals:
-    _SC_REALTIME_SIGNALS 
-    _SC_SIGQUEUE_MAX   
-
 mmap:
     POSIX_TYPED_MEM_ALLOCATE  (linux)
     POSIX_TYPED_MEM_ALLOCATE_CONTIG (linux) 

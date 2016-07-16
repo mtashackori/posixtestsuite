@@ -1,0 +1,92 @@
+From 03fbc1479c909a33b171e57ad2b0cacff81ff912 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Sat, 16 Jul 2016 06:29:27 +0000
+Subject: [PATCH] improve error checking
+
+---
+ sys/kern/kern_sig.c | 17 +++++++----------
+ sys/kern/sys_sig.c  |  3 +--
+ 2 files changed, 8 insertions(+), 12 deletions(-)
+
+diff --git a/sys/kern/kern_sig.c b/sys/kern/kern_sig.c
+index 1a36277..7a10c5a 100644
+--- a/sys/kern/kern_sig.c
++++ b/sys/kern/kern_sig.c
+@@ -1215,6 +1215,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	lwpid_t lid;
+ 	sig_t action;
+ 	bool toall;
++	int ret = 0;
+ 
+ 	KASSERT(!cpu_intr_p());
+ 	KASSERT(mutex_owned(proc_lock));
+@@ -1227,7 +1228,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	 * exiting, then just drop the signal here and bail out.
+ 	 */
+ 	if (p->p_stat != SACTIVE && p->p_stat != SSTOP)
+-		return 0;
++		return ret;
+ 
+ 	/*
+ 	 * Notify any interested parties of the signal.
+@@ -1255,7 +1256,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 			 */
+ 			if ((kp = ksiginfo_alloc(p, ksi, PR_NOWAIT)) == NULL)
+ 				goto discard;
+-			sigput(&p->p_sigpend, p, kp);
++			ret = sigput(&p->p_sigpend, p, kp);
+ 		}
+ 	} else {
+ 		/*
+@@ -1339,11 +1340,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	if (lid != 0) {
+ 		l = lwp_find(p, lid);
+ 		if (l != NULL) {
+-			int ret = sigput(&l->l_sigpend, p, kp);
+-			if (ret == -1) {
+-				printf("sigput returns -1\n");
+-				return -1;
+-			} 
++			ret = sigput(&l->l_sigpend, p, kp);
+ 			membar_producer();
+ 			(void)sigpost(l, action, prop, kp->ksi_signo);
+ 		}
+@@ -1415,7 +1412,7 @@ kpsignal2(struct proc *p, ksiginfo_t *ksi)
+ 	 * Make signal pending.
+ 	 */
+ 	KASSERT((p->p_slflag & PSL_TRACED) == 0);
+-	sigput(&p->p_sigpend, p, kp);
++	ret = sigput(&p->p_sigpend, p, kp);
+ 
+ deliver:
+ 	/*
+@@ -1440,10 +1437,10 @@ out:
+ 	 */
+ 	ksiginfo_free(kp);
+ 	if (signo == -1)
+-		return 0;
++		return ret;
+ discard:
+ 	SDT_PROBE(proc, kernel, , signal__discard, l, p, signo, 0, 0);
+-	return 0;
++	return ret;
+ }
+ 
+ void
+diff --git a/sys/kern/sys_sig.c b/sys/kern/sys_sig.c
+index c14e14d..00283a2 100644
+--- a/sys/kern/sys_sig.c
++++ b/sys/kern/sys_sig.c
+@@ -258,8 +258,7 @@ kill1(struct lwp *l, pid_t pid, ksiginfo_t *ksi, register_t *retval)
+ 		    KAUTH_PROCESS_SIGNAL, p, KAUTH_ARG(ksi->ksi_signo),
+ 		    NULL, NULL);
+ 		if (!error && ksi->ksi_signo) {
+-			int ret = kpsignal2(p, ksi);
+-			if (ret == -1) return -1;
++			if (kpsignal2(p, ksi) == -1) error = EAGAIN;
+ 		}
+ 		mutex_exit(p->p_lock);
+ 		mutex_exit(proc_lock);
+-- 
+2.6.4
+
