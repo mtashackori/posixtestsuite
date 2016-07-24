@@ -35,10 +35,6 @@ signals:
   signals:
     _SC_REALTIME_SIGNALS 
     _SC_SIGQUEUE_MAX  
-comments, 
-  http://www.qnx.com/developers/docs/660/index.jsp?topic=%2Fcom.qnx.doc.neutrino.lib_ref%2Ftopic%2Fs%2Fsysconf.html
-  1. write a unit test to prove that you can queue more than 1 signal
-  2. issue of handling sigqueue properly   (http://pubs.opengroup.org/onlinepubs/007908775/xsh/realtime.html)
 
 semaphore 
   _SC_SEM_NSEMS_MAX  (done)
