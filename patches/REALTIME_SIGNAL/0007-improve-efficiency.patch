@@ -1,0 +1,92 @@
+From f7aae28a876160fa9e7eb06fd313cb0b53f197f1 Mon Sep 17 00:00:00 2001
+From: yan cui <ccuiyyan@gmail.com>
+Date: Wed, 27 Jul 2016 22:09:50 +0000
+Subject: [PATCH] improve efficiency
+
+---
+ sys/kern/kern_sig.c | 29 +++++++++--------------------
+ 1 file changed, 9 insertions(+), 20 deletions(-)
+
+diff --git a/sys/kern/kern_sig.c b/sys/kern/kern_sig.c
+index 2768cdd..3d9d68e 100644
+--- a/sys/kern/kern_sig.c
++++ b/sys/kern/kern_sig.c
+@@ -524,7 +524,7 @@ ksiginfo_queue_drain0(ksiginfoq_t *kq)
+ 	}
+ }
+ 
+-static bool
++static int
+ siggetinfo(sigpend_t *sp, ksiginfo_t *out, int signo)
+ {
+ 	ksiginfo_t *ksi;
+@@ -533,9 +533,12 @@ siggetinfo(sigpend_t *sp, ksiginfo_t *out, int signo)
+ 		goto out;
+ 
+ 	/* Find siginfo and copy it out. */
++	int ret = 0;
+ 	TAILQ_FOREACH(ksi, &sp->sp_info, ksi_list) {
+ 		if (ksi->ksi_signo != signo)
+ 			continue;
++		ret += 1;
++		if (ret >= 2) continue; 
+ 		TAILQ_REMOVE(&sp->sp_info, ksi, ksi_list);
+ 		KASSERT((ksi->ksi_flags & KSI_FROMPOOL) != 0);
+ 		KASSERT((ksi->ksi_flags & KSI_QUEUED) != 0);
+@@ -544,9 +547,8 @@ siggetinfo(sigpend_t *sp, ksiginfo_t *out, int signo)
+ 			memcpy(out, ksi, sizeof(*out));
+ 			out->ksi_flags &= ~(KSI_FROMPOOL | KSI_QUEUED);
+ 		}
+-		ksiginfo_free(ksi);	/* XXXSMP */
+-		return true;
+ 	}
++	return ret;
+ 
+ out:
+ 	/* If there is no siginfo, then manufacture it. */
+@@ -555,20 +557,7 @@ out:
+ 		out->ksi_info._signo = signo;
+ 		out->ksi_info._code = SI_NOINFO;
+ 	}
+-	return false;
+-}
+-
+-static int
+-sigcnts(sigpend_t *sp, int signo) {
+-	ksiginfo_t* ksi;
+-	int ret = 0;
+-	if (sp == NULL) return 0;
+-	TAILQ_FOREACH(ksi, &sp->sp_info, ksi_list) {
+-		if (ksi->ksi_signo != signo)
+-			continue;
+-		ret += 1;
+-	}
+-	return ret;
++	return 0;
+ }
+ 
+ /*
+@@ -582,6 +571,7 @@ int
+ sigget(sigpend_t *sp, ksiginfo_t *out, int signo, const sigset_t *mask)
+ {
+ 	sigset_t tset;
++	int ret = 0;
+ 
+ 	/* If there's no pending set, the signal is from the debugger. */
+ 	if (sp == NULL)
+@@ -602,10 +592,9 @@ sigget(sigpend_t *sp, ksiginfo_t *out, int signo, const sigset_t *mask)
+ 		KASSERT(sigismember(&sp->sp_set, signo));
+ 	}
+ 
+-	if (sigcnts(sp, signo) == 1)
+-		sigdelset(&sp->sp_set, signo);
+ out:
+-	(void)siggetinfo(sp, out, signo);
++	ret = siggetinfo(sp, out, signo);
++	if (ret == 1) sigdelset(&sp->sp_set, signo);
+ 	return signo;
+ }
+ 
+-- 
+2.6.4
+
