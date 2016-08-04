@@ -29,12 +29,12 @@ timers:
 
 signals:
   SIGPOLL (done)
-  SIGRTMIN (done, should wait for realtime signals to be done)
-  SIGRTMAX (done, should wait for realtime signals to be done) 
+  SIGRTMIN (done)
+  SIGRTMAX (done) 
   bsd_signal (done)
   signals:
-    _SC_REALTIME_SIGNALS 
-    _SC_SIGQUEUE_MAX  
+    _SC_REALTIME_SIGNALS (done) 
+    _SC_SIGQUEUE_MAX (done)
 
 semaphore 
   _SC_SEM_NSEMS_MAX  (done)
