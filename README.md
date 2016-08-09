@@ -6,8 +6,8 @@ did some modifications both in the benchmark side and NetBSD current kernel. <br
 
 # How to Use This Repo
 
-In terms of benchmark modifications, one can acquire by cloning this repo. <br />
-For kernel changes, one can find all patches in the `patch/` folder. <br />
+In terms of benchmark modifications, one can acquire by cloning this repo or find patch in `patch/TESTSUITE`. <br />
+For NetBSD related changes, one can find all patches in the `patch/` folder. <br />
 This folder is organized by features. Each subfolder may have `OLD/` folder, <br />
 which usually implements the feature in a different way, but not used finally. <br />
 So, at first, apply patches in `patch/` folder to your kernel source tree, then <br />
@@ -51,3 +51,5 @@ https://github.com/IIJ-NetBSD/netbsd-src/commit/2b763ded396e6526d1cc63b89acd558e
 https://github.com/IIJ-NetBSD/netbsd-src/commit/ef38d5736b7367bff9aba260f532e5b24728b224 <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/6d66b56857eaf348825503072b60948bc3117c4e <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/7bfee8739f8b88a7eceb5dfe52fce3213fb009a8 <br />
+
+The patch for the POSIX test suite will be send to the community also. <br />
