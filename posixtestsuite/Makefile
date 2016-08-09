@@ -54,8 +54,6 @@ stress-tests: stress-make stress-run
 tests-pretty:
 	$(MAKE) all | column -t -s:
 
-#CFLAGS = -g -O2 -Wall -Werror -D_POSIX_C_SOURCE=200112L
-#CFLAGS = -g -O2 -D_POSIX_C_SOURCE=200112L
 CFLAGS = -g -O2
 
 # add -std=c99, -std=gnu99 if compiler supports it (gcc-2.95.3 does not).

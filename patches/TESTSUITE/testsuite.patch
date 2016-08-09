@@ -1,0 +1,718 @@
+diff -ruNa clean/posixtestsuite/LDFLAGS posixtestsuite/LDFLAGS
+--- clean/posixtestsuite/LDFLAGS	2005-06-02 18:32:42.000000000 -0700
++++ posixtestsuite/LDFLAGS	2016-08-09 11:04:26.000000000 -0700
+@@ -14,3 +14,4 @@
+ # allow for the NPTL-specific compilation (used in some test cases)
+ # Note: this sometimes require the package nptl-devel.*.rpm to be installed.
+ #-I /usr/include/nptl -L /usr/lib/nptl -D_XOPEN_SOURCE=600 -lpthread -lrt -lm
++-lpthread -lrt -lm
+diff -ruNa clean/posixtestsuite/Makefile posixtestsuite/Makefile
+--- clean/posixtestsuite/Makefile	2006-05-15 00:49:03.000000000 -0700
++++ posixtestsuite/Makefile	2016-08-09 11:05:16.000000000 -0700
+@@ -54,7 +54,7 @@
+ tests-pretty:
+ 	$(MAKE) all | column -t -s:
+ 
+-CFLAGS = -g -O2 -Wall -Werror -D_POSIX_C_SOURCE=200112L
++CFLAGS = -g -O2
+ 
+ # add -std=c99, -std=gnu99 if compiler supports it (gcc-2.95.3 does not).
+ check_gcc = $(shell if $(CC) $(1) -S -o /dev/null -xc /dev/null > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi)
+diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_read/15-1.c posixtestsuite/conformance/interfaces/aio_read/15-1.c
+--- clean/posixtestsuite/conformance/interfaces/aio_read/15-1.c	2006-09-20 04:26:32.000000000 -0700
++++ posixtestsuite/conformance/interfaces/aio_read/15-1.c	2016-05-08 12:09:31.000000000 -0700
+@@ -23,7 +23,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <aio.h>
+-
++#include <sys/resource.h>
+ #include "posixtest.h"
+ 
+ int main()
+diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c posixtestsuite/conformance/interfaces/aio_write/7-1.c
+--- clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c	2005-06-02 03:49:49.000000000 -0700
++++ posixtestsuite/conformance/interfaces/aio_write/7-1.c	2016-03-10 21:07:14.000000000 -0800
+@@ -84,6 +84,8 @@
+ 	for (i=0; i<last_req-1; i++)
+ 	{
+ 		err = aio_error(&aiocbs[i]);
++ 		if (err != 0)
++			printf(TNAME " aio_error got %d\n", err);
+ 		ret = aio_return(&aiocbs[i]);
+ 
+ 	}
+diff -ruNa clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c posixtestsuite/conformance/interfaces/clock_gettime/3-1.c
+--- clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2003-09-24 15:58:08.000000000 -0700
++++ posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2016-03-11 15:14:32.000000000 -0800
+@@ -59,8 +59,8 @@
+ 		return PTS_PASS;
+ 	} else {
+ 		printf("Test FAILED - ts1=%ld,ts2=%ld,ts3=%ld,ts4=%ld\n",
+-				ts1.tv_sec, ts2.tv_sec, ts3.tv_sec, 
+-				ts4.tv_sec);
++				(long int)ts1.tv_sec, (long int)ts2.tv_sec, (long int)ts3.tv_sec, 
++				(long int)ts4.tv_sec);
+ 		return PTS_FAIL;
+ 	}
+ 
+diff -ruNa clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c posixtestsuite/conformance/interfaces/gmtime/1-1.c
+--- clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c	2005-02-09 05:34:45.000000000 -0800
++++ posixtestsuite/conformance/interfaces/gmtime/1-1.c	2016-03-11 15:20:01.000000000 -0800
+@@ -23,7 +23,7 @@
+ 
+ 	(void) time(&the_time);
+ 	tm_ptr = gmtime(&the_time);
+-	printf("Raw time is %ld \n", the_time);
++	printf("Raw time is %ld \n", (long int)the_time);
+ 	printf("gmtime gives:\n");
+ 
+ 	/* Checking the seconds */
+diff -ruNa clean/posixtestsuite/conformance/interfaces/killpg/1-2.c posixtestsuite/conformance/interfaces/killpg/1-2.c
+--- clean/posixtestsuite/conformance/interfaces/killpg/1-2.c	2003-04-09 14:05:33.000000000 -0700
++++ posixtestsuite/conformance/interfaces/killpg/1-2.c	2016-03-11 22:28:16.000000000 -0800
+@@ -45,7 +45,7 @@
+ 		sigaction(SIGTOTEST, &act, 0);
+ 
+ 		/* change child's process group id */
+-		setpgrp();
++		setpgrp(0, 0);
+ 
+ 		sigpause(SIGABRT);
+ 
+diff -ruNa clean/posixtestsuite/conformance/interfaces/lio_listio/1-1.c posixtestsuite/conformance/interfaces/lio_listio/1-1.c
+--- clean/posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2005-06-02 03:49:50.000000000 -0700
++++ posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2016-03-10 21:07:14.000000000 -0800
+@@ -23,6 +23,7 @@
+ 
+ #define _XOPEN_SOURCE 600
+ #include <stdio.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-2.c posixtestsuite/conformance/interfaces/mmap/11-2.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/11-2.c	2004-04-22 20:41:41.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/11-2.c	2016-03-10 21:07:15.000000000 -0800
+@@ -21,6 +21,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <signal.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-3.c posixtestsuite/conformance/interfaces/mmap/11-3.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/11-3.c	2004-04-22 20:41:41.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/11-3.c	2016-03-10 21:07:15.000000000 -0800
+@@ -20,6 +20,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuite/conformance/interfaces/mmap/13-1.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/13-1.c	2004-05-23 23:59:30.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/13-1.c	2016-03-11 22:30:59.000000000 -0800
+@@ -73,7 +73,7 @@
+   
+   data = (char *) malloc(total_size); 
+   memset(data, 'a', total_size);
+-  printf("Time before write(): %ld\n", time(NULL));
++  printf("Time before write(): %ld\n", (long int)time(NULL));
+   if (write(fd, data, total_size) != total_size)
+   {
+     printf(TNAME "Error at write(): %s\n", 
+@@ -97,7 +97,7 @@
+   
+   flag = MAP_SHARED;
+   prot = PROT_READ | PROT_WRITE;
+-  printf("Time before mmap(): %ld\n", time(NULL));
++  printf("Time before mmap(): %ld\n", (long int)time(NULL));
+   pa = mmap(addr, size, prot, flag, fd, off);
+   if (pa == MAP_FAILED)
+   {
+@@ -126,7 +126,7 @@
+   ch = pa;
+   *ch = 'b';
+   
+-  printf("Time before munmap(): %ld\n", time(NULL));
++  printf("Time before munmap(): %ld\n", (long int)time(NULL));
+   munmap(pa, size);
+   
+   /* FIXME: Update the in-core meta data to the disk */
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuite/conformance/interfaces/mmap/14-1.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/14-1.c	2004-05-24 00:50:27.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/14-1.c	2016-03-11 22:34:36.000000000 -0800
+@@ -68,7 +68,7 @@
+   
+   data = (char *) malloc(total_size); 
+   memset(data, 'a', total_size);
+-  printf("Time before write(): %ld\n", time(NULL));
++  printf("Time before write(): %ld\n", (long int)time(NULL));
+   if (write(fd, data, total_size) != total_size)
+   {
+     printf(TNAME "Error at write(): %s\n", 
+@@ -80,7 +80,7 @@
+   sleep(1); 
+   flag = MAP_SHARED;
+   prot = PROT_READ | PROT_WRITE;
+-  printf("Time before mmap(): %ld\n", time(NULL));
++  printf("Time before mmap(): %ld\n", (long int)time(NULL));
+   pa = mmap(addr, size, prot, flag, fd, off);
+   if (pa == MAP_FAILED)
+   {
+@@ -90,7 +90,7 @@
+     exit(PTS_FAIL);
+   }
+   sleep(1); 
+-  printf("Time before write reference: %ld\n", time(NULL));
++  printf("Time before write reference: %ld\n", (long int)time(NULL));
+   /* Before write reference */
+   if (stat(tmpfname, &stat_buff) == -1)
+   {
+@@ -110,7 +110,7 @@
+   * is not acurate enough to reflect the update
+   */
+   sleep(1);
+-  printf("Time before msync(): %ld\n", time(NULL));
++  printf("Time before msync(): %ld\n", (long int)time(NULL));
+   msync(pa, size, MS_SYNC);
+ 
+   /* FIXME: Update the in-core meta data to the disk */
+@@ -128,7 +128,7 @@
+   mtime2 = stat_buff.st_mtime;
+  
+   printf("ctime1: %ld, ctime2: %ld\nmtime1: %ld, mtime2: %ld\n",
+-                  ctime1, ctime2, mtime1, mtime2); 
++                  (long int)ctime1, (long int)ctime2, (long int)mtime1, (long int)mtime2); 
+   if (ctime2 == ctime1 || mtime2 == mtime1)
+   {
+     printf("Test Fail " TNAME 
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/24-2.c posixtestsuite/conformance/interfaces/mmap/24-2.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/24-2.c	2004-04-20 18:59:48.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/24-2.c	2016-05-05 16:00:49.000000000 -0700
+@@ -74,7 +74,7 @@
+ 		printf(TNAME " Error at getrlimit(): %s\n", strerror(errno));
+ 		return PTS_UNRESOLVED;
+   }
+-  printf("available memory: %lu\n", rlim.rlim_cur); 
++  printf("available memory: %lu\n", (unsigned long int)rlim.rlim_cur); 
+  
+   /* First mmap, just to get a legal addr for second mmap */ 
+   fd = shm_fd;	
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/27-1.c posixtestsuite/conformance/interfaces/mmap/27-1.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/27-1.c	2004-04-01 22:31:46.000000000 -0800
++++ posixtestsuite/conformance/interfaces/mmap/27-1.c	2016-03-10 21:07:15.000000000 -0800
+@@ -19,6 +19,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
++#include <signal.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+@@ -62,6 +63,13 @@
+ #endif
+ 
+   data = (char *) malloc(total_size); 
++  if (data == NULL)
++  {
++     printf(TNAME "Error in malloc(): %s\n",
++            strerror(errno));
++     exit(PTS_UNRESOLVED);
++  }
++  
+   snprintf(tmpfname, sizeof(tmpfname), "/tmp/pts_mmap_27_1_%d",
+            getpid());
+   unlink(tmpfname);
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-1.c posixtestsuite/conformance/interfaces/mmap/6-1.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/6-1.c	2003-09-12 14:48:56.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/6-1.c	2016-03-10 21:07:15.000000000 -0800
+@@ -26,6 +26,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-2.c posixtestsuite/conformance/interfaces/mmap/6-2.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/6-2.c	2003-09-12 14:48:56.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/6-2.c	2016-03-10 21:07:15.000000000 -0800
+@@ -29,6 +29,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-3.c posixtestsuite/conformance/interfaces/mmap/6-3.c
+--- clean/posixtestsuite/conformance/interfaces/mmap/6-3.c	2003-09-12 14:48:56.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/6-3.c	2016-03-10 21:07:15.000000000 -0800
+@@ -27,6 +27,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-1.c posixtestsuite/conformance/interfaces/munmap/1-1.c
+--- clean/posixtestsuite/conformance/interfaces/munmap/1-1.c	2003-09-19 12:06:08.000000000 -0700
++++ posixtestsuite/conformance/interfaces/munmap/1-1.c	2016-03-10 21:07:15.000000000 -0800
+@@ -28,6 +28,7 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <fcntl.h>
++#include <signal.h>
+ #include <string.h>
+ #include <errno.h>
+ #include "posixtest.h"
+diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-2.c posixtestsuite/conformance/interfaces/munmap/1-2.c
+--- clean/posixtestsuite/conformance/interfaces/munmap/1-2.c	2003-09-19 12:06:08.000000000 -0700
++++ posixtestsuite/conformance/interfaces/munmap/1-2.c	2016-03-10 21:07:15.000000000 -0800
+@@ -23,6 +23,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <signal.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c posixtestsuite/conformance/interfaces/pthread_create/11-1.c
+--- clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2006-08-14 19:47:48.000000000 -0700
++++ posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2016-03-11 22:35:03.000000000 -0800
+@@ -32,7 +32,7 @@
+ 	if (ts.tv_sec != 0)
+ 	{
+ 		printf("ts.tv_sec: %ld, ts.tv_nsec: %ld\n", 
+-			ts.tv_sec, ts.tv_nsec);
++			(long int)ts.tv_sec, (long int)ts.tv_nsec);
+ 		exit(PTS_FAIL);
+ 	}
+ 	pthread_exit(0);
+diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/3-1.c posixtestsuite/conformance/interfaces/pthread_once/3-1.c
+--- clean/posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2003-02-07 13:01:58.000000000 -0800
++++ posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2016-05-08 23:38:17.000000000 -0700
+@@ -68,7 +68,7 @@
+ int main()
+ {
+ 	pthread_t new_th;
+-	once_control = PTHREAD_ONCE_INIT;
++	once_control = (pthread_once_t)PTHREAD_ONCE_INIT;
+ 	init_flag=0;
+ 	
+ 	/* Create a thread that will execute the first call to pthread_once() */
+diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/6-1.c posixtestsuite/conformance/interfaces/pthread_once/6-1.c
+--- clean/posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2005-01-17 02:31:24.000000000 -0800
++++ posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2016-05-08 23:38:47.000000000 -0700
+@@ -196,7 +196,7 @@
+ 	{
+ 		count_ope++;
+ 
+-		once_ctl = PTHREAD_ONCE_INIT;
++		once_ctl = (pthread_once_t)PTHREAD_ONCE_INIT;
+ 		init_ctl = 0;
+ 
+ 		ret = pthread_once( &once_ctl, initializer );
+diff -ruNa clean/posixtestsuite/conformance/interfaces/sched_yield/1-1.c posixtestsuite/conformance/interfaces/sched_yield/1-1.c
+--- clean/posixtestsuite/conformance/interfaces/sched_yield/1-1.c	2004-06-07 19:23:47.000000000 -0700
++++ posixtestsuite/conformance/interfaces/sched_yield/1-1.c	2016-05-08 23:09:53.000000000 -0700
+@@ -19,30 +19,25 @@
+  *  4. Launch a thread which call sched_yield() and check that the counter has
+  *     changed since the call.
+  */
+-#define LINUX
+-
+-#ifdef LINUX 
+-#define _GNU_SOURCE
+-#endif
+-
++#include <sys/types.h>
++#include <sys/param.h>
++#include <sys/wait.h>
+ #include <sched.h>
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <pthread.h>
++#include <inttypes.h>
++#include <stdint.h>
+ #include <errno.h>
+-#include <sys/wait.h>
+ #include "posixtest.h"
+ 
+ #ifdef BSD
+-# include <sys/types.h>
+-# include <sys/param.h>
+ # include <sys/sysctl.h>
+ #endif
+ 
+ #ifdef HPUX
+-# include <sys/param.h>
+ # include <sys/pstat.h>
+ #endif
+ 
+@@ -78,10 +73,10 @@
+ 	return ncpu;
+ }
+ 
+-#ifdef LINUX
+ int set_process_affinity(int cpu)
+ {
+ 	int retval = -1;
++#if defined(CPU_ZERO)	
+ 	cpu_set_t cpu_mask;
+ 	
+ 	CPU_ZERO(&cpu_mask);
+@@ -92,22 +87,34 @@
+ 		return -1;
+ 	}
+ 		
+-//#ifndef P2_SCHED_SETAFFINITY
+ 	retval = sched_setaffinity(0, sizeof(cpu_mask), &cpu_mask);
+-//#else
+-//	retval = sched_setaffinity(0, &cpu_mask);
+-//#endif
++#elif defined(cpuset_create)
++    cpuset_t *cpu_mask = cpuset_create();
++
++    cpuset_zero(cpu_mask);
++    if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
++        cpuset_set(cpu, cpu_mask);
++    } else {
++        fprintf (stderr, "Wrong cpu id: %d\n", cpu);
++        return -1;
++    }
++    retval = _sched_setaffinity(0, 0, cpuset_size(cpu_mask), cpu_mask);
++    cpuset_destroy(cpu_mask);
++#else
++    #error "no cpuset"
++#endif
++
+ 	if (retval == -1)
+ 	perror("Error at sched_setaffinity()");
+         
+-        return retval;
++    return retval;
+ }
+ 
+ int set_thread_affinity(int cpu)
+ {
+ 	int retval = -1;
+-	cpu_set_t cpu_mask;
+-	
++#if defined(CPU_ZERO) 
++	cpu_set_t cpu_mask;	
+ 	CPU_ZERO(&cpu_mask);
+ 	if (cpu >= 0 && cpu <= CPU_SETSIZE) {
+ 		CPU_SET(cpu, &cpu_mask);
+@@ -115,26 +122,33 @@
+ 		fprintf (stderr, "Wrong cpu id: %d\n", cpu); 
+ 		return -1;
+ 	}
+-//#ifndef P2_PTHREAD_SETAFFINITY
+ 	retval = pthread_setaffinity_np(pthread_self(), 
+ 			sizeof(cpu_mask), &cpu_mask);
+-//#else
+-//	retval = pthread_setaffinity_np(pthread_self(), &cpu_mask);
+-//#endif
+-        if (retval != 0)
++#elif defined(cpuset_create)
++    cpuset_t *cpu_mask = cpuset_create();
++
++    cpuset_zero(cpu_mask);
++    if (cpu >= 0 && cpu <= cpuset_size(cpu_mask)) {
++        cpuset_set(cpu, cpu_mask);
++    } else {
++        fprintf (stderr, "Wrong cpu id: %d\n", cpu);
++        return -1;
++    }
++    retval = pthread_setaffinity_np(0, cpuset_size(cpu_mask), cpu_mask);
++    cpuset_destroy(cpu_mask);
++#else
++    #error "no cpuset"
++#endif
++	if (retval != 0)
+ 	fprintf (stderr, "Error at pthread_setaffinity_np():\n");
+ 	return retval;
+ }
+-
+-#endif
+         
+ void * runner(void * arg) {
+ 	int i=0, nc;
+ 	long result = 0;
+-#ifdef LINUX        
+         set_thread_affinity(*(int *)arg);
+-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
+-#endif
++	fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
+ 	
+ 	for(;i<LOOP;i++){
+ 		nc = nb_call;
+@@ -154,11 +168,9 @@
+ }
+ 
+ void * busy_thread(void *arg){
+-#ifdef LINUX        
+         set_thread_affinity(*(int *)arg);
+-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
+-#endif
+-        while(1){ 
++        fprintf(stderr, "%jd bind to cpu: %d\n", (intmax_t)pthread_self(), *(int*)arg);
++	while(1){ 
+                 nb_call++;
+ 		sched_yield();
+ 	}
+@@ -170,11 +182,9 @@
+ void buzy_process(int cpu){
+         struct sched_param param;
+ 
+-#ifdef LINUX        
+         /* Bind to a processor */
+         set_process_affinity(cpu);
+         fprintf(stderr, "%d bind to cpu: %d\n", getpid(), cpu);
+-#endif
+         param.sched_priority = sched_get_priority_max(SCHED_FIFO);
+         if(sched_setscheduler(getpid(), SCHED_FIFO, &param) != 0) {
+                 perror("An error occurs when calling sched_setparam()");
+diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c
+--- clean/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2003-03-13 16:25:54.000000000 -0800
++++ posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2016-05-09 00:51:03.000000000 -0700
+@@ -19,7 +19,6 @@
+ #include <sys/types.h>
+ #include <strings.h>
+ #include <semaphore.h>
+-#include <features.h>
+ #include <time.h>
+ #include <unistd.h>
+ #include "posixtest.h"
+diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c
+--- clean/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2003-03-13 16:25:54.000000000 -0800
++++ posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2016-05-09 00:50:58.000000000 -0700
+@@ -19,7 +19,6 @@
+ #include <sys/types.h>
+ #include <strings.h>
+ #include <semaphore.h>
+-#include <features.h>
+ #include <time.h>
+ #include <unistd.h>
+ #include <errno.h>
+diff -ruNa clean/posixtestsuite/run_tests posixtestsuite/run_tests
+--- clean/posixtestsuite/run_tests	2004-12-16 01:56:18.000000000 -0800
++++ posixtestsuite/run_tests	2016-03-10 21:07:15.000000000 -0800
+@@ -23,8 +23,8 @@
+ runtests()
+ {
+ 	for test in `ls -d $1`; do
+-		POSIX_TARGET=$test make build-tests
+-		POSIX_TARGET=$test make run-tests
++		POSIX_TARGET=$test gmake build-tests
++		POSIX_TARGET=$test gmake run-tests
+ 	done
+ }
+ 
+diff -ruNa clean/posixtestsuite/stress/mqueues/Makefile posixtestsuite/stress/mqueues/Makefile
+--- clean/posixtestsuite/stress/mqueues/Makefile	2003-01-27 23:55:21.000000000 -0800
++++ posixtestsuite/stress/mqueues/Makefile	2016-08-09 11:09:26.000000000 -0700
+@@ -4,7 +4,7 @@
+ endif
+ 
+ INCLUDE = -I../../include
+-LIB=-lmqueue
++LIB=-lrt
+ 
+ CC=gcc
+ CFLAGS=-Wall -O2 -g -I$(POSIX_DIR_INC) -L$(POSIX_DIR_LIB) -lpthread
+diff -ruNa clean/posixtestsuite/stress/mqueues/run.sh posixtestsuite/stress/mqueues/run.sh
+--- clean/posixtestsuite/stress/mqueues/run.sh	2003-01-27 23:55:22.000000000 -0800
++++ posixtestsuite/stress/mqueues/run.sh	2016-03-10 21:07:15.000000000 -0800
+@@ -11,22 +11,24 @@
+ RunTest()
+ {
+ 	echo "TEST: " $1 $2
+-	TOTAL=$TOTAL+1
++	TOTAL=$((TOTAL+1))
+ 	./$1 $2
+-	if [ $? == 0 ]; then
+-		PASS=$PASS+1
+-		echo -ne "\t\t\t***TEST PASSED***\n\n"
++	if [ $? = 0 ]; then
++		PASS=$((PASS+1))
++		echo "                  ***TEST PASSED***"
++		echo
+ 	else
+-		FAIL=$FAIL+1
+-		echo -ne "\t\t\t***TEST FAILED***\n\n"
++		FAIL=$((FAIL+1))
++		echo "                  ***TEST FAILED***"
++		echo
+ 	fi
+ }
+ 
+ # Main program
+ 
+-declare -i TOTAL=0
+-declare -i PASS=0
+-declare -i FAIL=0
++TOTAL=0
++PASS=0
++FAIL=0
+ 
+ # Add lists of tests to these variables for execution
+ TESTS="multi_send_rev_1.test multi_send_rev_2.test"
+@@ -39,11 +41,11 @@
+  
+ 
+ echo
+-echo -ne "\t\t****************\n"
+-echo -ne "\t\t* TOTAL:  " $TOTAL "\n"
+-echo -ne "\t\t* PASSED: " $PASS "\n"
+-echo -ne "\t\t* FAILED: " $FAIL "\n"
+-echo -ne "\t\t****************\n"
++echo "         ****************"
++echo "         * TOTAL:  " $TOTAL
++echo "         * PASSED: " $PASS
++echo "         * FAILED: " $FAIL
++echo "         ****************"
+ 
+ exit 0
+ 
+diff -ruNa clean/posixtestsuite/stress/semaphores/Makefile posixtestsuite/stress/semaphores/Makefile
+--- clean/posixtestsuite/stress/semaphores/Makefile	2003-01-27 23:49:10.000000000 -0800
++++ posixtestsuite/stress/semaphores/Makefile	2016-08-09 11:04:03.000000000 -0700
+@@ -3,7 +3,6 @@
+ endif
+ 
+ INCLUDE = -I../../include
+-LIB=-lposix1b
+ 
+ CC=gcc
+ CFLAGS=-Wall -O2 -g -I$(POSIX_DIR_INC) -L$(POSIX_DIR_LIB)
+diff -ruNa clean/posixtestsuite/stress/semaphores/run.sh posixtestsuite/stress/semaphores/run.sh
+--- clean/posixtestsuite/stress/semaphores/run.sh	2003-01-27 23:49:10.000000000 -0800
++++ posixtestsuite/stress/semaphores/run.sh	2016-03-10 21:07:15.000000000 -0800
+@@ -11,22 +11,24 @@
+ RunTest()
+ {
+ 	echo "TEST: " $1 $2
+-	TOTAL=$TOTAL+1
++	TOTAL=$((TOTAL+1))
+ 	./$1 $2
+-	if [ $? == 0 ]; then
+-		PASS=$PASS+1
+-		echo -ne "\t\t\t***TEST PASSED***\n\n"
++	if [ $? = 0 ]; then
++		PASS=$((PASS+1))
++		echo "                  ***TEST PASSED***"
++		echo
+ 	else
+-		FAIL=$FAIL+1
+-		echo -ne "\t\t\t***TEST FAILED***\n\n"
++                FAIL=$((FAIL+1))
++                echo "                  ***TEST FAILED***"
++                echo	
+ 	fi
+ }
+ 
+ # Main program
+ 
+-declare -i TOTAL=0
+-declare -i PASS=0
+-declare -i FAIL=0
++TOTAL=0
++PASS=0
++FAIL=0
+ 
+ # Add lists of tests to these variables for execution
+ TESTS="multi_con_pro.test"
+@@ -37,12 +39,12 @@
+ RunTest $TESTS 100
+ 
+ echo
+-echo -ne "\t\t****************\n"
+-echo -ne "\t\t* TOTAL:  " $TOTAL "\n"
+-echo -ne "\t\t* PASSED: " $PASS "\n"
+-echo -ne "\t\t* FAILED: " $FAIL "\n"
+-echo -ne "\t\t****************\n"
+-
++echo "         ****************"
++echo "         * TOTAL:  " $TOTAL
++echo "         * PASSED: " $PASS
++echo "         * FAILED: " $FAIL
++echo "         ****************"
+ exit 0
+ 
++declare -i FAIL=0
+ 
+diff -ruNa clean/posixtestsuite/stress/threads/fork/do-plot posixtestsuite/stress/threads/fork/do-plot
+--- clean/posixtestsuite/stress/threads/fork/do-plot	2005-01-13 09:49:12.000000000 -0800
++++ posixtestsuite/stress/threads/fork/do-plot	2016-03-10 21:07:15.000000000 -0800
+@@ -15,12 +15,12 @@
+ FILE=$1
+ TMP=$(mktemp -d)
+ 
+-function clean_up
++clean_up()
+ {
+     rm -rf $TMP
+ }
+ 
+-function error
++error()
+ {
+     cat 1>&2
+     clean_up
+diff -ruNa clean/posixtestsuite/stress/threads/fork/s-c1.c posixtestsuite/stress/threads/fork/s-c1.c
+--- clean/posixtestsuite/stress/threads/fork/s-c1.c	2005-01-13 09:49:12.000000000 -0800
++++ posixtestsuite/stress/threads/fork/s-c1.c	2016-03-10 21:07:15.000000000 -0800
+@@ -130,7 +130,7 @@
+ 	mes_t sentinel;
+ 	mes_t *m_cur, *m_tmp;
+ 
+-	long CHILD_MAX = sysconf( _SC_CHILD_MAX );
++	long MY_CHILD_MAX = sysconf( _SC_CHILD_MAX );
+ 	long my_max = 1000 * SCALABILITY_FACTOR ;
+ 
+ 	/* Initialize the measure list */
+@@ -140,8 +140,8 @@
+ 	/* Initialize output routine */
+ 	output_init();
+ 
+-	if ( CHILD_MAX > 0 )
+-		my_max = CHILD_MAX;
++        if ( MY_CHILD_MAX > 0 )
++               my_max = MY_CHILD_MAX;
+ 
+ 	pr = ( pid_t * ) calloc( 1 + my_max, sizeof( pid_t ) );
+ 
+@@ -151,7 +151,7 @@
+ 	}
+ 
+ #if VERBOSE > 1
+-	output( "CHILD_MAX: %d\n", CHILD_MAX );
++	output( "CHILD_MAX: %d\n", MY_CHILD_MAX );
+ 
+ #endif
+ 
+@@ -267,12 +267,12 @@
+ 		/* Parent */
+ 		nprocesses++;
+ 
+-		/* FAILED if nprocesses > CHILD_MAX */
++		/* FAILED if nprocesses > MY_CHILD_MAX */
+ 		if ( nprocesses > my_max )
+ 		{
+ 			errno = 0;
+ 
+-			if ( CHILD_MAX > 0 )
++			if ( MY_CHILD_MAX > 0 )
+ 			{
+ #if VERBOSE > 0
+ 				output( "WARNING! We were able to create more than CHILD_MAX processes\n" );

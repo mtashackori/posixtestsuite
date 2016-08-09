@@ -4,7 +4,6 @@ ifndef POSIX_DIR_LIB
 endif
 
 INCLUDE = -I../../include
-#LIB=-lmqueue
 LIB=-lrt
 
 CC=gcc
