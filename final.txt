@@ -1,0 +1,144 @@
+Final Report:
+
+My goal for this project is to support POSIX standard better 
+on NetBSD system. We started from the posix test benchmark suite and did improvements both 
+in the benchmark side and NetBSD system. We have setup a github repo for this project. 
+https://github.com/ycui1984/posixtestsuite
+
+Things have done during the whole project:
+
+I. The benchmark suite is modified for NetBSD system. 
+The main reason is that NetBSD implements the same functionality for a lot
+of libraries and kernel subsystems, but the interface may be slightly 
+different from other systems, like Linux and FreeBSD. What we did was to 
+let the benchmark suite know the implementation details and run tests.
+Here is our patch to support POSIX test suite on NetBSD.
+https://github.com/ycui1984/posixtestsuite/blob/master/patches/TESTSUITE/testsuite.patch
+
+Our first step is to classify all errors, so that we know
+an error is caused by missing feature, by wrongly used interface, by compiling flags, or 
+some other reasons. Here is my classification for all errors,
+https://github.com/ycui1984/posixtestsuite/blob/master/errors.txt
+
+In terms of my benchmark fixes, 
+1. correct parameters for setpgrp function
+2. provide correct compile flag
+3. add new necessary headers
+4. fix bug of pthread_setaffinity_np and cpuset
+5. fix bug of pthread_once_init
+6. remove unnessary headers
+7. correct format
+
+Here are related commits
+https://github.com/ycui1984/posixtestsuite/commit/446d560bc7741a6cad90c991484a08cd9b75dd3d
+https://github.com/ycui1984/posixtestsuite/commit/5938d4d0f7ca641bd72252569e6bbd7be73ee802
+https://github.com/ycui1984/posixtestsuite/commit/8d57c13328a5ff6f6a7358534e221c2f56389142
+https://github.com/ycui1984/posixtestsuite/commit/b5a70f3b0955cce8d81c2696faaa4a9888756880
+https://github.com/ycui1984/posixtestsuite/commit/3b121f0ffa03826d997c374156f68afe3055a81f
+https://github.com/ycui1984/posixtestsuite/commit/8e77aacbb19f0b7cd3d66d30c957f559d7c798f7
+https://github.com/ycui1984/posixtestsuite/commit/620fd555c3e2ba73f547d2b38cdf75fd05e595ed
+
+II. NetBSD system is improved to support POSIX standard, including userland and kernel. 
+Following modifcations already been accepted by NetBSD.
+https://github.com/IIJ-NetBSD/netbsd-src/commit/b9650369701dd2c95c6f6afa589b1be6bcedbe58 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/203128993a0d31b47978fa659f8ae456bbed5a1c 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/272d39e2405b0c730cbcf300cf4879220a967aa7 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/b6c4d4ba3de2aed35ceba10f027225a04ca697a3 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/80dec21a89c7d0033ce1f54846cbfc7d675656a6 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/8312e2efc6d0a9e03b8774bb9fcd5aac3d73907a 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/053c58f1df1ccb730a2973d5690003c01b1182e1 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/2b763ded396e6526d1cc63b89acd558e6de63f32 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/ef38d5736b7367bff9aba260f532e5b24728b224 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/6d66b56857eaf348825503072b60948bc3117c4e 
+https://github.com/IIJ-NetBSD/netbsd-src/commit/7bfee8739f8b88a7eceb5dfe52fce3213fb009a8 
+
+Overall my improvements can be organized into 5 features.
+Each feature has implementation of the feature, manual and unit tests.
+To see all improvements of this project, please take look at 
+https://github.com/ycui1984/posixtestsuite/blob/master/improvements.patch
+
+1. Timers
+	In this feature, I implemented the support for 
+  _SC_CPU_TIME, _SC_THREAD_CPUTIME and _SC_DELAYTIMER_MAX. 
+	Here are related patches, 
+  https://github.com/ycui1984/posixtestsuite/tree/master/patches/TIMERS
+
+2. Signals
+	In this feature, I implemented the support for 
+  bsd_signal, SIGRTMIN, SIGRTMAX, SIGPOLL, _SC_REALTIME_SIGNALS, _SC_SIGQUEUE_MAX
+  Users can use real time signal related stuff in NetBSD in future. 
+  Here are related patches,
+  https://github.com/ycui1984/posixtestsuite/tree/master/patches/BSDSIGNAL
+  https://github.com/ycui1984/posixtestsuite/tree/master/patches/REALTIME_SIGNAL
+
+3. Semaphore
+	In this feature, I implemented the support for _SC_SEM_NSEMS_MAX
+  Here are related patches,
+  https://github.com/ycui1984/posixtestsuite/tree/master/patches/SEM_NSEMS_MAX
+
+4. Pthreads
+	In this feature, I implemented the support for the following functions,
+		  pthread_condattr_getclock 
+  		pthread_barrierattr_getpshared  
+  		pthread_barrierattr_setpshared  
+  		pthread_mutexattr_setpshared  
+  		pthread_mutexattr_getpshared 
+  		pthread_condattr_setpshared 
+  		pthread_condattr_getpshared 
+  		pthread_rwlockattr_getpshared 
+  		pthread_rwlockattr_setpshared 
+
+  		PTHREAD_PRIO_INHERIT
+  		PTHREAD_PRIO_NONE  
+  		PTHREAD_PRIO_PROTECT 
+  		pthread_mutexattr_getprioceiling  
+  		pthread_mutexattr_setprioceiling  
+  		pthread_mutexattr_getprotocol 
+  		pthread_mutexattr_setprotocol 
+  		pthread_mutex_getprioceiling 
+  		pthread_mutex_timedlock 
+  		PTHREAD_STACK_MIN  
+  	Note that getter and setting for _pshared needs more works for cross process synchronization. 
+  	Here are patches and related commits,
+    https://github.com/ycui1984/posixtestsuite/tree/master/patches/PTHREAD
+    https://github.com/ycui1984/posixtestsuite/tree/master/patches/PRIOPROTECT
+  	https://github.com/ycui1984/posixtestsuite/commit/1ff3d1b08def972a6ed837bc93bd1327834e0673
+  	https://github.com/ycui1984/posixtestsuite/commit/72bc70c182ee451e40d9d2d49eea2fe671193507
+  	https://github.com/ycui1984/posixtestsuite/commit/027b2de2448b85c1583ed818282859e906237347
+  	https://github.com/ycui1984/posixtestsuite/commit/07bc59798c558c1b3cf1d39369037b9bc2838788
+  	https://github.com/ycui1984/posixtestsuite/commit/c766d83289d9821f318d1ef5a6f7d9e85bfd71c8
+  	https://github.com/ycui1984/posixtestsuite/commit/f7f7c2266c2cb210bf7b26ce54d87dc56c3e9c81
+  	https://github.com/ycui1984/posixtestsuite/commit/8edccb8a7ec18dc7af990bae9d002a219741f0e0
+  	https://github.com/ycui1984/posixtestsuite/commit/a5a3390253995934b20e9af6932377a0d118cd3d
+  	https://github.com/ycui1984/posixtestsuite/commit/927e1ea5a3c9aa072ef7a18316903f6cf1a20056
+  	https://github.com/ycui1984/posixtestsuite/commit/1a5bafe2691daf1755f7156d246f297568f7768b
+
+ 5. Scheduler
+ 	Here is the patch and related commits,
+  https://github.com/ycui1984/posixtestsuite/tree/master/patches/SCHED
+ 	https://github.com/ycui1984/posixtestsuite/commit/30ba09403eb6a00a1972c50e30da054c07c33aa5
+
+III. things not done:
+  In terms of 1 and 2, these features are seldomly supported by popular community OSes. 
+  I have discussed this with NetBSD community, they think it is not worth to implement it in NetBSD system. 
+  In terms of 3, it is left as future work. 
+	
+    1. mmap, from the posix benchmark, there are several functions missing related to mmap. 
+		including functions that are listed below, 
+			  POSIX_TYPED_MEM_ALLOCATE
+    		POSIX_TYPED_MEM_ALLOCATE_CONTIG 
+    		POSIX_TYPED_MEM_MAP_ALLOCATABLE
+    		struct posix_typed_mem_info
+    		posix_mem_offset
+    		posix_typed_mem_get_info
+    		posix_typed_mem_open
+
+    2. SCHED_SPORADIC scheduling class. This feature is described in the standard, but 
+    never been implemented by popular OSes like Linux and FreeBSD. 
+    The concept is a task can only be scheduled a certain percent of time during a 
+    given interval. This scheduler can be implemented by modifying FIFO scheduling, 
+    we record how many percent has already been used for each real time task and never
+    schedule it once hit the limit. Right now it is defined as SCHED_FIFO. 
+    
+    3. Cross process synchronization. This enables a thread to hold a lock in another process.
+
