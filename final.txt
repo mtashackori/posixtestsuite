@@ -3,7 +3,9 @@ Final Report:
 My goal for this project is to support POSIX standard better 
 on NetBSD system. We started from the posix test benchmark suite and did improvements both 
 in the benchmark side and NetBSD system. We have setup a github repo for this project. 
-https://github.com/ycui1984/posixtestsuite
+Here is the repo address, https://github.com/ycui1984/posixtestsuite
+After adding our changes both in benchmark side and NetBSD system side,
+the number of failed tests are decreased from 172 to 7 (only related to memory allocation feature).
 
 Things have done during the whole project:
 
@@ -66,7 +68,7 @@ https://github.com/ycui1984/posixtestsuite/blob/master/improvements.patch
 2. Signals
 	In this feature, I implemented the support for 
   bsd_signal, SIGRTMIN, SIGRTMAX, SIGPOLL, _SC_REALTIME_SIGNALS, _SC_SIGQUEUE_MAX
-  Users can use real time signal related stuff in NetBSD in future. 
+  Users can use real time signal related stuff in NetBSD. 
   Here are related patches,
   https://github.com/ycui1984/posixtestsuite/tree/master/patches/BSDSIGNAL
   https://github.com/ycui1984/posixtestsuite/tree/master/patches/REALTIME_SIGNAL
@@ -114,6 +116,10 @@ https://github.com/ycui1984/posixtestsuite/blob/master/improvements.patch
   	https://github.com/ycui1984/posixtestsuite/commit/1a5bafe2691daf1755f7156d246f297568f7768b
 
  5. Scheduler
+  In this feature, I implemented the support for 
+  SCHED_SPORADIC, this is now the same as SCHED_FIFO. 
+  For developers who are interested in implementing the full feature, they can achieve that 
+  by modifying fifo scheduler.
  	Here is the patch and related commits,
   https://github.com/ycui1984/posixtestsuite/tree/master/patches/SCHED
  	https://github.com/ycui1984/posixtestsuite/commit/30ba09403eb6a00a1972c50e30da054c07c33aa5

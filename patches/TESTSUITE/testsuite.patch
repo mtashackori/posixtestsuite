@@ -44,27 +44,29 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c posixtest
  	}
 diff -ruNa clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c posixtestsuite/conformance/interfaces/clock_gettime/3-1.c
 --- clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2003-09-24 15:58:08.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2016-03-11 15:14:32.000000000 -0800
-@@ -59,8 +59,8 @@
++++ posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2016-08-10 16:11:27.000000000 -0700
+@@ -58,9 +58,9 @@
+ 		printf("Test PASSED\n");
  		return PTS_PASS;
  	} else {
- 		printf("Test FAILED - ts1=%ld,ts2=%ld,ts3=%ld,ts4=%ld\n",
+-		printf("Test FAILED - ts1=%ld,ts2=%ld,ts3=%ld,ts4=%ld\n",
 -				ts1.tv_sec, ts2.tv_sec, ts3.tv_sec, 
 -				ts4.tv_sec);
-+				(long int)ts1.tv_sec, (long int)ts2.tv_sec, (long int)ts3.tv_sec, 
-+				(long int)ts4.tv_sec);
++		printf("Test FAILED - ts1=%jd,ts2=%jd,ts3=%jd,ts4=%jd\n",
++				(intmax_t)ts1.tv_sec, (intmax_t)ts2.tv_sec, (intmax_t)ts3.tv_sec, 
++				(intmax_t)ts4.tv_sec);
  		return PTS_FAIL;
  	}
  
 diff -ruNa clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c posixtestsuite/conformance/interfaces/gmtime/1-1.c
 --- clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c	2005-02-09 05:34:45.000000000 -0800
-+++ posixtestsuite/conformance/interfaces/gmtime/1-1.c	2016-03-11 15:20:01.000000000 -0800
++++ posixtestsuite/conformance/interfaces/gmtime/1-1.c	2016-08-10 16:12:31.000000000 -0700
 @@ -23,7 +23,7 @@
  
  	(void) time(&the_time);
  	tm_ptr = gmtime(&the_time);
 -	printf("Raw time is %ld \n", the_time);
-+	printf("Raw time is %ld \n", (long int)the_time);
++	printf("Raw time is %jd \n", (intmax_t)the_time);
  	printf("gmtime gives:\n");
  
  	/* Checking the seconds */
@@ -115,13 +117,13 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-3.c posixtestsuit
  #include <sys/types.h>
 diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuite/conformance/interfaces/mmap/13-1.c
 --- clean/posixtestsuite/conformance/interfaces/mmap/13-1.c	2004-05-23 23:59:30.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/mmap/13-1.c	2016-03-11 22:30:59.000000000 -0800
++++ posixtestsuite/conformance/interfaces/mmap/13-1.c	2016-08-10 16:27:37.000000000 -0700
 @@ -73,7 +73,7 @@
    
    data = (char *) malloc(total_size); 
    memset(data, 'a', total_size);
 -  printf("Time before write(): %ld\n", time(NULL));
-+  printf("Time before write(): %ld\n", (long int)time(NULL));
++  printf("Time before write(): %jd\n", (intmax_t)time(NULL));
    if (write(fd, data, total_size) != total_size)
    {
      printf(TNAME "Error at write(): %s\n", 
@@ -130,7 +132,7 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuit
    flag = MAP_SHARED;
    prot = PROT_READ | PROT_WRITE;
 -  printf("Time before mmap(): %ld\n", time(NULL));
-+  printf("Time before mmap(): %ld\n", (long int)time(NULL));
++  printf("Time before mmap(): %jd\n", (intmax_t)time(NULL));
    pa = mmap(addr, size, prot, flag, fd, off);
    if (pa == MAP_FAILED)
    {
@@ -139,19 +141,19 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuit
    *ch = 'b';
    
 -  printf("Time before munmap(): %ld\n", time(NULL));
-+  printf("Time before munmap(): %ld\n", (long int)time(NULL));
++  printf("Time before munmap(): %jd\n", (intmax_t)time(NULL));
    munmap(pa, size);
    
    /* FIXME: Update the in-core meta data to the disk */
 diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuite/conformance/interfaces/mmap/14-1.c
 --- clean/posixtestsuite/conformance/interfaces/mmap/14-1.c	2004-05-24 00:50:27.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/mmap/14-1.c	2016-03-11 22:34:36.000000000 -0800
++++ posixtestsuite/conformance/interfaces/mmap/14-1.c	2016-08-10 16:27:39.000000000 -0700
 @@ -68,7 +68,7 @@
    
    data = (char *) malloc(total_size); 
    memset(data, 'a', total_size);
 -  printf("Time before write(): %ld\n", time(NULL));
-+  printf("Time before write(): %ld\n", (long int)time(NULL));
++  printf("Time before write(): %jd\n", (intmax_t)time(NULL));
    if (write(fd, data, total_size) != total_size)
    {
      printf(TNAME "Error at write(): %s\n", 
@@ -160,7 +162,7 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuit
    flag = MAP_SHARED;
    prot = PROT_READ | PROT_WRITE;
 -  printf("Time before mmap(): %ld\n", time(NULL));
-+  printf("Time before mmap(): %ld\n", (long int)time(NULL));
++  printf("Time before mmap(): %jd\n", (intmax_t)time(NULL));
    pa = mmap(addr, size, prot, flag, fd, off);
    if (pa == MAP_FAILED)
    {
@@ -169,7 +171,7 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuit
    }
    sleep(1); 
 -  printf("Time before write reference: %ld\n", time(NULL));
-+  printf("Time before write reference: %ld\n", (long int)time(NULL));
++  printf("Time before write reference: %jd\n", (intmax_t)time(NULL));
    /* Before write reference */
    if (stat(tmpfname, &stat_buff) == -1)
    {
@@ -178,28 +180,30 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuit
    */
    sleep(1);
 -  printf("Time before msync(): %ld\n", time(NULL));
-+  printf("Time before msync(): %ld\n", (long int)time(NULL));
++  printf("Time before msync(): %jd\n", (intmax_t)time(NULL));
    msync(pa, size, MS_SYNC);
  
    /* FIXME: Update the in-core meta data to the disk */
-@@ -128,7 +128,7 @@
+@@ -127,8 +127,8 @@
+   ctime2 = stat_buff.st_ctime;
    mtime2 = stat_buff.st_mtime;
   
-   printf("ctime1: %ld, ctime2: %ld\nmtime1: %ld, mtime2: %ld\n",
+-  printf("ctime1: %ld, ctime2: %ld\nmtime1: %ld, mtime2: %ld\n",
 -                  ctime1, ctime2, mtime1, mtime2); 
-+                  (long int)ctime1, (long int)ctime2, (long int)mtime1, (long int)mtime2); 
++  printf("ctime1: %jd, ctime2: %jd\nmtime1: %jd, mtime2: %jd\n",
++                  (intmax_t)ctime1, (intmax_t)ctime2, (intmax_t)mtime1, (intmax_t)mtime2); 
    if (ctime2 == ctime1 || mtime2 == mtime1)
    {
      printf("Test Fail " TNAME 
 diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/24-2.c posixtestsuite/conformance/interfaces/mmap/24-2.c
 --- clean/posixtestsuite/conformance/interfaces/mmap/24-2.c	2004-04-20 18:59:48.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/mmap/24-2.c	2016-05-05 16:00:49.000000000 -0700
++++ posixtestsuite/conformance/interfaces/mmap/24-2.c	2016-08-10 16:27:40.000000000 -0700
 @@ -74,7 +74,7 @@
  		printf(TNAME " Error at getrlimit(): %s\n", strerror(errno));
  		return PTS_UNRESOLVED;
    }
 -  printf("available memory: %lu\n", rlim.rlim_cur); 
-+  printf("available memory: %lu\n", (unsigned long int)rlim.rlim_cur); 
++  printf("available memory: %ju\n", (uintmax_t)rlim.rlim_cur); 
   
    /* First mmap, just to get a legal addr for second mmap */ 
    fd = shm_fd;	
@@ -285,13 +289,15 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-2.c posixtestsui
  #include <sys/stat.h>
 diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c posixtestsuite/conformance/interfaces/pthread_create/11-1.c
 --- clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2006-08-14 19:47:48.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2016-03-11 22:35:03.000000000 -0800
-@@ -32,7 +32,7 @@
++++ posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2016-08-10 16:22:03.000000000 -0700
+@@ -31,8 +31,8 @@
+ 	/* Just test the tv_sec field here. */
  	if (ts.tv_sec != 0)
  	{
- 		printf("ts.tv_sec: %ld, ts.tv_nsec: %ld\n", 
+-		printf("ts.tv_sec: %ld, ts.tv_nsec: %ld\n", 
 -			ts.tv_sec, ts.tv_nsec);
-+			(long int)ts.tv_sec, (long int)ts.tv_nsec);
++		printf("ts.tv_sec: %jd, ts.tv_nsec: %jd\n", 
++			(intmax_t)ts.tv_sec, (intmax_t)ts.tv_nsec);
  		exit(PTS_FAIL);
  	}
  	pthread_exit(0);

@@ -31,8 +31,8 @@ void *a_thread_func()
 	/* Just test the tv_sec field here. */
 	if (ts.tv_sec != 0)
 	{
-		printf("ts.tv_sec: %ld, ts.tv_nsec: %ld\n", 
-			(long int)ts.tv_sec, (long int)ts.tv_nsec);
+		printf("ts.tv_sec: %jd, ts.tv_nsec: %jd\n", 
+			(intmax_t)ts.tv_sec, (intmax_t)ts.tv_nsec);
 		exit(PTS_FAIL);
 	}
 	pthread_exit(0);

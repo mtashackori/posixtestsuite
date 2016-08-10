@@ -73,7 +73,7 @@ int main()
   
   data = (char *) malloc(total_size); 
   memset(data, 'a', total_size);
-  printf("Time before write(): %ld\n", (long int)time(NULL));
+  printf("Time before write(): %jd\n", (intmax_t)time(NULL));
   if (write(fd, data, total_size) != total_size)
   {
     printf(TNAME "Error at write(): %s\n", 
@@ -97,7 +97,7 @@ int main()
   
   flag = MAP_SHARED;
   prot = PROT_READ | PROT_WRITE;
-  printf("Time before mmap(): %ld\n", (long int)time(NULL));
+  printf("Time before mmap(): %jd\n", (intmax_t)time(NULL));
   pa = mmap(addr, size, prot, flag, fd, off);
   if (pa == MAP_FAILED)
   {
@@ -126,7 +126,7 @@ int main()
   ch = pa;
   *ch = 'b';
   
-  printf("Time before munmap(): %ld\n", (long int)time(NULL));
+  printf("Time before munmap(): %jd\n", (intmax_t)time(NULL));
   munmap(pa, size);
   
   /* FIXME: Update the in-core meta data to the disk */
