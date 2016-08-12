@@ -1,13 +1,13 @@
-diff -ruNa clean/posixtestsuite/LDFLAGS posixtestsuite/LDFLAGS
---- clean/posixtestsuite/LDFLAGS	2005-06-02 18:32:42.000000000 -0700
+diff -ruNa gen/posixtestsuite/LDFLAGS posixtestsuite/LDFLAGS
+--- gen/posixtestsuite/LDFLAGS	2005-06-02 18:32:42.000000000 -0700
 +++ posixtestsuite/LDFLAGS	2016-08-09 11:04:26.000000000 -0700
 @@ -14,3 +14,4 @@
  # allow for the NPTL-specific compilation (used in some test cases)
  # Note: this sometimes require the package nptl-devel.*.rpm to be installed.
  #-I /usr/include/nptl -L /usr/lib/nptl -D_XOPEN_SOURCE=600 -lpthread -lrt -lm
 +-lpthread -lrt -lm
-diff -ruNa clean/posixtestsuite/Makefile posixtestsuite/Makefile
---- clean/posixtestsuite/Makefile	2006-05-15 00:49:03.000000000 -0700
+diff -ruNa gen/posixtestsuite/Makefile posixtestsuite/Makefile
+--- gen/posixtestsuite/Makefile	2006-05-15 00:49:03.000000000 -0700
 +++ posixtestsuite/Makefile	2016-08-09 11:05:16.000000000 -0700
 @@ -54,7 +54,7 @@
  tests-pretty:
@@ -18,8 +18,8 @@ diff -ruNa clean/posixtestsuite/Makefile posixtestsuite/Makefile
  
  # add -std=c99, -std=gnu99 if compiler supports it (gcc-2.95.3 does not).
  check_gcc = $(shell if $(CC) $(1) -S -o /dev/null -xc /dev/null > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi)
-diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_read/15-1.c posixtestsuite/conformance/interfaces/aio_read/15-1.c
---- clean/posixtestsuite/conformance/interfaces/aio_read/15-1.c	2006-09-20 04:26:32.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/aio_read/15-1.c posixtestsuite/conformance/interfaces/aio_read/15-1.c
+--- gen/posixtestsuite/conformance/interfaces/aio_read/15-1.c	2006-09-20 04:26:32.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/aio_read/15-1.c	2016-05-08 12:09:31.000000000 -0700
 @@ -23,7 +23,7 @@
  #include <stdio.h>
@@ -30,8 +30,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_read/15-1.c posixtest
  #include "posixtest.h"
  
  int main()
-diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c posixtestsuite/conformance/interfaces/aio_write/7-1.c
---- clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c	2005-06-02 03:49:49.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/aio_write/7-1.c posixtestsuite/conformance/interfaces/aio_write/7-1.c
+--- gen/posixtestsuite/conformance/interfaces/aio_write/7-1.c	2005-06-02 03:49:49.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/aio_write/7-1.c	2016-03-10 21:07:14.000000000 -0800
 @@ -84,6 +84,8 @@
  	for (i=0; i<last_req-1; i++)
@@ -42,8 +42,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/aio_write/7-1.c posixtest
  		ret = aio_return(&aiocbs[i]);
  
  	}
-diff -ruNa clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c posixtestsuite/conformance/interfaces/clock_gettime/3-1.c
---- clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2003-09-24 15:58:08.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c posixtestsuite/conformance/interfaces/clock_gettime/3-1.c
+--- gen/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2003-09-24 15:58:08.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/clock_gettime/3-1.c	2016-08-10 16:11:27.000000000 -0700
 @@ -58,9 +58,9 @@
  		printf("Test PASSED\n");
@@ -58,8 +58,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/clock_gettime/3-1.c posix
  		return PTS_FAIL;
  	}
  
-diff -ruNa clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c posixtestsuite/conformance/interfaces/gmtime/1-1.c
---- clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c	2005-02-09 05:34:45.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/gmtime/1-1.c posixtestsuite/conformance/interfaces/gmtime/1-1.c
+--- gen/posixtestsuite/conformance/interfaces/gmtime/1-1.c	2005-02-09 05:34:45.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/gmtime/1-1.c	2016-08-10 16:12:31.000000000 -0700
 @@ -23,7 +23,7 @@
  
@@ -70,20 +70,20 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/gmtime/1-1.c posixtestsui
  	printf("gmtime gives:\n");
  
  	/* Checking the seconds */
-diff -ruNa clean/posixtestsuite/conformance/interfaces/killpg/1-2.c posixtestsuite/conformance/interfaces/killpg/1-2.c
---- clean/posixtestsuite/conformance/interfaces/killpg/1-2.c	2003-04-09 14:05:33.000000000 -0700
-+++ posixtestsuite/conformance/interfaces/killpg/1-2.c	2016-03-11 22:28:16.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/killpg/1-2.c posixtestsuite/conformance/interfaces/killpg/1-2.c
+--- gen/posixtestsuite/conformance/interfaces/killpg/1-2.c	2003-04-09 14:05:33.000000000 -0700
++++ posixtestsuite/conformance/interfaces/killpg/1-2.c	2016-08-12 10:50:12.000000000 -0700
 @@ -45,7 +45,7 @@
  		sigaction(SIGTOTEST, &act, 0);
  
  		/* change child's process group id */
 -		setpgrp();
-+		setpgrp(0, 0);
++		setpgid(0, 0);
  
  		sigpause(SIGABRT);
  
-diff -ruNa clean/posixtestsuite/conformance/interfaces/lio_listio/1-1.c posixtestsuite/conformance/interfaces/lio_listio/1-1.c
---- clean/posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2005-06-02 03:49:50.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/lio_listio/1-1.c posixtestsuite/conformance/interfaces/lio_listio/1-1.c
+--- gen/posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2005-06-02 03:49:50.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2016-03-10 21:07:14.000000000 -0800
 @@ -23,6 +23,7 @@
  
@@ -93,8 +93,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/lio_listio/1-1.c posixtes
  #include <unistd.h>
  #include <string.h>
  #include <errno.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-2.c posixtestsuite/conformance/interfaces/mmap/11-2.c
---- clean/posixtestsuite/conformance/interfaces/mmap/11-2.c	2004-04-22 20:41:41.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/11-2.c posixtestsuite/conformance/interfaces/mmap/11-2.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/11-2.c	2004-04-22 20:41:41.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/11-2.c	2016-03-10 21:07:15.000000000 -0800
 @@ -21,6 +21,7 @@
  #include <stdio.h>
@@ -104,8 +104,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-2.c posixtestsuit
  #include <sys/mman.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-3.c posixtestsuite/conformance/interfaces/mmap/11-3.c
---- clean/posixtestsuite/conformance/interfaces/mmap/11-3.c	2004-04-22 20:41:41.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/11-3.c posixtestsuite/conformance/interfaces/mmap/11-3.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/11-3.c	2004-04-22 20:41:41.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/11-3.c	2016-03-10 21:07:15.000000000 -0800
 @@ -20,6 +20,7 @@
  #include <pthread.h>
@@ -115,8 +115,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/11-3.c posixtestsuit
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/types.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuite/conformance/interfaces/mmap/13-1.c
---- clean/posixtestsuite/conformance/interfaces/mmap/13-1.c	2004-05-23 23:59:30.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuite/conformance/interfaces/mmap/13-1.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/13-1.c	2004-05-23 23:59:30.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/13-1.c	2016-08-10 16:27:37.000000000 -0700
 @@ -73,7 +73,7 @@
    
@@ -145,8 +145,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/13-1.c posixtestsuit
    munmap(pa, size);
    
    /* FIXME: Update the in-core meta data to the disk */
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuite/conformance/interfaces/mmap/14-1.c
---- clean/posixtestsuite/conformance/interfaces/mmap/14-1.c	2004-05-24 00:50:27.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuite/conformance/interfaces/mmap/14-1.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/14-1.c	2004-05-24 00:50:27.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/14-1.c	2016-08-10 16:27:39.000000000 -0700
 @@ -68,7 +68,7 @@
    
@@ -195,8 +195,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/14-1.c posixtestsuit
    if (ctime2 == ctime1 || mtime2 == mtime1)
    {
      printf("Test Fail " TNAME 
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/24-2.c posixtestsuite/conformance/interfaces/mmap/24-2.c
---- clean/posixtestsuite/conformance/interfaces/mmap/24-2.c	2004-04-20 18:59:48.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/24-2.c posixtestsuite/conformance/interfaces/mmap/24-2.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/24-2.c	2004-04-20 18:59:48.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/24-2.c	2016-08-10 16:27:40.000000000 -0700
 @@ -74,7 +74,7 @@
  		printf(TNAME " Error at getrlimit(): %s\n", strerror(errno));
@@ -207,8 +207,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/24-2.c posixtestsuit
   
    /* First mmap, just to get a legal addr for second mmap */ 
    fd = shm_fd;	
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/27-1.c posixtestsuite/conformance/interfaces/mmap/27-1.c
---- clean/posixtestsuite/conformance/interfaces/mmap/27-1.c	2004-04-01 22:31:46.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/27-1.c posixtestsuite/conformance/interfaces/mmap/27-1.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/27-1.c	2004-04-01 22:31:46.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/mmap/27-1.c	2016-03-10 21:07:15.000000000 -0800
 @@ -19,6 +19,7 @@
  #include <stdlib.h>
@@ -232,8 +232,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/27-1.c posixtestsuit
    snprintf(tmpfname, sizeof(tmpfname), "/tmp/pts_mmap_27_1_%d",
             getpid());
    unlink(tmpfname);
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-1.c posixtestsuite/conformance/interfaces/mmap/6-1.c
---- clean/posixtestsuite/conformance/interfaces/mmap/6-1.c	2003-09-12 14:48:56.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/6-1.c posixtestsuite/conformance/interfaces/mmap/6-1.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/6-1.c	2003-09-12 14:48:56.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/6-1.c	2016-03-10 21:07:15.000000000 -0800
 @@ -26,6 +26,7 @@
  #include <pthread.h>
@@ -243,8 +243,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-1.c posixtestsuite
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/types.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-2.c posixtestsuite/conformance/interfaces/mmap/6-2.c
---- clean/posixtestsuite/conformance/interfaces/mmap/6-2.c	2003-09-12 14:48:56.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/6-2.c posixtestsuite/conformance/interfaces/mmap/6-2.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/6-2.c	2003-09-12 14:48:56.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/6-2.c	2016-03-10 21:07:15.000000000 -0800
 @@ -29,6 +29,7 @@
  #include <pthread.h>
@@ -254,8 +254,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-2.c posixtestsuite
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/types.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-3.c posixtestsuite/conformance/interfaces/mmap/6-3.c
---- clean/posixtestsuite/conformance/interfaces/mmap/6-3.c	2003-09-12 14:48:56.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/mmap/6-3.c posixtestsuite/conformance/interfaces/mmap/6-3.c
+--- gen/posixtestsuite/conformance/interfaces/mmap/6-3.c	2003-09-12 14:48:56.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/mmap/6-3.c	2016-03-10 21:07:15.000000000 -0800
 @@ -27,6 +27,7 @@
  #include <pthread.h>
@@ -265,8 +265,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/mmap/6-3.c posixtestsuite
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/types.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-1.c posixtestsuite/conformance/interfaces/munmap/1-1.c
---- clean/posixtestsuite/conformance/interfaces/munmap/1-1.c	2003-09-19 12:06:08.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/munmap/1-1.c posixtestsuite/conformance/interfaces/munmap/1-1.c
+--- gen/posixtestsuite/conformance/interfaces/munmap/1-1.c	2003-09-19 12:06:08.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/munmap/1-1.c	2016-03-10 21:07:15.000000000 -0800
 @@ -28,6 +28,7 @@
  #include <sys/stat.h>
@@ -276,8 +276,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-1.c posixtestsui
  #include <string.h>
  #include <errno.h>
  #include "posixtest.h"
-diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-2.c posixtestsuite/conformance/interfaces/munmap/1-2.c
---- clean/posixtestsuite/conformance/interfaces/munmap/1-2.c	2003-09-19 12:06:08.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/munmap/1-2.c posixtestsuite/conformance/interfaces/munmap/1-2.c
+--- gen/posixtestsuite/conformance/interfaces/munmap/1-2.c	2003-09-19 12:06:08.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/munmap/1-2.c	2016-03-10 21:07:15.000000000 -0800
 @@ -23,6 +23,7 @@
  #include <stdio.h>
@@ -287,8 +287,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/munmap/1-2.c posixtestsui
  #include <sys/mman.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c posixtestsuite/conformance/interfaces/pthread_create/11-1.c
---- clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2006-08-14 19:47:48.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/pthread_create/11-1.c posixtestsuite/conformance/interfaces/pthread_create/11-1.c
+--- gen/posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2006-08-14 19:47:48.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/pthread_create/11-1.c	2016-08-10 16:22:03.000000000 -0700
 @@ -31,8 +31,8 @@
  	/* Just test the tv_sec field here. */
@@ -301,8 +301,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_create/11-1.c pos
  		exit(PTS_FAIL);
  	}
  	pthread_exit(0);
-diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/3-1.c posixtestsuite/conformance/interfaces/pthread_once/3-1.c
---- clean/posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2003-02-07 13:01:58.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/pthread_once/3-1.c posixtestsuite/conformance/interfaces/pthread_once/3-1.c
+--- gen/posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2003-02-07 13:01:58.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2016-05-08 23:38:17.000000000 -0700
 @@ -68,7 +68,7 @@
  int main()
@@ -313,8 +313,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/3-1.c posixt
  	init_flag=0;
  	
  	/* Create a thread that will execute the first call to pthread_once() */
-diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/6-1.c posixtestsuite/conformance/interfaces/pthread_once/6-1.c
---- clean/posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2005-01-17 02:31:24.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/pthread_once/6-1.c posixtestsuite/conformance/interfaces/pthread_once/6-1.c
+--- gen/posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2005-01-17 02:31:24.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2016-05-08 23:38:47.000000000 -0700
 @@ -196,7 +196,7 @@
  	{
@@ -325,8 +325,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/pthread_once/6-1.c posixt
  		init_ctl = 0;
  
  		ret = pthread_once( &once_ctl, initializer );
-diff -ruNa clean/posixtestsuite/conformance/interfaces/sched_yield/1-1.c posixtestsuite/conformance/interfaces/sched_yield/1-1.c
---- clean/posixtestsuite/conformance/interfaces/sched_yield/1-1.c	2004-06-07 19:23:47.000000000 -0700
+diff -ruNa gen/posixtestsuite/conformance/interfaces/sched_yield/1-1.c posixtestsuite/conformance/interfaces/sched_yield/1-1.c
+--- gen/posixtestsuite/conformance/interfaces/sched_yield/1-1.c	2004-06-07 19:23:47.000000000 -0700
 +++ posixtestsuite/conformance/interfaces/sched_yield/1-1.c	2016-05-08 23:09:53.000000000 -0700
 @@ -19,30 +19,25 @@
   *  4. Launch a thread which call sched_yield() and check that the counter has
@@ -488,8 +488,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/sched_yield/1-1.c posixte
          param.sched_priority = sched_get_priority_max(SCHED_FIFO);
          if(sched_setscheduler(getpid(), SCHED_FIFO, &param) != 0) {
                  perror("An error occurs when calling sched_setparam()");
-diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c
---- clean/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2003-03-13 16:25:54.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c
+--- gen/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2003-03-13 16:25:54.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2016-05-09 00:51:03.000000000 -0700
 @@ -19,7 +19,6 @@
  #include <sys/types.h>
@@ -499,8 +499,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c posix
  #include <time.h>
  #include <unistd.h>
  #include "posixtest.h"
-diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c
---- clean/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2003-03-13 16:25:54.000000000 -0800
+diff -ruNa gen/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c
+--- gen/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2003-03-13 16:25:54.000000000 -0800
 +++ posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2016-05-09 00:50:58.000000000 -0700
 @@ -19,7 +19,6 @@
  #include <sys/types.h>
@@ -510,8 +510,8 @@ diff -ruNa clean/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c posix
  #include <time.h>
  #include <unistd.h>
  #include <errno.h>
-diff -ruNa clean/posixtestsuite/run_tests posixtestsuite/run_tests
---- clean/posixtestsuite/run_tests	2004-12-16 01:56:18.000000000 -0800
+diff -ruNa gen/posixtestsuite/run_tests posixtestsuite/run_tests
+--- gen/posixtestsuite/run_tests	2004-12-16 01:56:18.000000000 -0800
 +++ posixtestsuite/run_tests	2016-03-10 21:07:15.000000000 -0800
 @@ -23,8 +23,8 @@
  runtests()
@@ -524,8 +524,8 @@ diff -ruNa clean/posixtestsuite/run_tests posixtestsuite/run_tests
  	done
  }
  
-diff -ruNa clean/posixtestsuite/stress/mqueues/Makefile posixtestsuite/stress/mqueues/Makefile
---- clean/posixtestsuite/stress/mqueues/Makefile	2003-01-27 23:55:21.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/mqueues/Makefile posixtestsuite/stress/mqueues/Makefile
+--- gen/posixtestsuite/stress/mqueues/Makefile	2003-01-27 23:55:21.000000000 -0800
 +++ posixtestsuite/stress/mqueues/Makefile	2016-08-09 11:09:26.000000000 -0700
 @@ -4,7 +4,7 @@
  endif
@@ -536,8 +536,8 @@ diff -ruNa clean/posixtestsuite/stress/mqueues/Makefile posixtestsuite/stress/mq
  
  CC=gcc
  CFLAGS=-Wall -O2 -g -I$(POSIX_DIR_INC) -L$(POSIX_DIR_LIB) -lpthread
-diff -ruNa clean/posixtestsuite/stress/mqueues/run.sh posixtestsuite/stress/mqueues/run.sh
---- clean/posixtestsuite/stress/mqueues/run.sh	2003-01-27 23:55:22.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/mqueues/run.sh posixtestsuite/stress/mqueues/run.sh
+--- gen/posixtestsuite/stress/mqueues/run.sh	2003-01-27 23:55:22.000000000 -0800
 +++ posixtestsuite/stress/mqueues/run.sh	2016-03-10 21:07:15.000000000 -0800
 @@ -11,22 +11,24 @@
  RunTest()
@@ -590,8 +590,8 @@ diff -ruNa clean/posixtestsuite/stress/mqueues/run.sh posixtestsuite/stress/mque
  
  exit 0
  
-diff -ruNa clean/posixtestsuite/stress/semaphores/Makefile posixtestsuite/stress/semaphores/Makefile
---- clean/posixtestsuite/stress/semaphores/Makefile	2003-01-27 23:49:10.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/semaphores/Makefile posixtestsuite/stress/semaphores/Makefile
+--- gen/posixtestsuite/stress/semaphores/Makefile	2003-01-27 23:49:10.000000000 -0800
 +++ posixtestsuite/stress/semaphores/Makefile	2016-08-09 11:04:03.000000000 -0700
 @@ -3,7 +3,6 @@
  endif
@@ -601,8 +601,8 @@ diff -ruNa clean/posixtestsuite/stress/semaphores/Makefile posixtestsuite/stress
  
  CC=gcc
  CFLAGS=-Wall -O2 -g -I$(POSIX_DIR_INC) -L$(POSIX_DIR_LIB)
-diff -ruNa clean/posixtestsuite/stress/semaphores/run.sh posixtestsuite/stress/semaphores/run.sh
---- clean/posixtestsuite/stress/semaphores/run.sh	2003-01-27 23:49:10.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/semaphores/run.sh posixtestsuite/stress/semaphores/run.sh
+--- gen/posixtestsuite/stress/semaphores/run.sh	2003-01-27 23:49:10.000000000 -0800
 +++ posixtestsuite/stress/semaphores/run.sh	2016-03-10 21:07:15.000000000 -0800
 @@ -11,22 +11,24 @@
  RunTest()
@@ -657,8 +657,8 @@ diff -ruNa clean/posixtestsuite/stress/semaphores/run.sh posixtestsuite/stress/s
  
 +declare -i FAIL=0
  
-diff -ruNa clean/posixtestsuite/stress/threads/fork/do-plot posixtestsuite/stress/threads/fork/do-plot
---- clean/posixtestsuite/stress/threads/fork/do-plot	2005-01-13 09:49:12.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/threads/fork/do-plot posixtestsuite/stress/threads/fork/do-plot
+--- gen/posixtestsuite/stress/threads/fork/do-plot	2005-01-13 09:49:12.000000000 -0800
 +++ posixtestsuite/stress/threads/fork/do-plot	2016-03-10 21:07:15.000000000 -0800
 @@ -15,12 +15,12 @@
  FILE=$1
@@ -675,8 +675,8 @@ diff -ruNa clean/posixtestsuite/stress/threads/fork/do-plot posixtestsuite/stres
  {
      cat 1>&2
      clean_up
-diff -ruNa clean/posixtestsuite/stress/threads/fork/s-c1.c posixtestsuite/stress/threads/fork/s-c1.c
---- clean/posixtestsuite/stress/threads/fork/s-c1.c	2005-01-13 09:49:12.000000000 -0800
+diff -ruNa gen/posixtestsuite/stress/threads/fork/s-c1.c posixtestsuite/stress/threads/fork/s-c1.c
+--- gen/posixtestsuite/stress/threads/fork/s-c1.c	2005-01-13 09:49:12.000000000 -0800
 +++ posixtestsuite/stress/threads/fork/s-c1.c	2016-03-10 21:07:15.000000000 -0800
 @@ -130,7 +130,7 @@
  	mes_t sentinel;
