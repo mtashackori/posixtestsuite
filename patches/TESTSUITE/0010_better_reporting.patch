@@ -1,0 +1,130 @@
+diff -ruNa c/posixtestsuite/stress/mqueues/run.sh patched/stress/mqueues/run.sh
+--- c/posixtestsuite/stress/mqueues/run.sh	2016-08-18 15:39:34.000000000 -0700
++++ patched/stress/mqueues/run.sh	2016-08-18 15:42:59.000000000 -0700
+@@ -11,22 +11,24 @@
+ RunTest()
+ {
+ 	echo "TEST: " $1 $2
+-	TOTAL=$TOTAL+1
++	TOTAL=$((TOTAL+1))
+ 	./$1 $2
+-	if [ $? == 0 ]; then
+-		PASS=$PASS+1
+-		echo -ne "\t\t\t***TEST PASSED***\n\n"
++	if [ $? = 0 ]; then
++		PASS=$((PASS+1))
++		echo "                  ***TEST PASSED***"
++		echo
+ 	else
+-		FAIL=$FAIL+1
+-		echo -ne "\t\t\t***TEST FAILED***\n\n"
++		FAIL=$((FAIL+1))
++		echo "                  ***TEST FAILED***"
++		echo
+ 	fi
+ }
+ 
+ # Main program
+ 
+-declare -i TOTAL=0
+-declare -i PASS=0
+-declare -i FAIL=0
++TOTAL=0
++PASS=0
++FAIL=0
+ 
+ # Add lists of tests to these variables for execution
+ TESTS="multi_send_rev_1.test multi_send_rev_2.test"
+@@ -39,11 +41,11 @@
+  
+ 
+ echo
+-echo -ne "\t\t****************\n"
+-echo -ne "\t\t* TOTAL:  " $TOTAL "\n"
+-echo -ne "\t\t* PASSED: " $PASS "\n"
+-echo -ne "\t\t* FAILED: " $FAIL "\n"
+-echo -ne "\t\t****************\n"
++echo "         ****************"
++echo "         * TOTAL:  " $TOTAL
++echo "         * PASSED: " $PASS
++echo "         * FAILED: " $FAIL
++echo "         ****************"
+ 
+ exit 0
+ 
+diff -ruNa c/posixtestsuite/stress/semaphores/run.sh patched/stress/semaphores/run.sh
+--- c/posixtestsuite/stress/semaphores/run.sh	2016-08-18 15:39:34.000000000 -0700
++++ patched/stress/semaphores/run.sh	2016-08-18 15:45:56.000000000 -0700
+@@ -11,22 +11,24 @@
+ RunTest()
+ {
+ 	echo "TEST: " $1 $2
+-	TOTAL=$TOTAL+1
++	TOTAL=$((TOTAL+1))
+ 	./$1 $2
+-	if [ $? == 0 ]; then
+-		PASS=$PASS+1
+-		echo -ne "\t\t\t***TEST PASSED***\n\n"
+-	else
+-		FAIL=$FAIL+1
+-		echo -ne "\t\t\t***TEST FAILED***\n\n"
++	if [ $? = 0 ]; then
++		PASS=$((PASS+1))
++		echo "                  ***TEST PASSED***"
++		echo
++	else	
++		FAIL=$((FAIL+1))
++		echo "                  ***TEST FAILED***"
++		echo   
+ 	fi
+ }
+ 
+ # Main program
+ 
+-declare -i TOTAL=0
+-declare -i PASS=0
+-declare -i FAIL=0
++TOTAL=0
++PASS=0
++FAIL=0
+ 
+ # Add lists of tests to these variables for execution
+ TESTS="multi_con_pro.test"
+@@ -37,12 +39,14 @@
+ RunTest $TESTS 100
+ 
+ echo
+-echo -ne "\t\t****************\n"
+-echo -ne "\t\t* TOTAL:  " $TOTAL "\n"
+-echo -ne "\t\t* PASSED: " $PASS "\n"
+-echo -ne "\t\t* FAILED: " $FAIL "\n"
+-echo -ne "\t\t****************\n"
++echo "         ****************"
++echo "         * TOTAL:  " $TOTAL
++echo "         * PASSED: " $PASS
++echo "         * FAILED: " $FAIL
++echo "         ****************"
+ 
+ exit 0
+ 
++declare -i FAIL=0
++
+ 
+diff -ruNa c/posixtestsuite/stress/threads/fork/do-plot patched/stress/threads/fork/do-plot
+--- c/posixtestsuite/stress/threads/fork/do-plot	2016-08-18 15:39:34.000000000 -0700
++++ patched/stress/threads/fork/do-plot	2016-08-18 15:46:56.000000000 -0700
+@@ -15,12 +15,12 @@
+ FILE=$1
+ TMP=$(mktemp -d)
+ 
+-function clean_up
++clean_up()
+ {
+     rm -rf $TMP
+ }
+ 
+-function error
++error()
+ {
+     cat 1>&2
+     clean_up

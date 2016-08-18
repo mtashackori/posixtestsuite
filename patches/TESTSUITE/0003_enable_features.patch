@@ -1,0 +1,132 @@
+diff -ruNa c/posixtestsuite/conformance/interfaces/aio_read/15-1.c patched/conformance/interfaces/aio_read/15-1.c
+--- c/posixtestsuite/conformance/interfaces/aio_read/15-1.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/aio_read/15-1.c	2016-08-17 17:28:58.000000000 -0700
+@@ -23,6 +23,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <aio.h>
++#include <sys/resource.h>
+ 
+ #include "posixtest.h"
+ 
+diff -ruNa c/posixtestsuite/conformance/interfaces/lio_listio/1-1.c patched/conformance/interfaces/lio_listio/1-1.c
+--- c/posixtestsuite/conformance/interfaces/lio_listio/1-1.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/lio_listio/1-1.c	2016-08-17 17:28:54.000000000 -0700
+@@ -23,6 +23,7 @@
+ 
+ #define _XOPEN_SOURCE 600
+ #include <stdio.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/11-2.c patched/conformance/interfaces/mmap/11-2.c
+--- c/posixtestsuite/conformance/interfaces/mmap/11-2.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/11-2.c	2016-08-17 17:29:33.000000000 -0700
+@@ -21,6 +21,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <signal.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/11-3.c patched/conformance/interfaces/mmap/11-3.c
+--- c/posixtestsuite/conformance/interfaces/mmap/11-3.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/11-3.c	2016-08-17 17:30:03.000000000 -0700
+@@ -20,6 +20,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/27-1.c patched/conformance/interfaces/mmap/27-1.c
+--- c/posixtestsuite/conformance/interfaces/mmap/27-1.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/27-1.c	2016-08-17 17:30:29.000000000 -0700
+@@ -19,6 +19,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
++#include <signal.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/6-1.c patched/conformance/interfaces/mmap/6-1.c
+--- c/posixtestsuite/conformance/interfaces/mmap/6-1.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/6-1.c	2016-08-17 17:31:35.000000000 -0700
+@@ -26,6 +26,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/6-2.c patched/conformance/interfaces/mmap/6-2.c
+--- c/posixtestsuite/conformance/interfaces/mmap/6-2.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/6-2.c	2016-08-17 17:32:10.000000000 -0700
+@@ -29,6 +29,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/6-3.c patched/conformance/interfaces/mmap/6-3.c
+--- c/posixtestsuite/conformance/interfaces/mmap/6-3.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/mmap/6-3.c	2016-08-17 17:32:30.000000000 -0700
+@@ -27,6 +27,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/munmap/1-1.c patched/conformance/interfaces/munmap/1-1.c
+--- c/posixtestsuite/conformance/interfaces/munmap/1-1.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/munmap/1-1.c	2016-08-17 17:33:00.000000000 -0700
+@@ -28,6 +28,7 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <fcntl.h>
++#include <signal.h>
+ #include <string.h>
+ #include <errno.h>
+ #include "posixtest.h"
+diff -ruNa c/posixtestsuite/conformance/interfaces/munmap/1-2.c patched/conformance/interfaces/munmap/1-2.c
+--- c/posixtestsuite/conformance/interfaces/munmap/1-2.c	2016-08-17 17:26:45.000000000 -0700
++++ patched/conformance/interfaces/munmap/1-2.c	2016-08-17 17:33:23.000000000 -0700
+@@ -23,6 +23,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <signal.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+diff -ruNa c/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c patched/conformance/interfaces/sem_timedwait/3-1.c
+--- c/posixtestsuite/conformance/interfaces/sem_timedwait/3-1.c	2016-08-17 17:26:46.000000000 -0700
++++ patched/conformance/interfaces/sem_timedwait/3-1.c	2016-08-17 17:35:21.000000000 -0700
+@@ -19,7 +19,6 @@
+ #include <sys/types.h>
+ #include <strings.h>
+ #include <semaphore.h>
+-#include <features.h>
+ #include <time.h>
+ #include <unistd.h>
+ #include "posixtest.h"
+diff -ruNa c/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c patched/conformance/interfaces/sem_timedwait/7-1.c
+--- c/posixtestsuite/conformance/interfaces/sem_timedwait/7-1.c	2016-08-17 17:26:46.000000000 -0700
++++ patched/conformance/interfaces/sem_timedwait/7-1.c	2016-08-17 17:35:08.000000000 -0700
+@@ -19,7 +19,6 @@
+ #include <sys/types.h>
+ #include <strings.h>
+ #include <semaphore.h>
+-#include <features.h>
+ #include <time.h>
+ #include <unistd.h>
+ #include <errno.h>

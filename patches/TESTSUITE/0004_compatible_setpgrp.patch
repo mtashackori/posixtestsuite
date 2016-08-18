@@ -1,0 +1,12 @@
+diff -ruNa c/posixtestsuite/conformance/interfaces/killpg/1-2.c patched/conformance/interfaces/killpg/1-2.c
+--- c/posixtestsuite/conformance/interfaces/killpg/1-2.c	2016-08-17 17:36:48.000000000 -0700
++++ patched/conformance/interfaces/killpg/1-2.c	2016-08-18 15:05:38.000000000 -0700
+@@ -45,7 +45,7 @@
+ 		sigaction(SIGTOTEST, &act, 0);
+ 
+ 		/* change child's process group id */
+-		setpgrp();
++		setpgid(0, 0);
+ 
+ 		sigpause(SIGABRT);
+ 

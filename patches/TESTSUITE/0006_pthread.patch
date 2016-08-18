@@ -1,0 +1,24 @@
+diff -ruNa c/posixtestsuite/conformance/interfaces/pthread_once/3-1.c patched/conformance/interfaces/pthread_once/3-1.c
+--- c/posixtestsuite/conformance/interfaces/pthread_once/3-1.c	2016-08-18 15:25:37.000000000 -0700
++++ patched/conformance/interfaces/pthread_once/3-1.c	2016-08-18 15:26:42.000000000 -0700
+@@ -68,7 +68,7 @@
+ int main()
+ {
+ 	pthread_t new_th;
+-	once_control = PTHREAD_ONCE_INIT;
++	once_control = (pthread_once_t)PTHREAD_ONCE_INIT;
+ 	init_flag=0;
+ 	
+ 	/* Create a thread that will execute the first call to pthread_once() */
+diff -ruNa c/posixtestsuite/conformance/interfaces/pthread_once/6-1.c patched/conformance/interfaces/pthread_once/6-1.c
+--- c/posixtestsuite/conformance/interfaces/pthread_once/6-1.c	2016-08-18 15:25:37.000000000 -0700
++++ patched/conformance/interfaces/pthread_once/6-1.c	2016-08-18 15:27:14.000000000 -0700
+@@ -196,7 +196,7 @@
+ 	{
+ 		count_ope++;
+ 
+-		once_ctl = PTHREAD_ONCE_INIT;
++		once_ctl = (pthread_once_t)PTHREAD_ONCE_INIT;
+ 		init_ctl = 0;
+ 
+ 		ret = pthread_once( &once_ctl, initializer );

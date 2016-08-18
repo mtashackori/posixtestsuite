@@ -1,0 +1,14 @@
+diff -ruNa c/posixtestsuite/run_tests patched/run_tests
+--- c/posixtestsuite/run_tests	2016-08-18 15:34:01.000000000 -0700
++++ patched/run_tests	2016-08-18 15:35:01.000000000 -0700
+@@ -23,8 +23,8 @@
+ runtests()
+ {
+ 	for test in `ls -d $1`; do
+-		POSIX_TARGET=$test make build-tests
+-		POSIX_TARGET=$test make run-tests
++		POSIX_TARGET=$test gmake build-tests
++		POSIX_TARGET=$test gmake run-tests
+ 	done
+ }
+ 

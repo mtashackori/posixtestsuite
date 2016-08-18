@@ -1,0 +1,28 @@
+diff -ruNa c/posixtestsuite/conformance/interfaces/aio_write/7-1.c patched/conformance/interfaces/aio_write/7-1.c
+--- c/posixtestsuite/conformance/interfaces/aio_write/7-1.c	2016-08-18 15:34:00.000000000 -0700
++++ patched/conformance/interfaces/aio_write/7-1.c	2016-08-18 15:37:13.000000000 -0700
+@@ -84,6 +84,8 @@
+ 	for (i=0; i<last_req-1; i++)
+ 	{
+ 		err = aio_error(&aiocbs[i]);
++		if (err != 0)
++			printf(TNAME " aio_error got %d\n", err);
+ 		ret = aio_return(&aiocbs[i]);
+ 
+ 	}
+diff -ruNa c/posixtestsuite/conformance/interfaces/mmap/27-1.c patched/conformance/interfaces/mmap/27-1.c
+--- c/posixtestsuite/conformance/interfaces/mmap/27-1.c	2016-08-18 15:34:00.000000000 -0700
++++ patched/conformance/interfaces/mmap/27-1.c	2016-08-18 15:38:31.000000000 -0700
+@@ -63,6 +63,12 @@
+ #endif
+ 
+   data = (char *) malloc(total_size); 
++  if (data == NULL)
++  {
++      printf(TNAME "Error in malloc(): %s\n",
++             strerror(errno));
++      exit(PTS_UNRESOLVED);
++  }
+   snprintf(tmpfname, sizeof(tmpfname), "/tmp/pts_mmap_27_1_%d",
+            getpid());
+   unlink(tmpfname);
