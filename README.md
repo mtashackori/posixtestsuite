@@ -52,4 +52,5 @@ https://github.com/IIJ-NetBSD/netbsd-src/commit/ef38d5736b7367bff9aba260f532e5b2
 https://github.com/IIJ-NetBSD/netbsd-src/commit/6d66b56857eaf348825503072b60948bc3117c4e <br />
 https://github.com/IIJ-NetBSD/netbsd-src/commit/7bfee8739f8b88a7eceb5dfe52fce3213fb009a8 <br />
 
-The patch for the POSIX test suite will be send to the community also. <br />
+The patch for the POSIX test suite is send to the community also. <br />
+https://github.com/ycui1984/posixtestsuite/tree/master/patches/TESTSUITE <br />
